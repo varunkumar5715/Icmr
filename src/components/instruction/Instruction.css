@@ -1,0 +1,46 @@
+/* Instruction.css */
+.instruction-container {
+   
+    width: 250px; /* Adjusted to 100% width */
+    margin: 50px auto;
+    background-color: #6CACBF; /* Card-like background color */
+    padding: 20px;
+    height: 350px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+.instruction-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.instruction-container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.instruction-container .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: auto; /* Align button container to the bottom */
+}
+
+.instruction-container button {
+    margin: 0 auto;
+    display: block;
+    width: 75px;
+    padding: 10px 15px;
+    font-size: 10px;
+    line-height: normal;
+    background-color: #2F4046;
+    color: #ffff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+

@@ -1,0 +1,30 @@
+/* Card styles */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px; 
+    margin-bottom: auto;/* Adjust as needed */
+}
+
+.card {
+    background-color: #6CACBF;
+    padding: 10px; /* Reduced padding */
+    width: 180px; /* Adjusted width */
+    border-radius: 15px; /* Reduced border radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+}
+
+.card-image {
+    width: 80px; /* Adjusted image size */
+    height: 80px; /* Adjusted image size */
+    margin-bottom: 5px; /* Reduced margin */
+}
+
+.card-content {
+    color: #fff;
+    font-size: 14px; /* Adjusted font size */
+    margin-bottom: 5px; /* Reduced margin */
+}

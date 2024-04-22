@@ -1,0 +1,32 @@
+
+.buttonContainer {  
+    display: flex;
+    gap: 20px;
+    padding-inline: 20px;
+    align-items: center;
+    position: relative;  
+    margin-left: auto;
+    margin-right: 30px;
+  }
+  
+  .button {
+    margin: 0 auto;
+    display: block;
+    width: 75px;
+    padding: 10px 15px;
+    font-size: 10px;
+    line-height: normal;
+    background-color: #2F4046;
+    color: #ffff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  
+ 
+
+  @media only screen and (max-width: 600px) {
+    .button {
+      padding:10px;
+    }  
+  }

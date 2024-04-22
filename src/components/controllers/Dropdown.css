@@ -1,0 +1,41 @@
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  padding: 7px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 130px;
+}
+
+.dropdown-symbol {
+  margin-left: 5px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 120px;
+  top: calc(100% + 5px); /* Position options below the dropdown toggle */
+  left: 0;
+  display: none; /* Hide options by default */
+}
+
+.dropdown-menu.show {
+  display: block; /* Show options when the dropdown is clicked */
+}
+
+.dropdown-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
