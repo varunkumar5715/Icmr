@@ -1,10 +1,10 @@
-// TestPage.js
+
 import React, { useState } from 'react';
 import './TestPage.css';
 import Button from '../components/controllers/Button';
 
 
-const TestPage1 = ({ onNext, onPrev, onCorrect, onIncorrect }) => {
+const TestPage2 = ({ onNext, onPrev,onExit,onclick, onCorrect, onIncorrect }) => {
     const [selectedOption, setSelectedOption] = useState(null);
     const [inputValue, setInputValue] = useState('');
 
@@ -19,28 +19,26 @@ const TestPage1 = ({ onNext, onPrev, onCorrect, onIncorrect }) => {
     return (
         <div className="custom-card">
             <div className="skill">Skill</div>
-            <div className="goals">Goals</div>
+            <div className="goals">Goals and Levels</div>
             <div className="instruction">Instruction</div>
             <div className="card-content">
 
                 <div className="centered-container">
                     <div className="white-container">
                         <div className="audio-symbol">🔊</div>
+                        <Button buttonName="click" handleClick={onclick} />
                     </div>
                 </div>
 
                 <div className="button-line">
-                    <Button buttonName="Back" handleClick={onPrev} />
-                    <Button buttonName="Next" handleClick={onNext} />
+                    <Button buttonName="Exit" handleClick={onExit} />
+                  
                 </div>
-                <div className="button-line">
-                    <Button buttonName="correct" handleClick={onCorrect} />
-                    <Button buttonName="incorrect" handleClick={onIncorrect} />
-                </div>
+        
 
             </div>
         </div>
     );
 };
 
-export default TestPage1;
+export default TestPage2;

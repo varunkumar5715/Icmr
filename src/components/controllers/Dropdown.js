@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import './Dropdown.css';
 
 const Dropdown = ({ options, onSelect }) => {
-  const [isOpen, setIsOpen] = useState();
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
 
   const handleSelect = (option) => {
+    setSelectedOption(option);
     onSelect(option);
-    setIsOpen();
+    setIsOpen(false); 
   };
 
   const toggleDropdown = () => {
@@ -22,7 +24,7 @@ const Dropdown = ({ options, onSelect }) => {
         aria-haspopup="true"
         aria-expanded={isOpen}
       >
-        Select an option
+        {selectedOption ? selectedOption.label : 'Select an option'}
         <span className="dropdown-symbol">&#9662;</span>
       </button>
       <div className={`dropdown-menu ${isOpen ? 'show' : ''}`}>
@@ -41,3 +43,4 @@ const Dropdown = ({ options, onSelect }) => {
 };
 
 export default Dropdown;
+

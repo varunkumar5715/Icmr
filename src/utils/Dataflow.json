@@ -20,13 +20,9 @@
                                     "folderName": "auditoryword",
                                     "item": [],
                                     "platform": "",
-                                    "levelCode": 1,
-                                    "levelTitle": [
-                                        "title1",
-                                        "title2",
-                                        "title3"
-                                    ],
-                                    "instruction": "",
+                                    "levelCode": 5,
+                                    "levelTitle": "",
+                                    "instruction": "Identify the words while ignoring the background noise",
                                     "example": ""
                                 },
                                 {
@@ -34,9 +30,9 @@
                                     "folderName": "auditorypharse",
                                     "item": [],
                                     "platform": "",
-                                    "levelCode": 1,
+                                    "levelCode": 5,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the phrase while ignoring the background noise",
                                     "example": ""
                                 },
                                 {
@@ -44,9 +40,9 @@
                                     "folderName": "auditoryspeechi",
                                     "item": [],
                                     "platform": "",
-                                    "levelCode": 1,
+                                    "levelCode": 5,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the sentence while ignoring the background noise",
                                     "example": ""
                                 },
                                 {
@@ -54,9 +50,9 @@
                                     "folderName": "auditoryspeechc",
                                     "item": [],
                                     "platform": "",
-                                    "levelCode": 1,
+                                    "levelCode": 5,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the question while ignoring the background noise and later answer it",
                                     "example": ""
                                 },
                                 {
@@ -64,9 +60,12 @@
                                     "folderName": "auditorydiscourse",
                                     "item": [],
                                     "platform": "",
-                                    "levelCode": 1,
+                                    "levelCode": 7,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": [
+                                        "Listen to the story or essay carefully while ignoring the background noise",
+                                        "Answer the following questions"
+                                    ],
                                     "example": ""
                                 },
                                 {
@@ -74,9 +73,12 @@
                                     "folderName": "auditoryconv",
                                     "item": [],
                                     "platform": "",
-                                    "levelCode": 1,
+                                    "levelCode": 7,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": [
+                                        "Listen to the story or essay carefully while ignoring the background noise",
+                                        "Answer the following questions"
+                                    ],
                                     "example": ""
                                 }
                             ]
@@ -100,6 +102,7 @@
                                     "folderName": "auditorymissword",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -109,6 +112,7 @@
                                     "folderName": "auditorymisssyllable",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -124,8 +128,9 @@
                                     "folderName": "auditorywordiden",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the words while ignoring the background noise",
                                     "example": ""
                                 },
                                 {
@@ -133,8 +138,9 @@
                                     "folderName": "auditoryphraseiden",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the phrase while ignoring the background noise",
                                     "example": ""
                                 },
                                 {
@@ -142,8 +148,9 @@
                                     "folderName": "auditorysentenceiden",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the sentence while ignoring the background noise",
                                     "example": ""
                                 },
                                 {
@@ -151,8 +158,9 @@
                                     "folderName": "auditorysentencecompre",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the question while ignoring the background noise and later answer it",
                                     "example": ""
                                 },
                                 {
@@ -160,8 +168,12 @@
                                     "folderName": "auditorydiscoursecomp",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 5,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": [
+                                        "Listen to the story or essay carefully",
+                                        "Answer the following questions"
+                                    ],
                                     "example": ""
                                 },
                                 {
@@ -169,8 +181,12 @@
                                     "folderName": "auditoryconversationcomp",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 5,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": [
+                                        "Listen to the Conversation carefully",
+                                        "Answer the following questions"
+                                    ],
                                     "example": ""
                                 }
                             ]
@@ -184,8 +200,9 @@
                                     "folderName": "auditorylowword",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 5,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the words while ignoring the background noise",
                                     "example": ""
                                 },
                                 {
@@ -193,8 +210,9 @@
                                     "folderName": "auditorylowphrase",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 5,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the phrase while ignoring the background noise",
                                     "example": ""
                                 },
                                 {
@@ -202,8 +220,9 @@
                                     "folderName": "auditorylowsentence",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 5,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the sentence while ignoring the background noise",
                                     "example": ""
                                 },
                                 {
@@ -211,8 +230,9 @@
                                     "folderName": "auditorylowsentencecomp",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 5,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the question while ignoring the background noise and later answer it",
                                     "example": ""
                                 },
                                 {
@@ -220,8 +240,12 @@
                                     "folderName": "auditorylowdiscourse",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 7,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": [
+                                        "Listen to the story or essay carefully",
+                                        "Answer the following questions"
+                                    ],
                                     "example": ""
                                 },
                                 {
@@ -229,8 +253,12 @@
                                     "folderName": "auditorylowdiscoursecomp",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 7,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": [
+                                        "Listen to the Conversationcarefully",
+                                        "Answer the following questions"
+                                    ],
                                     "example": ""
                                 }
                             ]
@@ -250,8 +278,9 @@
                                     "folderName": "auditoryvaryingnumber",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Listen carefully and Identify the odd stimulus",
                                     "example": ""
                                 },
                                 {
@@ -259,8 +288,9 @@
                                     "folderName": "auditoryvaryinglength",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Listen carefully and Identify the odd stimulus ",
                                     "example": ""
                                 }
                             ]
@@ -274,8 +304,9 @@
                                     "folderName": "auditoryvowels",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Listen carefully and Identify the odd stimulus ",
                                     "example": ""
                                 },
                                 {
@@ -283,8 +314,9 @@
                                     "folderName": "auditorywords",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Listen carefully and Identify the odd stimulus ",
                                     "example": ""
                                 },
                                 {
@@ -292,8 +324,9 @@
                                     "folderName": "auditorymono",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Listen carefully and Identify the odd stimulus ",
                                     "example": ""
                                 }
                             ]
@@ -307,8 +340,9 @@
                                     "folderName": "auditoryvowela",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Listen carefully and Identify the odd stimulus ",
                                     "example": ""
                                 },
                                 {
@@ -316,8 +350,9 @@
                                     "folderName": "auditoryvoweli",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Listen carefully and Identify the odd stimulus ",
                                     "example": ""
                                 },
                                 {
@@ -325,8 +360,9 @@
                                     "folderName": "auditoryvowelu",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Listen carefully and Identify the odd stimulus ",
                                     "example": ""
                                 },
                                 {
@@ -334,8 +370,9 @@
                                     "folderName": "auditoryconstants",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Listen carefully and Identify the odd stimulus ",
                                     "example": ""
                                 },
                                 {
@@ -343,8 +380,9 @@
                                     "folderName": "auditoryconstantsh",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Listen carefully and Identify the odd stimulus ",
                                     "example": ""
                                 },
                                 {
@@ -352,8 +390,9 @@
                                     "folderName": "auditoryconstantm",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Listen carefully and Identify the odd stimulus ",
                                     "example": ""
                                 }
                             ]
@@ -373,8 +412,9 @@
                                     "folderName": "auditorybroad",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the distinct stimuli by indicating its corresponding number",
                                     "example": ""
                                 },
                                 {
@@ -382,8 +422,9 @@
                                     "folderName": "auditorynarrow500",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the distinct stimuli by indicating its corresponding numbe",
                                     "example": ""
                                 },
                                 {
@@ -391,8 +432,9 @@
                                     "folderName": "auditorynarrow1000",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the distinct stimuli by indicating its corresponding number",
                                     "example": ""
                                 },
                                 {
@@ -400,8 +442,9 @@
                                     "folderName": "auditorynarrow2000",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the distinct stimuli by indicating its corresponding number",
                                     "example": ""
                                 },
                                 {
@@ -409,8 +452,9 @@
                                     "folderName": "auditorynarrow4000",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the distinct stimuli by indicating its corresponding number",
                                     "example": ""
                                 }
                             ]
@@ -424,8 +468,9 @@
                                     "folderName": "auditorybandgap",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the distinct stimuli by indicating its corresponding number",
                                     "example": ""
                                 },
                                 {
@@ -433,8 +478,9 @@
                                     "folderName": "auditorynarrowgap500",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the distinct stimuli by indicating its corresponding number",
                                     "example": ""
                                 },
                                 {
@@ -442,8 +488,9 @@
                                     "folderName": "auditorynarrowgap1000",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the distinct stimuli by indicating its corresponding number",
                                     "example": ""
                                 },
                                 {
@@ -451,8 +498,9 @@
                                     "folderName": "auditorynarrowgap2000",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the distinct stimuli by indicating its corresponding number",
                                     "example": ""
                                 },
                                 {
@@ -460,8 +508,9 @@
                                     "folderName": "auditorynarrowgap4000",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the distinct stimuli by indicating its corresponding number",
                                     "example": ""
                                 }
                             ]
@@ -475,8 +524,9 @@
                                     "folderName": "auditorypuretone500",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the distinct stimuli by indicating its corresponding number",
                                     "example": ""
                                 },
                                 {
@@ -484,8 +534,9 @@
                                     "folderName": "auditorypuretone1000",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the distinct stimuli by indicating its corresponding number",
                                     "example": ""
                                 },
                                 {
@@ -493,8 +544,9 @@
                                     "folderName": "auditorypuretone2000",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the distinct stimuli by indicating its corresponding number",
                                     "example": ""
                                 },
                                 {
@@ -502,8 +554,9 @@
                                     "folderName": "auditorypuretone4000",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the distinct stimuli by indicating its corresponding number",
                                     "example": ""
                                 }
                             ]
@@ -517,8 +570,9 @@
                                     "folderName": "auditoryintepuretone500",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the distinct stimuli by indicating its corresponding number",
                                     "example": ""
                                 },
                                 {
@@ -526,8 +580,9 @@
                                     "folderName": "auditoryintepuretone1000",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the distinct stimuli by indicating its corresponding number",
                                     "example": ""
                                 },
                                 {
@@ -535,8 +590,9 @@
                                     "folderName": "auditoryintepuretone2000",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the distinct stimuli by indicating its corresponding number",
                                     "example": ""
                                 },
                                 {
@@ -544,8 +600,9 @@
                                     "folderName": "auditoryintepuretone4000",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 6,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Identify the distinct stimuli by indicating its corresponding number",
                                     "example": ""
                                 }
                             ]
@@ -572,8 +629,9 @@
                                     "folderName": "cognitivesyllablessustained",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 2,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Click on the green button and repeat the syllable everytime it's presented",
                                     "example": ""
                                 },
                                 {
@@ -581,8 +639,9 @@
                                     "folderName": "cognitivewordssustained",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 2,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction":"Click on the green button and repeat the words everytime it's presented",
                                     "example": ""
                                 },
                                 {
@@ -590,8 +649,9 @@
                                     "folderName": "cognitivesentencessustained",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 2,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Click on the green button and repeat the sentences everytime it's presented",
                                     "example": ""
                                 }
                             ]
@@ -605,8 +665,9 @@
                                     "folderName": "cognitiveselectivessustained",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 3,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Click on the green button only when target syllable is presented",
                                     "example": ""
                                 },
                                 {
@@ -614,8 +675,9 @@
                                     "folderName": "cognitiveselectivewsustained",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 3,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction":"Click on the green button only when target word is presented",
                                     "example": ""
                                 },
                                 {
@@ -623,8 +685,9 @@
                                     "folderName": "cognitiveselectivesesustained",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 3,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": "Click on the green button only when target sentence is presented",
                                     "example": ""
                                 }
                             ]
@@ -638,8 +701,12 @@
                                     "folderName": "cognitiveresyllables",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 4,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": [
+                                        "Listen carefully and memorize all the syllables that will be presented",
+                                        "Recall and Repeat back all syllables in the same order"
+                                    ],
                                     "example": ""
                                 },
                                 {
@@ -647,8 +714,12 @@
                                     "folderName": "cognitiverewords",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 4,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": [
+                                        "Listen carefully and memorize all the words that will be presented",
+                                        "Recall and Repeat back all words in the same order"
+                                    ],
                                     "example": ""
                                 },
                                 {
@@ -656,8 +727,12 @@
                                     "folderName": "cognitiveresentences",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 4,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": [
+                                        "Listen carefully and memorize all the sentences that will be presented",
+                                        "Recall and Repeat back all sentences in the same order"
+                                    ],
                                     "example": ""
                                 }
                             ]
@@ -671,8 +746,13 @@
                                     "folderName": "cognitiveworkingsyllables",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 4,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": [
+                                        "Listen carefully and memorize all the syllables that will be presented",
+                                        "Identify and tell if the syllable is a vowel or consonant after each presentation",
+                                        "Recall and Repeat back all the syllables in the same order"
+                                    ],
                                     "example": ""
                                 },
                                 {
@@ -680,8 +760,13 @@
                                     "folderName": "cognitiveworkingwords",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 4,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": [
+                                        "Listen carefully and memorize all the words that will be presented",
+                                        "Identify and tell if the word represents an eatable or not after each presentation",
+                                        "Recall and Repeat back all the words in the same order"
+                                    ],
                                     "example": ""
                                 },
                                 {
@@ -689,8 +774,13 @@
                                     "folderName": "cognitiveworkingsentences",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 4,
                                     "level": "",
-                                    "instruction": "",
+                                    "instruction": [
+                                        "Listen carefully and memorize all the sentences that will be presented",
+                                        "Identify and tell if the sentence is a true or a false statement after each presentation",
+                                        "Recall and Repeat back all the sentences in the same order"
+                                    ],
                                     "example": ""
                                 }
                             ]
@@ -711,8 +801,8 @@
                                     "item": [],
                                     "platform": "",
                                     "level": "",
-                                    "instruction": "",
-                                    "example": ""
+                                    "instruction": "A situation will be presented. Tell what you will do in that situation",
+                                    "example": "ನಿನ್ನ ಬಟ್ಟೆ ಕೊಳಕಾಗಿದೆ|ಸರಿ ಉತ್ತರ: ಮಣ್ಣಿನಲ್ಲಿ ಆಟವಾಡಿದೆ"
                                 },
                                 {
                                     "title": "Predicting the cause",
@@ -720,8 +810,8 @@
                                     "item": [],
                                     "platform": "",
                                     "level": "",
-                                    "instruction": "",
-                                    "example": ""
+                                    "instruction": "A situation will be described.  Identify and tell the possible cause for that situation",
+                                    "example": "ನಿನಗೆ ಜ್ವರ ಬಂದಿದೆ|ಸರಿ ಉತ್ತರ: ಆಸ್ಪತ್ರೆಗೆ ಹೋಗುತೇನೆ"
                                 },
                                 {
                                     "title": "Compare and Contrast",
@@ -729,8 +819,8 @@
                                     "item": [],
                                     "platform": "",
                                     "level": "",
-                                    "instruction": "",
-                                    "example": ""
+                                    "instruction": "A word pair will be presented. You have to tell atleast one similarity or difference between what concept those words represent",
+                                    "example": "ನಾಯಿ - ಬೆಕ್ಕು|ಸರಿ ಉತ್ತರ: ಎರಡೂ ಪ್ರಾಣಿಗಳು"
                                 }
                             ]
                         },
@@ -744,8 +834,8 @@
                                     "item": [],
                                     "platform": "",
                                     "level": "",
-                                    "instruction": "",
-                                    "example": ""
+                                    "instruction": "Three words will be presented. You have to identify the category they belong to",
+                                    "example": "ವೃತ್ತ, ಚೌಕ, ಆಯತ|ಸರಿ ಉತ್ತರ: ಆಕಾರಗಳು"
                                 },
                                 {
                                     "title": "Category Oddity",
@@ -753,8 +843,8 @@
                                     "item": [],
                                     "platform": "",
                                     "level": "",
-                                    "instruction": "",
-                                    "example": ""
+                                    "instruction": "Four words will be presented. You have to identify the odd word",
+                                    "example": "ವೃತ್ತ, ಚೌಕ, ಆಯತ, ಕೆಂಪು|ಸರಿ ಉತ್ತರ: ಕೆಂಪು "
                                 },
                                 {
                                     "title": "Category member recall",
@@ -762,8 +852,8 @@
                                     "item": [],
                                     "platform": "",
                                     "level": "",
-                                    "instruction": "",
-                                    "example": ""
+                                    "instruction": "A category name will be presented. You have to name 3 things in that category",
+                                    "example": "ಹಬ್ಬಗಳು|ಸರಿ ಉತ್ತರ: ಯುಗಾದಿ, ರಂಜಾನ್, ಕ್ರಿಸ್ಮಸ್"
                                 }
                             ]
                         },
@@ -777,8 +867,8 @@
                                     "item": [],
                                     "platform": "",
                                     "level": "",
-                                    "instruction": "",
-                                    "example": ""
+                                    "instruction": "Identify the profession of the person associated with the word presented",
+                                    "example": "ತರಗತಿ|ಸರಿ ಉತ್ತರ: ಶಿಕ್ಷಕ"
                                 },
                                 {
                                     "title": "Whole-Part Relationship",
@@ -786,8 +876,8 @@
                                     "item": [],
                                     "platform": "",
                                     "level": "",
-                                    "instruction": "",
-                                    "example": ""
+                                    "instruction": "A word will be presented, you have to tell which object's part it is",
+                                    "example": "ಎಲೆ|ಸರಿ ಉತ್ತರ: ಮರ/ಗಿಡ"
                                 }
                             ]
                         }
@@ -864,6 +954,7 @@
                                     "folderName": "syllabletrail",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -873,6 +964,7 @@
                                     "folderName": "syllableoddity",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -882,6 +974,7 @@
                                     "folderName": "syllablerecognition",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -891,6 +984,7 @@
                                     "folderName": "syllableproduction",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -900,6 +994,7 @@
                                     "folderName": "syllableaddition",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -909,6 +1004,7 @@
                                     "folderName": "syllabledeletion ",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -918,6 +1014,7 @@
                                     "folderName": "syllablesegmentation ",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -927,6 +1024,7 @@
                                     "folderName": "syllablesequencing ",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -942,6 +1040,7 @@
                                     "folderName": "phonemetrail ",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -951,6 +1050,7 @@
                                     "folderName": "phonemewordswithout ",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -960,6 +1060,7 @@
                                     "folderName": "phonemewordswith ",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -969,6 +1070,7 @@
                                     "folderName": "phonemeoddity ",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -978,6 +1080,7 @@
                                     "folderName": "phonemeodditynonwords ",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -987,6 +1090,7 @@
                                     "folderName": "phonemeaddition ",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -996,6 +1100,7 @@
                                     "folderName": "phonemeadditionwords ",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -1005,6 +1110,7 @@
                                     "folderName": "phonemedeletion ",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -1014,6 +1120,7 @@
                                     "folderName": "phonemedeletionwords ",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -1023,6 +1130,7 @@
                                     "folderName": "phonemesegmentation ",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""
@@ -1032,6 +1140,7 @@
                                     "folderName": "phonemesegmentationwords ",
                                     "item": [],
                                     "platform": "",
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "",
                                     "example": ""

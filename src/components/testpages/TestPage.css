@@ -27,11 +27,9 @@
 }
 
 .goals {
-    margin-top: 20px;
-    text-align: center;
-    /* Adjust margin-top to move the goals down */
+    margin-top: 20px; 
+    text-align: center;/* Adjust margin-top to move the goals down */
 }
-
 .instruction {
     font-size: 15px;
     text-align: center;

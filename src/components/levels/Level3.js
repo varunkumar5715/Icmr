@@ -5,14 +5,14 @@ import React, { useState } from 'react';
 import Dropdown from '../controllers/Dropdown';
 import Button from '../controllers/Button';
 import TextBox from '../controllers/Textbox';
-// Import the Card component
+
 import './Level.css';
 
 const Level3 = ({onNext, onPrev}) => {
     const options = [
-        { label: 'Option 1', value: 1 },
-        { label: 'Option 2', value: 2 },
-        { label: 'Option 3', value: 3 },
+        { "label": "letter", "value": "letter" },
+        { "label": "word", "value": "word" },
+        { "label": "sentence", "value": "sentence" }
     ];
 
     const [selectedOption, setSelectedOption] = useState(null);

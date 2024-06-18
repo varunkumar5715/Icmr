@@ -12,9 +12,9 @@ import {getLevelTitle} from '../../utils/DataController'
 const Level1 = ({ onNext, onPrev }) => {
     const { m, sm, g, sk, level} = useContext(DataContext);
     const options = [
-        { label: 'Option 1', value: 1 },
-        { label: 'Option 2', value: 2 },
-        { label: 'Option 3', value: 3 },
+        { "label": "letter", "value": "letter" },
+        { "label": "word", "value": "word" },
+        { "label": "sentence", "value": "sentence" }
     ];
 
     const [selectedOption, setSelectedOption] = useState(null);
@@ -47,6 +47,7 @@ const Level1 = ({ onNext, onPrev }) => {
                 />
             </div>
 
+  
      
 
             <div className="button-container">

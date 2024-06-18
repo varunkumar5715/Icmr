@@ -11,9 +11,9 @@ import './Level.css';
 
 const Level2 = ({ onNext, onPrev }) => {
     const options = [
-        { label: 'Option 1', value: 1 },
-        { label: 'Option 2', value: 2 },
-        { label: 'Option 3', value: 3 },
+        { "label": "letter", "value": "letter" },
+        { "label": "word", "value": "word" },
+        { "label": "sentence", "value": "sentence" }
     ];
 
     const [selectedOption, setSelectedOption] = useState(null);

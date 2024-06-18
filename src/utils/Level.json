@@ -1,0 +1,180 @@
+
+
+  {
+    "levels": [
+      {
+        "elements": [
+          {
+            "label": "stimulus",
+            "options": [
+              { "label": "letter", "value": "letter" },
+              { "label": "word", "value": "word" },
+              { "label": "sentence", "value": "sentence" }
+            ]
+          }
+         ]
+      },
+      {
+        "elements": [
+          {
+            "label": "stimulus",
+            "options": [
+              { "label": "letter", "value": "letter" },
+              { "label": "word", "value": "word" },
+              { "label": "sentence", "value": "sentence" }
+            ]
+          },
+          {
+           
+            "label": "words",
+            "options": [
+              { "label": "letter", "value": "optionA" },
+              { "label": "word", "value": "optionB" },
+              { "label": "sentence", "value": "optionC" }
+            ]
+          },
+          {
+            "type": "text",
+            "label": "Text Input",
+            "placeholder": "Enter text here..."
+          }
+        ]
+      },
+      {
+      
+        "elements": [
+          {
+           
+            "label": "Dropdown 1",
+            "options": [
+              { "label": "Option X", "value": "optionX" },
+              { "label": "Option Y", "value": "optionY" },
+              { "label": "Option Z", "value": "optionZ" }
+            ]
+          },   
+          {
+            
+              "type": "text",
+              "label": "Text Input",
+              "placeholder": "Enter text here..."
+            
+         
+          }
+        ]
+      },
+      {
+        "elements": [
+          {
+            "label": "stimulus",
+            "options": [
+              { "label": "letter", "value": "letter" },
+              { "label": "word", "value": "word" },
+              { "label": "sentence", "value": "sentence" }
+            ]
+          },
+          {
+           
+            "label": "words",
+            "options": [
+              { "label": "Option A", "value": "optionA" },
+              { "label": "Option B", "value": "optionB" },
+              { "label": "Option C", "value": "optionC" }
+            ]
+          },
+          {
+            "type": "text",
+            "label": "Text Input",
+            "placeholder": "Enter text here..."
+          }
+        ]
+      },
+      {
+      
+        "elements": [
+          {
+           
+            "label": "Dropdown 1",
+            "options": [
+              { "label": "Option X", "value": "optionX" },
+              { "label": "Option Y", "value": "optionY" },
+              { "label": "Option Z", "value": "optionZ" }
+            ]
+          },   
+          {
+           
+            "label": "Dropdown 2",
+            "options": [
+              { "label": "Option X", "value": "optionX" },
+              { "label": "Option Y", "value": "optionY" },
+              { "label": "Option Z", "value": "optionZ" }
+            ]
+          }
+        
+        ]
+      },
+      {
+        "elements": [
+          {
+            "label": "stimulus",
+            "options": [
+              { "label": "letter", "value": "letter" },
+              { "label": "word", "value": "word" },
+              { "label": "sentence", "value": "sentence" }
+            ]
+          },
+          {
+           
+            "label": "words",
+            "options": [
+              { "label": "letter", "value": "optionA" },
+              { "label": "word", "value": "optionB" },
+              { "label": "sentence", "value": "optionC" }
+            ]
+          },
+          {
+            "type": "text",
+            "label": "Text Input",
+            "placeholder": "Enter text here..."
+          },
+          {
+            "type": "text",
+            "label": "Text Input",
+            "placeholder": "Enter text here..."
+          }
+        ]
+      },
+      {
+        "elements": [
+          {
+            "label": "stimulus",
+            "options": [
+              { "label": "letter", "value": "letter" },
+              { "label": "word", "value": "word" },
+              { "label": "sentence", "value": "sentence" }
+            ]
+          },
+          {
+           
+            "label": "words",
+            "options": [
+              { "label": "letter", "value": "optionA" },
+              { "label": "word", "value": "optionB" },
+              { "label": "sentence", "value": "optionC" }
+            ]
+          },
+          {
+           
+            "label": "words",
+            "options": [
+              { "label": "letter", "value": "optionA" },
+              { "label": "word", "value": "optionB" },
+              { "label": "sentence", "value": "optionC" }
+            ]
+          }
+       
+        ]
+      }
+    ]
+  }
+  
+  
