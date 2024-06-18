@@ -1,67 +1,82 @@
-
-
-
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
 import Dropdown from '../controllers/Dropdown';
 import Button from '../controllers/Button';
-// Import the Card component
 import './Level.css';
 
-const Level5 = ({onNext, onPrev}) => {
-    const options1 = [
-        { "label": "letter", "value": "letter" },
-        { "label": "word", "value": "word" },
-        { "label": "sentence", "value": "sentence" }
-    ];
+const Level5 = ({ onNext, onPrev, levelData }) => {
+  const [selectedOptions, setSelectedOptions] = useState({});
+  const [inputValues, setInputValues] = useState({});
 
-    const options2 = [
-        { "label": "up", "value": "letter" },
-        { "label": "down", "value": "word" },
-        { "label": "left", "value": "sentence" },
-        { "label": "Right", "value": "sentence" }
-    ];
+  useEffect(() => {
+    if (levelData) {
+      const initialSelectedOptions = {};
+      const initialInputValues = {};
 
-    const [selectedOption, setSelectedOption] = useState(null);
-    const [inputValue, setInputValue] = useState('');
+      levelData.skillData.forEach(skill => {
+        if (skill.type === 'dropdown') {
+          initialSelectedOptions[skill.label] = skill.options[0].value;
+        } else if (skill.type === 'text') {
+          initialInputValues[skill.label] = '';
+        }
+      });
 
-    const label1 = "Stimulus";
-    const label2 = "Type";
+      setSelectedOptions(initialSelectedOptions);
+      setInputValues(initialInputValues);
+    }
+  }, [levelData]);
 
-    const handleDropdownSelect = (option) => {
-        setSelectedOption(option);
-    };
+  const handleDropdownSelect = (label, value) => {
+    setSelectedOptions(prevState => ({ ...prevState, [label]: value }));
+  };
 
-    const handleTextChange = (event) => {
-        setInputValue(event.target.value);
-    };
+  const handleTextChange = (label, value) => {
+    setInputValues(prevState => ({ ...prevState, [label]: value }));
+  };
 
+  if (!levelData) {
+    return <div>Loading...</div>;
+  }
 
+  return (
+    <div className="level-container">
+      <div className="header-container">
+        <h1>Level {levelData.levelCode}</h1>
+      </div>
+      <div className="content-container">
+        {levelData.skillData.map((skill, index) => (
+          <div key={index} className="skill-container">
 
-    return (
-        <div className="level1-container">
-            <div className='name-component'>
-                <h3>{label1}</h3>
+            {skill.type === 'dropdown' && (
+              <div className="element-container">
+                <label>{skill.label}</label>
                 <Dropdown
-                    options={options1}
-                    onSelect={handleDropdownSelect}
+                  options={skill.options}
+                  selectedOption={selectedOptions[skill.label]}
+                  onSelect={(value) => handleDropdownSelect(skill.label, value)}
                 />
-            </div>
-            <div className='name-component'>
-                <h3>{label2}</h3>
-                <Dropdown
-                    options={options2}
-                    onSelect={handleDropdownSelect}
+              </div>
+            )}
+            
+            {skill.type === 'text' && (
+              <div className="element-container">
+                <label>{skill.label}</label>
+                <input
+                  type="text"
+                  placeholder={skill.placeholder}
+                  value={inputValues[skill.label]}
+                  onChange={(e) => handleTextChange(skill.label, e.target.value)}
                 />
-            </div>
-            <div className="button-container">
-                <Button buttonName="Back" handleClick={onPrev} />
-                <Button buttonName="Next" handleClick={onNext} />
-            </div>
-
-
-        </div>
-    );
-};
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+      <div className="button-container">
+        <Button buttonName="Back" handleClick={onPrev} />
+        <Button buttonName="Next" handleClick={onNext} />
+      </div>
+    </div>
+  );
+}
 
 export default Level5;

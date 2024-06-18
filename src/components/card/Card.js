@@ -2,11 +2,11 @@
 import React from 'react';
 import './Card.css';
 
-function Card({ title, handleClick, levelCode }) {
+function Card({ title, handleClick, levelCode, skillCode }) {
     console.log("card - LevelCode", levelCode)
     const handleCardClick = (e) => {
         e.preventDefault()
-        handleClick({ title, levelCode });
+        handleClick({ title, levelCode, skillCode});
     };
 
     return (

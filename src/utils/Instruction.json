@@ -1,0 +1,36 @@
+{
+    "skillCode": 90,
+    "dropdown": [
+      {
+        "label": "Phoneme Deletion-syllables",
+        "options": [
+
+          {
+            "label": "Simple Words- Recognition",
+            "value": "Simple Words- Recognition"
+          },
+          {
+            "label": "Simple Words- Production",
+            "value": "Simple Words- Production"
+          },
+          {
+            "label": "Words with same consonant clusters- Recognition",
+            "value": "Words with same consonant clusters- Recognition"
+          },
+          {
+            "label": "Words with same consonant clusters- Production",
+            "value": "Words with same consonant clusters- Production"
+          },
+          {
+            "label": "Words with different consonant clusters- Recognition",
+            "value": "Words with different consonant clusters- Recognition"
+          },
+          {
+            "label": "Words with different consonant clusters- Production",
+            "value": "Words with different consonant clusters- Production"
+          }
+          
+        ]
+      }
+    ]
+  }

@@ -8,13 +8,19 @@ const Dropdown = ({ options, onSelect }) => {
   const handleSelect = (option) => {
     setSelectedOption(option);
     onSelect(option);
-    setIsOpen(false); 
+    setIsOpen(false);
   };
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
-  
+
+  // Ensure options exist and it's an array before mapping
+  if (!options || !Array.isArray(options)) {
+    console.error('Dropdown options are missing or not an array');
+    return null; // Return null if options are missing or not an array
+  }
+
   return (
     <div className="dropdown">
       <button
@@ -43,4 +49,3 @@ const Dropdown = ({ options, onSelect }) => {
 };
 
 export default Dropdown;
-

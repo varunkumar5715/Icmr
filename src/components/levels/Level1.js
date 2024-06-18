@@ -1,62 +1,67 @@
 
 
-import React, { useEffect, useState , useContext} from 'react';
-import TextBox from '../controllers/Textbox';
+import React, { useState, useEffect } from 'react';
 import Dropdown from '../controllers/Dropdown';
 import Button from '../controllers/Button';
 import './Level.css';
-import processDataFlow from '../../utils/DataController';
-import DataContext from '../../stores/DataContextProvider';
-import {getLevelTitle} from '../../utils/DataController'
 
-const Level1 = ({ onNext, onPrev }) => {
-    const { m, sm, g, sk, level} = useContext(DataContext);
-    const options = [
-        { "label": "letter", "value": "letter" },
-        { "label": "word", "value": "word" },
-        { "label": "sentence", "value": "sentence" }
-    ];
-
-    const [selectedOption, setSelectedOption] = useState(null);
-    const [inputValue, setInputValue] = useState('');
-
-    const handleDropdownSelect = (option) => {
-        setSelectedOption(option);
-    };
-
-    const handleTextChange = (event) => {
-        setInputValue(event.target.value);
-    };
-
-    // Define a function to return the dropdown title
-    useEffect(()=>{       
-        // const titleArray = processDataFlow(m, sm, g, sk)
-        // console.log(titleArray)        
-    }, [])
-    
-
-    return (
-        <div className="level1-container"> {/* Apply background class here */}
-
-            <div className='name-component'>
-                <h3>d1</h3>
-                <Dropdown
-                    options={options}
-                    onSelect={handleDropdownSelect}
-                    ddTitle="Hello" // Pass the dropdown title
-                />
-            </div>
+const Level1 = ({ onNext, onPrev, levelData }) => {
+  const [selectedOptions, setSelectedOptions] = useState({});
+  const [inputValues, setInputValues] = useState({});
 
   
-     
+  const handleDropdownSelect = (label, value) => {
+    setSelectedOptions(prevState => ({ ...prevState, [label]: value }));
+  };
 
-            <div className="button-container">
-                <Button buttonName="Back" handleClick={onPrev} />
-                <Button buttonName="Next" handleClick={onNext} />
-            </div>
+  const handleTextChange = (label, value) => {
+    setInputValues(prevState => ({ ...prevState, [label]: value }));
+  };
 
-        </div>
-    );
-};
+  if (!levelData) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div className="level-container">
+      <div className="header-container">
+        <h1>Level {levelData.levelCode}</h1>
+      </div>
+      <div className="content-container">
+        {levelData.skillData.map((skill, index) => (
+          <div key={index} className="skill-container">
+            {skill.type === 'dropdown' && (
+              <div className="element-container">
+                <label>{skill.label}</label>
+                <Dropdown
+                  options={skill.options}
+                  selectedOption={selectedOptions[skill.label]}
+                  onSelect={(value) => handleDropdownSelect(skill.label, value)}
+                />
+              </div>
+            )}
+            {skill.type === 'text' && (
+              <div className="element-container">
+                <label>{skill.label}</label>
+                <input
+                  type="text"
+                  placeholder={skill.placeholder}
+                  value={inputValues[skill.label]}
+                  onChange={(e) => handleTextChange(skill.label, e.target.value)}
+                />
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+      <div className="button-container">
+        <Button buttonName="Back" handleClick={onPrev} />
+        <Button buttonName="Next" handleClick={onNext} />
+      </div>
+    </div>
+  );
+}
 
 export default Level1;
+
+

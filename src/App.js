@@ -43,7 +43,7 @@ import LoginPage from './pages/LoginPage';
 import { DataContextProvider } from './stores/DataContextProvider';
 import Levels from './pages/Levels';
 import Instruction from './pages/Instruction';
-import TestPage from './pages/TestPage';
+
 
 function App() {
   return (
@@ -54,7 +54,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/level" element={<Levels />} />
           <Route path="/instruction" element={<Instruction />} />
-          <Route path="/test" element={<TestPage />} />
+       
         </Routes>
       </Router>
     </DataContextProvider>

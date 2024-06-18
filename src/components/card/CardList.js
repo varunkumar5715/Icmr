@@ -8,7 +8,7 @@ import DataContext from '../../stores/DataContextProvider';
 import { useNavigate } from 'react-router-dom'; 
 
 const CardList = () => {
-    const { m, sm, g, sk, level, levelCode, updateM, updateSM, updateG, updateSK, updateLevel, updateLevelCode } = useContext(DataContext);
+    const { m, sm, g, sk, level, levelCode, skillCode,  updateM, updateSM, updateG, updateSK, updateLevel, updateLevelCode, updateSkillCode} = useContext(DataContext);
     const [cardList, setCardList] = useState([]);
     const navigate = useNavigate();
 
@@ -17,12 +17,14 @@ const CardList = () => {
         if(level<4)
         {
             console.log("Whatg we are passing, m=" + m + ",sm=" + sm + ",g=" + g + ",sk=" + sk)
-            const data =processDataFlow(m, sm, g, sk)
+            const data =processDataFlow(m, sm, g, sk)            
             setCardList(data);
+
+            console.log(sk)
         }
         else if (level==4) 
             {           
-                console.log("levelCode-Navigate", levelCode)    
+                console.log("levelCode", levelCode, "skillCode", skillCode)    
                 if (levelCode) {
                     
                     navigate('/level'); 
@@ -37,12 +39,14 @@ const CardList = () => {
     const cardClick = (card) => {       
         console.log("cardClicked", card, level)
        
-            const { title, levelCode } = card;
+            const { title, levelCode, skillCode } = card;
             updateLevelCode(levelCode)
+            updateSkillCode(skillCode)
 
             if (level == 0) {
                 updateM(title);
                 updateLevel(1)
+               
             }
             else if (level == 1) {
                 updateSM(title);
@@ -62,7 +66,7 @@ const CardList = () => {
     return (
         <div className='cardlist'>
             {cardList.map((card, index) => (
-                <Card key={index} title={card.title} levelCode = {card.levelCode} handleClick={cardClick} />
+                <Card key={index} title={card.title} levelCode = {card.levelCode} skillCode = {card.skillCode} handleClick={cardClick} />
             ))}
         </div>
     );
