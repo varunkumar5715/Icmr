@@ -651,7 +651,7 @@
           ]
         },
         {
-          "skillCode": 86,
+          "skillCode": 87,
           "dropdown": [
             {
               "label": "Phoneme oddity - syllables",
@@ -669,7 +669,7 @@
           ]
         },
         {
-          "skillCode": 87,
+          "skillCode": 88,
           "dropdown": [
             {
               "label": "Phoneme oddity - Words or Nonwords",
@@ -696,7 +696,7 @@
           ]
         },
         {
-          "skillCode": 88,
+          "skillCode": 89,
           "dropdown": [
             {
               "label": "Phoneme Addition - syllables",
@@ -731,7 +731,7 @@
           ]
         },
         {
-          "skillCode": 89,
+          "skillCode": 90,
           "dropdown": [
             {
               "label": "Phoneme Addition - Words",
@@ -766,7 +766,7 @@
           ]
         },
         {
-          "skillCode": 90,
+          "skillCode": 91,
           "dropdown": [
             {
               "label": "Phoneme Deletion-syllables",
@@ -794,6 +794,114 @@
                 {
                   "label": "Syllables with different consonant clusters- Production",
                   "value": "Syllables with different consonant clusters- Production"
+                }
+                
+              ]
+            }
+          ]
+        },
+        {
+          "skillCode": 92,
+          "dropdown": [
+            {
+              "label": "Phoneme Deletion-words",
+              "options": [
+      
+                {
+                  "label": "Simple words- Recognition",
+                  "value": "Simple words- Recognition"
+                },
+                {
+                  "label": "Simple Words- Production",
+                  "value": "Simple Words- Production"
+                },
+                {
+                  "label": "Words with same consonant clusters- Recognition",
+                  "value": "Words with same consonant clusters- Recognition"
+                },
+                {
+                  "label": "Words with same consonant clusters- Production",
+                  "value": "Words with same consonant clusters- Production"
+                },
+                {
+                  "label": "Words with different consonant clusters- Recognition",
+                  "value": "Words with different consonant clusters- Recognition"
+                },
+                {
+                  "label": "Words with different consonant clusters- Production",
+                  "value": "Words with different consonant clusters- Production"
+                }
+                
+              ]
+            }
+          ]
+        },
+        {
+          "skillCode": 93,
+          "dropdown": [
+            {
+              "label": "Phoneme Segmentation - Syllables",
+              "options": [
+      
+                {
+                  "label": "Simple Syllables- Recognition",
+                  "value": "Simple Syllables- Recognition"
+                },
+                {
+                  "label": "Simple Syllables- Production",
+                  "value": "Simple Syllables- Production"
+                },
+                {
+                  "label": "Syllables with same consonant clusters- Recognition",
+                  "value": "Syllables with same consonant clusters- Recognition"
+                },
+                {
+                  "label": "Syllables with same consonant clusters- Production",
+                  "value": "Syllables with same consonant clusters- Production"
+                },
+                {
+                  "label": "Syllables with different consonant clusters- Recognition",
+                  "value": "Syllables with different consonant clusters- Recognition"
+                },
+                {
+                  "label": "Syllables with different consonant clusters- Production",
+                  "value": "Syllables with different consonant clusters- Production"
+                }
+                
+              ]
+            }
+          ]
+        },
+        {
+          "skillCode": 94,
+          "dropdown": [
+            {
+              "label": "Phoneme Segmentation - Words",
+              "options": [
+      
+                {
+                  "label": "Simple Words- Recognition",
+                  "value": "Simple Words- Recognition"
+                },
+                {
+                  "label": "Simple Words- Production",
+                  "value": "Simple Words- Production"
+                },
+                {
+                  "label": "Words with same consonant clusters- Recognition",
+                  "value": "Words with same consonant clusters- Recognition"
+                },
+                {
+                  "label": "Words with same consonant clusters- Production",
+                  "value": "Words with same consonant clusters- Production"
+                },
+                {
+                  "label": "Words with different consonant clusters- Recognition",
+                  "value": "Words with different consonant clusters- Recognition"
+                },
+                {
+                  "label": "Words with different consonant clusters- Production",
+                  "value": "Words with different consonant clusters- Production"
                 }
                 
               ]

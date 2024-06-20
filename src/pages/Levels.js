@@ -25,7 +25,7 @@ function Levels() {
     navigate('/instruction');
   };
 
-  const handlePrevLevel = () => {
+  const handleBackLevel = () => {
     navigate('/home');
   };
 
@@ -50,14 +50,13 @@ function Levels() {
         }
       }
     }
-    return null; // Skill code not found
+    return null; 
   };
 
   const skillData = getLabelAndOptions(levels, skillCode);
-
   console.log("Skill Data:", skillData);
 
-  if (!LevelComponent ||  !skillData) {
+  if (!LevelComponent || !skillData) {
     return <div>Invalid level or skill</div>;
   }
 
@@ -72,7 +71,7 @@ function Levels() {
         <LevelComponent
           levelData={levelData}
           onNext={handleNextLevel}
-          onBack={handlePrevLevel}
+          onPrev={handleBackLevel} 
         />
       </Suspense>
     </Layout>
@@ -80,5 +79,3 @@ function Levels() {
 }
 
 export default Levels;
-
-

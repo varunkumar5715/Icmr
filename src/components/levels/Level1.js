@@ -1,6 +1,5 @@
-
-
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Dropdown from '../controllers/Dropdown';
 import Button from '../controllers/Button';
 import './Level.css';
@@ -8,14 +7,18 @@ import './Level.css';
 const Level1 = ({ onNext, onPrev, levelData }) => {
   const [selectedOptions, setSelectedOptions] = useState({});
   const [inputValues, setInputValues] = useState({});
+  const navigate = useNavigate(); // Initialize useNavigate
 
-  
   const handleDropdownSelect = (label, value) => {
     setSelectedOptions(prevState => ({ ...prevState, [label]: value }));
   };
 
   const handleTextChange = (label, value) => {
     setInputValues(prevState => ({ ...prevState, [label]: value }));
+  };
+
+  const handleBack = () => {
+    onPrev(); // Use onPrev function to navigate back
   };
 
   if (!levelData) {
@@ -55,7 +58,7 @@ const Level1 = ({ onNext, onPrev, levelData }) => {
         ))}
       </div>
       <div className="button-container">
-        <Button buttonName="Back" handleClick={onPrev} />
+        <Button buttonName="Back" handleClick={handleBack} />
         <Button buttonName="Next" handleClick={onNext} />
       </div>
     </div>
@@ -63,5 +66,3 @@ const Level1 = ({ onNext, onPrev, levelData }) => {
 }
 
 export default Level1;
-
-
