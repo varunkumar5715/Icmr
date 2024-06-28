@@ -369,7 +369,7 @@
           "skillCode": 76,
           "dropdown": [
             {
-              "label": "Syllable awareness- Trial activity",
+              "label": "Syllable Position",
               "options": [
                 {
                   "label": "Initial Syllable",
@@ -391,7 +391,7 @@
           "skillCode": 77,
           "dropdown": [
             {
-              "label": "Syllable Oddity",
+              "label": "Syllable Position",
               "options": [
                 {
                   "label": "Initial Syllable",
@@ -413,7 +413,7 @@
           "skillCode": 78,
           "dropdown": [
             {
-              "label": "Syllable Recognition",
+              "label": "Syllable Position",
               "options": [
                 {
                   "label": "Initial Syllable",
@@ -435,7 +435,7 @@
           "skillCode": 79,
           "dropdown": [
             {
-              "label": "Syllable Production ",
+              "label": "Syllable Position",
               "options": [
                 {
                   "label": "Initial Syllable",
@@ -457,7 +457,7 @@
           "skillCode": 80,
           "dropdown": [
             {
-              "label": "Syllable Addition",
+              "label": "Task Type",
               "options": [
                 {
                   "label": " Recognition",
@@ -475,31 +475,31 @@
           "skillCode": 81,
           "dropdown": [
             {
-              "label": "Syllable Deletion",
+              "label": "Task Type",
               "options": [
                 {
-                  "label": "Recognition -Final position",
-                  "value": "Recognition -Final position"
+                  "label": "Recognition-Final position",
+                  "value": "Recognition-Final position"
                 },
                 {
-                  "label": "Recognition -Initial position",
-                  "value": "Recognition -Initial position"
+                  "label": "Recognition-Initial position",
+                  "value": "Recognition-Initial position"
                 },
                 {
-                  "label": "Recognition -Medial position",
-                  "value": "Recognition -Medial position"
+                  "label": "Recognition-Medial position",
+                  "value": "Recognition-Medial position"
                 },
                 {
-                  "label": "Production -Final position",
-                  "value": "Production -Final position"
+                  "label": "Production-Final position",
+                  "value": "Production-Final position"
                 },
                 {
-                  "label": "Production -Initial position",
-                  "value": "Production -Initial position"
+                  "label": "Production-Initial position",
+                  "value": "Production-Initial position"
                 },
                 {
-                  "label": "Production of -Medial position",
-                  "value": "Production of -Medial position"
+                  "label": "Production-Medial position",
+                  "value": "Production-Medial position"
                 }
               ]
             }
@@ -509,7 +509,7 @@
           "skillCode": 82,
           "dropdown": [
             {
-              "label": "Syllable Segmentation ",
+              "label": "Task Type",
               "options": [
                 {
                   "label": " Recognition",
@@ -527,7 +527,7 @@
           "skillCode": 83,
           "dropdown": [
             {
-              "label": "Syllable Sequencing ",
+              "label": "Task Type",
               "options": [
                 {
                   "label": "Reversal Recognition",
@@ -553,7 +553,7 @@
           "skillCode": 84,
           "dropdown": [
             {
-              "label": "Phoneme awareness- Trial Activity",
+              "label": "Task Type",
               "options": [
                 {
                   "label": "Simple CV syllable formation",
@@ -584,7 +584,7 @@
           "skillCode": 85,
           "dropdown": [
             {
-              "label": "Phoneme Identification - Words without clustered consonants",
+              "label": "Task Type",
               "options": [
                 {
                   "label": "Initial Syllable Consonant",
@@ -619,7 +619,7 @@
           "skillCode": 86,
           "dropdown": [
             {
-              "label": "Phoneme Identification - Words with cluster consonants",
+              "label": "Task Type",
               "options": [
                 {
                   "label": "Initial Syllable Consonant",
@@ -654,7 +654,7 @@
           "skillCode": 87,
           "dropdown": [
             {
-              "label": "Phoneme oddity - syllables",
+              "label": "Task Type",
               "options": [
                 {
                   "label": "Vowel oddity",
@@ -672,7 +672,7 @@
           "skillCode": 88,
           "dropdown": [
             {
-              "label": "Phoneme oddity - Words or Nonwords",
+              "label": "Task Type",
               "options": [
                 {
                   "label": "Vowel - initial position",
@@ -699,7 +699,7 @@
           "skillCode": 89,
           "dropdown": [
             {
-              "label": "Phoneme Addition - syllables",
+              "label": "Task Type",
               "options": [
                 {
                   "label": "Simple syllables- Recognition",
@@ -734,7 +734,7 @@
           "skillCode": 90,
           "dropdown": [
             {
-              "label": "Phoneme Addition - Words",
+              "label": "Task Type",
               "options": [
                 {
                   "label": "Simple Words- Recognition",
@@ -769,7 +769,7 @@
           "skillCode": 91,
           "dropdown": [
             {
-              "label": "Phoneme Deletion-syllables",
+              "label": "Task Type",
               "options": [
                 {
                   "label": "Simple syllables- Recognition",
@@ -804,7 +804,7 @@
           "skillCode": 92,
           "dropdown": [
             {
-              "label": "Phoneme Deletion-words",
+              "label": "Task Type",
               "options": [
       
                 {
@@ -840,7 +840,7 @@
           "skillCode": 93,
           "dropdown": [
             {
-              "label": "Phoneme Segmentation - Syllables",
+              "label": "Task Type",
               "options": [
       
                 {
@@ -876,7 +876,7 @@
           "skillCode": 94,
           "dropdown": [
             {
-              "label": "Phoneme Segmentation - Words",
+              "label": "Task Type",
               "options": [
       
                 {
@@ -970,102 +970,102 @@
               ]
             },
             {
-              "label": "No of Stimuli",
+              "label": "Number of Stimuli",
               "options": [
                 {
-                  "label": "5 min",
-                  "value": "5 min"
+                  "label": "5",
+                  "value": "5"
                 },
                 {
-                  "label": "10 min",
-                  "value": "10 min"
+                  "label": "10",
+                  "value": "10"
                 },
                 {
-                  "label": "15 min",
-                  "value": "15 min"
+                  "label": "15",
+                  "value": "15"
                 },
                 {
-                  "label": "20 min",
-                  "value": "20 min"
+                  "label": "20",
+                  "value": "20"
                 },
                 {
-                  "label": "25 min",
-                  "value": "25 min"
+                  "label": "25",
+                  "value": "25"
                 },
                 {
-                  "label": "30 min",
-                  "value": "30 min"
+                  "label": "30",
+                  "value": "30"
                 },
                 {
-                  "label": "35 min",
-                  "value": "35 min"
+                  "label": "35",
+                  "value": "35"
                 },
                 {
-                  "label": "40 min",
-                  "value": "40 min"
+                  "label": "40",
+                  "value": "40"
                 },
                 {
-                  "label": "45 min",
-                  "value": "45 min"
+                  "label": "45",
+                  "value": "45"
                 },
                 {
-                  "label": "50 min",
-                  "value": "50 min"
+                  "label": "50",
+                  "value": "50"
                 },
                 {
-                  "label": "55 min",
-                  "value": "55 min"
+                  "label": "55",
+                  "value": "55"
                 },
                 {
-                  "label": "60 min",
-                  "value": "60 min"
+                  "label": "60",
+                  "value": "60"
                 },
                 {
-                  "label": "65 min",
-                  "value": "65 min"
+                  "label": "65",
+                  "value": "65"
                 },
                 {
-                  "label": "70 min",
-                  "value": "70 min"
+                  "label": "70",
+                  "value": "70"
                 },
                 {
-                  "label": "75 min",
-                  "value": "75 min"
+                  "label": "75",
+                  "value": "75"
                 },
                 {
-                  "label": "80 min",
-                  "value": "80 min"
+                  "label": "80",
+                  "value": "80"
                 },
                 {
-                  "label": "85 min",
-                  "value": "85 min"
+                  "label": "85",
+                  "value": "85"
                 },
                 {
-                  "label": "90 min",
-                  "value": "90 min"
+                  "label": "90",
+                  "value": "90"
                 },
                 {
-                  "label": "95 min",
-                  "value": "95 min"
+                  "label": "95",
+                  "value": "95"
                 },
                 {
-                  "label": "100 min",
-                  "value": "100 min"
+                  "label": "100",
+                  "value": "100"
                 },
                 {
-                  "label": "110 min",
-                  "value": "110 min"
+                  "label": "110",
+                  "value": "110"
                 },
                 {
-                  "label": "120 min",
-                  "value": "120 min"
+                  "label": "120",
+                  "value": "120"
                 }
               ]
             }
           ],
           "textbox": [
             {
-              "label": "Text Input",
+              "label": "Response Window",
               "placeholder": "Enter text here..."
             }
           ]
@@ -1127,102 +1127,102 @@
               ]
             },
             {
-              "label": "No of Stimuli",
+              "label": "Number of Stimuli",
               "options": [
                 {
-                  "label": "5 min",
-                  "value": "5 min"
+                  "label": "5",
+                  "value": "5"
                 },
                 {
-                  "label": "10 min",
-                  "value": "10 min"
+                  "label": "10",
+                  "value": "10"
                 },
                 {
-                  "label": "15 min",
-                  "value": "15 min"
+                  "label": "15",
+                  "value": "15"
                 },
                 {
-                  "label": "20 min",
-                  "value": "20 min"
+                  "label": "20",
+                  "value": "20"
                 },
                 {
-                  "label": "25 min",
-                  "value": "25 min"
+                  "label": "25",
+                  "value": "25"
                 },
                 {
-                  "label": "30 min",
-                  "value": "30 min"
+                  "label": "30",
+                  "value": "30"
                 },
                 {
-                  "label": "35 min",
-                  "value": "35 min"
+                  "label": "35",
+                  "value": "35"
                 },
                 {
-                  "label": "40 min",
-                  "value": "40 min"
+                  "label": "40",
+                  "value": "40"
                 },
                 {
-                  "label": "45 min",
-                  "value": "45 min"
+                  "label": "45",
+                  "value": "45"
                 },
                 {
-                  "label": "50 min",
-                  "value": "50 min"
+                  "label": "50",
+                  "value": "50"
                 },
                 {
-                  "label": "55 min",
-                  "value": "55 min"
+                  "label": "55",
+                  "value": "55"
                 },
                 {
-                  "label": "60 min",
-                  "value": "60 min"
+                  "label": "60",
+                  "value": "60"
                 },
                 {
-                  "label": "65 min",
-                  "value": "65 min"
+                  "label": "65",
+                  "value": "65"
                 },
                 {
-                  "label": "70 min",
-                  "value": "70 min"
+                  "label": "70",
+                  "value": "70"
                 },
                 {
-                  "label": "75 min",
-                  "value": "75 min"
+                  "label": "75",
+                  "value": "75"
                 },
                 {
-                  "label": "80 min",
-                  "value": "80 min"
+                  "label": "80",
+                  "value": "80"
                 },
                 {
-                  "label": "85 min",
-                  "value": "85 min"
+                  "label": "85",
+                  "value": "85"
                 },
                 {
-                  "label": "90 min",
-                  "value": "90 min"
+                  "label": "90",
+                  "value": "90"
                 },
                 {
-                  "label": "95 min",
-                  "value": "95 min"
+                  "label": "95",
+                  "value": "95"
                 },
                 {
-                  "label": "100 min",
-                  "value": "100 min"
+                  "label": "100",
+                  "value": "100"
                 },
                 {
-                  "label": "110 min",
-                  "value": "110 min"
+                  "label": "110",
+                  "value": "110"
                 },
                 {
-                  "label": "120 min",
-                  "value": "120 min"
+                  "label": "120",
+                  "value": "120"
                 }
               ]
             }
           ],
           "textbox": [
             {
-              "label": "Text Input",
+              "label": "Response Window",
               "placeholder": "Enter text here..."
             }
           ]
@@ -1284,109 +1284,109 @@
               ]
             },
             {
-              "label": "No of Stimuli",
+              "label": "Number of Stimuli",
               "options": [
                 {
-                  "label": "5 min",
-                  "value": "5 min"
+                  "label": "5",
+                  "value": "5"
                 },
                 {
-                  "label": "10 min",
-                  "value": "10 min"
+                  "label": "10",
+                  "value": "10"
                 },
                 {
-                  "label": "15 min",
-                  "value": "15 min"
+                  "label": "15",
+                  "value": "15"
                 },
                 {
-                  "label": "20 min",
-                  "value": "20 min"
+                  "label": "20",
+                  "value": "20"
                 },
                 {
-                  "label": "25 min",
-                  "value": "25 min"
+                  "label": "25",
+                  "value": "25"
                 },
                 {
-                  "label": "30 min",
-                  "value": "30 min"
+                  "label": "30",
+                  "value": "30"
                 },
                 {
-                  "label": "35 min",
-                  "value": "35 min"
+                  "label": "35",
+                  "value": "35"
                 },
                 {
-                  "label": "40 min",
-                  "value": "40 min"
+                  "label": "40",
+                  "value": "40"
                 },
                 {
-                  "label": "45 min",
-                  "value": "45 min"
+                  "label": "45",
+                  "value": "45"
                 },
                 {
-                  "label": "50 min",
-                  "value": "50 min"
+                  "label": "50",
+                  "value": "50"
                 },
                 {
-                  "label": "55 min",
-                  "value": "55 min"
+                  "label": "55",
+                  "value": "55"
                 },
                 {
-                  "label": "60 min",
-                  "value": "60 min"
+                  "label": "60",
+                  "value": "60"
                 },
                 {
-                  "label": "65 min",
-                  "value": "65 min"
+                  "label": "65",
+                  "value": "65"
                 },
                 {
-                  "label": "70 min",
-                  "value": "70 min"
+                  "label": "70",
+                  "value": "70"
                 },
                 {
-                  "label": "75 min",
-                  "value": "75 min"
+                  "label": "75",
+                  "value": "75"
                 },
                 {
-                  "label": "80 min",
-                  "value": "80 min"
+                  "label": "80",
+                  "value": "80"
                 },
                 {
-                  "label": "85 min",
-                  "value": "85 min"
+                  "label": "85",
+                  "value": "85"
                 },
                 {
-                  "label": "90 min",
-                  "value": "90 min"
+                  "label": "90",
+                  "value": "90"
                 },
                 {
-                  "label": "95 min",
-                  "value": "95 min"
+                  "label": "95",
+                  "value": "95"
                 },
                 {
-                  "label": "100 min",
-                  "value": "100 min"
+                  "label": "100",
+                  "value": "100"
                 },
                 {
-                  "label": "110 min",
-                  "value": "110 min"
+                  "label": "110",
+                  "value": "110"
                 },
                 {
-                  "label": "120 min",
-                  "value": "120 min"
+                  "label": "120",
+                  "value": "120"
                 }
               ]
             }
           ],
           "textbox": [
             {
-              "label": "Text Input",
+              "label": "Response Window",
               "placeholder": "Enter text here..."
             }
           ]
         }
       ]
     },
-    {
+    { 
       "level": 3,
       "skill": [
         {
@@ -1446,95 +1446,95 @@
               ]
             },
             {
-              "label": "No of Stimuli",
+              "label": "Number of Stimuli",
               "options": [
                 {
-                  "label": "5 min",
-                  "value": "5 min"
+                  "label": "5",
+                  "value": "5"
                 },
                 {
-                  "label": "10 min",
-                  "value": "10 min"
+                  "label": "10",
+                  "value": "10"
                 },
                 {
-                  "label": "15 min",
-                  "value": "15 min"
+                  "label": "15",
+                  "value": "15"
                 },
                 {
-                  "label": "20 min",
-                  "value": "20 min"
+                  "label": "20",
+                  "value": "20"
                 },
                 {
-                  "label": "25 min",
-                  "value": "25 min"
+                  "label": "25",
+                  "value": "25"
                 },
                 {
-                  "label": "30 min",
-                  "value": "30 min"
+                  "label": "30",
+                  "value": "30"
                 },
                 {
-                  "label": "35 min",
-                  "value": "35 min"
+                  "label": "35",
+                  "value": "35"
                 },
                 {
-                  "label": "40 min",
-                  "value": "40 min"
+                  "label": "40",
+                  "value": "40"
                 },
                 {
-                  "label": "45 min",
-                  "value": "45 min"
+                  "label": "45",
+                  "value": "45"
                 },
                 {
-                  "label": "50 min",
-                  "value": "50 min"
+                  "label": "50",
+                  "value": "50"
                 },
                 {
-                  "label": "55 min",
-                  "value": "55 min"
+                  "label": "55",
+                  "value": "55"
                 },
                 {
-                  "label": "60 min",
-                  "value": "60 min"
+                  "label": "60",
+                  "value": "60"
                 },
                 {
-                  "label": "65 min",
-                  "value": "65 min"
+                  "label": "65",
+                  "value": "65"
                 },
                 {
-                  "label": "70 min",
-                  "value": "70 min"
+                  "label": "70",
+                  "value": "70"
                 },
                 {
-                  "label": "75 min",
-                  "value": "75 min"
+                  "label": "75",
+                  "value": "75"
                 },
                 {
-                  "label": "80 min",
-                  "value": "80 min"
+                  "label": "80",
+                  "value": "80"
                 },
                 {
-                  "label": "85 min",
-                  "value": "85 min"
+                  "label": "85",
+                  "value": "85"
                 },
                 {
-                  "label": "90 min",
-                  "value": "90 min"
+                  "label": "90",
+                  "value": "90"
                 },
                 {
-                  "label": "95 min",
-                  "value": "95 min"
+                  "label": "95",
+                  "value": "95"
                 },
                 {
-                  "label": "100 min",
-                  "value": "100 min"
+                  "label": "100",
+                  "value": "100"
                 },
                 {
-                  "label": "110 min",
-                  "value": "110 min"
+                  "label": "110",
+                  "value": "110"
                 },
                 {
-                  "label": "120 min",
-                  "value": "120 min"
+                  "label": "120",
+                  "value": "120"
                 }
               ]
             },
@@ -1688,95 +1688,95 @@
               ]
             },
             {
-              "label": "No of Stimuli",
+              "label": "Number of Stimuli",
               "options": [
                 {
-                  "label": "5 min",
-                  "value": "5 min"
+                  "label": "5",
+                  "value": "5"
                 },
                 {
-                  "label": "10 min",
-                  "value": "10 min"
+                  "label": "10",
+                  "value": "10"
                 },
                 {
-                  "label": "15 min",
-                  "value": "15 min"
+                  "label": "15",
+                  "value": "15"
                 },
                 {
-                  "label": "20 min",
-                  "value": "20 min"
+                  "label": "20",
+                  "value": "20"
                 },
                 {
-                  "label": "25 min",
-                  "value": "25 min"
+                  "label": "25",
+                  "value": "25"
                 },
                 {
-                  "label": "30 min",
-                  "value": "30 min"
+                  "label": "30",
+                  "value": "30"
                 },
                 {
-                  "label": "35 min",
-                  "value": "35 min"
+                  "label": "35",
+                  "value": "35"
                 },
                 {
-                  "label": "40 min",
-                  "value": "40 min"
+                  "label": "40",
+                  "value": "40"
                 },
                 {
-                  "label": "45 min",
-                  "value": "45 min"
+                  "label": "45",
+                  "value": "45"
                 },
                 {
-                  "label": "50 min",
-                  "value": "50 min"
+                  "label": "50",
+                  "value": "50"
                 },
                 {
-                  "label": "55 min",
-                  "value": "55 min"
+                  "label": "55",
+                  "value": "55"
                 },
                 {
-                  "label": "60 min",
-                  "value": "60 min"
+                  "label": "60",
+                  "value": "60"
                 },
                 {
-                  "label": "65 min",
-                  "value": "65 min"
+                  "label": "65",
+                  "value": "65"
                 },
                 {
-                  "label": "70 min",
-                  "value": "70 min"
+                  "label": "70",
+                  "value": "70"
                 },
                 {
-                  "label": "75 min",
-                  "value": "75 min"
+                  "label": "75",
+                  "value": "75"
                 },
                 {
-                  "label": "80 min",
-                  "value": "80 min"
+                  "label": "80",
+                  "value": "80"
                 },
                 {
-                  "label": "85 min",
-                  "value": "85 min"
+                  "label": "85",
+                  "value": "85"
                 },
                 {
-                  "label": "90 min",
-                  "value": "90 min"
+                  "label": "90",
+                  "value": "90"
                 },
                 {
-                  "label": "95 min",
-                  "value": "95 min"
+                  "label": "95",
+                  "value": "95"
                 },
                 {
-                  "label": "100 min",
-                  "value": "100 min"
+                  "label": "100",
+                  "value": "100"
                 },
                 {
-                  "label": "110 min",
-                  "value": "110 min"
+                  "label": "110",
+                  "value": "110"
                 },
                 {
-                  "label": "120 min",
-                  "value": "120 min"
+                  "label": "120",
+                  "value": "120"
                 }
               ]
             },
@@ -1930,95 +1930,95 @@
               ]
             },
             {
-              "label": "No of Stimuli",
+              "label": "Number of Stimuli",
               "options": [
                 {
-                  "label": "5 min",
-                  "value": "5 min"
+                  "label": "5",
+                  "value": "5"
                 },
                 {
-                  "label": "10 min",
-                  "value": "10 min"
+                  "label": "10",
+                  "value": "10"
                 },
                 {
-                  "label": "15 min",
-                  "value": "15 min"
+                  "label": "15",
+                  "value": "15"
                 },
                 {
-                  "label": "20 min",
-                  "value": "20 min"
+                  "label": "20",
+                  "value": "20"
                 },
                 {
-                  "label": "25 min",
-                  "value": "25 min"
+                  "label": "25",
+                  "value": "25"
                 },
                 {
-                  "label": "30 min",
-                  "value": "30 min"
+                  "label": "30",
+                  "value": "30"
                 },
                 {
-                  "label": "35 min",
-                  "value": "35 min"
+                  "label": "35",
+                  "value": "35"
                 },
                 {
-                  "label": "40 min",
-                  "value": "40 min"
+                  "label": "40",
+                  "value": "40"
                 },
                 {
-                  "label": "45 min",
-                  "value": "45 min"
+                  "label": "45",
+                  "value": "45"
                 },
                 {
-                  "label": "50 min",
-                  "value": "50 min"
+                  "label": "50",
+                  "value": "50"
                 },
                 {
-                  "label": "55 min",
-                  "value": "55 min"
+                  "label": "55",
+                  "value": "55"
                 },
                 {
-                  "label": "60 min",
-                  "value": "60 min"
+                  "label": "60",
+                  "value": "60"
                 },
                 {
-                  "label": "65 min",
-                  "value": "65 min"
+                  "label": "65",
+                  "value": "65"
                 },
                 {
-                  "label": "70 min",
-                  "value": "70 min"
+                  "label": "70",
+                  "value": "70"
                 },
                 {
-                  "label": "75 min",
-                  "value": "75 min"
+                  "label": "75",
+                  "value": "75"
                 },
                 {
-                  "label": "80 min",
-                  "value": "80 min"
+                  "label": "80",
+                  "value": "80"
                 },
                 {
-                  "label": "85 min",
-                  "value": "85 min"
+                  "label": "85",
+                  "value": "85"
                 },
                 {
-                  "label": "90 min",
-                  "value": "90 min"
+                  "label": "90",
+                  "value": "90"
                 },
                 {
-                  "label": "95 min",
-                  "value": "95 min"
+                  "label": "95",
+                  "value": "95"
                 },
                 {
-                  "label": "100 min",
-                  "value": "100 min"
+                  "label": "100",
+                  "value": "100"
                 },
                 {
-                  "label": "110 min",
-                  "value": "110 min"
+                  "label": "110",
+                  "value": "110"
                 },
                 {
-                  "label": "120 min",
-                  "value": "120 min"
+                  "label": "120",
+                  "value": "120"
                 }
               ]
             },
@@ -2195,7 +2195,7 @@
           ],
           "textbox": [
             {
-              "label": "Response Window",
+              "label": "Inter-stimulus Interval",
               "placeholder": "Enter text here..."
             }
           ]
@@ -2275,7 +2275,7 @@
           ],
           "textbox": [
             {
-              "label": "Response Window",
+              "label": "Inter-stimulus Interval",
               "placeholder": "Enter text here..."
             }
           ]
@@ -2355,7 +2355,7 @@
           ],
           "textbox": [
             {
-              "label": "Response Window",
+              "label": "Inter-stimulus Interval",
               "placeholder": "Enter text here..."
             }
           ]
@@ -2435,7 +2435,7 @@
           ],
           "textbox": [
             {
-              "label": "Response Window",
+              "label": "Inter-screen Interval",
               "placeholder": "Enter text here..."
             }
           ]
@@ -2515,7 +2515,7 @@
           ],
           "textbox": [
             {
-              "label": "Response Window",
+              "label": "Inter-screen Interval",
               "placeholder": "Enter text here..."
             }
           ]
@@ -2595,7 +2595,7 @@
           ],
           "textbox": [
             {
-              "label": "Response Window",
+              "label": "Inter-screen Interval",
               "placeholder": "Enter text here..."
             }
           ]
@@ -2609,7 +2609,7 @@
           "skillCode": 1,
           "dropdown": [
             {
-              "label": "noise type",
+              "label": "Noise type",
               "options": [
                 {
                   "label": "No Noise",
@@ -2658,7 +2658,7 @@
               ]
             },
             {
-              "label": "noise level",
+              "label": "Noise level",
               "options": [
                 {
                   "label": "Quiet",
@@ -2768,7 +2768,7 @@
           "skillCode": 2,
           "dropdown": [
             {
-              "label": "noise type",
+              "label": "Noise type",
               "options": [
                 {
                   "label": "No Noise",
@@ -2817,7 +2817,7 @@
               ]
             },
             {
-              "label": "noise level",
+              "label": "Noise level",
               "options": [
                 {
                   "label": "Quiet",
@@ -2927,7 +2927,7 @@
           "skillCode": 3,
           "dropdown": [
             {
-              "label": "noise type",
+              "label": "Noise type",
               "options": [
                 {
                   "label": "No Noise",
@@ -2976,7 +2976,7 @@
               ]
             },
             {
-              "label": "noise level",
+              "label": "Noise level",
               "options": [
                 {
                   "label": "Quiet",
@@ -3086,7 +3086,7 @@
           "skillCode": 4,
           "dropdown": [
             {
-              "label": "noise type",
+              "label": "Noise type",
               "options": [
                 {
                   "label": "No Noise",
@@ -3135,7 +3135,7 @@
               ]
             },
             {
-              "label": "noise level",
+              "label": "Noise level",
               "options": [
                 {
                   "label": "Quiet",
@@ -3314,7 +3314,7 @@
               ]
             },
             {
-              "label": "Topic Selection",
+              "label": "Topic",
               "options": [
                 {
                   "label": "Topic 1",
@@ -3593,7 +3593,7 @@
               ]
             },
             {
-              "label": "Topic Selection",
+              "label": "Topic",
               "options": [
                 {
                   "label": "Topic 1",
@@ -3806,16 +3806,20 @@
               "label": "Filter Type",
               "options": [
                 {
-                  "label": "Low pass filter ",
-                  "value": "Low pass filter "
+                  "label": "No Filter ",
+                  "value": "No Filter "
                 },
                 {
-                  "label": "High Pass filter ",
-                  "value": "High Pass filter "
+                  "label": "Low-Pass Filter ",
+                  "value": "Low-Pass Filter "
                 },
                 {
-                  "label": "Band Pass filter ",
-                  "value": "Band Pass filter "
+                  "label": "High-Pass Filter ",
+                  "value": "High-Pass Filter "
+                },
+                {
+                  "label": "Band-Pass Filter ",
+                  "value": "Band-Pass Filter "
                 },
                 {
                   "label": "Notch Filter ",
@@ -3826,6 +3830,10 @@
             {
               "label": "Cut off frequency",
               "options": [
+                {
+                  "label": "No Cut Off",
+                  "value": "No Cut Off"
+                },
                 {
                   "label": "6000 Hz ",
                   "value": "6000 Hz "
@@ -3870,18 +3878,12 @@
                   "label": "3400 Hz ",
                   "value": "3400 Hz "
                 },
-                {
-                  "label": "6000 Hz ",
-                  "value": "6000 Hz "
-                },
+            
                 {
                   "label": "3200 Hz ",
                   "value": "3200 Hz "
                 },
-                {
-                  "label": "6000 Hz ",
-                  "value": "6000 Hz "
-                },
+             
                 {
                   "label": "3000 Hz ",
                   "value": "3000 Hz "
@@ -4005,16 +4007,20 @@
               "label": "Filter Type",
               "options": [
                 {
-                  "label": "Low pass filter ",
-                  "value": "Low pass filter "
+                  "label": "No Filter ",
+                  "value": "No Filter "
                 },
                 {
-                  "label": "High Pass filter ",
-                  "value": "High Pass filter "
+                  "label": "Low-Pass Filter ",
+                  "value": "Low-Pass Filter "
                 },
                 {
-                  "label": "Band Pass filter ",
-                  "value": "Band Pass filter "
+                  "label": "High-Pass Filter ",
+                  "value": "High-Pass Filter "
+                },
+                {
+                  "label": "Band-Pass Filter ",
+                  "value": "Band-Pass Filter "
                 },
                 {
                   "label": "Notch Filter ",
@@ -4025,6 +4031,10 @@
             {
               "label": "Cut off frequency",
               "options": [
+                {
+                  "label": "No Cut Off",
+                  "value": "No Cut Off"
+                },
                 {
                   "label": "6000 Hz ",
                   "value": "6000 Hz "
@@ -4069,18 +4079,12 @@
                   "label": "3400 Hz ",
                   "value": "3400 Hz "
                 },
-                {
-                  "label": "6000 Hz ",
-                  "value": "6000 Hz "
-                },
+               
                 {
                   "label": "3200 Hz ",
                   "value": "3200 Hz "
                 },
-                {
-                  "label": "6000 Hz ",
-                  "value": "6000 Hz "
-                },
+             
                 {
                   "label": "3000 Hz ",
                   "value": "3000 Hz "
@@ -4204,16 +4208,20 @@
               "label": "Filter Type",
               "options": [
                 {
-                  "label": "Low pass filter ",
-                  "value": "Low pass filter "
+                  "label": "No Filter ",
+                  "value": "No Filter "
                 },
                 {
-                  "label": "High Pass filter ",
-                  "value": "High Pass filter "
+                  "label": "Low-Pass Filter ",
+                  "value": "Low-Pass Filter "
                 },
                 {
-                  "label": "Band Pass filter ",
-                  "value": "Band Pass filter "
+                  "label": "High-Pass Filter ",
+                  "value": "High-Pass Filter "
+                },
+                {
+                  "label": "Band-Pass Filter ",
+                  "value": "Band-Pass Filter "
                 },
                 {
                   "label": "Notch Filter ",
@@ -4224,6 +4232,10 @@
             {
               "label": "Cut off frequency",
               "options": [
+                {
+                  "label": "No Cut Off",
+                  "value": "No Cut Off"
+                },
                 {
                   "label": "6000 Hz ",
                   "value": "6000 Hz "
@@ -4268,18 +4280,12 @@
                   "label": "3400 Hz ",
                   "value": "3400 Hz "
                 },
-                {
-                  "label": "6000 Hz ",
-                  "value": "6000 Hz "
-                },
+            
                 {
                   "label": "3200 Hz ",
                   "value": "3200 Hz "
                 },
-                {
-                  "label": "6000 Hz ",
-                  "value": "6000 Hz "
-                },
+              
                 {
                   "label": "3000 Hz ",
                   "value": "3000 Hz "
@@ -4403,16 +4409,20 @@
               "label": "Filter Type",
               "options": [
                 {
-                  "label": "Low pass filter ",
-                  "value": "Low pass filter "
+                  "label": "No Filter ",
+                  "value": "No Filter "
                 },
                 {
-                  "label": "High Pass filter ",
-                  "value": "High Pass filter "
+                  "label": "Low-Pass Filter ",
+                  "value": "Low-Pass Filter "
                 },
                 {
-                  "label": "Band Pass filter ",
-                  "value": "Band Pass filter "
+                  "label": "High-Pass Filter ",
+                  "value": "High-Pass Filter "
+                },
+                {
+                  "label": "Band-Pass Filter ",
+                  "value": "Band-Pass Filter "
                 },
                 {
                   "label": "Notch Filter ",
@@ -4423,6 +4433,10 @@
             {
               "label": "Cut off frequency",
               "options": [
+                {
+                  "label": "No Cut Off",
+                  "value": "No Cut Off"
+                },
                 {
                   "label": "6000 Hz ",
                   "value": "6000 Hz "
@@ -4467,18 +4481,12 @@
                   "label": "3400 Hz ",
                   "value": "3400 Hz "
                 },
-                {
-                  "label": "6000 Hz ",
-                  "value": "6000 Hz "
-                },
+           
                 {
                   "label": "3200 Hz ",
                   "value": "3200 Hz "
                 },
-                {
-                  "label": "6000 Hz ",
-                  "value": "6000 Hz "
-                },
+          
                 {
                   "label": "3000 Hz ",
                   "value": "3000 Hz "
@@ -4604,7 +4612,7 @@
           "skillCode": 22,
           "dropdown": [
             {
-              "label": "Standard Number of Syllables ",
+              "label": "Standard",
               "options": [
                 {
                   "label": "Quadrisyllabic words",
@@ -4625,7 +4633,7 @@
               ]
             },
             {
-              "label": "Variable Number of Syllables",
+              "label": "Variable",
               "options": [
                 {
                   "label": "Quadrisyllabic words",
@@ -4661,7 +4669,7 @@
           "skillCode": 23,
           "dropdown": [
             {
-              "label": "Standard Vowel Length",
+              "label": "Standard",
               "options": [
                 {
                   "label": "Vowel ಅ",
@@ -4786,7 +4794,7 @@
               ]
             },
             {
-              "label": "Variable Vowel Length",
+              "label": "Variable",
               "options": [
                 {
                   "label": "Vowel ಅ",
@@ -4926,7 +4934,7 @@
           "skillCode": 24,
           "dropdown": [
             {
-              "label": "Standard Vowel Frequency",
+              "label": "Standard",
               "options": [
                 {
                   "label": "Low",
@@ -4943,7 +4951,7 @@
               ]
             },
             {
-              "label": "Variable Vowel Frequency",
+              "label": "Variable",
               "options": [
                 {
                   "label": "Low",
@@ -4975,7 +4983,7 @@
           "skillCode": 25,
           "dropdown": [
             {
-              "label": "Standard word CVCV frequency",
+              "label": "Standard",
               "options": [
                 {
                   "label": "HHHH",
@@ -5316,7 +5324,7 @@
               ]
             },
             {
-              "label": "Variable word CVCV frequency",
+              "label": "Variable",
               "options": [
                 {
                   "label": "HHHH",
@@ -5672,84 +5680,84 @@
           "skillCode": 26,
           "dropdown": [
             {
-              "label": "Standard Intensity",
+              "label": "Standard",
               "options": [
                 {
-                  "label": "Standard Intensity",
-                  "value": "Standard Intensity"
+                  "label": "High-High ",
+                  "value": "High-High "
+                },
+                {
+                  "label": "High-Mid",
+                  "value": "High-Mid"
+                },
+                {
+                  "label": "High-Low",
+                  "value": "High-Low"
+                },
+                {
+                  "label": "Mid-Mid",
+                  "value": "Mid-Mid"
+                },
+                {
+                  "label": "Mid-High",
+                  "value": "Mid-High"
+                },
+                {
+                  "label": "Mid-Low",
+                  "value": "Mid-Low"
+                },
+                {
+                  "label": "Low-Low",
+                  "value": "Low-Low"
+                },
+                {
+                  "label": "Low-Mid",
+                  "value": "Low-Mid"
+                },
+                {
+                  "label": "Low-High",
+                  "value": "Low-High"
                 }
               ]
             },
             {
-              "label": "Variable Intensity",
+              "label": "Variable",
               "options": [
                 {
-                  "label": "Standard Intensity",
-                  "value": "Standard Intensity"
+                  "label": "High-High ",
+                  "value": "High-High "
                 },
                 {
-                  "label": " +1 dB",
-                  "value": " +1 dB"
+                  "label": "High-Mid",
+                  "value": "High-Mid"
                 },
                 {
-                  "label": " +2 dB",
-                  "value": " +2 dB"
+                  "label": "High-Low",
+                  "value": "High-Low"
                 },
                 {
-                  "label": " +3 dB",
-                  "value": " +3 dB"
+                  "label": "Mid-Mid",
+                  "value": "Mid-Mid"
                 },
                 {
-                  "label": " +4 dB",
-                  "value": " +4 dB"
+                  "label": "Mid-High",
+                  "value": "Mid-High"
                 },
                 {
-                  "label": " +5 dB",
-                  "value": " +5 dB"
+                  "label": "Mid-Low",
+                  "value": "Mid-Low"
                 },
                 {
-                  "label": " +6 dB",
-                  "value": " +6 dB"
+                  "label": "Low-Low",
+                  "value": "Low-Low"
                 },
                 {
-                  "label": " +7 dB",
-                  "value": " +7 dB"
+                  "label": "Low-Mid",
+                  "value": "Low-Mid"
                 },
                 {
-                  "label": " +8 dB",
-                  "value": " +8 dB"
-                },
-                {
-                  "label": " +9 dB",
-                  "value": " +9 dB"
-                },
-                {
-                  "label": " +10 dB",
-                  "value": " +10 dB"
-                },
-                {
-                  "label": " +11 dB",
-                  "value": " +11 dB"
-                },
-                {
-                  "label": " +12 dB",
-                  "value": " +12 dB"
-                },
-                {
-                  "label": " +13 dB",
-                  "value": " +13 dB"
-                },
-                {
-                  "label": " +14 dB",
-                  "value": " +14 dB"
-                },
-                {
-                  "label": " +15 dB",
-                  "value": " +15 dB"
-                },
-                {
-                  "label": " +20 dB",
-                  "value": " +20 dB"
+                  "label": "Low-High",
+                  "value": "Low-High"
                 }
               ]
             }
@@ -5769,7 +5777,7 @@
           "skillCode": 27,
           "dropdown": [
             {
-              "label": "Standard Intensity",
+              "label": "Standard",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -5778,7 +5786,7 @@
               ]
             },
             {
-              "label": "Variable Intensity",
+              "label": "Variable",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -5866,7 +5874,7 @@
           "skillCode": 28,
           "dropdown": [
             {
-              "label": "Standard Intensity",
+              "label": "Standard",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -5875,7 +5883,7 @@
               ]
             },
             {
-              "label": "Variable Intensity",
+              "label": "Variable",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -5963,7 +5971,7 @@
           "skillCode": 29,
           "dropdown": [
             {
-              "label": "Standard Intensity",
+              "label": "Standard",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -5972,7 +5980,7 @@
               ]
             },
             {
-              "label": "Variable Intensity",
+              "label": "Variable",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -6060,7 +6068,7 @@
           "skillCode": 30,
           "dropdown": [
             {
-              "label": "Standard Intensity",
+              "label": "Standard",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -6069,7 +6077,7 @@
               ]
             },
             {
-              "label": "Variable Intensity",
+              "label": "Variable",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -6157,7 +6165,7 @@
           "skillCode": 31,
           "dropdown": [
             {
-              "label": "Standard Intensity",
+              "label": "Standard",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -6166,7 +6174,7 @@
               ]
             },
             {
-              "label": "Variable Intensity",
+              "label": "Variable",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -6254,7 +6262,7 @@
           "skillCode": 32,
           "dropdown": [
             {
-              "label": "Standard Intensity",
+              "label": "Standard",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -6263,7 +6271,7 @@
               ]
             },
             {
-              "label": "Variable Intensity",
+              "label": "Variable",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -6351,7 +6359,7 @@
           "skillCode": 33,
           "dropdown": [
             {
-              "label": "Standard Duration",
+              "label": "Standard",
               "options": [
                 {
                   "label": "500ms",
@@ -6360,7 +6368,7 @@
               ]
             },
             {
-              "label": "Variable Duration",
+              "label": "Variable",
               "options": [
                 {
                   "label": "500ms",
@@ -6406,10 +6414,7 @@
                   "label": "540ms",
                   "value": "540ms"
                 },
-                {
-                  "label": "502ms",
-                  "value": "502ms"
-                },
+             
                 {
                   "label": "545ms",
                   "value": "545ms"
@@ -6508,7 +6513,7 @@
           "skillCode": 34,
           "dropdown": [
             {
-              "label": "Standard Duration",
+              "label": "Standard",
               "options": [
                 {
                   "label": "500ms",
@@ -6517,7 +6522,7 @@
               ]
             },
             {
-              "label": "Variable Duration",
+              "label": "Variable",
               "options": [
                 {
                   "label": "500ms",
@@ -6563,10 +6568,7 @@
                   "label": "540ms",
                   "value": "540ms"
                 },
-                {
-                  "label": "502ms",
-                  "value": "502ms"
-                },
+              
                 {
                   "label": "545ms",
                   "value": "545ms"
@@ -6665,7 +6667,7 @@
           "skillCode": 35,
           "dropdown": [
             {
-              "label": "Standard Duration",
+              "label": "Standard",
               "options": [
                 {
                   "label": "500ms",
@@ -6674,7 +6676,7 @@
               ]
             },
             {
-              "label": "Variable Duration",
+              "label": "Variable",
               "options": [
                 {
                   "label": "500ms",
@@ -6720,10 +6722,7 @@
                   "label": "540ms",
                   "value": "540ms"
                 },
-                {
-                  "label": "502ms",
-                  "value": "502ms"
-                },
+             
                 {
                   "label": "545ms",
                   "value": "545ms"
@@ -6822,7 +6821,7 @@
           "skillCode": 36,
           "dropdown": [
             {
-              "label": "Standard Duration",
+              "label": "Standard",
               "options": [
                 {
                   "label": "500ms",
@@ -6831,7 +6830,7 @@
               ]
             },
             {
-              "label": "Variable Duration",
+              "label": "Variable",
               "options": [
                 {
                   "label": "500ms",
@@ -6877,10 +6876,7 @@
                   "label": "540ms",
                   "value": "540ms"
                 },
-                {
-                  "label": "502ms",
-                  "value": "502ms"
-                },
+            
                 {
                   "label": "545ms",
                   "value": "545ms"
@@ -6979,7 +6975,7 @@
           "skillCode": 37,
           "dropdown": [
             {
-              "label": "Standard Duration",
+              "label": "Standard",
               "options": [
                 {
                   "label": "500ms",
@@ -6988,7 +6984,7 @@
               ]
             },
             {
-              "label": "Variable Duration",
+              "label": "Variable",
               "options": [
                 {
                   "label": "500ms",
@@ -7034,10 +7030,7 @@
                   "label": "540ms",
                   "value": "540ms"
                 },
-                {
-                  "label": "502ms",
-                  "value": "502ms"
-                },
+           
                 {
                   "label": "545ms",
                   "value": "545ms"
@@ -7136,7 +7129,7 @@
           "skillCode": 38,
           "dropdown": [
             {
-              "label": "Standard Stimuli",
+              "label": "Standard",
               "options": [
                 {
                   "label": "No gap",
@@ -7145,7 +7138,7 @@
               ]
             },
             {
-              "label": "Variable stimuli with Gap duration",
+              "label": "Variable",
               "options": [
                 {
                   "label": "No gap",
@@ -7289,7 +7282,7 @@
           "skillCode": 39,
           "dropdown": [
             {
-              "label": "Standard Stimuli",
+              "label": "Standard",
               "options": [
                 {
                   "label": "No gap",
@@ -7298,7 +7291,7 @@
               ]
             },
             {
-              "label": "Variable stimuli with Gap duration",
+              "label": "Variable",
               "options": [
                 {
                   "label": "No gap",
@@ -7442,7 +7435,7 @@
           "skillCode": 40,
           "dropdown": [
             {
-              "label": "Standard Stimuli",
+              "label": "Standard",
               "options": [
                 {
                   "label": "No gap",
@@ -7451,7 +7444,7 @@
               ]
             },
             {
-              "label": "Variable stimuli with Gap duration",
+              "label": "Variable",
               "options": [
                 {
                   "label": "No gap",
@@ -7595,7 +7588,7 @@
           "skillCode": 41,
           "dropdown": [
             {
-              "label": "Standard Stimuli",
+              "label": "Standard",
               "options": [
                 {
                   "label": "No gap",
@@ -7604,7 +7597,7 @@
               ]
             },
             {
-              "label": "Variable stimuli with Gap duration",
+              "label": "Variable",
               "options": [
                 {
                   "label": "No gap",
@@ -7748,7 +7741,7 @@
           "skillCode": 42,
           "dropdown": [
             {
-              "label": "Standard Stimuli",
+              "label": "Standard",
               "options": [
                 {
                   "label": "No gap",
@@ -7757,7 +7750,7 @@
               ]
             },
             {
-              "label": "Variable stimuli with Gap duration",
+              "label": "Variable",
               "options": [
                 {
                   "label": "No gap",
@@ -7901,7 +7894,7 @@
           "skillCode": 43,
           "dropdown": [
             {
-              "label": "Standard Frequency",
+              "label": "Standard",
               "options": [
                 {
                   "label": "500 Hz",
@@ -7910,7 +7903,7 @@
               ]
             },
             {
-              "label": "Variable Frequency",
+              "label": "Variable",
               "options": [
                 {
                   "label": "500 Hz",
@@ -8134,7 +8127,7 @@
           "skillCode": 44,
           "dropdown": [
             {
-              "label": "Standard Frequency",
+              "label": "Standard",
               "options": [
                 {
                   "label": "1000 Hz",
@@ -8143,7 +8136,7 @@
               ]
             },
             {
-              "label": "Variable Frequency",
+              "label": "Variable",
               "options": [
                 {
                   "label": "1000 Hz",
@@ -8367,7 +8360,7 @@
           "skillCode": 45,
           "dropdown": [
             {
-              "label": "Standard Frequency",
+              "label": "Standard",
               "options": [
                 {
                   "label": "2000 Hz",
@@ -8376,7 +8369,7 @@
               ]
             },
             {
-              "label": "Variable Frequency",
+              "label": "Variable",
               "options": [
                 {
                   "label": "2000 Hz",
@@ -8600,7 +8593,7 @@
           "skillCode": 46,
           "dropdown": [
             {
-              "label": "Standard Frequency",
+              "label": "Standard",
               "options": [
                 {
                   "label": "4000 Hz",
@@ -8609,7 +8602,7 @@
               ]
             },
             {
-              "label": "Variable Frequency",
+              "label": "Variable",
               "options": [
                 {
                   "label": "4000 Hz",
@@ -8833,7 +8826,7 @@
           "skillCode": 47,
           "dropdown": [
             {
-              "label": "Standard Intensity",
+              "label": "Standard",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -8842,7 +8835,7 @@
               ]
             },
             {
-              "label": "Variable Intensity",
+              "label": "Variable",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -8930,7 +8923,7 @@
           "skillCode": 48,
           "dropdown": [
             {
-              "label": "Standard Intensity",
+              "label": "Standard",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -8939,7 +8932,7 @@
               ]
             },
             {
-              "label": "Variable Intensity",
+              "label": "Variable",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -9027,7 +9020,7 @@
           "skillCode": 49,
           "dropdown": [
             {
-              "label": "Standard Intensity",
+              "label": "Standard",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -9036,7 +9029,7 @@
               ]
             },
             {
-              "label": "Variable Intensity",
+              "label": "Variable",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -9124,7 +9117,7 @@
           "skillCode": 50,
           "dropdown": [
             {
-              "label": "Standard Intensity",
+              "label": "Standard",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -9133,7 +9126,7 @@
               ]
             },
             {
-              "label": "Variable Intensity",
+              "label": "Variable",
               "options": [
                 {
                   "label": "Standard Intensity",
@@ -9226,7 +9219,7 @@
           "skillCode": 5,
           "dropdown": [
             {
-              "label": "noise type",
+              "label": "Noise type",
               "options": [
                 {
                   "label": "No Noise",
@@ -9275,7 +9268,7 @@
               ]
             },
             {
-              "label": "noise level",
+              "label": "Noise level",
               "options": [
                 {
                   "label": "Quiet",
@@ -9380,7 +9373,7 @@
               ]
             },
             {
-              "label": "topic selection",
+              "label": "Topic",
               "options": [
                 {
                   "label": "Topic 1",
@@ -9590,7 +9583,7 @@
           "skillCode": 6,
           "dropdown": [
             {
-              "label": "noise type",
+              "label": "Noise type",
               "options": [
                 {
                   "label": "No Noise",
@@ -9639,7 +9632,7 @@
               ]
             },
             {
-              "label": "noise level",
+              "label": "Noise level",
               "options": [
                 {
                   "label": "Quiet",
@@ -9744,7 +9737,7 @@
               ]
             },
             {
-              "label": "topic selection",
+              "label": "Topic",
               "options": [
                 {
                   "label": "Topic 1",
@@ -9957,16 +9950,20 @@
               "label": "Filter Type",
               "options": [
                 {
-                  "label": "Low pass filter ",
-                  "value": "Low pass filter "
+                  "label": "No Filter ",
+                  "value": "No Filter "
                 },
                 {
-                  "label": "High Pass filter ",
-                  "value": "High Pass filter "
+                  "label": "Low-Pass Filter ",
+                  "value": "Low-Pass Filter "
                 },
                 {
-                  "label": "Band Pass filter ",
-                  "value": "Band Pass filter "
+                  "label": "High-Pass Filter ",
+                  "value": "High-Pass Filter "
+                },
+                {
+                  "label": "Band-Pass Filter ",
+                  "value": "Band-Pass Filter "
                 },
                 {
                   "label": "Notch Filter ",
@@ -9977,6 +9974,11 @@
             {
               "label": "Cut off frequency",
               "options": [
+         
+                {
+                  "label": "No Cut Off",
+                  "value": "No Cut Off"
+                },
                 {
                   "label": "6000 Hz ",
                   "value": "6000 Hz "
@@ -10021,18 +10023,12 @@
                   "label": "3400 Hz ",
                   "value": "3400 Hz "
                 },
-                {
-                  "label": "6000 Hz ",
-                  "value": "6000 Hz "
-                },
+            
                 {
                   "label": "3200 Hz ",
                   "value": "3200 Hz "
                 },
-                {
-                  "label": "6000 Hz ",
-                  "value": "6000 Hz "
-                },
+           
                 {
                   "label": "3000 Hz ",
                   "value": "3000 Hz "
@@ -10148,7 +10144,7 @@
               ]
             },
             {
-              "label": "topic selection",
+              "label": "Topic",
               "options": [
                 {
                   "label": "Topic 1",
@@ -10361,16 +10357,20 @@
               "label": "Filter Type",
               "options": [
                 {
-                  "label": "Low pass filter ",
-                  "value": "Low pass filter "
+                  "label": "No Filter ",
+                  "value": "No Filter "
                 },
                 {
-                  "label": "High Pass filter ",
-                  "value": "High Pass filter "
+                  "label": "Low-Pass Filter ",
+                  "value": "Low-Pass Filter "
                 },
                 {
-                  "label": "Band Pass filter ",
-                  "value": "Band Pass filter "
+                  "label": "High-Pass Filter ",
+                  "value": "High-Pass Filter "
+                },
+                {
+                  "label": "Band-Pass Filter ",
+                  "value": "Band-Pass Filter "
                 },
                 {
                   "label": "Notch Filter ",
@@ -10381,6 +10381,11 @@
             {
               "label": "Cut off frequency",
               "options": [
+         
+                {
+                  "label": "No Cut Off",
+                  "value": "No Cut Off"
+                },
                 {
                   "label": "6000 Hz ",
                   "value": "6000 Hz "
@@ -10425,18 +10430,12 @@
                   "label": "3400 Hz ",
                   "value": "3400 Hz "
                 },
-                {
-                  "label": "6000 Hz ",
-                  "value": "6000 Hz "
-                },
+            
                 {
                   "label": "3200 Hz ",
                   "value": "3200 Hz "
                 },
-                {
-                  "label": "6000 Hz ",
-                  "value": "6000 Hz "
-                },
+           
                 {
                   "label": "3000 Hz ",
                   "value": "3000 Hz "
@@ -10552,7 +10551,7 @@
               ]
             },
             {
-              "label": "topic selection",
+              "label": "Topic",
               "options": [
                 {
                   "label": "Topic 1",

@@ -1,18 +1,18 @@
 import df from './Dataflow.json';
 
-export  function processDataFlow(module, submodule, goals, skills) {
+export function processDataFlow(module, submodule, goals, skills) {
   const data = df;
 
   if (module === "") {
     return data.dataFlow;
-  } else {    
+  } else {
     const moduleList = data.dataFlow.find(item => item.title === module);
 
     if (!moduleList) {
       console.log("Modulelist not found");
       return null;
     }
-    
+
     if (submodule === "") {
       return moduleList.item;
     } else {
@@ -24,7 +24,7 @@ export  function processDataFlow(module, submodule, goals, skills) {
 
       if (goals === "") {
         return submoduleList.item;
-      } else {       
+      } else {
         const goalList = submoduleList.item.find(item => item.title === goals);
         if (!goalList) {
           console.log("Goallist not found");
@@ -34,7 +34,7 @@ export  function processDataFlow(module, submodule, goals, skills) {
         if (skills === "") {
           return goalList.item;
         } else {
-         
+
           const skillList = goalList.item.find(item => item.title === skills);
           if (!skillList) {
             console.log("Skilllist not found");
@@ -50,6 +50,7 @@ export  function processDataFlow(module, submodule, goals, skills) {
 export default processDataFlow;
 
 
-export const getLevelTitle = (title) =>{
-  return df.dataFlow.find(item => item.title=== title);
+export const getLevelTitle = (title) => {
+  return df.dataFlow.find(item => item.title === title);
 }
+

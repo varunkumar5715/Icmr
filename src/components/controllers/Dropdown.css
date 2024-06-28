@@ -1,56 +1,64 @@
+/* Dropdown container */
 .dropdown {
   position: relative;
-  width: 180px; /* Fixed width for the dropdown container */
-  font-family: Arial, sans-serif;
-  margin-left: 10px; /* Ensures a clean, modern font */
+  width: 160px; /* Fixed width for the dropdown */
+margin-left: auto;
+  
+   /* Margin to the left of content */
 }
 
+/* Dropdown toggle button */
 .dropdown-toggle {
-  padding: 10px; /* Increased padding for better click area */
-  font-size: 14px; /* Slightly larger font for better readability */
+  padding: 12px; /* Increased padding for better click area */
+  font-size: 14px; /* Font size for readability */
   border: 1px solid #ccc;
   border-radius: 4px;
   cursor: pointer;
   width: 100%; /* Full width to match the dropdown container */
-  background-color: #f8f8f8; /* Light grey background for better visibility */
+  background-color: #f8f8f8; /* Light grey background */
   transition: background-color 0.3s ease; /* Smooth background transition */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .dropdown-toggle:hover {
   background-color: #e0e0e0; /* Darker background on hover */
 }
 
+/* Symbol indicating dropdown state */
 .dropdown-symbol {
-  margin-left: 5px;
+  margin-left: 5px; /* Fixed margin to the left of content */
   transition: transform 0.3s ease; /* Smooth rotation transition */
 }
 
+/* Dropdown menu styles */
 .dropdown-menu {
   position: absolute;
-  border-radius: 4px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  top: calc(100% + 5px); /* Position below toggle button */
+  left: 0;
   width: 100%;
-  top: calc(100% + 5px);
-  display: none; 
   max-height: 200px; /* Maximum height of the dropdown menu */
   overflow-y: auto; /* Enable vertical scrolling */
-  background-color: #fff; /* White background for options */
+  background-color: #fff; /* White background */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
   border: 1px solid #ccc; /* Light grey border */
-  transition: opacity 0.3s ease; /* Smooth opacity transition */
+  border-radius: 4px;
+  display: none; /* Initially hidden */
   opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth opacity transition */
+  z-index: 1000; /* Ensure dropdown is above other content */
 }
 
 .dropdown-menu.show {
-  display: block; /* Show options when the dropdown is clicked */
+  display: block; /* Show dropdown when active */
   opacity: 1; /* Fully visible */
 }
 
+/* Dropdown item styles */
 .dropdown-item {
-  padding: 10px 15px; /* Increased padding for better click area */
+  padding: 10px 15px; /* Padding for item content */
   cursor: pointer;
-  
-  background-color: #fff; /* White background for items */
   transition: background-color 0.3s ease; /* Smooth background transition */
 }
 
@@ -58,7 +66,7 @@
   background-color: #f0f0f0; /* Light grey background on hover */
 }
 
-/* Rotate the dropdown symbol when the menu is open */
+/* Rotate symbol when menu is open */
 .dropdown-menu.show + .dropdown-symbol {
-  transform: rotate(180deg); /* Rotate the symbol */
+  transform: rotate(180deg); /* Rotate symbol */
 }

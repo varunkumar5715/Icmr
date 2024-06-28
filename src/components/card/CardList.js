@@ -17,16 +17,22 @@ const CardList = () => {
         if(level<4)
         {
             console.log("Whatg we are passing, m=" + m + ",sm=" + sm + ",g=" + g + ",sk=" + sk)
-            const data =processDataFlow(m, sm, g, sk)            
+            
+            const data =processDataFlow(m, sm, g, sk)  
+            console.log("data:",data)
+            if (Array.isArray(data)) {          
             setCardList(data);
-
+        } else {
+            console.error("processDataFlow did not return an array", data);
+        }
             console.log(sk)
         }
+      
         else if (level==4) 
             {           
                 console.log("levelCode", levelCode, "skillCode", skillCode)    
                 if (levelCode) {
-                    
+                    console.log(' Redirecting to levelcode')
                     navigate('/level'); 
                 } else {
                     console.log("levelCode is not available");
@@ -73,4 +79,3 @@ const CardList = () => {
 };
 
 export default CardList;
-

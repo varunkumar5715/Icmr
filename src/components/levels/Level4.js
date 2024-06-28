@@ -40,7 +40,7 @@ const Level4 = ({ onNext, onPrev, levelData }) => {
   return (
     <div className="level-container">
       <div className="header-container">
-        <h1>Level {levelData.levelCode}</h1>
+      <h2>Select the options</h2>
       </div>
       <div className="content-container">
         {levelData.skillData.map((skill, index) => (

@@ -7,7 +7,7 @@
             "item": [
                 {
                     "title": "Auditory Closure",
-                    "folderName": "auditoryclosure",
+                    "folderName": "audiclo",
                     "position": "",
                     "item": [
                         {
@@ -22,7 +22,6 @@
                                     "item": [],
                                     "platform": "",
                                     "levelCode": 5,
-                                    "levelTitle": "",
                                     "instruction": "Identify the words while ignoring the background noise",
                                     "example": "ನಾಯಿ - ಬೆಕ್ಕು ಸರಿ ಉತ್ತರ: ಎರಡೂ ಪ್ರಾಣಿಗಳು"
                                 },
@@ -129,7 +128,7 @@
                             ]
                         },
                         {
-                            "title": "Time compressed Speech ",
+                            "title": "Time-compressed Speech ",
                             "folderName": "auditorytime",
                             "item": [
                                 {
@@ -288,30 +287,33 @@
                 },
                 {
                     "title": "Auditory Discrimination Speech",
-                    "folderName": "",
+                    "folderName": "auddisspe",
                     "item": [
                         {
                             "title": "Duration Discrimination",
-                            "folderName": "auditoryduration",
+                            "folderName": "durationdis",
                             "item": [
                                 {
                                     "title": "Varying number of syllables",
                                     "skillCode":22,
-                                    "folderName": "auditoryvaryingnumber",
+                                    "testcode":1,
+                                    "folderName": "varyingdissyl",
                                     "item": [],
                                     "platform": "",
                                     "levelCode": 6,
                                     "level": "",
                                     "instruction": "Listen carefully and Identify the odd stimulus",
                                     "example": ""
+
                                 },
                                 {
                                     "title": "Varying vowel length",
                                     "skillCode":23,
-                                    "folderName": "auditoryvaryinglength",
+                                    "testcode":9,
+                                    "folderName": "varyingdisvow",
                                     "item": [],
                                     "platform": "",
-                                    "levelCode": 6,
+                                    "levelCode": 1,
                                     "level": "",
                                     "instruction": "Listen carefully and Identify the odd stimulus ",
                                     "example": ""
@@ -321,12 +323,13 @@
                         {
                             "title": "Frequency Discrimination",
                             "skillCode":1,
-                            "folderName": "auditoryfrequency",
+                            "folderName": "frequencydis",
                             "item": [
                                 {
-                                    "title": "Vowels",
+                                    "title": "Vowel Frequency",
                                     "skillCode":24,
-                                    "folderName": "auditoryvowels",
+                                    "testcode":9,
+                                    "folderName": "disvowfreq",
                                     "item": [],
                                     "platform": "",
                                     "levelCode": 6,
@@ -335,9 +338,10 @@
                                     "example": ""
                                 },
                                 {
-                                    "title": "Words or Non-words",
+                                    "title": "Words or Non-words (CVCV) Frequency",
                                     "skillCode":25,
-                                    "folderName": "auditorywords",
+                                    "testcode":9,
+                                    "folderName": "diswordsfreq",
                                     "item": [],
                                     "platform": "",
                                     "levelCode": 6,
@@ -346,9 +350,10 @@
                                     "example": ""
                                 },
                                 {
-                                    "title": "Monosyllables",
+                                    "title": "Monosyllable (CV) Frequency",
                                     "skillCode":26,
-                                    "folderName": "auditorymono",
+                                    "testcode":9,
+                                    "folderName": "dismonofreq",
                                     "item": [],
                                     "platform": "",
                                     "levelCode": 6,
@@ -360,12 +365,13 @@
                         },
                         {
                             "title": "Intensity Discrimination",
-                            "folderName": "auditoryintensity",
+                            "folderName": "intensitydis",
                             "item": [
                                 {
                                     "title": "Vowel a",
                                     "skillCode":27,
-                                    "folderName": "auditoryvowela",
+                                    "testcode":9,
+                                    "folderName": "disvowa",
                                     "item": [],
                                     "platform": "",
                                     "levelCode": 6,
@@ -376,7 +382,8 @@
                                 {
                                     "title": "Vowel i",
                                     "skillCode":28,
-                                    "folderName": "auditoryvoweli",
+                                    "testcode":9,
+                                    "folderName": "disvowi",
                                     "item": [],
                                     "platform": "",
                                     "levelCode": 6,
@@ -387,7 +394,8 @@
                                 {
                                     "title": "Vowel u",
                                     "skillCode":29,
-                                    "folderName": "auditoryvowelu",
+                                    "testcode":9,
+                                    "folderName": "disvowu",
                                     "item": [],
                                     "platform": "",
                                     "levelCode": 6,
@@ -398,7 +406,8 @@
                                 {
                                     "title": "Consonant s",
                                     "skillCode":30,
-                                    "folderName": "auditoryconstants",
+                                    "testcode":9,
+                                    "folderName": "disconsts",
                                     "item": [],
                                     "platform": "",
                                     "levelCode": 6,
@@ -409,7 +418,8 @@
                                 {
                                     "title": "Consonant sh",
                                     "skillCode":31,
-                                    "folderName": "auditoryconstantsh",
+                                    "testcode":9,
+                                    "folderName": "disconstsh",
                                     "item": [],
                                     "platform": "",
                                     "levelCode": 6,
@@ -420,7 +430,8 @@
                                 {
                                     "title": "Consonant m",
                                     "skillCode":32,
-                                    "folderName": "auditoryconstantm",
+                                    "testcode":9,
+                                    "folderName": "disconstm",
                                     "item": [],
                                     "platform": "",
                                     "levelCode": 6,
@@ -434,7 +445,7 @@
                 },
                 {
                     "title": "Auditory Discrimination Non-Speech",
-                    "folderName": "",
+                    "folderName": "audidisnonspe",
                     "item": [
                         {
                             "title": "Duration Discrimination",
@@ -443,6 +454,7 @@
                                 {
                                     "title": "Broad Band Noise",
                                     "skillCode":33,
+                                    "testcode":9,
                                     "folderName": "auditorybroad",
                                     "item": [],
                                     "platform": "",
@@ -454,6 +466,7 @@
                                 {
                                     "title": "Narrow Band Noise 500 Hz",
                                     "skillCode":34,
+                                    "testcode":9,
                                     "folderName": "auditorynarrow500",
                                     "item": [],
                                     "platform": "",
@@ -465,6 +478,7 @@
                                 {
                                     "title": "Narrow Band Noise 1000 Hz",
                                     "skillCode":35,
+                                    "testcode":9,
                                     "folderName": "auditorynarrow1000",
                                     "item": [],
                                     "platform": "",
@@ -476,6 +490,7 @@
                                 {
                                     "title": "Narrow Band Noise 2000 Hz",
                                     "skillCode":36,
+                                    "testcode":9,
                                     "folderName": "auditorynarrow2000",
                                     "item": [],
                                     "platform": "",
@@ -487,6 +502,7 @@
                                 {
                                     "title": "Narrow Band Noise 4000 Hz",
                                     "skillCode":37,
+                                    "testcode":9,
                                     "folderName": "auditorynarrow4000",
                                     "item": [],
                                     "platform": "",
@@ -498,12 +514,13 @@
                             ]
                         },
                         {
-                            "title": "Gap in noise Discrimination",
+                            "title": "Gap in noise Detection",
                             "folderName": "auditorygapnoise",
                             "item": [
                                 {
                                     "title": "Broad Band Noise",
                                     "skillCode":38,
+                                    "testcode":9,
                                     "folderName": "auditorybandgap",
                                     "item": [],
                                     "platform": "",
@@ -515,6 +532,7 @@
                                 {
                                     "title": "Narrow Band Noise 500 Hz",
                                     "skillCode":39,
+                                    "testcode":9,
                                     "folderName": "auditorynarrowgap500",
                                     "item": [],
                                     "platform": "",
@@ -526,6 +544,7 @@
                                 {
                                     "title": "Narrow Band Noise 1000 Hz",
                                     "skillCode":40,
+                                    "testcode":9,
                                     "folderName": "auditorynarrowgap1000",
                                     "item": [],
                                     "platform": "",
@@ -537,6 +556,7 @@
                                 {
                                     "title": "Narrow Band Noise 2000 Hz",
                                     "skillCode":41,
+                                    "testcode":9,
                                     "folderName": "auditorynarrowgap2000",
                                     "item": [],
                                     "platform": "",
@@ -548,6 +568,7 @@
                                 {
                                     "title": "Narrow Band Noise 4000 Hz",
                                     "skillCode":42,
+                                    "testcode":9,
                                     "folderName": "auditorynarrowgap4000",
                                     "item": [],
                                     "platform": "",
@@ -565,6 +586,7 @@
                                 {
                                     "title": "Puretone 500 Hz",
                                     "skillCode":43,
+                                    "testcode":9,
                                     "folderName": "auditorypuretone500",
                                     "item": [],
                                     "platform": "",
@@ -576,6 +598,7 @@
                                 {
                                     "title": "Puretone 1000 Hz",
                                     "skillCode":44,
+                                    "testcode":9,
                                     "folderName": "auditorypuretone1000",
                                     "item": [],
                                     "platform": "",
@@ -587,6 +610,7 @@
                                 {
                                     "title": "Puretone 2000 Hz",
                                     "skillCode":45,
+                                    "testcode":9,
                                     "folderName": "auditorypuretone2000",
                                     "item": [],
                                     "platform": "",
@@ -598,6 +622,7 @@
                                 {
                                     "title": "Puretone 4000 Hz",
                                     "skillCode":46,
+                                    "testcode":9,
                                     "folderName": "auditorypuretone4000",
                                     "item": [],
                                     "platform": "",
@@ -615,6 +640,7 @@
                                 {
                                     "title": "Puretone 500 Hz",
                                     "skillCode":47,
+                                    "testcode":9,
                                     "folderName": "auditoryintepuretone500",
                                     "item": [],
                                     "platform": "",
@@ -626,6 +652,7 @@
                                 {
                                     "title": "Puretone 1000 Hz",
                                     "skillCode":48,
+                                    "testcode":9,
                                     "folderName": "auditoryintepuretone1000",
                                     "item": [],
                                     "platform": "",
@@ -637,6 +664,7 @@
                                 {
                                     "title": "Puretone 2000 Hz",
                                     "skillCode":49,
+                                    "testcode":9,
                                     "folderName": "auditoryintepuretone2000",
                                     "item": [],
                                     "platform": "",
@@ -648,6 +676,7 @@
                                 {
                                     "title": "Puretone 4000 Hz",
                                     "skillCode":50,
+                                    "testcode":9,
                                     "folderName": "auditoryintepuretone4000",
                                     "item": [],
                                     "platform": "",
@@ -672,7 +701,7 @@
                     "folderName": "cognition",
                     "item": [
                         {
-                            "title": "Sustained attention",
+                            "title": "Sustained Attention",
                             "folderName": "cognitivesustained",
                             "item": [
                                 {
@@ -750,7 +779,7 @@
                             ]
                         },
                         {
-                            "title": "Short Term Memory and Sequencing",
+                            "title": "Short-Term Memory and Sequencing",
                             "folderName": "cognitiveshort",
                             "item": [
                                 {
@@ -915,7 +944,7 @@
                                     "example": "ವೃತ್ತ, ಚೌಕ, ಆಯತ, ಕೆಂಪು|ಸರಿ ಉತ್ತರ: ಕೆಂಪು "
                                 },
                                 {
-                                    "title": "Category member recall",
+                                    "title": "Category Member Recall",
                                     "skillCode":68,
                                     "folderName": "metacognitiverecall",
                                     "item": [],
@@ -927,7 +956,7 @@
                             ]
                         },
                         {
-                            "title": "Concept Relationships and Association",
+                            "title": "Concept Relationship and Association",
                             "folderName": "metacognitiveconcept",
                             "item": [
                                 {
@@ -1142,7 +1171,7 @@
                                     "example": ""
                                 },
                                 {
-                                    "title": "Phoneme Identification - Words with cluster consonants ",
+                                    "title": "Phoneme Identification - Words with clustered consonants ",
                                     "skillCode":86,
                                     "folderName": "phonemewordswith ",
                                     "item": [],
@@ -1153,7 +1182,7 @@
                                     "example": ""
                                 },
                                 {
-                                    "title": "Phoneme oddity - syllables",
+                                    "title": "Phoneme oddity - Syllables",
                                     "skillCode":87,
                                     "folderName": "phonemeoddity ",
                                     "item": [],
@@ -1164,7 +1193,7 @@
                                     "example": ""
                                 },
                                 {
-                                    "title": "Phoneme oddity - Nonwords ",
+                                    "title": "Phoneme oddity -Words or Nonwords ",
                                     "skillCode":88,
                                     "folderName": "phonemeodditynonwords ",
                                     "item": [],
@@ -1177,7 +1206,7 @@
                                 {
                                     "title": "Phoneme Addition - Syllables",
                                     "skillCode":89,
-                                    "folderName": "phonemeaddition ",
+                                    "folderName": "phonemeaddition",
                                     "item": [],
                                     "platform": "",
                                     "levelCode": 1,
@@ -1197,7 +1226,7 @@
                                     "example": ""
                                 },
                                 {
-                                    "title": "Phoneme Deletion-syllables ",
+                                    "title": "Phoneme Deletion - Syllables ",
                                     "skillCode":91,
                                     "folderName": "phonemedeletion ",
                                     "item": [],

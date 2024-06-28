@@ -1,0 +1,110 @@
+/* Test Screen Container */
+.test-screen {
+  background-color: #6CACBF;
+  width: 280px;
+  border-radius: 25px;
+  height: 400px;
+  padding: 20px;
+  margin: 30px auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Header */
+.test-screen .header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.test-screen .header span {
+  font-size: 15px;
+  margin-right: 15px;
+}
+
+/* Content */
+.test-screen .content {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.test-screen .content h2 {
+  font-size: 15px;
+}
+
+/* Audio Buttons */
+.test-screen .audio-buttons {
+  display: flex;
+  flex-wrap: wrap; /* Ensure buttons wrap to the next line if needed */
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px; /* Adjust spacing from content */
+}
+
+.test-screen .audio-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #417bb2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+  
+
+.test-screen .audio-icon {
+  margin-right: 5px;
+}
+
+/* Correct and Incorrect Styles */
+.test-screen .audio-button.correct {
+  background-color: green;
+}
+
+.test-screen .audio-button.incorrect {
+  background-color: red;
+}
+
+/* Exit Button */
+.test-screen .exit-button {
+  background-color: #2F4046;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  width: 100px; /* Adjust width as needed */
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 20px; /* Add margin top */
+  transition: background-color 0.3s ease;
+}
+
+.test-screen .exit-button:hover {
+  background-color: #1c262a; /* Darken color on hover */
+}
+
+/* General Button Styling */
+.test-screen button {
+  font-size: 14px; /* Ensure consistent font size for buttons */
+  font-family: Arial, sans-serif; /* Use specified font family */
+  outline: none; /* Remove default outline */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 600px) {
+  .test-screen {
+    width: 100%; /* Adjust width to fit smaller screens */
+    max-width: 320px; /* Limit maximum width */
+    margin: 20px auto; /* Adjust margin for centering */
+  }
+}
