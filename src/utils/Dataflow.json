@@ -32,7 +32,6 @@
                                     "item": [],
                                     "platform": "",
                                     "levelCode": 5,
-                                    "level": "",
                                     "instruction": "Identify the phrase while ignoring the background noise",
                                     "example": ""
                                 },
@@ -65,7 +64,6 @@
                                     "item": [],
                                     "platform": "",
                                     "levelCode": 7,
-                                    "level": "",
                                     "instruction": [
                                         "Listen to the story or essay carefully while ignoring the background noise",
                                         "Answer the following questions"
@@ -322,7 +320,6 @@
                         },
                         {
                             "title": "Frequency Discrimination",
-                            "skillCode":1,
                             "folderName": "frequencydis",
                             "item": [
                                 {

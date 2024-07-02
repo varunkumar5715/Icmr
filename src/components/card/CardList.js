@@ -16,8 +16,7 @@ const CardList = () => {
         // console.log("card", m,sm,g,sk,level, cardList)  
         if(level<4)
         {
-            console.log("Whatg we are passing, m=" + m + ",sm=" + sm + ",g=" + g + ",sk=" + sk)
-            
+          
             const data =processDataFlow(m, sm, g, sk)  
             console.log("data:",data)
             if (Array.isArray(data)) {          
