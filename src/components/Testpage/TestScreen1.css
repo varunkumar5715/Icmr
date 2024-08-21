@@ -5,48 +5,58 @@
   border-radius: 25px;
   height: 400px;
   padding: 20px;
-  margin: 30px auto;
+  margin: 20px auto; /* Adjust margin for centering */
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; /* Space between content and exit button */
   align-items: center;
+  box-sizing: border-box; /* Ensure padding and border are included in the width and height */
 }
 
 /* Header */
 .test-screen .header {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center; /* Center header content horizontally */
   align-items: center;
+  margin-bottom: 5px; /* Add margin below header */
 }
 
 .test-screen .header span {
-  font-size: 15px;
-  margin-right: 15px;
+  font-size: 20px; /* Adjust font size for header */
+  color: #000; /* Set font color to white */
 }
 
 /* Content */
 .test-screen .content {
   text-align: center;
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-bottom: 80px;
+  align-items: center; /* Center items horizontally */
+  flex-grow: 1; /* Allow content to grow and take up available space */
+  overflow: auto; /* Handle overflow if content is too large */
 }
 
 .test-screen .content h2 {
-  font-size: 15px;
+  margin: 0; /* Remove margin to eliminate gap above h2 */
+  margin-top: 30px;
+  color: #fff; /* Reduce margin below h2 */
+}
+
+.test-screen .content h4 {
+  margin: 0; /* Remove margin above h4 */
+  font-size: 15px; /* Font size for instruction */
+  color: #000; /* Black text color */
+  font-weight: normal; /* Set font weight to normal (not bold) */
 }
 
 /* Audio Buttons */
 .test-screen .audio-buttons {
   display: flex;
-  flex-wrap: wrap; /* Ensure buttons wrap to the next line if needed */
   justify-content: center;
   gap: 10px;
-  margin-top: 20px; /* Adjust spacing from content */
+  margin-top: 10px; /* Adjust spacing from content */
 }
 
 .test-screen .audio-button {
@@ -62,17 +72,18 @@
   transition: background-color 0.3s ease;
 }
 
-.test-screen .audio-icon {
-  margin-right: 5px;
-}
-
-/* Correct and Incorrect Styles */
 .test-screen .audio-button.correct {
   background-color: green;
 }
 
-.test-screen .audio-button.incorrect {
+.test-screen .audio-button.wrong {
   background-color: red;
+}
+
+
+
+.test-screen .audio-icon {
+  margin-right: 5px;
 }
 
 /* Exit Button */
@@ -86,6 +97,8 @@
   cursor: pointer;
   margin-top: 20px; /* Add margin top */
   transition: background-color 0.3s ease;
+  font-size: 14px; /* Ensure font size is consistent */
+  font-family: Arial, sans-serif; /* Use specified font family */
 }
 
 .test-screen .exit-button:hover {
@@ -106,4 +119,22 @@
     max-width: 320px; /* Limit maximum width */
     margin: 20px auto; /* Adjust margin for centering */
   }
+}
+
+.audio-button {
+  background-color: #417bb2; /* Blue color for default state */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.audio-button.correct {
+  background-color: green; /* Green color for variable audio file */
+}
+
+.audio-button.default {
+  background-color: #417bb2; /* Ensure default state is blue */
 }

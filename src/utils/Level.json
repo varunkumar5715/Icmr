@@ -4616,19 +4616,19 @@
               "options": [
                 {
                   "label": "Quadrisyllabic words",
-                  "value": "Quadrisyllabic words"
+                  "value": "quadrasyl"
                 },
                 {
                   "label": "Trisyllabic words",
-                  "value": "Trisyllabic words"
+                  "value": "trisyl"
                 },
                 {
                   "label": "Bisyllabic words",
-                  "value": "Bisyllabic words"
+                  "value": "bisyl"
                 },
                 {
                   "label": "Monosyllabic words",
-                  "value": "Monosyllabic words"
+                  "value": "monosyl"
                 }
               ]
             },
@@ -4637,30 +4637,30 @@
               "options": [
                 {
                   "label": "Quadrisyllabic words",
-                  "value": "Quadrisyllabic words"
+                  "value": "quadrasyl"
                 },
                 {
                   "label": "Trisyllabic words",
-                  "value": "Trisyllabic words"
+                  "value": "trisyl"
                 },
                 {
                   "label": "Bisyllabic words",
-                  "value": "Bisyllabic words"
+                  "value": "bisyl"
                 },
                 {
                   "label": "Monosyllabic words",
-                  "value": "Monosyllabic words"
+                  "value": "monosyl"
                 }
               ]
             }
           ],
           "textbox": [
             {
-              "label": "Inter-stimulus Interval",
+              "label": "ISI",
               "placeholder": "Enter text here..."
             },
             {
-              "label": "Inter-block Interval",
+              "label": "IBI",
               "placeholder": "Enter text here..."
             }
           ]
@@ -4921,11 +4921,11 @@
           ],
           "textbox": [
             {
-              "label": "Inter-stimulus Interval",
+              "label": "ISI",
               "placeholder": "Enter text here..."
             },
             {
-              "label": "Inter-block Interval",
+              "label": "IBI",
               "placeholder": "Enter text here..."
             }
           ]

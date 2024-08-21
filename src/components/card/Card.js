@@ -2,11 +2,11 @@
 import React from 'react';
 import './Card.css';
 
-function Card({ title, handleClick, levelCode, skillCode }) {
-    console.log("card - LevelCode", levelCode)
+function Card({ title, handleClick, levelCode, skillCode,folderPath }) {
+   
     const handleCardClick = (e) => {
         e.preventDefault()
-        handleClick({ title, levelCode, skillCode});
+        handleClick({ title, levelCode, skillCode,folderPath});
     };
 
     return (
@@ -20,5 +20,5 @@ function Card({ title, handleClick, levelCode, skillCode }) {
     );
 }
 
-export default Card;
 
+export default Card;

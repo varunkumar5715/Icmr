@@ -4,14 +4,15 @@ import { Routes, Route } from 'react-router-dom';
 import TestScreen1 from '../components/Testpage/TestScreen1';
 import Layout from '../components/Layout/Layout';
 
+
 const TestPage = () => {
   return (
     <Layout>
-    <div>
+     <div>
       <Routes>
-        <Route path="/" element={<TestScreen1 />} /> {/* Directly render TestScreen1 */}
+        <Route path="/" element={<TestScreen1/>} /> 
       </Routes>
-    </div>
+     </div>
     </Layout>
   );
 };

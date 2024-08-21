@@ -1,3 +1,5 @@
+
+
 // import React, { useContext, Suspense } from 'react';
 // import { useNavigate } from 'react-router-dom';
 // import DataContext from '../stores/DataContextProvider';
@@ -15,19 +17,16 @@
 
 // function Levels() {
 //   const navigate = useNavigate();
-//   const { levelCode, skillCode, levels, updateLevel} = useContext(DataContext);
-
-//   console.log("Levels variable:", levels);
-//   console.log("Current Level Code:", levelCode);
-//   console.log("Current Skill Code:", skillCode);
+//   const { levelCode, skillCode, levels, updateLevel,updateSK } = useContext(DataContext);
 
 //   const handleNextLevel = () => {
 //     navigate('/instruction');
 //   };
 
 //   const handleBackLevel = () => {
-//     console.log('back click')
-//     updateLevel(3)
+   
+//     updateLevel(3); // Set level back to 3 (skill selection)
+//     updateSK("")
 //     navigate('/home');
 //   };
 
@@ -35,10 +34,8 @@
 
 //   const getLabelAndOptions = (levels, skillCode) => {
 //     for (const level of levels) {
-//       console.log("Checking level:", level);
 //       if (level.skill && Array.isArray(level.skill)) {
 //         for (const skill of level.skill) {
-//           console.log("Checking skill:", skill);
 //           if (skill.skillCode === skillCode) {
 //             let data = [];
 //             if (Array.isArray(skill.dropdown)) {
@@ -52,11 +49,10 @@
 //         }
 //       }
 //     }
-//     return null; 
+//     return null;
 //   };
 
 //   const skillData = getLabelAndOptions(levels, skillCode);
-//   console.log("Skill Data:", skillData);
 
 //   if (!LevelComponent || !skillData) {
 //     return <div>Invalid level or skill</div>;
@@ -73,7 +69,7 @@
 //         <LevelComponent
 //           levelData={levelData}
 //           onNext={handleNextLevel}
-//           onPrev={handleBackLevel} 
+//           onPrev={handleBackLevel}
 //         />
 //       </Suspense>
 //     </Layout>
@@ -81,10 +77,6 @@
 // }
 
 // export default Levels;
-
-
-
-
 
 import React, { useContext, Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -103,16 +95,15 @@ const levelComponents = {
 
 function Levels() {
   const navigate = useNavigate();
-  const { levelCode, skillCode, levels, updateLevel,updateSK } = useContext(DataContext);
+  const { levelCode, skillCode, levels, updateLevel, updateSK } = useContext(DataContext);
 
-  const handleNextLevel = () => {
-    navigate('/instruction');
+  const handleNextLevel = (selectedOptions) => {
+    navigate('/instruction', { state: { selectedOptions } });
   };
 
   const handleBackLevel = () => {
-    console.log('skill selection')
     updateLevel(3); // Set level back to 3 (skill selection)
-    updateSK("")
+    updateSK("");
     navigate('/home');
   };
 
@@ -163,4 +154,3 @@ function Levels() {
 }
 
 export default Levels;
-
