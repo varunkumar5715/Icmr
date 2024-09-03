@@ -15,7 +15,7 @@ const Instruction = () => {
   const { selectedOptions } = location.state || {};
 
   useEffect(() => {
-      const fetchInstructionData = () => {
+    const fetchInstructionData = () => {
       let foundInstruction = null;
 
       const searchInstruction = (items) => {

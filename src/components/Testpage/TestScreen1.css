@@ -5,13 +5,12 @@
   border-radius: 25px;
   height: 400px;
   padding: 20px;
-  margin: 20px auto; /* Adjust margin for centering */
-  position: relative;
+  margin: 20px auto; /* Center horizontally */
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Space between content and exit button */
   align-items: center;
-  box-sizing: border-box; /* Ensure padding and border are included in the width and height */
+  box-sizing: border-box; /* Include padding and border in the width and height */
 }
 
 /* Header */
@@ -20,12 +19,12 @@
   display: flex;
   justify-content: center; /* Center header content horizontally */
   align-items: center;
-  margin-bottom: 5px; /* Add margin below header */
+  margin-bottom: 5px; /* Margin below header */
 }
 
 .test-screen .header span {
-  font-size: 20px; /* Adjust font size for header */
-  color: #000; /* Set font color to white */
+  font-size: 20px; /* Font size for header */
+  color: #000; /* Font color */
 }
 
 /* Content */
@@ -39,16 +38,16 @@
 }
 
 .test-screen .content h2 {
-  margin: 0; /* Remove margin to eliminate gap above h2 */
+  margin: 0; /* Remove margin above h2 */
   margin-top: 30px;
-  color: #fff; /* Reduce margin below h2 */
+  color: #fff; /* Font color */
 }
 
 .test-screen .content h4 {
   margin: 0; /* Remove margin above h4 */
   font-size: 15px; /* Font size for instruction */
-  color: #000; /* Black text color */
-  font-weight: normal; /* Set font weight to normal (not bold) */
+  color: #000; /* Font color */
+  font-weight: normal; /* Font weight */
 }
 
 /* Audio Buttons */
@@ -56,14 +55,14 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 10px; /* Adjust spacing from content */
+  margin-top: 10px; /* Space from content */
 }
 
 .test-screen .audio-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #417bb2;
+  background-color: #417bb2; /* Default button color */
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -73,14 +72,12 @@
 }
 
 .test-screen .audio-button.correct {
-  background-color: green;
+  background-color: green; /* Correct answer color */
 }
 
 .test-screen .audio-button.wrong {
-  background-color: red;
+  background-color: red; /* Wrong answer color */
 }
-
-
 
 .test-screen .audio-icon {
   margin-right: 5px;
@@ -92,37 +89,52 @@
   color: #fff;
   border: none;
   border-radius: 30px;
-  width: 100px; /* Adjust width as needed */
+  width: 100px;
   padding: 10px 20px;
   cursor: pointer;
-  margin-top: 20px; /* Add margin top */
+  margin-top: 20px;
   transition: background-color 0.3s ease;
-  font-size: 14px; /* Ensure font size is consistent */
-  font-family: Arial, sans-serif; /* Use specified font family */
+  font-size: 14px;
+  font-family: Arial, sans-serif;
 }
 
 .test-screen .exit-button:hover {
-  background-color: #1c262a; /* Darken color on hover */
+  background-color: #1c262a; /* Darker color on hover */
+}
+
+/* Repeat Button */
+.repeat-button {
+  background-color: #a57919; /* Green background */
+  color: white; /* White text */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.repeat-button:hover {
+  background-color: #1f318b; /* Darker green on hover */
 }
 
 /* General Button Styling */
 .test-screen button {
-  font-size: 14px; /* Ensure consistent font size for buttons */
-  font-family: Arial, sans-serif; /* Use specified font family */
+  font-size: 14px; /* Consistent font size */
+  font-family: Arial, sans-serif; /* Font family */
   outline: none; /* Remove default outline */
 }
 
 /* Responsive Adjustments */
 @media screen and (max-width: 600px) {
   .test-screen {
-    width: 100%; /* Adjust width to fit smaller screens */
+    width: 100%; /* Fit smaller screens */
     max-width: 320px; /* Limit maximum width */
-    margin: 20px auto; /* Adjust margin for centering */
+    margin: 20px auto; /* Center horizontally */
   }
 }
-
 .audio-button {
-  background-color: #417bb2; /* Blue color for default state */
+  background-color: #417bb2; /* Default button color */
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -132,9 +144,9 @@
 }
 
 .audio-button.correct {
-  background-color: green; /* Green color for variable audio file */
+  background-color: green; /* Color for variable audio */
 }
 
-.audio-button.default {
-  background-color: #417bb2; /* Ensure default state is blue */
+.audio-button.wrong {
+  background-color: red; /* Color for standard audio */
 }

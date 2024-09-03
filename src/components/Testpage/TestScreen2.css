@@ -1,0 +1,122 @@
+/* Test Screen Container */
+.test-screen2 {
+    background-color: #6CACBF;
+    width: 280px;
+    border-radius: 25px;
+    height: 400px;
+    padding: 20px;
+    margin: 20px auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    border: 2px solid #3183FF; /* Adds the blue border */
+  }
+  
+  /* Header */
+  .test-screen2 .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .test-screen2 .header span {
+    font-size: 18px;
+    color: #000;
+    margin-left: 25px;
+    
+  }
+  
+  /* Content */
+  .test-screen2 .content {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+  }
+  
+  .test-screen2 .content h2 {
+    margin: 5px 0;
+    color: #fff;
+   margin-bottom: 40px;
+    font-size: 22px;
+  }
+  
+  .test-screen2 .content h4 {
+    margin: 0; /* Remove margin above h4 */
+    font-size: 15px; /* Font size for instruction */
+    color: #000; /* Black text color */
+    font-weight: normal;
+   
+  }
+  
+  /* Audio Icon */
+  .test-screen2 .audio-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  /* Buttons */
+  .test-screen2 .audio-button,
+  .test-screen2 .correct-button,
+  .test-screen2 .incorrect-button,
+  .test-screen2 .repeat-button,
+  .test-screen2 .exit-button {
+    width: 80px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+ 
+  .test-screen2 .correct-button {
+    background-color: #25B233;
+  }
+  
+  .test-screen2 .incorrect-button {
+    background-color: #A81D1D;
+  }
+  
+  .test-screen2 .repeat-button,
+  .test-screen2 .exit-button {
+    background-color: #2F4046;
+  }
+  
+  /* Button Hover Effects */
+  .test-screen2 .audio-button:hover,
+  .test-screen2 .correct-button:hover,
+  .test-screen2 .incorrect-button:hover,
+  .test-screen2 .repeat-button:hover,
+  .test-screen2 .exit-button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Layout for buttons at the bottom */
+  .test-screen2 .button-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  /* Responsive Adjustments */
+  @media screen and (max-width: 600px) {
+    .test-screen2 {
+      width: 100%;
+      max-width: 320px;
+      margin: 20px auto;
+    }
+  }
+  

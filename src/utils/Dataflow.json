@@ -17,7 +17,7 @@
                             "item": [
                                 {
                                     "title": "Word Identification",
-                                    "skillCode":1,
+                                    "skillCode": 1,
                                     "folderName": "audiword",
                                     "item": [],
                                     "platform": "",
@@ -27,7 +27,7 @@
                                 },
                                 {
                                     "title": "Phrase Identification",
-                                    "skillCode":2,
+                                    "skillCode": 2,
                                     "folderName": "audipharse",
                                     "item": [],
                                     "platform": "",
@@ -37,7 +37,7 @@
                                 },
                                 {
                                     "title": "Sentence Identification",
-                                    "skillCode":3,
+                                    "skillCode": 3,
                                     "folderName": "audispeechi",
                                     "item": [],
                                     "platform": "",
@@ -48,7 +48,7 @@
                                 },
                                 {
                                     "title": " Sentence Comprehension",
-                                    "skillCode":4,
+                                    "skillCode": 4,
                                     "folderName": "audispeechc",
                                     "item": [],
                                     "platform": "",
@@ -59,7 +59,7 @@
                                 },
                                 {
                                     "title": "Discourse  Comprehension",
-                                    "skillCode":5,
+                                    "skillCode": 5,
                                     "folderName": "audidiscourse",
                                     "item": [],
                                     "platform": "",
@@ -72,7 +72,7 @@
                                 },
                                 {
                                     "title": "Conversation comprehension ",
-                                    "skillCode":6,
+                                    "skillCode": 6,
                                     "folderName": "audiconv",
                                     "item": [],
                                     "platform": "",
@@ -83,7 +83,7 @@
                                         "Answer the following questions"
                                     ],
                                     "example": ""
-                                }  
+                                }
                             ]
                         },
                         {
@@ -92,7 +92,7 @@
                             "item": [
                                 {
                                     "title": "Missing phrase exercises",
-                                    "skillCode":7,
+                                    "skillCode": 7,
                                     "folderName": "auditorymissphrase",
                                     "item": [],
                                     "platform": "",
@@ -103,7 +103,7 @@
                                 },
                                 {
                                     "title": "Missing word exercises",
-                                    "skillCode":8,
+                                    "skillCode": 8,
                                     "folderName": "auditorymissword",
                                     "item": [],
                                     "platform": "",
@@ -114,7 +114,7 @@
                                 },
                                 {
                                     "title": "Missing syllable exercises",
-                                    "skillCode":9,
+                                    "skillCode": 9,
                                     "folderName": "auditorymisssyllable",
                                     "item": [],
                                     "platform": "",
@@ -131,7 +131,7 @@
                             "item": [
                                 {
                                     "title": "Word identification",
-                                    "skillCode":10,
+                                    "skillCode": 10,
                                     "folderName": "auditorywordiden",
                                     "item": [],
                                     "platform": "",
@@ -142,7 +142,7 @@
                                 },
                                 {
                                     "title": "Phrase Identification ",
-                                    "skillCode":11,
+                                    "skillCode": 11,
                                     "folderName": "auditoryphraseiden",
                                     "item": [],
                                     "platform": "",
@@ -153,7 +153,7 @@
                                 },
                                 {
                                     "title": "Sentence identification",
-                                    "skillCode":12,
+                                    "skillCode": 12,
                                     "folderName": "auditorysentenceiden",
                                     "item": [],
                                     "platform": "",
@@ -164,7 +164,7 @@
                                 },
                                 {
                                     "title": "Sentence comprehension ",
-                                    "skillCode":13,
+                                    "skillCode": 13,
                                     "folderName": "auditorysentencecompre",
                                     "item": [],
                                     "platform": "",
@@ -175,7 +175,7 @@
                                 },
                                 {
                                     "title": "Discourse Comprehension",
-                                    "skillCode":14,
+                                    "skillCode": 14,
                                     "folderName": "auditorydiscoursecomp",
                                     "item": [],
                                     "platform": "",
@@ -189,7 +189,7 @@
                                 },
                                 {
                                     "title": "Conversation comprehension",
-                                    "skillCode":15,
+                                    "skillCode": 15,
                                     "folderName": "auditoryconversationcomp",
                                     "item": [],
                                     "platform": "",
@@ -209,7 +209,7 @@
                             "item": [
                                 {
                                     "title": "Word identification",
-                                    "skillCode":16,
+                                    "skillCode": 16,
                                     "folderName": "auditorylowword",
                                     "item": [],
                                     "platform": "",
@@ -220,7 +220,7 @@
                                 },
                                 {
                                     "title": "Phrase Identification ",
-                                    "skillCode":17,
+                                    "skillCode": 17,
                                     "folderName": "auditorylowphrase",
                                     "item": [],
                                     "platform": "",
@@ -231,7 +231,7 @@
                                 },
                                 {
                                     "title": "Sentence identification ",
-                                    "skillCode":18,
+                                    "skillCode": 18,
                                     "folderName": "auditorylowsentence",
                                     "item": [],
                                     "platform": "",
@@ -242,7 +242,7 @@
                                 },
                                 {
                                     "title": "Sentence comprehension ",
-                                    "skillCode":19,
+                                    "skillCode": 19,
                                     "folderName": "auditorylowsentencecomp",
                                     "item": [],
                                     "platform": "",
@@ -253,7 +253,7 @@
                                 },
                                 {
                                     "title": "Discourse Comprehension",
-                                    "skillCode":20,
+                                    "skillCode": 20,
                                     "folderName": "auditorylowdiscourse",
                                     "item": [],
                                     "platform": "",
@@ -267,7 +267,7 @@
                                 },
                                 {
                                     "title": "Conversation comprehension",
-                                    "skillCode":21,
+                                    "skillCode": 21,
                                     "folderName": "auditorylowdiscoursecomp",
                                     "item": [],
                                     "platform": "",
@@ -293,8 +293,8 @@
                             "item": [
                                 {
                                     "title": "Varying number of syllables",
-                                    "skillCode":22,
-                                    "testcode":1,
+                                    "skillCode": 22,
+                                    "testCode":1,
                                     "folderName": "varyingdissyl",
                                     "item": [],
                                     "platform": "",
@@ -302,16 +302,15 @@
                                     "level": "",
                                     "instruction": "Listen carefully and Identify the odd stimulus",
                                     "example": ""
-
                                 },
                                 {
                                     "title": "Varying vowel length",
-                                    "skillCode":23,
-                                    "testcode":9,
+                                    "skillCode": 23,
+                                    "testcode": 1.1,
                                     "folderName": "varyingdisvow",
                                     "item": [],
                                     "platform": "",
-                                    "levelCode": 1,
+                                    "levelCode": 6,
                                     "level": "",
                                     "instruction": "Listen carefully and Identify the odd stimulus ",
                                     "example": ""
@@ -324,8 +323,8 @@
                             "item": [
                                 {
                                     "title": "Vowel Frequency",
-                                    "skillCode":24,
-                                    "testcode":9,
+                                    "skillCode": 24,
+                                    "testcode": 9,
                                     "folderName": "disvowfreq",
                                     "item": [],
                                     "platform": "",
@@ -336,25 +335,21 @@
                                 },
                                 {
                                     "title": "Words or Non-words (CVCV) Frequency",
-                                    "skillCode":25,
-                                    "testcode":9,
+                                    "skillCode": 25,
+                                    "testcode": 9,
                                     "folderName": "diswordsfreq",
                                     "item": [],
-                                    "platform": "",
                                     "levelCode": 6,
-                                    "level": "",
                                     "instruction": "Listen carefully and Identify the odd stimulus ",
                                     "example": ""
                                 },
                                 {
                                     "title": "Monosyllable (CV) Frequency",
-                                    "skillCode":26,
-                                    "testcode":9,
+                                    "skillCode": 26,
+                                    "testcode": 9,
                                     "folderName": "dismonofreq",
                                     "item": [],
-                                    "platform": "",
                                     "levelCode": 6,
-                                    "level": "",
                                     "instruction": "Listen carefully and Identify the odd stimulus ",
                                     "example": ""
                                 }
@@ -366,8 +361,8 @@
                             "item": [
                                 {
                                     "title": "Vowel a",
-                                    "skillCode":27,
-                                    "testcode":9,
+                                    "skillCode": 27,
+                                    "testcode": 9,
                                     "folderName": "disvowa",
                                     "item": [],
                                     "platform": "",
@@ -378,8 +373,8 @@
                                 },
                                 {
                                     "title": "Vowel i",
-                                    "skillCode":28,
-                                    "testcode":9,
+                                    "skillCode": 28,
+                                    "testcode": 9,
                                     "folderName": "disvowi",
                                     "item": [],
                                     "platform": "",
@@ -390,8 +385,8 @@
                                 },
                                 {
                                     "title": "Vowel u",
-                                    "skillCode":29,
-                                    "testcode":9,
+                                    "skillCode": 29,
+                                    "testcode": 9,
                                     "folderName": "disvowu",
                                     "item": [],
                                     "platform": "",
@@ -402,8 +397,8 @@
                                 },
                                 {
                                     "title": "Consonant s",
-                                    "skillCode":30,
-                                    "testcode":9,
+                                    "skillCode": 30,
+                                    "testcode": 9,
                                     "folderName": "disconsts",
                                     "item": [],
                                     "platform": "",
@@ -414,8 +409,8 @@
                                 },
                                 {
                                     "title": "Consonant sh",
-                                    "skillCode":31,
-                                    "testcode":9,
+                                    "skillCode": 31,
+                                    "testcode": 9,
                                     "folderName": "disconstsh",
                                     "item": [],
                                     "platform": "",
@@ -426,8 +421,8 @@
                                 },
                                 {
                                     "title": "Consonant m",
-                                    "skillCode":32,
-                                    "testcode":9,
+                                    "skillCode": 32,
+                                    "testcode": 9,
                                     "folderName": "disconstm",
                                     "item": [],
                                     "platform": "",
@@ -450,8 +445,8 @@
                             "item": [
                                 {
                                     "title": "Broad Band Noise",
-                                    "skillCode":33,
-                                    "testcode":9,
+                                    "skillCode": 33,
+                                    "testcode": 9,
                                     "folderName": "audibroad",
                                     "item": [],
                                     "platform": "",
@@ -462,8 +457,8 @@
                                 },
                                 {
                                     "title": "Narrow Band Noise 500 Hz",
-                                    "skillCode":34,
-                                    "testcode":9,
+                                    "skillCode": 34,
+                                    "testcode": 9,
                                     "folderName": "audinarrow500",
                                     "item": [],
                                     "platform": "",
@@ -474,8 +469,8 @@
                                 },
                                 {
                                     "title": "Narrow Band Noise 1000 Hz",
-                                    "skillCode":35,
-                                    "testcode":9,
+                                    "skillCode": 35,
+                                    "testcode": 9,
                                     "folderName": "audinarrow1000",
                                     "item": [],
                                     "platform": "",
@@ -486,8 +481,8 @@
                                 },
                                 {
                                     "title": "Narrow Band Noise 2000 Hz",
-                                    "skillCode":36,
-                                    "testcode":9,
+                                    "skillCode": 36,
+                                    "testcode": 9,
                                     "folderName": "audinarrow2000",
                                     "item": [],
                                     "platform": "",
@@ -498,8 +493,8 @@
                                 },
                                 {
                                     "title": "Narrow Band Noise 4000 Hz",
-                                    "skillCode":37,
-                                    "testcode":9,
+                                    "skillCode": 37,
+                                    "testcode": 9,
                                     "folderName": "audinarrow4000",
                                     "item": [],
                                     "platform": "",
@@ -516,8 +511,8 @@
                             "item": [
                                 {
                                     "title": "Broad Band Noise",
-                                    "skillCode":38,
-                                    "testcode":9,
+                                    "skillCode": 38,
+                                    "testcode": 9,
                                     "folderName": "audibandgap",
                                     "item": [],
                                     "platform": "",
@@ -528,8 +523,8 @@
                                 },
                                 {
                                     "title": "Narrow Band Noise 500 Hz",
-                                    "skillCode":39,
-                                    "testcode":9,
+                                    "skillCode": 39,
+                                    "testcode": 9,
                                     "folderName": "audinargap500",
                                     "item": [],
                                     "platform": "",
@@ -540,8 +535,8 @@
                                 },
                                 {
                                     "title": "Narrow Band Noise 1000 Hz",
-                                    "skillCode":40,
-                                    "testcode":9,
+                                    "skillCode": 40,
+                                    "testcode": 9,
                                     "folderName": "audinargap1000",
                                     "item": [],
                                     "platform": "",
@@ -552,8 +547,8 @@
                                 },
                                 {
                                     "title": "Narrow Band Noise 2000 Hz",
-                                    "skillCode":41,
-                                    "testcode":9,
+                                    "skillCode": 41,
+                                    "testcode": 9,
                                     "folderName": "audinargap2000",
                                     "item": [],
                                     "platform": "",
@@ -564,8 +559,8 @@
                                 },
                                 {
                                     "title": "Narrow Band Noise 4000 Hz",
-                                    "skillCode":42,
-                                    "testcode":9,
+                                    "skillCode": 42,
+                                    "testcode": 9,
                                     "folderName": "audinargap4000",
                                     "item": [],
                                     "platform": "",
@@ -582,8 +577,8 @@
                             "item": [
                                 {
                                     "title": "Puretone 500 Hz",
-                                    "skillCode":43,
-                                    "testcode":9,
+                                    "skillCode": 43,
+                                    "testcode": 9,
                                     "folderName": "audipure500",
                                     "item": [],
                                     "platform": "",
@@ -594,8 +589,8 @@
                                 },
                                 {
                                     "title": "Puretone 1000 Hz",
-                                    "skillCode":44,
-                                    "testcode":9,
+                                    "skillCode": 44,
+                                    "testcode": 9,
                                     "folderName": "audipure1000",
                                     "item": [],
                                     "platform": "",
@@ -606,8 +601,8 @@
                                 },
                                 {
                                     "title": "Puretone 2000 Hz",
-                                    "skillCode":45,
-                                    "testcode":9,
+                                    "skillCode": 45,
+                                    "testcode": 9,
                                     "folderName": "audipure2000",
                                     "item": [],
                                     "platform": "",
@@ -618,8 +613,8 @@
                                 },
                                 {
                                     "title": "Puretone 4000 Hz",
-                                    "skillCode":46,
-                                    "testcode":9,
+                                    "skillCode": 46,
+                                    "testcode": 9,
                                     "folderName": "audipure4000",
                                     "item": [],
                                     "platform": "",
@@ -636,8 +631,8 @@
                             "item": [
                                 {
                                     "title": "Puretone 500 Hz",
-                                    "skillCode":47,
-                                    "testcode":9,
+                                    "skillCode": 47,
+                                    "testcode": 9,
                                     "folderName": "audiintpu500",
                                     "item": [],
                                     "platform": "",
@@ -648,8 +643,8 @@
                                 },
                                 {
                                     "title": "Puretone 1000 Hz",
-                                    "skillCode":48,
-                                    "testcode":9,
+                                    "skillCode": 48,
+                                    "testcode": 9,
                                     "folderName": "audiintpu1000",
                                     "item": [],
                                     "platform": "",
@@ -660,8 +655,8 @@
                                 },
                                 {
                                     "title": "Puretone 2000 Hz",
-                                    "skillCode":49,
-                                    "testcode":9,
+                                    "skillCode": 49,
+                                    "testcode": 9,
                                     "folderName": "audiintpu2000",
                                     "item": [],
                                     "platform": "",
@@ -672,8 +667,8 @@
                                 },
                                 {
                                     "title": "Puretone 4000 Hz",
-                                    "skillCode":50,
-                                    "testcode":9,
+                                    "skillCode": 50,
+                                    "testcode": 9,
                                     "folderName": "audiintpu4000",
                                     "item": [],
                                     "platform": "",
@@ -703,7 +698,7 @@
                             "item": [
                                 {
                                     "title": "Syllables",
-                                    "skillCode":51,
+                                    "skillCode": 51,
                                     "folderName": "cogsylsus",
                                     "item": [],
                                     "platform": "",
@@ -714,7 +709,7 @@
                                 },
                                 {
                                     "title": "Words",
-                                    "skillCode":52,
+                                    "skillCode": 52,
                                     "folderName": "cogwordsus",
                                     "item": [],
                                     "platform": "",
@@ -725,7 +720,7 @@
                                 },
                                 {
                                     "title": "Sentences",
-                                    "skillCode":53,
+                                    "skillCode": 53,
                                     "folderName": "cogsentsus",
                                     "item": [],
                                     "platform": "",
@@ -742,7 +737,7 @@
                             "item": [
                                 {
                                     "title": "Syllables",
-                                    "skillCode":54,
+                                    "skillCode": 54,
                                     "folderName": "cogselsus",
                                     "item": [],
                                     "platform": "",
@@ -753,7 +748,7 @@
                                 },
                                 {
                                     "title": "Words",
-                                    "skillCode":55,
+                                    "skillCode": 55,
                                     "folderName": "cogwordssus",
                                     "item": [],
                                     "platform": "",
@@ -764,7 +759,7 @@
                                 },
                                 {
                                     "title": "Sentences",
-                                    "skillCode":56,
+                                    "skillCode": 56,
                                     "folderName": "cogselwsus",
                                     "item": [],
                                     "platform": "",
@@ -781,7 +776,7 @@
                             "item": [
                                 {
                                     "title": "Recalling syllables",
-                                    "skillCode":57,
+                                    "skillCode": 57,
                                     "folderName": "cogresyl",
                                     "item": [],
                                     "platform": "",
@@ -795,7 +790,7 @@
                                 },
                                 {
                                     "title": "Recalling Words",
-                                    "skillCode":58,
+                                    "skillCode": 58,
                                     "folderName": "cogrewords",
                                     "item": [],
                                     "platform": "",
@@ -809,7 +804,7 @@
                                 },
                                 {
                                     "title": "Recalling Sentences",
-                                    "skillCode":59,
+                                    "skillCode": 59,
                                     "folderName": "cogresent",
                                     "item": [],
                                     "platform": "",
@@ -829,7 +824,7 @@
                             "item": [
                                 {
                                     "title": "Recalling syllables",
-                                    "skillCode":60,
+                                    "skillCode": 60,
                                     "folderName": "cogworksyl",
                                     "item": [],
                                     "platform": "",
@@ -844,7 +839,7 @@
                                 },
                                 {
                                     "title": "Recalling Words",
-                                    "skillCode":61,
+                                    "skillCode": 61,
                                     "folderName": "cogworkword",
                                     "item": [],
                                     "platform": "",
@@ -859,7 +854,7 @@
                                 },
                                 {
                                     "title": "Recalling Sentences",
-                                    "skillCode":62,
+                                    "skillCode": 62,
                                     "folderName": "cogworksent",
                                     "item": [],
                                     "platform": "",
@@ -886,7 +881,7 @@
                             "item": [
                                 {
                                     "title": "Predicting the outcome",
-                                    "skillCode":63,
+                                    "skillCode": 63,
                                     "folderName": "metacogoutcome",
                                     "item": [],
                                     "platform": "",
@@ -896,7 +891,7 @@
                                 },
                                 {
                                     "title": "Predicting the cause",
-                                    "skillCode":64,
+                                    "skillCode": 64,
                                     "folderName": "metacogcause",
                                     "item": [],
                                     "platform": "",
@@ -906,7 +901,7 @@
                                 },
                                 {
                                     "title": "Compare and Contrast",
-                                    "skillCode":65,
+                                    "skillCode": 65,
                                     "folderName": "metacogcont",
                                     "item": [],
                                     "platform": "",
@@ -922,7 +917,7 @@
                             "item": [
                                 {
                                     "title": "Category Identification",
-                                    "skillCode":66,
+                                    "skillCode": 66,
                                     "folderName": "metacogiden",
                                     "item": [],
                                     "platform": "",
@@ -932,7 +927,7 @@
                                 },
                                 {
                                     "title": "Category Oddity",
-                                    "skillCode":67,
+                                    "skillCode": 67,
                                     "folderName": "metacogoddi",
                                     "item": [],
                                     "platform": "",
@@ -942,7 +937,7 @@
                                 },
                                 {
                                     "title": "Category Member Recall",
-                                    "skillCode":68,
+                                    "skillCode": 68,
                                     "folderName": "metacogrecal",
                                     "item": [],
                                     "platform": "",
@@ -958,7 +953,7 @@
                             "item": [
                                 {
                                     "title": "Object-Person Relationship",
-                                    "skillCode":69,
+                                    "skillCode": 69,
                                     "folderName": "metacogobj",
                                     "item": [],
                                     "platform": "",
@@ -968,7 +963,7 @@
                                 },
                                 {
                                     "title": "Whole-Part Relationship",
-                                    "skillCode":70,
+                                    "skillCode": 70,
                                     "folderName": "metacogwhole",
                                     "item": [],
                                     "platform": "",
@@ -997,7 +992,7 @@
                             "item": [
                                 {
                                     "title": "Rhyming Awareness - Trial Activity",
-                                    "skillCode":71,
+                                    "skillCode": 71,
                                     "folderName": "rhytrial",
                                     "item": [],
                                     "platform": "",
@@ -1007,7 +1002,7 @@
                                 },
                                 {
                                     "title": "Rhyme Judgement",
-                                    "skillCode":72,
+                                    "skillCode": 72,
                                     "folderName": "rhyjudge",
                                     "item": [],
                                     "platform": "",
@@ -1017,7 +1012,7 @@
                                 },
                                 {
                                     "title": "Rhyme Oddity",
-                                    "skillCode":73,
+                                    "skillCode": 73,
                                     "folderName": "rhyoddi",
                                     "item": [],
                                     "platform": "",
@@ -1027,7 +1022,7 @@
                                 },
                                 {
                                     "title": "Rhyme Recognition",
-                                    "skillCode":74,
+                                    "skillCode": 74,
                                     "folderName": "rhyrecog",
                                     "item": [],
                                     "platform": "",
@@ -1037,7 +1032,7 @@
                                 },
                                 {
                                     "title": "Rhyme Production",
-                                    "skillCode":75,
+                                    "skillCode": 75,
                                     "folderName": "rhyprodu",
                                     "item": [],
                                     "platform": "",
@@ -1053,7 +1048,7 @@
                             "item": [
                                 {
                                     "title": "Syllable awareness- Trial activity",
-                                    "skillCode":76,
+                                    "skillCode": 76,
                                     "folderName": "syltrail",
                                     "item": [],
                                     "platform": "",
@@ -1064,7 +1059,7 @@
                                 },
                                 {
                                     "title": "Syllable Oddity",
-                                    "skillCode":77,
+                                    "skillCode": 77,
                                     "folderName": "syloddi",
                                     "item": [],
                                     "platform": "",
@@ -1075,7 +1070,7 @@
                                 },
                                 {
                                     "title": "Syllable Recognition",
-                                    "skillCode":78,
+                                    "skillCode": 78,
                                     "folderName": "sylrecog",
                                     "item": [],
                                     "platform": "",
@@ -1086,7 +1081,7 @@
                                 },
                                 {
                                     "title": "Syllable Production ",
-                                    "skillCode":79,
+                                    "skillCode": 79,
                                     "folderName": "sylprod",
                                     "item": [],
                                     "platform": "",
@@ -1097,7 +1092,7 @@
                                 },
                                 {
                                     "title": "Syllable Addition",
-                                    "skillCode":80,
+                                    "skillCode": 80,
                                     "folderName": "syladdi",
                                     "item": [],
                                     "platform": "",
@@ -1108,7 +1103,7 @@
                                 },
                                 {
                                     "title": "Syllable Deletion ",
-                                    "skillCode":81,
+                                    "skillCode": 81,
                                     "folderName": "syldele ",
                                     "item": [],
                                     "platform": "",
@@ -1119,7 +1114,7 @@
                                 },
                                 {
                                     "title": "Syllable Segmentation ",
-                                    "skillCode":82,
+                                    "skillCode": 82,
                                     "folderName": "sylsegment ",
                                     "item": [],
                                     "platform": "",
@@ -1130,7 +1125,7 @@
                                 },
                                 {
                                     "title": "Syllable Sequencing ",
-                                    "skillCode":83,
+                                    "skillCode": 83,
                                     "folderName": "sylsequen ",
                                     "item": [],
                                     "platform": "",
@@ -1147,7 +1142,7 @@
                             "item": [
                                 {
                                     "title": "Phoneme awareness- Trial Activity ",
-                                    "skillCode":84,
+                                    "skillCode": 84,
                                     "folderName": "phontrail ",
                                     "item": [],
                                     "platform": "",
@@ -1158,7 +1153,7 @@
                                 },
                                 {
                                     "title": "Phoneme Identification - Words without clustered consonants ",
-                                    "skillCode":85,
+                                    "skillCode": 85,
                                     "folderName": "phonworwitou ",
                                     "item": [],
                                     "platform": "",
@@ -1169,7 +1164,7 @@
                                 },
                                 {
                                     "title": "Phoneme Identification - Words with clustered consonants ",
-                                    "skillCode":86,
+                                    "skillCode": 86,
                                     "folderName": "phonworwit ",
                                     "item": [],
                                     "platform": "",
@@ -1180,7 +1175,7 @@
                                 },
                                 {
                                     "title": "Phoneme oddity - Syllables",
-                                    "skillCode":87,
+                                    "skillCode": 87,
                                     "folderName": "phonoddi ",
                                     "item": [],
                                     "platform": "",
@@ -1191,7 +1186,7 @@
                                 },
                                 {
                                     "title": "Phoneme oddity -Words or Nonwords ",
-                                    "skillCode":88,
+                                    "skillCode": 88,
                                     "folderName": "phonoddinonwor ",
                                     "item": [],
                                     "platform": "",
@@ -1202,7 +1197,7 @@
                                 },
                                 {
                                     "title": "Phoneme Addition - Syllables",
-                                    "skillCode":89,
+                                    "skillCode": 89,
                                     "folderName": "phonaddi",
                                     "item": [],
                                     "platform": "",
@@ -1213,7 +1208,7 @@
                                 },
                                 {
                                     "title": "Phoneme Addition - Words ",
-                                    "skillCode":90,
+                                    "skillCode": 90,
                                     "folderName": "phonaddiwords ",
                                     "item": [],
                                     "platform": "",
@@ -1224,7 +1219,7 @@
                                 },
                                 {
                                     "title": "Phoneme Deletion - Syllables ",
-                                    "skillCode":91,
+                                    "skillCode": 91,
                                     "folderName": "phondele",
                                     "item": [],
                                     "platform": "",
@@ -1235,7 +1230,7 @@
                                 },
                                 {
                                     "title": "Phoneme Deletion - Words ",
-                                    "skillCode":92,
+                                    "skillCode": 92,
                                     "folderName": "phondelewor ",
                                     "item": [],
                                     "platform": "",
@@ -1246,7 +1241,7 @@
                                 },
                                 {
                                     "title": "Phoneme Segmentation - Syllables ",
-                                    "skillCode":93,
+                                    "skillCode": 93,
                                     "folderName": "phonsegment ",
                                     "item": [],
                                     "platform": "",
@@ -1257,7 +1252,7 @@
                                 },
                                 {
                                     "title": "Phoneme Segmentation - Words",
-                                    "skillCode":94,
+                                    "skillCode": 94,
                                     "folderName": "phonsegmentwor ",
                                     "item": [],
                                     "platform": "",

@@ -1,4 +1,3 @@
-
 import React, { useContext, useEffect, useState } from 'react';
 import Card from './Card';
 import './CardList.css';
@@ -14,6 +13,8 @@ const CardList = () => {
   } = useContext(DataContext);
   const [cardList, setCardList] = useState([]);
   const navigate = useNavigate();
+
+  const baseDirectory = '\\ICMR-MAIN\\backend\\audiofiles\\'; // Base directory
 
   useEffect(() => {
     if (level < 4) {
@@ -32,10 +33,8 @@ const CardList = () => {
 
   const cardClick = (card) => {
     const { title, levelCode, skillCode, folderName } = card;
-    let newFolderPath = folderPath ? folderPath : '/audiofiles';
+    let newFolderPath = folderPath ? folderPath : baseDirectory; // Start with base directory
     newFolderPath += `/${folderName}`;
-
-   
 
     switch(level) {
       case 0:

@@ -4673,83 +4673,83 @@
               "options": [
                 {
                   "label": "Vowel ಅ",
-                  "value": "Vowel ಅ"
+                  "value": "vowha"
                 },
                 {
                   "label": "Vowel ಇ",
-                  "value": "Vowel ಇ"
+                  "value": "vowhi"
                 },
                 {
                   "label": "Vowel ಉ",
-                  "value": "Vowel ಉ"
+                  "value": "vowhu"
                 },
                 {
                   "label": "Vowel ಎ",
-                  "value": "Vowel ಎ"
+                  "value": "vowye"
                 },
                 {
                   "label": "Vowel ಒ",
-                  "value": "Vowel ಒ"
+                  "value": "vowoh"
                 },
                 {
                   "label": "Vowel ಆ",
-                  "value": "Vowel ಆ"
+                  "value": "vowhaa"
                 },
                 {
                   "label": "Vowel ಈ",
-                  "value": "Vowel ಈ"
+                  "value": "vowhii"
                 },
                 {
                   "label": "Vowel ಊ",
-                  "value": "Vowel ಊ"
+                  "value": "vowhuu"
                 },
                 {
                   "label": "Vowel ಏ",
-                  "value": "Vowel ಏ"
+                  "value": "vowyee"
                 },
                 {
                   "label": "Vowel ಓ",
-                  "value": "Vowel ಓ"
+                  "value": "vowohh"
                 },
                 {
                   "label": "Monosyllable with ಅ",
-                  "value": "Monosyllable with ಅ"
+                  "value": "monosylha"
                 },
                 {
                   "label": "Monosyllable with ಇ",
-                  "value": "Monosyllable with ಇ"
+                  "value": "monosylhi"
                 },
                 {
                   "label": "Monosyllable with ಉ",
-                  "value": "Monosyllable with ಉ"
+                  "value": "monosylhu"
                 },
                 {
                   "label": "Monosyllable with ಎ",
-                  "value": "Monosyllable with ಎ"
+                  "value": "monosylye"
                 },
                 {
                   "label": "Monosyllable with ಒ",
-                  "value": "Monosyllable with ಒ"
+                  "value": "monosyloh"
                 },
                 {
                   "label": "Monosyllable with ಆ",
-                  "value": "Monosyllable with ಆ"
+                  "value": "monosylhaa"
                 },
                 {
                   "label": "Monosyllable with ಈ",
-                  "value": "Monosyllable with ಈ"
+                  "value": "monosylhii"
                 },
                 {
                   "label": "Monosyllable with ಊ",
-                  "value": "Monosyllable with ಊ"
+                  "value": "monosylhuu"
                 },
                 {
                   "label": "Monosyllable with ಏ",
-                  "value": "Monosyllable with  ಏ"
+                  "value": "monosylyee"
                 },
                 {
                   "label": "Monosyllable with  ಓ",
-                  "value": "Monosyllable with  ಓ"
+                  "value": "monosylohh"
                 },
                 {
                   "label": "Words or Nonwords with ಅ",
