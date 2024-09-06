@@ -4798,19 +4798,19 @@
               "options": [
                 {
                   "label": "Vowel ಅ",
-                  "value": "Vowel ಅ"
+                  "value": "vowha"
                 },
                 {
                   "label": "Vowel ಇ",
-                  "value": "Vowel ಇ"
+                  "value": "vowhi"
                 },
                 {
                   "label": "Vowel ಉ",
-                  "value": "Vowel ಉ"
+                  "value": "vowhu"
                 },
                 {
                   "label": "Vowel ಎ",
-                  "value": "Vowel ಎ"
+                  "value": "vowye"
                 },
                 {
                   "label": "Vowel ಒ",

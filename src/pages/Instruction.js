@@ -1,15 +1,12 @@
-
-
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Layout from '../components/Layout/Layout';
 import DataContext from '../stores/DataContextProvider';
 import dataFlow from '../utils/Dataflow.json'; // Adjust the path as necessary
-import './Instruction.css'; // Import the CSS file
+import './Instruction.css';
 
 const Instruction = () => {
-  const [step, setStep] = useState(1);
-  const { levelCode, skillCode, instruction, updateInstruction } = useContext(DataContext);
+  const { levelCode, skillCode, instruction, updateInstruction, testCode, updateTestCode } = useContext(DataContext);
   const navigate = useNavigate();
   const location = useLocation();
   const { selectedOptions } = location.state || {};
@@ -25,6 +22,7 @@ const Instruction = () => {
         for (const item of items) {
           if (item.levelCode === levelCode && item.skillCode === skillCode) {
             foundInstruction = item;
+            console.log('Found Instruction:', foundInstruction);
             return;
           }
           if (item.item && Array.isArray(item.item)) {
@@ -34,7 +32,6 @@ const Instruction = () => {
         }
       };
 
-      // Ensure dataFlow.dataFlow is an array
       if (Array.isArray(dataFlow.dataFlow)) {
         searchInstruction(dataFlow.dataFlow);
       } else {
@@ -42,13 +39,32 @@ const Instruction = () => {
       }
 
       updateInstruction(foundInstruction ? foundInstruction.instruction : null);
+      updateTestCode(foundInstruction ? foundInstruction.testCode : 1); // Update testCode based on found instruction
     };
 
     fetchInstructionData();
-  }, [levelCode, skillCode, updateInstruction]);
+  }, [levelCode, skillCode, updateInstruction, updateTestCode]);
 
   const handleNext = () => {
-    navigate('/testscreen', { state: { selectedOptions } });
+    console.log('Navigating to TestScreen with testCode:', testCode);
+
+    switch (testCode) {
+      case 1:
+        console.log('Navigating to TestScreen1');
+        navigate('/testscreen1', { state: { selectedOptions } });
+        break;
+      case 2:
+        console.log('Navigating to TestScreen2');
+        navigate('/testscreen2', { state: { selectedOptions } });
+        break;
+      case 3:
+        console.log('Navigating to TestScreen3');
+        navigate('/testscreen3', { state: { selectedOptions } });
+        break;
+      default:
+        console.error('Invalid testCode:', testCode);
+        navigate('/home'); // Fallback in case of an invalid testCode
+    }
   };
 
   const handleBack = () => {
@@ -63,7 +79,7 @@ const Instruction = () => {
     <Layout>
       <div className="instruction-container">
         <h1>Instruction</h1>
-        <p>{Array.isArray(instruction) ? instruction.join(' ') : instruction}</p>
+        <p>{instruction}</p>
         <div className="button-container">
           <button onClick={handleBack}>Back</button>
           <button onClick={handleNext}>Next</button>

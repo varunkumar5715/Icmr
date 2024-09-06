@@ -146,7 +146,9 @@ const TestScreen1 = () => {
     return new Promise((resolve) => {
       const audioElement = new Audio(audioUrl);
       audioElement.play();
-      audioElement.onended = resolve;
+      audioElement.onended = () => {
+        resolve();
+      };
       audioRef.current = audioElement;
     });
   };
@@ -229,7 +231,6 @@ const TestScreen1 = () => {
       </button>
 
       {showPopup && (
-        console.log('showPopup', showPopup),
         <Popup message={`Score: ${correctAnswers}/${totalAudioFiles} (${score}%)`} onClose={closePopup} />
       )}
     </div>
@@ -237,7 +238,3 @@ const TestScreen1 = () => {
 };
 
 export default TestScreen1;
-
-
-
-
