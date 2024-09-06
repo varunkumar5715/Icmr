@@ -1,0 +1,118 @@
+/* Test Screen Container */
+.test-screen2 {
+    background-color: #6CACBF;
+    width: 280px;
+    border-radius: 25px;
+    height: auto; /* Adjusted height to fit content */
+    padding: 20px;
+    margin: 20px auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  /* Header */
+  .test-screen2 .header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Adjusted margin for spacing */
+  }
+  
+  .test-screen2 .header span {
+    font-size: 20px;
+    color: #000;
+  }
+  
+  /* Content */
+  .test-screen2 .content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff; /* White background for content area */
+    border-radius: 10px; /* Rounded corners for the content box */
+    padding: 15px; /* Padding inside the content box */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
+    width: 100%; /* Full width of the container */
+    margin-bottom: 15px; /* Space below the content */
+  }
+  
+  .test-screen2 .content h2 {
+    margin: 0;
+    margin-top: 20px; /* Adjusted margin for spacing */
+    color: #000;
+  }
+  
+  .test-screen2 .content h4 {
+    margin: 0;
+    font-size: 15px;
+    color: #000;
+    font-weight: normal;
+  }
+  
+  /* Audio Symbol */
+  .test-screen2 .audio-icon {
+    font-size: 24px; /* Larger icon size */
+    margin-bottom: 10px; /* Space below the icon */
+  }
+  
+  /* Script Display */
+  .test-screen2 .display-script {
+    font-size: 18px;
+    color: #000;
+    margin: 10px 0; /* Space around the script text */
+  }
+  
+  /* Button Container */
+  .test-screen2 .button-container {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between buttons */
+    width: 100%; /* Full width of the container */
+  }
+  
+  /* Buttons */
+  .test-screen2 .button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px; /* Font size for buttons */
+    font-family: Arial, sans-serif; /* Font family for buttons */
+  }
+  
+  .test-screen2 .button.correct {
+    background-color: green;
+  }
+  
+  .test-screen2 .button.incorrect {
+    background-color: red;
+  }
+  
+  .test-screen2 .button.repeat {
+    background-color: #417bb2;
+  }
+  
+  .test-screen2 .button.exit {
+    background-color: #2F4046;
+  }
+  
+  .test-screen2 .button:hover {
+    opacity: 0.8; /* Slightly reduce opacity on hover */
+  }
+  
+  /* Responsive Adjustments */
+  @media screen and (max-width: 600px) {
+    .test-screen2 {
+      width: 100%;
+      max-width: 320px;
+      margin: 20px auto;
+    }
+  }
+  

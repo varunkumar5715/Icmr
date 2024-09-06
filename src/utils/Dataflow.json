@@ -685,12 +685,12 @@
         },
         {
             "title": "Cognition",
-            "folderName": "cogni",
+            "folderName": "cognition",
             "position": "1",
             "item": [
                 {
                     "title": "Cognitive",
-                    "folderName": "cognition",
+                    "folderName": "cognitive",
                     "item": [
                         {
                             "title": "Sustained Attention",
@@ -877,11 +877,12 @@
                     "item": [
                         {
                             "title": "Problem Solving and Abstract Reasoning",
-                            "folderName": "metacogpro",
+                            "folderName": "metacogproar",
                             "item": [
                                 {
                                     "title": "Predicting the outcome",
                                     "skillCode": 63,
+                                    "testCode":3,
                                     "folderName": "metacogoutcome",
                                     "item": [],
                                     "platform": "",
@@ -892,6 +893,7 @@
                                 {
                                     "title": "Predicting the cause",
                                     "skillCode": 64,
+                                    "testCode":3,
                                     "folderName": "metacogcause",
                                     "item": [],
                                     "platform": "",
@@ -902,6 +904,7 @@
                                 {
                                     "title": "Compare and Contrast",
                                     "skillCode": 65,
+                                    "testCode":3,
                                     "folderName": "metacogcont",
                                     "item": [],
                                     "platform": "",
