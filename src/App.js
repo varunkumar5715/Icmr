@@ -39,6 +39,7 @@ import TestScreen1 from './components/Testpage/TestScreen1';
 import TestScreen2 from './components/Testpage/TestScreen2';
 import TestScreen3 from './components/Testpage/TestScreen3';
 import { DataContextProvider } from './stores/DataContextProvider';
+import TestScreen4 from './components/Testpage/TestScreen4';
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
             <Route path="/testscreen1" element={<TestScreen1 />} />
             <Route path="/testscreen2" element={<TestScreen2 />} />
             <Route path="/testscreen3" element={<TestScreen3 />} />
+            <Route path="/testscreen4" element={<TestScreen4 />} />
           </Routes>
         </Layout>
       </Router>

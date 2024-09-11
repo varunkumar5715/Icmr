@@ -18,6 +18,7 @@
                                 {
                                     "title": "Word Identification",
                                     "skillCode": 1,
+                                    "testCode":4,
                                     "folderName": "audiword",
                                     "item": [],
                                     "platform": "",
@@ -324,7 +325,7 @@
                                 {
                                     "title": "Vowel Frequency",
                                     "skillCode": 24,
-                                    "testcode": 9,
+                                    "testCode": 1,
                                     "folderName": "disvowfreq",
                                     "item": [],
                                     "platform": "",
@@ -446,7 +447,7 @@
                                 {
                                     "title": "Broad Band Noise",
                                     "skillCode": 33,
-                                    "testcode": 9,
+                                    "testCode": 1,
                                     "folderName": "audibroad",
                                     "item": [],
                                     "platform": "",
@@ -921,6 +922,7 @@
                                 {
                                     "title": "Category Identification",
                                     "skillCode": 66,
+                                    "testCode":4,
                                     "folderName": "metacogiden",
                                     "item": [],
                                     "platform": "",
@@ -931,6 +933,7 @@
                                 {
                                     "title": "Category Oddity",
                                     "skillCode": 67,
+                                    "testCode":3,
                                     "folderName": "metacogoddi",
                                     "item": [],
                                     "platform": "",

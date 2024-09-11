@@ -61,6 +61,10 @@ const Instruction = () => {
         console.log('Navigating to TestScreen3');
         navigate('/testscreen3', { state: { selectedOptions } });
         break;
+        case 4:
+          console.log('Navigating to TestScreen4');
+          navigate('/testscreen4', { state: { selectedOptions } });
+          break;
       default:
         console.error('Invalid testCode:', testCode);
         navigate('/home'); // Fallback in case of an invalid testCode
@@ -82,7 +86,7 @@ const Instruction = () => {
         <p>{instruction}</p>
         <div className="button-container">
           <button onClick={handleBack}>Back</button>
-          <button onClick={handleNext}>Next</button>
+          <button onClick={handleNext}>Start</button>
         </div>
       </div>
     </Layout>

@@ -2613,31 +2613,31 @@
               "options": [
                 {
                   "label": "No Noise",
-                  "value": "No Noise"
+                  "value": "nonoise"
                 },
                 {
                   "label": "White Noise",
-                  "value": "White Noise"
+                  "value": "whitenoise"
                 },
                 {
                   "label": "Speech Noise",
-                  "value": "Speech Noise"
+                  "value": "speechnoise"
                 },
                 {
                   "label": "Fan noise",
-                  "value": "Fan noise"
+                  "value": "fannoise"
                 },
                 {
                   "label": "Restaurant Noise",
-                  "value": "Restaurant Noise"
+                  "value": "resturnoise"
                 },
                 {
                   "label": "Classroom noise",
-                  "value": "Classroom noise"
+                  "value": "classnoise"
                 },
                 {
                   "label": "2 talker babble",
-                  "value": "2 talker babble"
+                  "value": "2talbab"
                 },
                 {
                   "label": "4 talker babble",
@@ -2666,27 +2666,27 @@
                 },
                 {
                   "label": "30 dB SNR",
-                  "value": "30 dB SNR"
+                  "value": "30dbsnr"
                 },
                 {
                   "label": "25 dB SNR",
-                  "value": "25 dB SNR"
+                  "value": "25dbsnr"
                 },
                 {
                   "label": "20 dB SNR",
-                  "value": "20 dB SNR"
+                  "value": "20dbsnr"
                 },
                 {
                   "label": "18 dB SNR",
-                  "value": "18 dB SNR"
+                  "value": "18dbsnr"
                 },
                 {
                   "label": "16 dB SNR",
-                  "value": "16 dB SNR"
+                  "value": "16dbsnr"
                 },
                 {
                   "label": "14 dB SNR",
-                  "value": "14 dB SNR"
+                  "value": "14dbsnr"
                 },
                 {
                   "label": "12 dB SNR",
@@ -2694,7 +2694,7 @@
                 },
                 {
                   "label": "10 dB SNR",
-                  "value": "10 dB SNR"
+                  "value": "10dbsnr"
                 },
                 {
                   "label": "8 dB SNR",
@@ -2761,6 +2761,7 @@
                   "value": "-25 dB SNR"
                 }
               ]
+              
             }
           ]
         },
@@ -4938,15 +4939,15 @@
               "options": [
                 {
                   "label": "Low",
-                  "value": "Low"
+                  "value": "lowst"
                 },
                 {
                   "label": "Mid",
-                  "value": "Mid"
+                  "value": "midst"
                 },
                 {
                   "label": "High",
-                  "value": "High"
+                  "value": "highst"
                 }
               ]
             },
@@ -4955,26 +4956,26 @@
               "options": [
                 {
                   "label": "Low",
-                  "value": "Low"
+                  "value": "lowable"
                 },
                 {
                   "label": "Mid",
-                  "value": "Mid"
+                  "value": "midable"
                 },
                 {
                   "label": "High",
-                  "value": "High"
+                  "value": "highable"
                 }
               ]
             }
           ],
-          "textbox": [
+        "textbox": [
             {
-              "label": "Inter-stimulus Interval",
+              "label": "ISI",
               "placeholder": "Enter text here..."
             },
             {
-              "label": "Inter-block Interval",
+              "label": "IBI",
               "placeholder": "Enter text here..."
             }
           ]
@@ -6500,11 +6501,11 @@
           ],
           "textbox": [
             {
-              "label": "Inter-stimulus Interval",
+              "label": "ISI",
               "placeholder": "Enter text here..."
             },
             {
-              "label": "Inter-block Interval",
+              "label": "IBI",
               "placeholder": "Enter text here..."
             }
           ]

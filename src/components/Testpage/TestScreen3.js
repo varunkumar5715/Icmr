@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
 import DataContext from '../../stores/DataContextProvider';
+import { useNavigate } from 'react-router-dom'; 
 import backendIP from '../../utils/serverData';
+import Popup from '../popup/Popup'; // Import the Popup component
 import './TestScreen2.css';
 import './TestScreen3.css';
 
@@ -10,8 +12,11 @@ const TestScreen3 = () => {
   const [selectedFileName, setSelectedFileName] = useState('');
   const [score, setScore] = useState(0);
   const [totalAudioPlayed, setTotalAudioPlayed] = useState(0);
+  const [showPopup, setShowPopup] = useState(false);
+  // State to manage popup visibility
   const audioRef = useRef(null);
   const abortControllerRef = useRef(new AbortController());
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (folderPath) {
@@ -140,8 +145,14 @@ const TestScreen3 = () => {
   };
 
   const handleExit = () => {
-    alert(`Total Audio Played: ${totalAudioPlayed}, Score: ${score}`);
+    setShowPopup(true); // Show popup when exit button is clicked
   };
+
+  const handleClosePopup = () => {
+    setShowPopup(false); // Close the popup
+    navigate('/home');
+  };
+  
 
   return (
     <div className="test-screen2">
@@ -164,6 +175,10 @@ const TestScreen3 = () => {
         <button className="repeat-button" onClick={handleRepeat}>Repeat</button>
         <button className="exit-button" onClick={handleExit}>Exit</button>
       </div>
+      {showPopup && (
+  <Popup score={score} totalAudioPlayed={totalAudioPlayed} onClose={handleClosePopup} />
+)}
+
     </div>
   );
 };
