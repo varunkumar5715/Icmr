@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect, useContext, useRef } from 'react';
 import { FaVolumeUp, FaRedo } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
@@ -24,68 +22,68 @@ const TestScreen1 = () => {
   const [totalAudioFiles, setTotalAudioFiles] = useState(0);
   const [isRepeating, setIsRepeating] = useState(false);
   const audioRef = useRef(null);
-  const [isDelayActive, setIsDelayActive] = useState(false);
+ 
   const timeoutRef = useRef(null);
-  
+
   const navigate = useNavigate();
 
- 
+
 
   // First pick the file from the backend - totalfileList
   const generateFileSet = async () => {
     console.log('generateFileSet called');
     const standardFolder = selectedOptions.Standard ? selectedOptions.Standard.value : '';
     const variableFolder = selectedOptions.Variable ? selectedOptions.Variable.value : '';
-  
+
     const paths = {
       standard: `${folderPath}/standard/${standardFolder}/`,
       variable: `${folderPath}/variable/${variableFolder}/`,
     };
-  
+
     const [standardFiles, variableFiles] = await Promise.all([
       fetchAudioFiles(paths.standard),
       fetchAudioFiles(paths.variable),
     ]);
-  
+
     const pickRandomFile = (fileList) => {
       return fileList[Math.floor(Math.random() * fileList.length)];
     };
-  
+
     // Pick one standard file to play twice
     const standardFileName = pickRandomFile(standardFiles);
     // Pick one variable file to play once
     const variableFileName = pickRandomFile(variableFiles);
-  
+
     // Create an array with two standard and one variable audio file
     const fileList = [
       { path: `${paths.standard}${standardFileName}`, type: 'standard' },
       { path: `${paths.standard}${standardFileName}`, type: 'standard' },
       { path: `${paths.variable}${variableFileName}`, type: 'variable' },
     ];
-  
+
     // Shuffle the array to randomize the position of the variable file
     const shuffledFileList = fileList.sort(() => Math.random() - 0.5);
-  
+
     setAudioSet(shuffledFileList);
     setButtonColors(Array(shuffledFileList.length).fill(''));
     setTotalAudioFiles(shuffledFileList.length);
   };
   const hasGeneratedFileSet = useRef(false); // Ref to track if generateFileSet is called
   useEffect(() => {
-   
-  
+
+
     if (!hasGeneratedFileSet.current && !exitClicked) {
       generateFileSet();
       hasGeneratedFileSet.current = true; // Set flag to true after generating files
     }
-  
-   
+
+
   }, [selectedOptions, folderPath]);
-  
 
-// Fetches audio files based on the fileset generated
 
-  
+  // Fetches audio files based on the fileset generated
+
+
   const fetchAudioFiles = async (path) => {
     try {
       const response = await fetch(`${backendIP}/audio/listfiles`, {
@@ -106,8 +104,8 @@ const TestScreen1 = () => {
       return [];
     }
   };
-  
-   // After audio set is readyt and files are picked from the backend , play it unless currently playing
+
+  // After audio set is readyt and files are picked from the backend , play it unless currently playing
   useEffect(() => {
     if (audioSet.length > 0 && !isPlaying && !exitClicked) {
       playAudioSet();
@@ -124,12 +122,10 @@ const TestScreen1 = () => {
       }
     };
   }, [audioSet]);
-
 // Main function to play audio set
 const playAudioSet = async () => {
   try {
     setIsPlaying(true); // Start playing
-
 
     // Play through the audio set
     for (let i = 0; i < audioSet.length; i++) {
@@ -151,28 +147,37 @@ const playAudioSet = async () => {
 
       // Wait for ISI delay between audios
       if (i < audioSet.length - 1) {
-        console.log('Waiting for', isi, 'seconds');
-        await delay(parseInt(isi, 10) * 1000);
+        console.log('Waiting for', isi, 'milliseconds');
+        await delay(parseInt(isi, 10) );
       }
     }
 
     // Mark as not playing when done
     setIsPlaying(false);
+      // Log the current score
+      const currentScore = correctAnswers; // Variable holding correct answers count
+      console.log(`Score: ${currentScore} / ${totalSetsPlayed}`);
+  
+      // Increment total sets played only if it's not a repeat
+      if (!exitClicked && !isRepeating) {
+        setTotalSetsPlayed(prev => prev + 1);
+        setTotalAudioFilesPlayed(prev => prev + 1); // Increment for the set played
+      }
+  
 
     // Log the state of exit and repeat
     console.log(`Exit Clicked: ${exitClicked}, Is Repeating: ${isRepeating}`);
 
     // Handle exit and repeat logic
     if (!exitClicked && isRepeating) {
-      console.log('Waiting for IBI:', ibi, 'seconds');
+      console.log('Waiting for IBI:', ibi, 'milliseconds');
       await startDelay(); // Wait for Inter-Block Interval (IBI)
-      setTotalSetsPlayed(prev => prev + 1);
       // Reset repeating state and play again after IBI
       setIsRepeating(false); // Ensure repeat is reset before the next cycle
       generateFileSet();  // Generate a new set of files for the next playback
     } else if (!exitClicked && !isRepeating) {
       // Handle normal flow when not repeating
-      console.log('Waiting for IBI:', ibi, 'seconds');
+      console.log('Waiting for IBI:', ibi, ' milliseconds');
       await startDelay(); // Wait for Inter-Block Interval (IBI)
       generateFileSet();  // Generate a new set of files for next playback
     }
@@ -181,7 +186,8 @@ const playAudioSet = async () => {
     setIsPlaying(false); // Ensure state is reset if an error occurs
   }
 };
-  
+
+
   const playAudio = (audioUrl) => {
     return new Promise((resolve) => {
       const audioElement = new Audio(audioUrl);
@@ -197,22 +203,17 @@ const playAudioSet = async () => {
   const delay = (ms) => new Promise(resolve => {
     timeoutRef.current = setTimeout(resolve, ms);
   });
-  
+
   // Start the delay and log its status
   const startDelay = async () => {
-    setIsDelayActive(true);
     console.log("Delay started");
-    await delay(parseInt(ibi, 10) * 1000); // Use the ibi delay (e.g., 4 seconds)
-    if (isDelayActive) {
-      console.log("Delay finished");
-      setIsDelayActive(false); // Set delay as finished
-    }
+    await delay(parseInt(ibi, 10)); // Use the ibi delay (e.g., 4 seconds)
+    console.log("Delay finished");
   };
-  
+
   // Stop the delay if a repeat occurs
   const stopDelay = () => {
     clearTimeout(timeoutRef.current); // Clear the current timeout
-    setIsDelayActive(false); // Set the delay flag as inactive
     console.log("Delay stopped");
   };
 
@@ -245,24 +246,24 @@ const playAudioSet = async () => {
     }, 3000); // 3000 milliseconds = 3 seconds
   };
 
- 
-// Handle repeat button click
-const handleRepeatClick = () => {
-  if (audioSet.length > 0 && !isPlaying) {
-    setIsRepeating(true); // Set repeating state
-    stopDelay(); // Ensure any active delays are stopped
-    setButtonColors(Array(audioSet.length).fill('')); // Reset button colors
-    setIsPlaying(false); // Ensure that no audio is playing
-    playAudioSet(); // Start playing audio set again
-  }
-};
+
+  // Handle repeat button click
+  const handleRepeatClick = () => {
+    if (audioSet.length > 0 && !isPlaying) {
+      setIsRepeating(true); // Set repeating state
+      stopDelay(); // Ensure any active delays are stopped
+      setButtonColors(Array(audioSet.length).fill('')); // Reset button colors
+      setIsPlaying(false); // Ensure that no audio is playing
+      playAudioSet(); // Start playing audio set again
+    }
+  };
 
   const closePopup = () => {
     setShowPopup(false);
     navigate('/instruction');
   };
 
-  
+
 
   return (
     <div className="test-screen">
