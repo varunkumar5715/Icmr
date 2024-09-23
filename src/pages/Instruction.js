@@ -10,6 +10,7 @@ const Instruction = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { selectedOptions } = location.state || {};
+  console.log('Selected Options:', selectedOptions);
 
   useEffect(() => {
     const fetchInstructionData = () => {
@@ -64,6 +65,15 @@ const Instruction = () => {
         case 4:
           console.log('Navigating to TestScreen4');
           navigate('/testscreen4', { state: { selectedOptions } });
+          break;
+    
+        case 5:
+          console.log('Navigating to TestScreen5');
+          navigate('/testscreen5', { state: { selectedOptions } });
+          break;
+          case 5:
+          console.log('Navigating to TestScreen6');
+          navigate('/testscreen6', { state: { selectedOptions } });
           break;
       default:
         console.error('Invalid testCode:', testCode);

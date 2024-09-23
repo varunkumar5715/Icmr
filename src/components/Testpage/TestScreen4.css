@@ -137,10 +137,8 @@
   margin-top: 20px;
   width: 100%;
 }
-
 .test-screen4 .option-buttons .option-button {
-  width: auto;
-  max-width: 400px;
+  width: 200px; /* Set a fixed width */
   padding: 10px;
   border-radius: 10px;
   background-color: #ffffff;
@@ -151,11 +149,8 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   text-align: center;
-  white-space: normal;
-  /* Added to ensure text wraps properly */
   word-break: break-word;
 }
-
 /* Single-Word Options */
 .test-screen4 .option-buttons .option-button.single-word {
   display: inline-block; /* Display in a row */

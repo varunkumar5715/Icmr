@@ -4815,67 +4815,67 @@
                 },
                 {
                   "label": "Vowel ಒ",
-                  "value": "Vowel ಒ"
+                  "value": "vowoh"
                 },
                 {
                   "label": "Vowel ಆ",
-                  "value": "Vowel ಆ"
+                  "value": "vowhaa"
                 },
                 {
                   "label": "Vowel ಈ",
-                  "value": "Vowel ಈ"
+                  "value": "vowhii"
                 },
                 {
                   "label": "Vowel ಊ",
-                  "value": "Vowel ಊ"
+                  "value": "vowhuu"
                 },
                 {
                   "label": "Vowel ಏ",
-                  "value": "Vowel ಏ"
+                  "value": "vowyee"
                 },
                 {
                   "label": "Vowel ಓ",
-                  "value": "Vowel ಓ"
+                  "value": "vowohh"
                 },
                 {
                   "label": "Monosyllable with ಅ",
-                  "value": "Monosyllable with ಅ"
+                  "value": "monosylha"
                 },
                 {
                   "label": "Monosyllable with ಇ",
-                  "value": "Monosyllable with ಇ"
+                  "value": "monosylhi"
                 },
                 {
                   "label": "Monosyllable with ಉ",
-                  "value": "Monosyllable with ಉ"
+                  "value": "monosylhu"
                 },
                 {
                   "label": "Monosyllable with ಎ",
-                  "value": "Monosyllable with ಎ"
+                  "value": "monosylye"
                 },
                 {
                   "label": "Monosyllable with ಒ",
-                  "value": "Monosyllable with ಒ"
+                  "value": "monosyloh"
                 },
                 {
                   "label": "Monosyllable with ಆ",
-                  "value": "Monosyllable with ಆ"
+                  "value": "monosylhaa"
                 },
                 {
                   "label": "Monosyllable with ಈ",
-                  "value": "Monosyllable with ಈ"
+                  "value": "monosylhii"
                 },
                 {
                   "label": "Monosyllable with ಊ",
-                  "value": "Monosyllable with ಊ"
+                  "value": "monosylhuu"
                 },
                 {
                   "label": "Monosyllable with ಏ",
-                  "value": "Monosyllable with  ಏ"
+                  "value": "monosylyee"
                 },
                 {
                   "label": "Monosyllable with  ಓ",
-                  "value": "Monosyllable with  ಓ"
+                  "value": "monosylohh"
                 },
                 {
                   "label": "Words or Nonwords with ಅ",
@@ -5782,7 +5782,7 @@
               "options": [
                 {
                   "label": "Standard Intensity",
-                  "value": "Standard Intensity"
+                  "value": "standinten"
                 }
               ]
             },
@@ -5791,82 +5791,82 @@
               "options": [
                 {
                   "label": "Standard Intensity",
-                  "value": "Standard Intensity"
+                  "value": "standinten"
                 },
                 {
                   "label": " +1 dB",
-                  "value": " +1 dB"
+                  "value": "intenone"
                 },
                 {
                   "label": " +2 dB",
-                  "value": " +2 dB"
+                  "value": "twodbi"
                 },
                 {
                   "label": " +3 dB",
-                  "value": " +3 dB"
+                  "value": "threedbi"
                 },
                 {
                   "label": " +4 dB",
-                  "value": " +4 dB"
+                  "value": "fourdbi"
                 },
                 {
                   "label": " +5 dB",
-                  "value": " +5 dB"
+                  "value": "fivedbi"
                 },
                 {
                   "label": " +6 dB",
-                  "value": " +6 dB"
+                  "value": "sixdbi"
                 },
                 {
                   "label": " +7 dB",
-                  "value": " +7 dB"
+                  "value": "sevendbi"
                 },
                 {
                   "label": " +8 dB",
-                  "value": " +8 dB"
+                  "value": "eightdbi"
                 },
                 {
                   "label": " +9 dB",
-                  "value": " +9 dB"
+                  "value": "ninedbi"
                 },
                 {
                   "label": " +10 dB",
-                  "value": " +10 dB"
+                  "value": "tendbi"
                 },
                 {
                   "label": " +11 dB",
-                  "value": " +11 dB"
+                  "value": "elevendbi"
                 },
                 {
                   "label": " +12 dB",
-                  "value": " +12 dB"
+                  "value": "twelevedbi"
                 },
                 {
                   "label": " +13 dB",
-                  "value": " +13 dB"
+                  "value": "thirteendbi"
                 },
                 {
                   "label": " +14 dB",
-                  "value": " +14 dB"
+                  "value": "fourteendbi"
                 },
                 {
                   "label": " +15 dB",
-                  "value": " +15 dB"
+                  "value": "fifteendbi"
                 },
                 {
                   "label": " +20 dB",
-                  "value": " +20 dB"
+                  "value": "twentydbi"
                 }
               ]
             }
           ],
           "textbox": [
             {
-              "label": "Inter-stimulus Interval",
+              "label": "ISI",
               "placeholder": "Enter text here..."
             },
             {
-              "label": "Inter-block Interval",
+              "label": "IBI",
               "placeholder": "Enter text here..."
             }
           ]
@@ -5879,7 +5879,7 @@
               "options": [
                 {
                   "label": "Standard Intensity",
-                  "value": "Standard Intensity"
+                  "value": "standinten"
                 }
               ]
             },
@@ -5888,82 +5888,82 @@
               "options": [
                 {
                   "label": "Standard Intensity",
-                  "value": "Standard Intensity"
+                  "value": "standinten"
                 },
                 {
                   "label": " +1 dB",
-                  "value": " +1 dB"
+                  "value": "intenone"
                 },
                 {
                   "label": " +2 dB",
-                  "value": " +2 dB"
+                  "value": "twodbi"
                 },
                 {
                   "label": " +3 dB",
-                  "value": " +3 dB"
+                  "value": "threedbi"
                 },
                 {
                   "label": " +4 dB",
-                  "value": " +4 dB"
+                  "value": "fourdbi"
                 },
                 {
                   "label": " +5 dB",
-                  "value": " +5 dB"
+                  "value": "fivedbi"
                 },
                 {
                   "label": " +6 dB",
-                  "value": " +6 dB"
+                  "value": "sixdbi"
                 },
                 {
                   "label": " +7 dB",
-                  "value": " +7 dB"
+                  "value": "sevendbi"
                 },
                 {
                   "label": " +8 dB",
-                  "value": " +8 dB"
+                  "value": "eightdbi"
                 },
                 {
                   "label": " +9 dB",
-                  "value": " +9 dB"
+                  "value": "ninedbi"
                 },
                 {
                   "label": " +10 dB",
-                  "value": " +10 dB"
+                  "value": "tendbi"
                 },
                 {
                   "label": " +11 dB",
-                  "value": " +11 dB"
+                  "value": "elevendbi"
                 },
                 {
                   "label": " +12 dB",
-                  "value": " +12 dB"
+                  "value": "twelevedbi"
                 },
                 {
                   "label": " +13 dB",
-                  "value": " +13 dB"
+                  "value": "thirteendbi"
                 },
                 {
                   "label": " +14 dB",
-                  "value": " +14 dB"
+                  "value": "fourteendbi"
                 },
                 {
                   "label": " +15 dB",
-                  "value": " +15 dB"
+                  "value": "fifteendbi"
                 },
                 {
                   "label": " +20 dB",
-                  "value": " +20 dB"
+                  "value": "twentydbi"
                 }
               ]
             }
           ],
           "textbox": [
             {
-              "label": "Inter-stimulus Interval",
+              "label": "ISI",
               "placeholder": "Enter text here..."
             },
             {
-              "label": "Inter-block Interval",
+              "label": "IBI",
               "placeholder": "Enter text here..."
             }
           ]
@@ -5976,7 +5976,7 @@
               "options": [
                 {
                   "label": "Standard Intensity",
-                  "value": "Standard Intensity"
+                  "value": "standinten"
                 }
               ]
             },
@@ -5985,82 +5985,82 @@
               "options": [
                 {
                   "label": "Standard Intensity",
-                  "value": "Standard Intensity"
+                  "value": "standinten"
                 },
                 {
                   "label": " +1 dB",
-                  "value": " +1 dB"
+                  "value": "intenone"
                 },
                 {
                   "label": " +2 dB",
-                  "value": " +2 dB"
+                  "value": "twodbi"
                 },
                 {
                   "label": " +3 dB",
-                  "value": " +3 dB"
+                  "value": "threedbi"
                 },
                 {
                   "label": " +4 dB",
-                  "value": " +4 dB"
+                  "value": "fourdbi"
                 },
                 {
                   "label": " +5 dB",
-                  "value": " +5 dB"
+                  "value": "fivedbi"
                 },
                 {
                   "label": " +6 dB",
-                  "value": " +6 dB"
+                  "value": "sixdbi"
                 },
                 {
                   "label": " +7 dB",
-                  "value": " +7 dB"
+                  "value": "sevendbi"
                 },
                 {
                   "label": " +8 dB",
-                  "value": " +8 dB"
+                  "value": "eightdbi"
                 },
                 {
                   "label": " +9 dB",
-                  "value": " +9 dB"
+                  "value": "ninedbi"
                 },
                 {
                   "label": " +10 dB",
-                  "value": " +10 dB"
+                  "value": "tendbi"
                 },
                 {
                   "label": " +11 dB",
-                  "value": " +11 dB"
+                  "value": "elevendbi"
                 },
                 {
                   "label": " +12 dB",
-                  "value": " +12 dB"
+                  "value": "twelevedbi"
                 },
                 {
                   "label": " +13 dB",
-                  "value": " +13 dB"
+                  "value": "thirteendbi"
                 },
                 {
                   "label": " +14 dB",
-                  "value": " +14 dB"
+                  "value": "fourteendbi"
                 },
                 {
                   "label": " +15 dB",
-                  "value": " +15 dB"
+                  "value": "fifteendbi"
                 },
                 {
                   "label": " +20 dB",
-                  "value": " +20 dB"
+                  "value": "twentydbi"
                 }
               ]
             }
           ],
           "textbox": [
             {
-              "label": "Inter-stimulus Interval",
+              "label": "ISI",
               "placeholder": "Enter text here..."
             },
             {
-              "label": "Inter-block Interval",
+              "label": "IBI",
               "placeholder": "Enter text here..."
             }
           ]
@@ -6073,7 +6073,7 @@
               "options": [
                 {
                   "label": "Standard Intensity",
-                  "value": "Standard Intensity"
+                  "value": "standinten"
                 }
               ]
             },
@@ -6082,82 +6082,82 @@
               "options": [
                 {
                   "label": "Standard Intensity",
-                  "value": "Standard Intensity"
+                  "value": "standinten"
                 },
                 {
                   "label": " +1 dB",
-                  "value": " +1 dB"
+                  "value": "intenone"
                 },
                 {
                   "label": " +2 dB",
-                  "value": " +2 dB"
+                  "value": "twodbi"
                 },
                 {
                   "label": " +3 dB",
-                  "value": " +3 dB"
+                  "value": "threedbi"
                 },
                 {
                   "label": " +4 dB",
-                  "value": " +4 dB"
+                  "value": "fourdbi"
                 },
                 {
                   "label": " +5 dB",
-                  "value": " +5 dB"
+                  "value": "fivedbi"
                 },
                 {
                   "label": " +6 dB",
-                  "value": " +6 dB"
+                  "value": "sixdbi"
                 },
                 {
                   "label": " +7 dB",
-                  "value": " +7 dB"
+                  "value": "sevendbi"
                 },
                 {
                   "label": " +8 dB",
-                  "value": " +8 dB"
+                  "value": "eightdbi"
                 },
                 {
                   "label": " +9 dB",
-                  "value": " +9 dB"
+                  "value": "ninedbi"
                 },
                 {
                   "label": " +10 dB",
-                  "value": " +10 dB"
+                  "value": "tendbi"
                 },
                 {
                   "label": " +11 dB",
-                  "value": " +11 dB"
+                  "value": "elevendbi"
                 },
                 {
                   "label": " +12 dB",
-                  "value": " +12 dB"
+                  "value": "twelevedbi"
                 },
                 {
                   "label": " +13 dB",
-                  "value": " +13 dB"
+                  "value": "thirteendbi"
                 },
                 {
                   "label": " +14 dB",
-                  "value": " +14 dB"
+                  "value": "fourteendbi"
                 },
                 {
                   "label": " +15 dB",
-                  "value": " +15 dB"
+                  "value": "fifteendbi"
                 },
                 {
                   "label": " +20 dB",
-                  "value": " +20 dB"
+                  "value": "twentydbi"
                 }
               ]
             }
           ],
           "textbox": [
             {
-              "label": "Inter-stimulus Interval",
+              "label": "ISI",
               "placeholder": "Enter text here..."
             },
             {
-              "label": "Inter-block Interval",
+              "label": "IBI",
               "placeholder": "Enter text here..."
             }
           ]
@@ -6170,7 +6170,7 @@
               "options": [
                 {
                   "label": "Standard Intensity",
-                  "value": "Standard Intensity"
+                  "value": "standinten"
                 }
               ]
             },
@@ -6179,82 +6179,82 @@
               "options": [
                 {
                   "label": "Standard Intensity",
-                  "value": "Standard Intensity"
+                  "value": "standinten"
                 },
                 {
                   "label": " +1 dB",
-                  "value": " +1 dB"
+                  "value": "intenone"
                 },
                 {
                   "label": " +2 dB",
-                  "value": " +2 dB"
+                  "value": "twodbi"
                 },
                 {
                   "label": " +3 dB",
-                  "value": " +3 dB"
+                  "value": "threedbi"
                 },
                 {
                   "label": " +4 dB",
-                  "value": " +4 dB"
+                  "value": "fourdbi"
                 },
                 {
                   "label": " +5 dB",
-                  "value": " +5 dB"
+                  "value": "fivedbi"
                 },
                 {
                   "label": " +6 dB",
-                  "value": " +6 dB"
+                  "value": "sixdbi"
                 },
                 {
                   "label": " +7 dB",
-                  "value": " +7 dB"
+                  "value": "sevendbi"
                 },
                 {
                   "label": " +8 dB",
-                  "value": " +8 dB"
+                  "value": "eightdbi"
                 },
                 {
                   "label": " +9 dB",
-                  "value": " +9 dB"
+                  "value": "ninedbi"
                 },
                 {
                   "label": " +10 dB",
-                  "value": " +10 dB"
+                  "value": "tendbi"
                 },
                 {
                   "label": " +11 dB",
-                  "value": " +11 dB"
+                  "value": "elevendbi"
                 },
                 {
                   "label": " +12 dB",
-                  "value": " +12 dB"
+                  "value": "twelevedbi"
                 },
                 {
                   "label": " +13 dB",
-                  "value": " +13 dB"
+                  "value": "thirteendbi"
                 },
                 {
                   "label": " +14 dB",
-                  "value": " +14 dB"
+                  "value": "fourteendbi"
                 },
                 {
                   "label": " +15 dB",
-                  "value": " +15 dB"
+                  "value": "fifteendbi"
                 },
                 {
                   "label": " +20 dB",
-                  "value": " +20 dB"
+                  "value": "twentydbi"
                 }
               ]
             }
           ],
           "textbox": [
             {
-              "label": "Inter-stimulus Interval",
+              "label": "ISI",
               "placeholder": "Enter text here..."
             },
             {
-              "label": "Inter-block Interval",
+              "label": "IBI",
               "placeholder": "Enter text here..."
             }
           ]
@@ -6267,7 +6267,7 @@
               "options": [
                 {
                   "label": "Standard Intensity",
-                  "value": "Standard Intensity"
+                  "value": "standinten"
                 }
               ]
             },
@@ -6276,82 +6276,82 @@
               "options": [
                 {
                   "label": "Standard Intensity",
-                  "value": "Standard Intensity"
+                  "value": "standinten"
                 },
                 {
                   "label": " +1 dB",
-                  "value": " +1 dB"
+                  "value": "intenone"
                 },
                 {
                   "label": " +2 dB",
-                  "value": " +2 dB"
+                  "value": "twodbi"
                 },
                 {
                   "label": " +3 dB",
-                  "value": " +3 dB"
+                  "value": "threedbi"
                 },
                 {
                   "label": " +4 dB",
-                  "value": " +4 dB"
+                  "value": "fourdbi"
                 },
                 {
                   "label": " +5 dB",
-                  "value": " +5 dB"
+                  "value": "fivedbi"
                 },
                 {
                   "label": " +6 dB",
-                  "value": " +6 dB"
+                  "value": "sixdbi"
                 },
                 {
                   "label": " +7 dB",
-                  "value": " +7 dB"
+                  "value": "sevendbi"
                 },
                 {
                   "label": " +8 dB",
-                  "value": " +8 dB"
+                  "value": "eightdbi"
                 },
                 {
                   "label": " +9 dB",
-                  "value": " +9 dB"
+                  "value": "ninedbi"
                 },
                 {
                   "label": " +10 dB",
-                  "value": " +10 dB"
+                  "value": "tendbi"
                 },
                 {
                   "label": " +11 dB",
-                  "value": " +11 dB"
+                  "value": "elevendbi"
                 },
                 {
                   "label": " +12 dB",
-                  "value": " +12 dB"
+                  "value": "twelevedbi"
                 },
                 {
                   "label": " +13 dB",
-                  "value": " +13 dB"
+                  "value": "thirteendbi"
                 },
                 {
                   "label": " +14 dB",
-                  "value": " +14 dB"
+                  "value": "fourteendbi"
                 },
                 {
                   "label": " +15 dB",
-                  "value": " +15 dB"
+                  "value": "fifteendbi"
                 },
                 {
                   "label": " +20 dB",
-                  "value": " +20 dB"
+                  "value": "twentydbi"
                 }
               ]
             }
           ],
           "textbox": [
             {
-              "label": "Inter-stimulus Interval",
+              "label": "ISI",
               "placeholder": "Enter text here..."
             },
             {
-              "label": "Inter-block Interval",
+              "label": "IBI",
               "placeholder": "Enter text here..."
             }
           ]

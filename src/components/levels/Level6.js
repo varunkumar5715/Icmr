@@ -8,7 +8,7 @@ import Button from '../controllers/Button';
 import './Level.css';
 import DataContext from '../../stores/DataContextProvider';
 
-const Level6 = ({ levelData }) => {
+const Level6 = ({ levelData,onPrev}) => {
   const [selectedOptions, setSelectedOptions] = useState({});
   const [inputValues, setInputValues] = useState({});
   const { updateSelectedOptions, updateTestdata, updateIsi, updateIbi } = useContext(DataContext);
@@ -61,7 +61,7 @@ const Level6 = ({ levelData }) => {
   };
 
   const handleBack = () => {
-    navigate(-1);
+    onPrev(); // Use onPrev function to navigate back
   };
 
   if (!levelData) {
@@ -89,11 +89,11 @@ const Level6 = ({ levelData }) => {
 
             {skill.type === 'text' && (
               <div className="element-container">
-                <label>{skill.label}</label>
+                <label>{skill.label}(sec) </label>
                 <input
                   type="text"
                   placeholder={skill.placeholder}
-                  value={inputValues[skill.label] || ''}
+                  value={inputValues[skill.label]|| ''}
                   onChange={(e) => handleTextChange(skill.label, e.target.value)}
                 />
               </div>

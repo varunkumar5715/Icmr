@@ -13,7 +13,7 @@ const TestScreen3 = () => {
   const [score, setScore] = useState(0);
   const [totalAudioPlayed, setTotalAudioPlayed] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
-  // State to manage popup visibility
+  const [playedFiles, setPlayedFiles] = useState([]); // New state to track played files
   const audioRef = useRef(null);
   const abortControllerRef = useRef(new AbortController());
   const navigate = useNavigate();
@@ -56,11 +56,19 @@ const TestScreen3 = () => {
       }
 
       const audioData = await response.json();
-      console.log('Audio Data:', audioData);
+    
 
       if (Array.isArray(audioData) && audioData.length > 0) {
-        const randomIndex = Math.floor(Math.random() * audioData.length);
-        const selectedFileName = audioData[randomIndex]; // Directly get the file name
+        let availableFiles = audioData.filter(file => !playedFiles.includes(file));
+        
+        if (availableFiles.length === 0) {
+          // If all files have been played, reset the playedFiles list
+          availableFiles = audioData;
+          setPlayedFiles([]);
+        }
+
+        const randomIndex = Math.floor(Math.random() * availableFiles.length);
+        const selectedFileName = availableFiles[randomIndex];
         if (typeof selectedFileName !== 'string') {
           console.error('Expected selectedFileName to be a string, but got:', typeof selectedFileName);
           return;
@@ -68,6 +76,7 @@ const TestScreen3 = () => {
         const fileNameWithoutExtension = selectedFileName.replace('.wav', '');
         setSelectedFileName(selectedFileName);
         setDisplayScript(fileNameWithoutExtension); // Display file name without extension
+        setPlayedFiles(prevFiles => [...prevFiles, selectedFileName]); // Update playedFiles list
         playAudio(selectedFileName);
       } else {
         console.warn('No audio files found in the folder');
@@ -128,13 +137,13 @@ const TestScreen3 = () => {
   };
 
   const handleCorrect = () => {
-    setScore((prevScore) => prevScore + 1);
-    setTotalAudioPlayed((prevTotal) => prevTotal + 1);
+    setScore(prevScore => prevScore + 1);
+    setTotalAudioPlayed(prevTotal => prevTotal + 1);
     fetchSelectedAudio();
   };
 
   const handleIncorrect = () => {
-    setTotalAudioPlayed((prevTotal) => prevTotal + 1);
+    setTotalAudioPlayed(prevTotal => prevTotal + 1);
     fetchSelectedAudio();
   };
 
@@ -176,9 +185,8 @@ const TestScreen3 = () => {
         <button className="exit-button" onClick={handleExit}>Exit</button>
       </div>
       {showPopup && (
-  <Popup score={score} totalAudioPlayed={totalAudioPlayed} onClose={handleClosePopup} />
-)}
-
+        <Popup score={score} totalAudioPlayed={totalAudioPlayed} onClose={handleClosePopup} />
+      )}
     </div>
   );
 };

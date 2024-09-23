@@ -361,10 +361,10 @@
                             "folderName": "intensitydis",
                             "item": [
                                 {
-                                    "title": "Vowel a",
+                                    "title": "Vowel aa",
                                     "skillCode": 27,
-                                    "testcode": 9,
-                                    "folderName": "disvowa",
+                                    "testCode": 1,
+                                    "folderName": "disvowaa",
                                     "item": [],
                                     "platform": "",
                                     "levelCode": 6,
@@ -373,10 +373,10 @@
                                     "example": ""
                                 },
                                 {
-                                    "title": "Vowel i",
+                                    "title": "Vowel ii",
                                     "skillCode": 28,
-                                    "testcode": 9,
-                                    "folderName": "disvowi",
+                                    "testCode": 1,
+                                    "folderName": "disvowii",
                                     "item": [],
                                     "platform": "",
                                     "levelCode": 6,
@@ -385,10 +385,10 @@
                                     "example": ""
                                 },
                                 {
-                                    "title": "Vowel u",
+                                    "title": "Vowel uu",
                                     "skillCode": 29,
-                                    "testcode": 9,
-                                    "folderName": "disvowu",
+                                    "testCode": 1,
+                                    "folderName": "disvowuu",
                                     "item": [],
                                     "platform": "",
                                     "levelCode": 6,
@@ -399,8 +399,8 @@
                                 {
                                     "title": "Consonant s",
                                     "skillCode": 30,
-                                    "testcode": 9,
-                                    "folderName": "disconsts",
+                                    "testCode": 1,
+                                    "folderName": "disconstss",
                                     "item": [],
                                     "platform": "",
                                     "levelCode": 6,
@@ -411,7 +411,7 @@
                                 {
                                     "title": "Consonant sh",
                                     "skillCode": 31,
-                                    "testcode": 9,
+                                    "testCode": 1,
                                     "folderName": "disconstsh",
                                     "item": [],
                                     "platform": "",
@@ -423,7 +423,7 @@
                                 {
                                     "title": "Consonant m",
                                     "skillCode": 32,
-                                    "testcode": 9,
+                                    "testCode": 1,
                                     "folderName": "disconstm",
                                     "item": [],
                                     "platform": "",
@@ -700,6 +700,7 @@
                                 {
                                     "title": "Syllables",
                                     "skillCode": 51,
+                                    "testCode":6,
                                     "folderName": "cogsylsus",
                                     "item": [],
                                     "platform": "",
@@ -711,6 +712,7 @@
                                 {
                                     "title": "Words",
                                     "skillCode": 52,
+                                    "testCode":6,
                                     "folderName": "cogwordsus",
                                     "item": [],
                                     "platform": "",
@@ -722,6 +724,7 @@
                                 {
                                     "title": "Sentences",
                                     "skillCode": 53,
+                                    "testCode":6,
                                     "folderName": "cogsentsus",
                                     "item": [],
                                     "platform": "",
@@ -739,6 +742,7 @@
                                 {
                                     "title": "Syllables",
                                     "skillCode": 54,
+                                    "testCode":6,
                                     "folderName": "cogselsus",
                                     "item": [],
                                     "platform": "",
@@ -750,6 +754,7 @@
                                 {
                                     "title": "Words",
                                     "skillCode": 55,
+                                    "testCode":6,
                                     "folderName": "cogwordssus",
                                     "item": [],
                                     "platform": "",
@@ -761,6 +766,7 @@
                                 {
                                     "title": "Sentences",
                                     "skillCode": 56,
+                                    "testCode":6,
                                     "folderName": "cogselwsus",
                                     "item": [],
                                     "platform": "",
@@ -778,6 +784,7 @@
                                 {
                                     "title": "Recalling syllables",
                                     "skillCode": 57,
+                                    "testCode":6,
                                     "folderName": "cogresyl",
                                     "item": [],
                                     "platform": "",
@@ -792,6 +799,7 @@
                                 {
                                     "title": "Recalling Words",
                                     "skillCode": 58,
+                                    "testCode":6,
                                     "folderName": "cogrewords",
                                     "item": [],
                                     "platform": "",
@@ -806,6 +814,7 @@
                                 {
                                     "title": "Recalling Sentences",
                                     "skillCode": 59,
+                                    "testCode":6,
                                     "folderName": "cogresent",
                                     "item": [],
                                     "platform": "",

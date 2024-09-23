@@ -36,6 +36,10 @@ const Level2 = ({ onNext, onPrev, levelData }) => {
   if (!levelData) {
     return <div>Loading...</div>;
   }
+  const handleBack = () => {
+    onPrev(); // Use onPrev function to navigate back
+  };
+
 
   return (
     <div className="level-container">

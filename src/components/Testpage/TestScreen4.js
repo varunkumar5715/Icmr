@@ -179,7 +179,7 @@ const TestScreen4 = () => {
         <div className="audio-icon" onClick={handleRepeat}>
           <span role="img" aria-label="speaker">🔊</span>
         </div>
-        <div className="display-word"><h3>{displayWord}</h3></div>
+    
       </div>
       <div className="option-buttons">
         {options.map((option, index) => (
