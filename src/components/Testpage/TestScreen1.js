@@ -31,7 +31,7 @@ const TestScreen1 = () => {
 
   // First pick the file from the backend - totalfileList
   const generateFileSet = async () => {
-    console.log('generateFileSet called');
+    // console.log('generateFileSet called');
     const standardFolder = selectedOptions.Standard ? selectedOptions.Standard.value : '';
     const variableFolder = selectedOptions.Variable ? selectedOptions.Variable.value : '';
 
@@ -68,17 +68,14 @@ const TestScreen1 = () => {
     setButtonColors(Array(shuffledFileList.length).fill(''));
     setTotalAudioFiles(shuffledFileList.length);
   };
+
   const hasGeneratedFileSet = useRef(false); // Ref to track if generateFileSet is called
-  useEffect(() => {
-
-
+     useEffect(() => {
     if (!hasGeneratedFileSet.current && !exitClicked) {
       generateFileSet();
       hasGeneratedFileSet.current = true; // Set flag to true after generating files
     }
-
-
-  }, [selectedOptions, folderPath]);
+ }, [selectedOptions, folderPath]);
 
 
   // Fetches audio files based on the fileset generated
@@ -122,6 +119,9 @@ const TestScreen1 = () => {
       }
     };
   }, [audioSet]);
+
+
+
 // Main function to play audio set
 const playAudioSet = async () => {
   try {
@@ -130,14 +130,14 @@ const playAudioSet = async () => {
     // Play through the audio set
     for (let i = 0; i < audioSet.length; i++) {
       const { path } = audioSet[i];
-      console.log('Playing Path:', path);
+      // console.log('Playing Path:', path);
 
       // Play the audio, wrapped in a Promise
       await new Promise((resolve) => {
         getAudio(path, async (audioUrl) => {
           if (audioUrl) {
             await playAudio(audioUrl); // Play the audio
-            console.log(`Played audio: ${audioUrl}`);
+            // console.log(`Played audio: ${audioUrl}`);
           } else {
             console.error('Audio URL not found:', path);
           }
@@ -147,7 +147,7 @@ const playAudioSet = async () => {
 
       // Wait for ISI delay between audios
       if (i < audioSet.length - 1) {
-        console.log('Waiting for', isi, 'milliseconds');
+        // console.log('Waiting for', isi, 'milliseconds');
         await delay(parseInt(isi, 10) );
       }
     }
@@ -156,7 +156,7 @@ const playAudioSet = async () => {
     setIsPlaying(false);
       // Log the current score
       const currentScore = correctAnswers; // Variable holding correct answers count
-      console.log(`Score: ${currentScore} / ${totalSetsPlayed}`);
+      // console.log(`Score: ${currentScore} / ${totalSetsPlayed}`);
   
       // Increment total sets played only if it's not a repeat
       if (!exitClicked && !isRepeating) {
@@ -166,18 +166,18 @@ const playAudioSet = async () => {
   
 
     // Log the state of exit and repeat
-    console.log(`Exit Clicked: ${exitClicked}, Is Repeating: ${isRepeating}`);
+    // console.log(`Exit Clicked: ${exitClicked}, Is Repeating: ${isRepeating}`);
 
     // Handle exit and repeat logic
     if (!exitClicked && isRepeating) {
-      console.log('Waiting for IBI:', ibi, 'milliseconds');
+      // console.log('Waiting for IBI:', ibi, 'milliseconds');
       await startDelay(); // Wait for Inter-Block Interval (IBI)
       // Reset repeating state and play again after IBI
       setIsRepeating(false); // Ensure repeat is reset before the next cycle
       generateFileSet();  // Generate a new set of files for the next playback
     } else if (!exitClicked && !isRepeating) {
       // Handle normal flow when not repeating
-      console.log('Waiting for IBI:', ibi, ' milliseconds');
+      // console.log('Waiting for IBI:', ibi, ' milliseconds');
       await startDelay(); // Wait for Inter-Block Interval (IBI)
       generateFileSet();  // Generate a new set of files for next playback
     }
@@ -206,15 +206,15 @@ const playAudioSet = async () => {
 
   // Start the delay and log its status
   const startDelay = async () => {
-    console.log("Delay started");
+    // console.log("Delay started");
     await delay(parseInt(ibi, 10)); // Use the ibi delay (e.g., 4 seconds)
-    console.log("Delay finished");
+    // console.log("Delay finished");
   };
 
   // Stop the delay if a repeat occurs
   const stopDelay = () => {
     clearTimeout(timeoutRef.current); // Clear the current timeout
-    console.log("Delay stopped");
+    // console.log("Delay stopped");
   };
 
   const handleAudioClick = (index) => {

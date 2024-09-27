@@ -45,7 +45,7 @@ const Level1 = ({ onNext, onPrev, levelData }) => {
             )}
             {skill.type === 'text' && (
               <div className="element-container">
-                <label>{skill.label}</label>
+                  <label>{skill.label}(ms) </label>
                 <input
                   type="text"
                   placeholder={skill.placeholder}

@@ -23,7 +23,7 @@
 
 //     if (level > 0) {
 //       updateLevel(pv => pv - 1);
-//       console.log("Back:", level);
+//       // console.log("Back:", level);
 //     }
     
 //     switch (level) {
@@ -81,7 +81,7 @@ function Navbar() {
 
     if (level > 0) {
       updateLevel(pv => pv - 1);
-      console.log("Back:", level);
+      // console.log("Back:", level);
     }
 
     switch (level) {

@@ -30,7 +30,7 @@ const TestScreen4 = () => {
       return '';
     }
     const path = `${folderPath}/${noiseType}/${noiseLevel}/${fileName}`;
-    console.log(`Constructed file path: ${path}`); // Add logging
+    // console.log(`Constructed file path: ${path}`); // Add logging
     return path;
   };
   
@@ -50,7 +50,7 @@ const TestScreen4 = () => {
         console.error('File path construction failed');
         return;
       }
-      console.log(`Requesting audio file: ${filenameWithPath}`);
+      // console.log(`Requesting audio file: ${filenameWithPath}`);
   
       const response = await fetch(`${backendIP}/audio/getaudio`, {
         method: 'POST',
@@ -94,7 +94,7 @@ const TestScreen4 = () => {
   
 
   const fetchAudioOptions = async (fileName) => {
-    console.log('Fetching audio options for file:', fileName);
+    // console.log('Fetching audio options for file:', fileName);
 
     try {
       const response = await fetch(`${backendIP}/audio/getoptions`, {
@@ -110,7 +110,7 @@ const TestScreen4 = () => {
       }
 
       const data = await response.json();
-      console.log('Options fetched:', data);
+      // console.log('Options fetched:', data);
 
       setOptions(data.options);
       setCorrectWord(data.correctWord);
@@ -144,7 +144,7 @@ const TestScreen4 = () => {
   const handleClosePopup = () => setShowPopup(false);
 
   const fetchSelectedAudio = async () => {
-    console.log('Fetching selected audio based on options:', selectedOptions);
+    // console.log('Fetching selected audio based on options:', selectedOptions);
 
     try {
       // List of files to choose from
@@ -160,7 +160,7 @@ const TestScreen4 = () => {
       const randomIndex = Math.floor(Math.random() * availableFiles.length);
       const selectedFile = availableFiles[randomIndex];
 
-      console.log('Selected file for playback:', selectedFile);
+      // console.log('Selected file for playback:', selectedFile);
 
       setDisplayWord(selectedFile);
       await playAudio(selectedFile);

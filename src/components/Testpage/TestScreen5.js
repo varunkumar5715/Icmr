@@ -49,7 +49,7 @@ const TestScreen5 = () => {
       setIsPlaying(true);
 
       const filenameWithPath = `${folderPath}/${fileName}`;
-      console.log(`Requesting audio file: ${filenameWithPath}`);
+      // console.log(`Requesting audio file: ${filenameWithPath}`);
 
       const response = await fetch(`${backendIP}/audio/getaudio`, {
         method: 'POST',
@@ -90,7 +90,7 @@ const TestScreen5 = () => {
   };
 
   const fetchAudioOptions = async (fileName) => {
-    console.log('Fetching audio options for file:', fileName);
+    // console.log('Fetching audio options for file:', fileName);
 
     try {
       const response = await fetch(`${backendIP}/audio/getoptions`, {
@@ -99,7 +99,7 @@ const TestScreen5 = () => {
         body: JSON.stringify({ fileName }),
       });
 
-      console.log('Response Status:', response.status);
+      // console.log('Response Status:', response.status);
 
       if (!response.ok) {
         const errorDetails = await response.text();
@@ -108,7 +108,7 @@ const TestScreen5 = () => {
       }
 
       const data = await response.json();
-      console.log('Fetched data:', data);
+      // console.log('Fetched data:', data);
       setOptions(data.options);
 
     } catch (error) {

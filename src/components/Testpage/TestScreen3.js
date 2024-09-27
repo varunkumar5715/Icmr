@@ -101,7 +101,7 @@ const TestScreen3 = () => {
       }
 
       const filenameWithPath = `${folderPath}/${fileName}`;
-      console.log(`Requesting audio file: ${filenameWithPath}`);
+      // console.log(`Requesting audio file: ${filenameWithPath}`);
 
       const response = await fetch(`${backendIP}/audio/getaudio`, {
         method: 'POST',

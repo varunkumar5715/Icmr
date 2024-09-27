@@ -10,7 +10,7 @@
 //   const { testCode } = useContext(DataContext);
 
 //   const getTestScreen = () => {
-//     console.log('Rendering TestScreen with testCode:', testCode);
+//     // console.log('Rendering TestScreen with testCode:', testCode);
 //     switch (testCode) {
 //       case 1:
 //         return <TestScreen1 />;
@@ -52,7 +52,7 @@ const TestPage = () => {
   const { testCode } = useContext(DataContext);
 
   const getTestScreen = () => {
-    console.log('Rendering TestScreen with testCode:', testCode);
+    // console.log('Rendering TestScreen with testCode:', testCode);
     switch (testCode) {
       case 1:
         return <TestScreen1 />;

@@ -50,7 +50,7 @@ const Level5 = ({ onPrev, levelData }) => {
         }
       }
 
-      console.log('Updated selected options:', newSelectedOptions);
+      // console.log('Updated selected options:', newSelectedOptions);
 
       return newSelectedOptions;
     });
@@ -74,7 +74,7 @@ const Level5 = ({ onPrev, levelData }) => {
     // Ensure values are strings
     const filePath = `audiofiles/auditory/auddisspe/audiword/${noiseTypeValue}/${noiseLevelValue}/one.wav`;
 
-    console.log('Generated audio path:', filePath);
+    // console.log('Generated audio path:', filePath);
 
     updateTestdata({
       selectedOptions,
@@ -120,7 +120,7 @@ const Level5 = ({ onPrev, levelData }) => {
 
             {skill.type === 'text' && (
               <div className="element-container">
-                <label>{skill.label}</label>
+             <label>{skill.label}(ms) </label>
                 <input
                   type="text"
                   placeholder={skill.placeholder}

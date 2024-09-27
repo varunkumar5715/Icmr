@@ -10,7 +10,7 @@ const Instruction = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { selectedOptions } = location.state || {};
-  console.log('Selected Options:', selectedOptions);
+  // console.log('Selected Options:', selectedOptions);
 
   useEffect(() => {
     const fetchInstructionData = () => {
@@ -23,7 +23,7 @@ const Instruction = () => {
         for (const item of items) {
           if (item.levelCode === levelCode && item.skillCode === skillCode) {
             foundInstruction = item;
-            console.log('Found Instruction:', foundInstruction);
+            // console.log('Found Instruction:', foundInstruction);
             return;
           }
           if (item.item && Array.isArray(item.item)) {
@@ -47,33 +47,38 @@ const Instruction = () => {
   }, [levelCode, skillCode, updateInstruction, updateTestCode]);
 
   const handleNext = () => {
-    console.log('Navigating to TestScreen with testCode:', testCode);
+    // console.log('Navigating to TestScreen with testCode:', testCode);
 
     switch (testCode) {
       case 1:
-        console.log('Navigating to TestScreen1');
+        // console.log('Navigating to TestScreen1');
         navigate('/testscreen1', { state: { selectedOptions } });
         break;
       case 2:
-        console.log('Navigating to TestScreen2');
+        // console.log('Navigating to TestScreen2');
         navigate('/testscreen2', { state: { selectedOptions } });
         break;
       case 3:
-        console.log('Navigating to TestScreen3');
+        // console.log('Navigating to TestScreen3');
         navigate('/testscreen3', { state: { selectedOptions } });
         break;
         case 4:
-          console.log('Navigating to TestScreen4');
+          // console.log('Navigating to TestScreen4');
           navigate('/testscreen4', { state: { selectedOptions } });
           break;
     
         case 5:
-          console.log('Navigating to TestScreen5');
+          // console.log('Navigating to TestScreen5');
           navigate('/testscreen5', { state: { selectedOptions } });
           break;
-          case 5:
-          console.log('Navigating to TestScreen6');
+          case 6:
+          // console.log('Navigating to TestScreen6');
           navigate('/testscreen6', { state: { selectedOptions } });
+          break;
+     
+        case 7:
+          // console.log('Navigating to TestScreen6');
+          navigate('/testscreen7', { state: { selectedOptions } });
           break;
       default:
         console.error('Invalid testCode:', testCode);

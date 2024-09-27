@@ -9,7 +9,7 @@ export function processDataFlow(module, submodule, goals, skills) {
     const moduleList = data.dataFlow.find(item => item.title === module);
 
     if (!moduleList) {
-      console.log("Modulelist not found");
+      // console.log("Modulelist not found");
       return null;
     }
 
@@ -18,7 +18,7 @@ export function processDataFlow(module, submodule, goals, skills) {
     } else {
       const submoduleList = moduleList.item.find(item => item.title === submodule);
       if (!submoduleList) {
-        console.log("Submodulelist not found");
+        // console.log("Submodulelist not found");
         return null;
       }
 
@@ -27,7 +27,7 @@ export function processDataFlow(module, submodule, goals, skills) {
       } else {
         const goalList = submoduleList.item.find(item => item.title === goals);
         if (!goalList) {
-          console.log("Goallist not found");
+          // console.log("Goallist not found");
           return null;
         }
 
@@ -37,7 +37,7 @@ export function processDataFlow(module, submodule, goals, skills) {
 
           const skillList = goalList.item.find(item => item.title === skills);
           if (!skillList) {
-            console.log("Skilllist not found");
+            // console.log("Skilllist not found");
             return null;
           }
           return skillList;

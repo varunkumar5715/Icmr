@@ -1,5 +1,5 @@
 {
-  "levels": [
+  "levels": [ 
     {
       "level": 1,
       "skill": [
@@ -2128,74 +2128,74 @@
               "options": [
                 {
                   "label": "1 stimuli recall",
-                  "value": "1 stimuli recall"
+                  "value": "onesti"
                 },
                 {
                   "label": "2 stimuli recall",
-                  "value": "2 stimuli recall"
+                  "value": "twosti"
                 },
                 {
                   "label": "3 stimuli recall",
-                  "value": "3 stimuli recall"
+                  "value": "threesti"
                 },
                 {
                   "label": "4 stimuli recall",
-                  "value": "4 stimuli recall"
+                  "value": "foursti"
                 },
                 {
                   "label": "5 stimuli recall",
-                  "value": "5 stimuli recall"
+                  "value": "fivesti"
                 },
                 {
                   "label": "6 stimuli recall",
-                  "value": "6 stimuli recall"
+                  "value": "sixsti"
                 },
                 {
                   "label": "7 stimuli recall",
-                  "value": "7 stimuli recall"
+                  "value": "sevensti"
                 },
                 {
                   "label": "8 stimuli recall",
-                  "value": "8 stimuli recall"
+                  "value": "eightsti"
                 },
                 {
                   "label": "9 stimuli recall",
-                  "value": "9 stimuli recall"
+                  "value": "ninesti"
                 },
                 {
                   "label": "10 stimuli recall",
-                  "value": "10 stimuli recall"
+                  "value": "tensti"
                 },
                 {
                   "label": "11 stimuli recall",
-                  "value": "11 stimuli recall"
+                  "value": "elevensti"
                 },
                 {
                   "label": "12 stimuli recall",
-                  "value": "12 stimuli recall"
+                  "value": "twelevesti"
                 },
                 {
                   "label": "13 stimuli recall",
-                  "value": "13 stimuli recall"
+                  "value": "thirteensti"
                 },
                 {
                   "label": "14 stimuli recall",
-                  "value": "14 stimuli recall"
+                  "value": "fourteensti"
                 },
                 {
                   "label": "15 stimuli recall",
-                  "value": "15 stimuli recall"
+                  "value": "fifteensti"
                 },
                 {
                   "label": "16 stimuli recall",
-                  "value": "16 stimuli recall"
+                  "value": "sixteensti"
                 }
               ]
             }
           ],
           "textbox": [
             {
-              "label": "Inter-stimulus Interval",
+              "label": "ISI",
               "placeholder": "Enter text here..."
             }
           ]

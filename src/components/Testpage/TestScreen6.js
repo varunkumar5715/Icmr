@@ -1,191 +1,378 @@
-import React, { useContext, useState, useEffect, useRef } from 'react';
+
+
+// import React, { useContext, useEffect, useState, useRef } from 'react';
+// import DataContext from '../../stores/DataContextProvider';
+// import { useNavigate } from 'react-router-dom';
+// import backendIP from '../../utils/serverData';
+// import './TestScreen6.css';
+
+// const TestScreen6 = () => {
+//   const { sk, g, selectedOptions, isi, folderPath, updatePlayedScripts } = useContext(DataContext);
+//   const [selectedFileNames, setSelectedFileNames] = useState([]);
+//   const [currentFileName, setCurrentFileName] = useState('');
+//   const audioRef = useRef(new Audio());
+//   const [isPlaying, setIsPlaying] = useState(false);
+//   const [playedScripts, setPlayedScripts] = useState([]);
+//   const navigate = useNavigate();
+//   const abortControllerRef = useRef();
+
+//   useEffect(() => {
+//     abortControllerRef.current = new AbortController();
+//     fetchSelectedAudio();
+
+//     return () => {
+//       if (abortControllerRef.current) {
+//         abortControllerRef.current.abort();
+//       }
+//     };
+//   }, [selectedOptions]);
+
+//   const fetchSelectedAudio = async () => {
+//     try {
+//       const recallLevel = selectedOptions['Recall Level']?.value || selectedOptions['Recall Level']?.label || '';
+//       const numberOfSelections = getNumberOfSelections(recallLevel);
+
+//       if (!recallLevel) {
+//         console.error('Recall level is not selected');
+//         return;
+//       }
+
+//       console.log(`Fetching audio files from: ${folderPath}/${recallLevel}`);
+
+//       const response = await fetch(`${backendIP}/audio/listfiles`, {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ folderPath: `${folderPath}/${recallLevel}` }),
+//         signal: abortControllerRef.current.signal,
+//       });
+
+//       if (!response.ok) {
+//         throw new Error(`Failed to fetch audio files: ${response.status} ${response.statusText}`);
+//       }
+
+//       const data = await response.json();
+//       console.log('Fetched audio files:', data);
+
+//       if (!Array.isArray(data)) {
+//         console.error('Expected an array of file names');
+//         return;
+//       }
+
+//       setSelectedFileNames(data);
+//       const randomFiles = selectRandomFiles(data, numberOfSelections);
+//       await playAudioFiles(randomFiles);
+//     } catch (error) {
+//       if (error.name === 'AbortError') {
+//         console.log('Fetch aborted');
+//       } else {
+//         console.error('Failed to fetch audio files:', error);
+//       }
+//     }
+//   };
+
+//   const getNumberOfSelections = (recallLevel) => {
+//     const levelMap = {
+//       'onesti': 1,
+//       'twosti': 2,
+//       'threesti': 3,
+//       'foursti': 4,
+//       'fivesti': 5,
+//       'sixsti': 6,
+//       'sevensti': 7,
+//       'eightsti': 8,
+//       'ninesti': 9,
+//       'tensti': 10,
+//       'elevensti': 11,
+//       'twelevesti': 12,
+//       'thirteensti': 13,
+//       'fourteensti': 14,
+//       'fifteensti': 15,
+//       'sixteensti': 16
+//     };
+//     return levelMap[recallLevel] || 0;
+//   };
+
+//   const selectRandomFiles = (fileNames, count) => {
+//     const shuffled = fileNames.sort(() => 0.5 - Math.random());
+//     return shuffled.slice(0, count);
+//   };
+
+//   const playAudioFiles = async (fileNames) => {
+//     if (isPlaying) return;
+
+//     setIsPlaying(true);
+//     const scripts = [];
+
+//     for (const fileName of fileNames) {
+//       await playAudio(fileName);
+//       scripts.push(fileName.replace('.wav', ''));
+//       await new Promise((resolve) => setTimeout(resolve, isi * 1000));
+//     }
+
+//     setPlayedScripts(scripts);
+//     updatePlayedScripts(scripts); // Update context with played scripts
+//     console.log("Before Navigating to TestScreen7, Played Scripts:", scripts);
+
+//     setIsPlaying(false);
+//     navigate('/testscreen7');
+//   };
+
+//   const playAudio = async (fileName) => {
+//     try {
+//       const filePath = constructFilePath(fileName);
+//       if (!filePath) return;
+
+//       const response = await fetch(`${backendIP}/audio/getaudio`, {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ filenameWithPath: filePath }),
+//       });
+
+//       if (!response.ok) {
+//         throw new Error(`Failed to fetch audio file: ${response.status} ${response.statusText}`);
+//       }
+
+//       const audioBlob = await response.blob();
+//       const audioUrl = URL.createObjectURL(audioBlob);
+
+//       audioRef.current.src = audioUrl;
+
+//       await new Promise((resolve, reject) => {
+//         audioRef.current.oncanplaythrough = resolve;
+//         audioRef.current.onerror = reject;
+//       });
+
+//       setCurrentFileName(fileName.replace('.wav', ''));
+//       await audioRef.current.play();
+
+//       await new Promise((resolve) => {
+//         audioRef.current.onended = resolve;
+//       });
+
+//       setCurrentFileName('');
+//     } catch (error) {
+//       console.error('Failed to load audio file:', error);
+//     }
+//   };
+
+//   const constructFilePath = (fileName) => {
+//     const recallLevel = selectedOptions['Recall Level']?.value || selectedOptions['Recall Level']?.label || '';
+//     if (!recallLevel) {
+//       console.error('Recall level not selected');
+//       return '';
+//     }
+//     const path = `${folderPath}/${recallLevel}/${fileName}`;
+//     console.log(`Constructed file path: ${path}`);
+//     return path;
+//   };
+
+//   return (
+//     <div className="test-screen6">
+//       <div className="header">
+//         <span>{g}</span>
+//       </div>
+//       <div className="content">
+//         <h2>{sk}</h2>
+//         <div className="audio-icon" onClick={fetchSelectedAudio}>
+//           <span role="img" aria-label="speaker">🔊</span>
+//         </div>
+//         <h2 className="display-script">
+//           {currentFileName ? ` ${currentFileName}` : ''}
+//         </h2>
+//       </div>
+//       <div className="button-row">
+//         <button className="button exit" onClick={() => navigate('/home')}>Exit</button>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default TestScreen6;
+
+
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import DataContext from '../../stores/DataContextProvider';
 import { useNavigate } from 'react-router-dom';
 import backendIP from '../../utils/serverData';
-import Popup from '../popup/Popup'; // Import the Popup component
-import './TestScreen6.css'; // Import your CSS for this screen
+import './TestScreen6.css';
 
 const TestScreen6 = () => {
-  const { folderPath, levelSelection } = useContext(DataContext);
-  const [audioFiles, setAudioFiles] = useState([]);
-  const [scripts, setScripts] = useState([]);
-  const [buttons, setButtons] = useState([]);
-  const [correctButtonIndices, setCorrectButtonIndices] = useState([]);
-  const [score, setScore] = useState(0);
-  const [totalAudioPlayed, setTotalAudioPlayed] = useState(0);
-  const [showPopup, setShowPopup] = useState(false);
-  const audioRef = useRef(null);
-  const abortControllerRef = useRef(new AbortController());
+  const { sk, g, selectedOptions, isi, folderPath, updatePlayedScripts } = useContext(DataContext);
+  const [selectedFileNames, setSelectedFileNames] = useState([]);
+  const [currentFileName, setCurrentFileName] = useState('');
+  const audioRef = useRef(new Audio());
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [playedScripts, setPlayedScripts] = useState([]);
   const navigate = useNavigate();
+  const abortControllerRef = useRef();
 
   useEffect(() => {
-    if (folderPath && levelSelection) {
-      loadAudioFilesAndScripts();
-    }
+    abortControllerRef.current = new AbortController();
+    fetchSelectedAudio();
 
     return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.src = '';
-      }
       if (abortControllerRef.current) {
         abortControllerRef.current.abort();
       }
     };
-  }, [folderPath, levelSelection]);
+  }, [selectedOptions]);
 
-  const loadAudioFilesAndScripts = async () => {
+  const fetchSelectedAudio = async () => {
     try {
-      if (abortControllerRef.current) {
-        abortControllerRef.current.abort();
+      const recallLevel = selectedOptions['Recall Level']?.value || selectedOptions['Recall Level']?.label || '';
+      const numberOfSelections = getNumberOfSelections(recallLevel);
+
+      if (!recallLevel) {
+        console.error('Recall level is not selected');
+        return;
       }
 
-      abortControllerRef.current = new AbortController();
+      console.log(`Fetching audio files from: ${folderPath}/${recallLevel}`);
 
       const response = await fetch(`${backendIP}/audio/listfiles`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ folderPath }),
+        body: JSON.stringify({ folderPath: `${folderPath}/${recallLevel}` }),
         signal: abortControllerRef.current.signal,
       });
 
       if (!response.ok) {
-        const errorDetails = await response.text();
-        console.error(`Failed to fetch audio file list: ${errorDetails}`);
-        throw new Error(`Failed to fetch audio file list: ${errorDetails}`);
+        throw new Error(`Failed to fetch audio files: ${response.status} ${response.statusText}`);
       }
 
-      const audioData = await response.json();
-      const totalFiles = levelSelection;
-      
-      if (audioData.length < totalFiles) {
-        console.warn('Not enough audio files available');
+      const data = await response.json();
+      console.log('Fetched audio files:', data);
+
+      if (!Array.isArray(data)) {
+        console.error('Expected an array of file names');
         return;
       }
 
-      // Randomly select audio files and scripts
-      const selectedFiles = getRandomItems(audioData, totalFiles);
-      const selectedScripts = selectedFiles.map(file => file.replace('.wav', ''));
-
-      // Define correct button indices for the visual scripts
-      const correctIndices = getRandomItems([...Array(totalFiles).keys()], totalFiles);
-
-      setAudioFiles(selectedFiles);
-      setScripts(selectedScripts);
-      setCorrectButtonIndices(correctIndices);
-
-      // Generate buttons with placeholders
-      const allButtons = Array.from({ length: 12 }, (_, index) => ({
-        text: `Button ${index + 1}`,
-        isCorrect: correctIndices.includes(index),
-      }));
-
-      setButtons(allButtons);
-
+      setSelectedFileNames(data);
+      const randomFiles = selectRandomFiles(data, numberOfSelections);
+      await playAudioFiles(randomFiles);
     } catch (error) {
-      if (error.name !== 'AbortError') {
-        console.error('Error loading audio files and scripts:', error);
+      if (error.name === 'AbortError') {
+        console.log('Fetch aborted');
+      } else {
+        console.error('Failed to fetch audio files:', error);
       }
     }
   };
 
-  const getRandomItems = (array, count) => {
-    const shuffled = array.slice().sort(() => 0.5 - Math.random());
+  const getNumberOfSelections = (recallLevel) => {
+    const levelMap = {
+      'onesti': 1,
+      'twosti': 2,
+      'threesti': 3,
+      'foursti': 4,
+      'fivesti': 5,
+      'sixsti': 6,
+      'sevensti': 7,
+      'eightsti': 8,
+      'ninesti': 9,
+      'tensti': 10,
+      'elevensti': 11,
+      'twelevesti': 12,
+      'thirteensti': 13,
+      'fourteensti': 14,
+      'fifteensti': 15,
+      'sixteensti': 16
+    };
+    return levelMap[recallLevel] || 0;
+  };
+
+  const selectRandomFiles = (fileNames, count) => {
+    const shuffled = fileNames.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);
+  };
+
+  const playAudioFiles = async (fileNames) => {
+    if (isPlaying) return;
+
+    setIsPlaying(true);
+    const scripts = [];
+
+    for (const fileName of fileNames) {
+      await playAudio(fileName);
+      scripts.push(fileName.replace('.wav', ''));
+      await new Promise((resolve) => setTimeout(resolve, isi * 1000));
+    }
+
+    setPlayedScripts(scripts);
+    updatePlayedScripts(scripts); // Update context with played scripts
+    console.log("Before Navigating to TestScreen7, Played Scripts:", scripts);
+
+    setIsPlaying(false);
+    navigate('/testscreen7');
   };
 
   const playAudio = async (fileName) => {
     try {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.src = '';
-      }
-
-      if (!fileName || typeof fileName !== 'string') {
-        console.error('No file name provided for audio playback');
-        return;
-      }
-
-      const filenameWithPath = `${folderPath}/${fileName}`;
-      console.log(`Requesting audio file: ${filenameWithPath}`);
+      const filePath = constructFilePath(fileName);
+      if (!filePath) return;
 
       const response = await fetch(`${backendIP}/audio/getaudio`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ filenameWithPath }),
-        signal: abortControllerRef.current.signal,
+        body: JSON.stringify({ filenameWithPath: filePath }),
       });
 
       if (!response.ok) {
-        const errorDetails = await response.text();
-        console.error(`Failed to fetch audio file: ${errorDetails}`);
-        throw new Error(`Failed to fetch audio file: ${errorDetails}`);
+        throw new Error(`Failed to fetch audio file: ${response.status} ${response.statusText}`);
       }
 
       const audioBlob = await response.blob();
       const audioUrl = URL.createObjectURL(audioBlob);
 
-      if (!audioRef.current) {
-        audioRef.current = new Audio();
-      }
-
       audioRef.current.src = audioUrl;
-      audioRef.current.play();
-      setTotalAudioPlayed(prevTotal => prevTotal + 1);
-      
+
+      await new Promise((resolve, reject) => {
+        audioRef.current.oncanplaythrough = resolve;
+        audioRef.current.onerror = reject;
+      });
+
+      setCurrentFileName(fileName.replace('.wav', ''));
+      await audioRef.current.play();
+
+      await new Promise((resolve) => {
+        audioRef.current.onended = resolve;
+      });
+
+      setCurrentFileName('');
     } catch (error) {
-      if (error.name !== 'AbortError') {
-        console.error('Failed to load audio file:', error);
-      }
+      console.error('Failed to load audio file:', error);
     }
   };
 
-  const handleButtonClick = (index) => {
-    if (buttons[index].isCorrect) {
-      setScore(prevScore => prevScore + 1);
+  const constructFilePath = (fileName) => {
+    const recallLevel = selectedOptions['Recall Level']?.value || selectedOptions['Recall Level']?.label || '';
+    if (!recallLevel) {
+      console.error('Recall level not selected');
+      return '';
     }
-    // Optionally, handle incorrect cases
-  };
-
-  const handleExit = () => {
-    setShowPopup(true); // Show popup when exit button is clicked
-  };
-
-  const handleClosePopup = () => {
-    setShowPopup(false); // Close the popup
-    navigate('/next-screen'); // Navigate to the next screen
+    const path = `${folderPath}/${recallLevel}/${fileName}`;
+    console.log(`Constructed file path: ${path}`);
+    return path;
   };
 
   return (
     <div className="test-screen6">
       <div className="header">
-        <span>{levelSelection}</span>
+        <span>{g}</span>
       </div>
       <div className="content">
-        {audioFiles.map((file, index) => (
-          <div key={index} className="audio-section">
-            <h2>Script: {scripts[index]}</h2>
-            <button onClick={() => playAudio(file)}>Play Audio</button>
-          </div>
-        ))}
-        <div className="button-row">
-          {buttons.map((button, index) => (
-            <button
-              key={index}
-              className={button.isCorrect ? 'correct-button' : 'incorrect-button'}
-              onClick={() => handleButtonClick(index)}
-            >
-              {button.text}
-            </button>
-          ))}
+        <h2>{sk}</h2>
+        <div className="audio-icon" onClick={fetchSelectedAudio}>
+          <span role="img" aria-label="speaker">🔊</span>
         </div>
+        <h2 className="display-script">
+          {currentFileName ? ` ${currentFileName}` : ''}
+        </h2>
       </div>
-      <div className="footer">
-        <button className="exit-button" onClick={handleExit}>Exit</button>
+      <div className="button-row">
+        <button className="button exit" onClick={() => navigate('/home')}>Exit</button>
       </div>
-      {showPopup && (
-        <Popup score={score} totalAudioPlayed={totalAudioPlayed} onClose={handleClosePopup} />
-      )}
     </div>
   );
 };

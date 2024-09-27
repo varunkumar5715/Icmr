@@ -737,7 +737,7 @@
                         },
                         {
                             "title": "Selective Sustained Attention",
-                            "folderName": "cognisel",
+                            "folderName": "cogniselsusatt",
                             "item": [
                                 {
                                     "title": "Syllables",
@@ -779,7 +779,7 @@
                         },
                         {
                             "title": "Short-Term Memory and Sequencing",
-                            "folderName": "cogshort",
+                            "folderName": "cogshortterm",
                             "item": [
                                 {
                                     "title": "Recalling syllables",
@@ -787,9 +787,7 @@
                                     "testCode":6,
                                     "folderName": "cogresyl",
                                     "item": [],
-                                    "platform": "",
                                     "levelCode": 4,
-                                    "level": "",
                                     "instruction": [
                                         "Listen carefully and memorize all the syllables that will be presented",
                                         "Recall and Repeat back all syllables in the same order"
@@ -802,12 +800,9 @@
                                     "testCode":6,
                                     "folderName": "cogrewords",
                                     "item": [],
-                                    "platform": "",
                                     "levelCode": 4,
-                                    "level": "",
                                     "instruction": [
-                                        "Listen carefully and memorize all the words that will be presented",
-                                        "Recall and Repeat back all words in the same order"
+                                        "Listen carefully and memorize all the words that will be presented"
                                     ],
                                     "example": ""
                                 },
@@ -817,12 +812,9 @@
                                     "testCode":6,
                                     "folderName": "cogresent",
                                     "item": [],
-                                    "platform": "",
                                     "levelCode": 4,
-                                    "level": "",
                                     "instruction": [
-                                        "Listen carefully and memorize all the sentences that will be presented",
-                                        "Recall and Repeat back all sentences in the same order"
+                                        "Listen carefully and memorize all the sentences that will be presented"
                                     ],
                                     "example": ""
                                 }

@@ -56,7 +56,7 @@ const Level6 = ({ levelData,onPrev}) => {
       updateIbi(inputValues['IBI']); // Update IBI in context
       navigate('/instruction');
     } else {
-      console.log("Please select all the fields");
+      // console.log("Please select all the fields");
     }
   };
 
@@ -89,7 +89,7 @@ const Level6 = ({ levelData,onPrev}) => {
 
             {skill.type === 'text' && (
               <div className="element-container">
-                <label>{skill.label}(sec) </label>
+                <label>{skill.label}(ms) </label>
                 <input
                   type="text"
                   placeholder={skill.placeholder}
