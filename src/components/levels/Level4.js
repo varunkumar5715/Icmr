@@ -25,7 +25,7 @@ const Level4 = ({ onNext, onPrev, levelData }) => {
 
       setSelectedOptions(initialSelectedOptions);
       setInputValues(initialInputValues);
-      console.log('Initial selected options:', initialSelectedOptions); // Log initial selected options
+ 
     }
   }, [levelData]);
 
@@ -63,13 +63,6 @@ const Level4 = ({ onNext, onPrev, levelData }) => {
     updateSelectedOptions(selectedOptions);
     updateIsi(isi);
     updateIbi(ibi);
-
-    console.log('Proceeding with the following data:');
-    console.log('Selected options:', selectedOptions);
-    console.log('ISI:', isi);
-    console.log('IBI:', ibi);
-
-    // Proceed to the next screen
     onNext();
   };
 

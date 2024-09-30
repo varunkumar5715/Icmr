@@ -1,24 +1,7 @@
-// import React from 'react';
-// import styles from './Popup.css';
-
-// const Popup = ({ message, onClose }) => {
-//   return (
-//     <div className={styles.overlay}>
-//       <div className={styles.popup}>
-//         <h2>Score</h2>
-//         <p>{message}</p>
-//         <button onClick={onClose}>Close</button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Popup;
-
 import React from 'react';
-import './Popup.css'; // Using the styles defined below
+import './Popup.css'; // Ensure the styles are defined in Popup.css
 
-const Popup = ({ score, totalAudioPlayed, onClose }) => {
+const Popup = ({ score, totalAudioPlayed, memoryScore, sequencingScore, onClose }) => {
   return (
     <div className="popup-overlay">
       <div className="popup-container">
@@ -27,6 +10,13 @@ const Popup = ({ score, totalAudioPlayed, onClose }) => {
           <span className="correct-answers">{score}</span> / {totalAudioPlayed}
         </p>
         <p className="popup-text">You answered {score} out of {totalAudioPlayed} correctly!</p>
+        
+        {/* Display memory and sequencing scores */}
+        <div className="popup-scores">
+          <p className="memory-score">Memory Score: {memoryScore}</p>
+          <p className="sequencing-score">Sequencing Score: {sequencingScore}</p>
+        </div>
+
         <button className="popup-close-button" onClick={onClose}>
           Close
         </button>

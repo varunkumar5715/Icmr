@@ -40,7 +40,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for visibility */
     width: 100%; /* Full width of container */
     margin-bottom: 15px; /* Space below content */
-    height: 150px; /* Fixed height for content */
+    height: 250px; /* Fixed height for content */
     overflow-y: auto; /* Scrollable if content overflows */
 }
 
