@@ -2,12 +2,10 @@ import React, { useContext, useEffect, useState, useRef } from 'react';
 import DataContext from '../../stores/DataContextProvider';
 import { useNavigate } from 'react-router-dom';
 import Popup from '../popup/Popup';
-import './TestScreen7.css';
+import './TestScreen7.css'; // Ensure the correct CSS file name
 
 const TestScreen10 = () => {
   const {
-    sk,
-    g,
     playedScripts,
     updatePlayedScripts,
     memoryScoreCount,
@@ -27,18 +25,59 @@ const TestScreen10 = () => {
   const [isExiting, setIsExiting] = useState(false);
 
   const navigate = useNavigate();
+  const audioRef = useRef(new Audio());
   const timeoutRef = useRef(null); // Ref to store timeout ID
 
   useEffect(() => {
-    if (!isExiting) { // Only initialize if not exiting
-      setSelectedScripts(playedScripts);
-      setUserResponses(Array(playedScripts.length).fill(''));
-      setButtonColors(Array(playedScripts.length).fill('default'));
+    if (!isExiting) {
+      console.log("Played Scripts from previous screen:", playedScripts);
+      
+      // Check if playedScripts is an array and filter valid strings
+      const validScripts = playedScripts.filter(script => typeof script === 'string' && script !== '');
+
+      if (validScripts.length > 0) {
+        setSelectedScripts(validScripts);
+        setUserResponses(Array(validScripts.length).fill(''));
+        setButtonColors(Array(validScripts.length).fill('default'));
+        setResponseOrder([]); // Reset response order
+
+        // Play the selected scripts in sequence
+        playScripts(validScripts);
+      } else {
+        console.error("No valid played scripts available.");
+      }
     }
   }, [playedScripts, isExiting]);
 
+  const playScripts = (scripts) => {
+    let currentIndex = 0;
+
+    const playNextScript = () => {
+      if (currentIndex < scripts.length) {
+        // Stop current audio if it's playing
+        if (!audioRef.current.paused) {
+          audioRef.current.pause();
+          audioRef.current.currentTime = 0; // Reset time to start
+        }
+
+        audioRef.current.src = scripts[currentIndex]; // Set the audio source
+
+        audioRef.current.play().then(() => {
+          audioRef.current.onended = () => {
+            currentIndex += 1;
+            playNextScript(); // Play the next script when the current one ends
+          };
+        }).catch((error) => {
+          console.error("Error playing audio:", error);
+        });
+      }
+    };
+
+    playNextScript(); // Start playing the first script
+  };
+
   const handleResponseClick = (index) => {
-    if (isExiting) return; // Prevent actions if exiting
+    if (isExiting) return;
 
     const newColors = [...buttonColors];
     const newResponses = [...userResponses];
@@ -55,10 +94,7 @@ const TestScreen10 = () => {
       } else {
         newColors[index] = 'default';
         newResponses[index] = '';
-        // Remove the response from the order
-        newResponseOrder = newResponseOrder.filter(
-          (item) => item !== selectedScripts[index]
-        );
+        newResponseOrder = newResponseOrder.filter(item => item !== selectedScripts[index]);
       }
     }
 
@@ -66,7 +102,6 @@ const TestScreen10 = () => {
     setUserResponses(newResponses);
     setResponseOrder(newResponseOrder);
 
-    // Check sequence after each click
     const sequenceScore = checkSequence(newResponseOrder);
     console.log('Current Response Order:', newResponseOrder);
     console.log('Sequence Score:', sequenceScore);
@@ -79,50 +114,34 @@ const TestScreen10 = () => {
     setIsEditing(true);
     setButtonColors(Array(selectedScripts.length).fill('default'));
     setUserResponses(Array(selectedScripts.length).fill(''));
-    setResponseOrder([]); // Reset the response order
+    setResponseOrder([]);
   };
 
   const checkSequence = (currentResponseOrder) => {
-    // Check if the current response order matches the order of selectedScripts
     if (currentResponseOrder.length !== selectedScripts.length) {
       return 0;
     }
-    return currentResponseOrder.every(
-      (response, index) => response === selectedScripts[index]
-    )
-      ? 1
-      : 0;
+    return currentResponseOrder.every((response, index) => response === selectedScripts[index]) ? 1 : 0;
   };
 
   const calculateScores = () => {
     let memoryCount = 0;
     let sequenceCount = 0;
 
-    // Check if all responses are provided
     const allResponsesProvided = userResponses.filter(Boolean).length === selectedScripts.length;
 
     if (allResponsesProvided) {
-      // Check if all responses are correct, regardless of order
-      const allCorrect = selectedScripts.every((script) =>
-        userResponses.includes(script)
-      );
-
+      const allCorrect = selectedScripts.every(script => userResponses.includes(script));
       if (allCorrect) {
         memoryCount = 1;
       }
-
-      // Check if the responses are in the correct sequence
       sequenceCount = checkSequence(responseOrder);
     } else {
-      // If not all responses are provided, both scores are 0
       memoryCount = 0;
       sequenceCount = 0;
     }
 
-    console.log(
-      `Final Scores - Memory Count: ${memoryCount}, Sequence Count: ${sequenceCount}`
-    );
-
+    console.log(`Final Scores - Memory Count: ${memoryCount}, Sequence Count: ${sequenceCount}`);
     return { memoryCount, sequenceCount };
   };
 
@@ -131,48 +150,42 @@ const TestScreen10 = () => {
     if (isExiting) return;
 
     const { memoryCount, sequenceCount } = calculateScores();
-
-    updateMemoryScoreCount((prev) => prev + memoryCount);
-    updateSequenceScoreCount((prev) => prev + sequenceCount);
+    updateMemoryScoreCount(prev => prev + memoryCount);
+    updateSequenceScoreCount(prev => prev + sequenceCount);
 
     console.log('Updated Memory Score Count:', memoryScoreCount + memoryCount);
-    console.log(
-      'Updated Sequence Score Count:',
-      sequenceScoreCount + sequenceCount
-    );
-
+    console.log('Updated Sequence Score Count:', sequenceScoreCount + sequenceCount);
     updateTotalSetsPlayed(totalSetsPlayed + 1);
-    console.log('Total Sets Played:', totalSetsPlayed + 1);
 
-    updatePlayedScripts(userResponses);
+    setUserResponses([]);
+    setResponseOrder([]);
+    updatePlayedScripts([]);
+    setButtonColors(Array(selectedScripts.length).fill('default'));
 
-    // Set a timeout to navigate to the next test screen
     timeoutRef.current = setTimeout(() => {
       if (!isExiting) {
         setButtonColors(Array(selectedScripts.length).fill('default'));
         setSelectedScripts([]);
-        navigate('/testScreen8');
+        navigate('/testScreen8'); // Replace this with the desired screen.
       }
-    },500);
+    }, 1500);
   };
 
   const handleExit = (e) => {
     e.preventDefault();
     if (isExiting) return;
     console.log('Exit button clicked.');
-    setIsExiting(true); // Stop any further actions
-    setShowPopup(true); // Show the popup
+    setIsExiting(true);
+    setShowPopup(true);
 
-    // Clear any ongoing timeouts or intervals
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
-    // Reset any states if necessary
   };
 
   const handleClosePopup = () => {
     setShowPopup(false);
-    navigate('/home'); // Navigate to home after manually closing the popup
+    navigate('/home');
   };
 
   const memoryScore = `${memoryScoreCount}/${totalSetsPlayed}`;
@@ -181,24 +194,31 @@ const TestScreen10 = () => {
   return (
     <div className="test-screen7">
       <div className="header">
-        <span>{g}</span>
+        <span>Recall and Repeat</span>
       </div>
       <div className="content">
-        
         <h3>Recall and repeat back in the same order</h3>
         <div className="scripts-display">
           <ul>
             {selectedScripts.length > 0 ? (
-              selectedScripts.map((script, index) => (
-                <li key={index}>
-                  <button
-                    className={`response-btn ${buttonColors[index]}`}
-                    onClick={() => handleResponseClick(index)}
-                  >
-                    {userResponses[index] || script}
-                  </button>
-                </li>
-              ))
+              selectedScripts.map((script, index) => {
+                if (typeof script !== 'string') {
+                  console.error(`Invalid script type at index ${index}:`, script);
+                  return null; // Skip invalid scripts
+                }
+
+                const displayScript = script.replace(/\.wav$/, '');
+                return (
+                  <li key={index}>
+                    <button
+                      className={`response-btn ${buttonColors[index]}`}
+                      onClick={() => handleResponseClick(index)}
+                    >
+                      {userResponses[index]?.replace(/\.wav$/, '') || displayScript}
+                    </button>
+                  </li>
+                );
+              })
             ) : (
               <li>No played scripts available.</li>
             )}
@@ -222,7 +242,7 @@ const TestScreen10 = () => {
           memoryScore={memoryScore}
           sequencingScore={sequenceScore}
           onClose={handleClosePopup}
-          isTestScreen7={true} // or false, depending on the screen
+          isTestScreen10={true} // or false, depending on the screen
         />
       )}
     </div>
@@ -230,5 +250,3 @@ const TestScreen10 = () => {
 };
 
 export default TestScreen10;
-
-

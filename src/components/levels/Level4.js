@@ -5,8 +5,10 @@ import DataContext from '../../stores/DataContextProvider'; // Import context
 import './Level.css';
 
 const Level4 = ({ onNext, onPrev, levelData }) => {
-  const { updateSelectedOptions, updateTestdata, updateIsi, updateIbi } = useContext(DataContext);
+  const { updateSelectedOptions, updateTestdata, updateIsi, updateIbi ,updateCurrentFileCount,updateTotalAudioFiles} = useContext(DataContext);
   const [selectedOptions, setSelectedOptions] = useState({});
+ 
+
   const [inputValues, setInputValues] = useState({}); // Handle text input for ISI and IBI
 
   // Initialize the level and other options based on levelData
@@ -60,6 +62,8 @@ const Level4 = ({ onNext, onPrev, levelData }) => {
     const ibi = parseInt(inputValues['IBI'], 10) || 0; // Get IBI from text input, default to 0
 
     // Store the selected options, ISI, IBI in context
+    updateCurrentFileCount(0);
+    updateTotalAudioFiles(0);
     updateSelectedOptions(selectedOptions);
     updateIsi(isi);
     updateIbi(ibi);

@@ -10,7 +10,6 @@ const Instruction = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { selectedOptions } = location.state || {};
-  // console.log('Selected Options:', selectedOptions);
 
   useEffect(() => {
     const fetchInstructionData = () => {
@@ -23,7 +22,6 @@ const Instruction = () => {
         for (const item of items) {
           if (item.levelCode === levelCode && item.skillCode === skillCode) {
             foundInstruction = item;
-            // console.log('Found Instruction:', foundInstruction);
             return;
           }
           if (item.item && Array.isArray(item.item)) {
@@ -47,39 +45,37 @@ const Instruction = () => {
   }, [levelCode, skillCode, updateInstruction, updateTestCode]);
 
   const handleNext = () => {
-    // console.log('Navigating to TestScreen with testCode:', testCode);
-
     switch (testCode) {
       case 1:
-        // console.log('Navigating to TestScreen1');
         navigate('/testscreen1', { state: { selectedOptions } });
         break;
       case 2:
-        // console.log('Navigating to TestScreen2');
         navigate('/testscreen2', { state: { selectedOptions } });
         break;
       case 3:
-        // console.log('Navigating to TestScreen3');
         navigate('/testscreen3', { state: { selectedOptions } });
         break;
-        case 4:
-          // console.log('Navigating to TestScreen4');
-          navigate('/testscreen4', { state: { selectedOptions } });
-          break;
-    
-        case 5:
-          // console.log('Navigating to TestScreen5');
-          navigate('/testscreen5', { state: { selectedOptions } });
-          break;
-          case 6:
-          // console.log('Navigating to TestScreen6');
-          navigate('/testscreen6', { state: { selectedOptions } });
-          break;
-     
-        case 7:
-          // console.log('Navigating to TestScreen6');
-          navigate('/testscreen7', { state: { selectedOptions } });
-          break;
+      case 4:
+        navigate('/testscreen4', { state: { selectedOptions } });
+        break;
+      case 5:
+        navigate('/testscreen5', { state: { selectedOptions } });
+        break;
+      case 6:
+        navigate('/testscreen6', { state: { selectedOptions } });
+        break;
+      case 7:
+        navigate('/testscreen7', { state: { selectedOptions } });
+        break;
+      case 8:
+        navigate('/testscreen8', { state: { selectedOptions } });
+        break;
+      case 9:
+        navigate('/testscreen9', { state: { selectedOptions } });
+        break;
+      case 10:
+        navigate('/testscreen10', { state: { selectedOptions } });
+        break;
       default:
         console.error('Invalid testCode:', testCode);
         navigate('/home'); // Fallback in case of an invalid testCode
@@ -98,7 +94,7 @@ const Instruction = () => {
     <Layout>
       <div className="instruction-container">
         <h1>Instruction</h1>
-        <p>{instruction}</p>
+        <p>{instruction[0]}</p> {/* Display only the first line of the instruction */}
         <div className="button-container">
           <button onClick={handleBack}>Back</button>
           <button onClick={handleNext}>Start</button>

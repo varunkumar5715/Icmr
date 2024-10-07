@@ -18,7 +18,7 @@
                                 {
                                     "title": "Word Identification",
                                     "skillCode": 1,
-                                    "testCode":4,
+                                    "testCode": 4,
                                     "folderName": "audiword",
                                     "item": [],
                                     "platform": "",
@@ -295,7 +295,7 @@
                                 {
                                     "title": "Varying number of syllables",
                                     "skillCode": 22,
-                                    "testCode":1,
+                                    "testCode": 1,
                                     "folderName": "varyingdissyl",
                                     "item": [],
                                     "platform": "",
@@ -700,7 +700,7 @@
                                 {
                                     "title": "Syllables",
                                     "skillCode": 51,
-                                    "testCode":6,
+                                    "testCode": 6,
                                     "folderName": "cogsylsus",
                                     "item": [],
                                     "platform": "",
@@ -712,7 +712,7 @@
                                 {
                                     "title": "Words",
                                     "skillCode": 52,
-                                    "testCode":6,
+                                    "testCode": 6,
                                     "folderName": "cogwordsus",
                                     "item": [],
                                     "platform": "",
@@ -724,7 +724,7 @@
                                 {
                                     "title": "Sentences",
                                     "skillCode": 53,
-                                    "testCode":6,
+                                    "testCode": 6,
                                     "folderName": "cogsentsus",
                                     "item": [],
                                     "platform": "",
@@ -742,7 +742,7 @@
                                 {
                                     "title": "Syllables",
                                     "skillCode": 54,
-                                    "testCode":6,
+                                    "testCode": 6,
                                     "folderName": "cogselsus",
                                     "item": [],
                                     "platform": "",
@@ -754,7 +754,7 @@
                                 {
                                     "title": "Words",
                                     "skillCode": 55,
-                                    "testCode":6,
+                                    "testCode": 6,
                                     "folderName": "cogwordssus",
                                     "item": [],
                                     "platform": "",
@@ -766,7 +766,7 @@
                                 {
                                     "title": "Sentences",
                                     "skillCode": 56,
-                                    "testCode":6,
+                                    "testCode": 6,
                                     "folderName": "cogselwsus",
                                     "item": [],
                                     "platform": "",
@@ -784,20 +784,19 @@
                                 {
                                     "title": "Recalling syllables",
                                     "skillCode": 57,
-                                    "testCode":6,
+                                    "testCode": 6,
                                     "folderName": "cogresyl",
                                     "item": [],
                                     "levelCode": 4,
                                     "instruction": [
-                                        "Listen carefully and memorize all the syllables that will be presented",
-                                        "Recall and Repeat back all syllables in the same order"
+                                        "Listen carefully and memorize all the syllables that will be presented"
                                     ],
                                     "example": ""
                                 },
                                 {
                                     "title": "Recalling Words",
                                     "skillCode": 58,
-                                    "testCode":6,
+                                    "testCode": 6,
                                     "folderName": "cogrewords",
                                     "item": [],
                                     "levelCode": 4,
@@ -809,7 +808,7 @@
                                 {
                                     "title": "Recalling Sentences",
                                     "skillCode": 59,
-                                    "testCode":6,
+                                    "testCode": 6,
                                     "folderName": "cogresent",
                                     "item": [],
                                     "levelCode": 4,
@@ -827,6 +826,7 @@
                                 {
                                     "title": "Recalling syllables",
                                     "skillCode": 60,
+                                    "testCode": 8,
                                     "folderName": "cogworksyl",
                                     "item": [],
                                     "platform": "",
@@ -834,14 +834,14 @@
                                     "level": "",
                                     "instruction": [
                                         "Listen carefully and memorize all the syllables that will be presented",
-                                        "Identify and tell if the syllable is a vowel or consonant after each presentation",
-                                        "Recall and Repeat back all the syllables in the same order"
+                                        "Identify and tell if the syllable is a vowel or consonant after each presentation"
                                     ],
                                     "example": ""
                                 },
                                 {
                                     "title": "Recalling Words",
                                     "skillCode": 61,
+                                    "testCode": 8,
                                     "folderName": "cogworkword",
                                     "item": [],
                                     "platform": "",
@@ -849,14 +849,14 @@
                                     "level": "",
                                     "instruction": [
                                         "Listen carefully and memorize all the words that will be presented",
-                                        "Identify and tell if the word represents an eatable or not after each presentation",
-                                        "Recall and Repeat back all the words in the same order"
+                                        "Identify and tell if the word represents an eatable or not after each presentation"
                                     ],
                                     "example": ""
                                 },
                                 {
                                     "title": "Recalling Sentences",
                                     "skillCode": 62,
+                                    "testCode": 8,
                                     "folderName": "cogworksent",
                                     "item": [],
                                     "platform": "",
@@ -864,8 +864,7 @@
                                     "level": "",
                                     "instruction": [
                                         "Listen carefully and memorize all the sentences that will be presented",
-                                        "Identify and tell if the sentence is a true or a false statement after each presentation",
-                                        "Recall and Repeat back all the sentences in the same order"
+                                       "Identify and tell if the sentence is a true or a false statement after each presentation"
                                     ],
                                     "example": ""
                                 }
@@ -884,7 +883,7 @@
                                 {
                                     "title": "Predicting the outcome",
                                     "skillCode": 63,
-                                    "testCode":3,
+                                    "testCode": 3,
                                     "folderName": "metacogoutcome",
                                     "item": [],
                                     "platform": "",
@@ -895,7 +894,7 @@
                                 {
                                     "title": "Predicting the cause",
                                     "skillCode": 64,
-                                    "testCode":3,
+                                    "testCode": 3,
                                     "folderName": "metacogcause",
                                     "item": [],
                                     "platform": "",
@@ -906,7 +905,7 @@
                                 {
                                     "title": "Compare and Contrast",
                                     "skillCode": 65,
-                                    "testCode":3,
+                                    "testCode": 3,
                                     "folderName": "metacogcont",
                                     "item": [],
                                     "platform": "",
@@ -923,7 +922,7 @@
                                 {
                                     "title": "Category Identification",
                                     "skillCode": 66,
-                                    "testCode":4,
+                                    "testCode": 4,
                                     "folderName": "metacogiden",
                                     "item": [],
                                     "platform": "",
@@ -934,7 +933,7 @@
                                 {
                                     "title": "Category Oddity",
                                     "skillCode": 67,
-                                    "testCode":3,
+                                    "testCode": 3,
                                     "folderName": "metacogoddi",
                                     "item": [],
                                     "platform": "",

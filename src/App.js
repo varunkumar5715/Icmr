@@ -15,6 +15,9 @@ import TestScreen4 from './components/Testpage/TestScreen4';
 import TestScreen5 from './components/Testpage/TestScreen5';
 import TestScreen6 from './components/Testpage/TestScreen6';
 import TestScreen7 from './components/Testpage/TestScreen7';
+import TestScreen8 from './components/Testpage/TestScreen8';
+import TestScreen9 from './components/Testpage/TestScreen9';
+import TestScreen10 from './components/Testpage/TestScreen10';
 
 function App() {
   return (
@@ -33,6 +36,9 @@ function App() {
             <Route path="/testscreen5" element={<TestScreen5 />} />
             <Route path="/testscreen6" element={<TestScreen6 />} />
             <Route path="/testscreen7" element={<TestScreen7/>} />
+            <Route path="/testscreen8" element={<TestScreen8/>} />
+            <Route path="/testscreen9" element={<TestScreen9/>} />
+            <Route path="/testscreen10" element={<TestScreen10/>} />
           </Routes>
         </Layout>
       </Router>

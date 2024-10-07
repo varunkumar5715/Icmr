@@ -34,10 +34,19 @@
 
 /* Score Text Styling */
 .popup-score {
-  font-size: 48px;
+  font-size: 48px; /* Main score font size */
   font-weight: bold;
   color: #28a745; /* Green color for the score */
   margin-bottom: 10px;
+}
+
+/* Memory and Sequencing Score Styling */
+.memory-score,
+.sequencing-score {
+  font-size: 18px; /* Set font size to 8px */
+  font-weight: bold; /* Make text bold */
+  color: #28a745; /* Green color for memory and sequencing scores */
+  margin: 5px 0; /* Space between scores */
 }
 
 /* Correct Answer Styling */
@@ -83,7 +92,12 @@
   }
 
   .popup-score {
-    font-size: 36px;
+    font-size: 36px; /* Adjust size for smaller screens */
+  }
+
+  .memory-score,
+  .sequencing-score {
+    font-size: 8px; /* Keep size consistent */
   }
 
   .popup-text {
@@ -93,15 +107,4 @@
   .popup-close-button {
     font-size: 14px;
   }
-  .popup-scores {
-    margin-top: 10px;
-    font-size: 16px;
-  }
-  
-  .memory-score, .sequencing-score {
-    margin: 5px 0;
-    font-weight: bold;
-    color: #333; /* Adjust color as needed */
-  }
-  
 }
