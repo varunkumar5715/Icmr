@@ -13,6 +13,8 @@ const TestScreen10 = () => {
     sequenceScoreCount,
     updateSequenceScoreCount,
     totalSetsPlayed,
+    distractionScoreCount,
+    totalAudioFiles,
     updateTotalSetsPlayed,
   } = useContext(DataContext);
 
@@ -30,7 +32,7 @@ const TestScreen10 = () => {
 
   useEffect(() => {
     if (!isExiting) {
-      console.log("Played Scripts from previous screen:", playedScripts);
+   
       
       // Check if playedScripts is an array and filter valid strings
       const validScripts = playedScripts.filter(script => typeof script === 'string' && script !== '');
@@ -43,9 +45,7 @@ const TestScreen10 = () => {
 
         // Play the selected scripts in sequence
         playScripts(validScripts);
-      } else {
-        console.error("No valid played scripts available.");
-      }
+      } 
     }
   }, [playedScripts, isExiting]);
 
@@ -190,6 +190,7 @@ const TestScreen10 = () => {
 
   const memoryScore = `${memoryScoreCount}/${totalSetsPlayed}`;
   const sequenceScore = `${sequenceScoreCount}/${totalSetsPlayed}`;
+  const distractionRawScore = `${distractionScoreCount}/${totalAudioFiles*totalSetsPlayed}`;
 
   return (
     <div className="test-screen7">
@@ -241,6 +242,7 @@ const TestScreen10 = () => {
         <Popup
           memoryScore={memoryScore}
           sequencingScore={sequenceScore}
+          distractionRawScore={distractionRawScore}
           onClose={handleClosePopup}
           isTestScreen10={true} // or false, depending on the screen
         />

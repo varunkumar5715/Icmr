@@ -11,14 +11,13 @@ import DataContext from '../../stores/DataContextProvider';
 const Level6 = ({ levelData,onPrev}) => {
   const [selectedOptions, setSelectedOptions] = useState({});
   const [inputValues, setInputValues] = useState({});
-  const { updateSelectedOptions, updateTestdata, updateIsi, updateIbi } = useContext(DataContext);
+  const { updateSelectedOptions, updateTestdata,updateIsi,updateIbi} = useContext(DataContext);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (levelData) {
       const initialSelectedOptions = {};
       const initialInputValues = {};
-
       levelData.skillData.forEach(skill => {
         if (skill.type === 'dropdown') {
           initialSelectedOptions[skill.label] = skill.options[0].value; // Default to the first option

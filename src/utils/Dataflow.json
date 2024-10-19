@@ -438,7 +438,7 @@
                 },
                 {
                     "title": "Auditory Discrimination Non-Speech",
-                    "folderName": "audidisnonspe",
+                    "folderName": "auddisnonspe",
                     "item": [
                         {
                             "title": "Duration Discrimination",
@@ -700,7 +700,7 @@
                                 {
                                     "title": "Syllables",
                                     "skillCode": 51,
-                                    "testCode": 6,
+                                    "testCode": 11,
                                     "folderName": "cogsylsus",
                                     "item": [],
                                     "platform": "",

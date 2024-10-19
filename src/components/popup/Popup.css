@@ -42,6 +42,7 @@
 
 /* Memory and Sequencing Score Styling */
 .memory-score,
+.distraction-score,
 .sequencing-score {
   font-size: 18px; /* Set font size to 8px */
   font-weight: bold; /* Make text bold */
@@ -96,8 +97,9 @@
   }
 
   .memory-score,
+  .distraction-score,
   .sequencing-score {
-    font-size: 8px; /* Keep size consistent */
+    font-size: 12px; /* Keep size consistent */
   }
 
   .popup-text {

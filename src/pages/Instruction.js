@@ -76,6 +76,9 @@ const Instruction = () => {
       case 10:
         navigate('/testscreen10', { state: { selectedOptions } });
         break;
+      case 11:
+        navigate('/testscreen11', { state: { selectedOptions } });
+        break;
       default:
         console.error('Invalid testCode:', testCode);
         navigate('/home'); // Fallback in case of an invalid testCode
@@ -94,7 +97,7 @@ const Instruction = () => {
     <Layout>
       <div className="instruction-container">
         <h1>Instruction</h1>
-        <p>{instruction[0]}</p> {/* Display only the first line of the instruction */}
+        <p>{instruction}</p> {/* Display only the first line of the instruction */}
         <div className="button-container">
           <button onClick={handleBack}>Back</button>
           <button onClick={handleNext}>Start</button>

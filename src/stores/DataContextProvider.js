@@ -22,7 +22,9 @@ export const DataContextProvider = ({ children }) => {
   const [folderPath, setFolderPath] = useState("");
   const [totalAudioFiles, setTotalAudioFiles] = useState(0);
   
-  
+  const [duration, setDuration] = useState(null);
+  const [numberOfStimuli, setNumberOfStimuli] = useState(null);
+  const [responseWindow, setResponseWindow] = useState(1000);
   // State for played scripts
   const [playedScripts, setPlayedScripts] = useState([]);
 
@@ -34,6 +36,8 @@ export const DataContextProvider = ({ children }) => {
   const [sequenceScoreCount, setSequenceScoreCount] = useState(0); // Sequence score state
   const [totalSetsPlayed, setTotalSetsPlayed] = useState(0);
   const [currentFileCount , setCurrentFileCount] = useState(0);
+  const [distractionScoreCount, setDistractionScoreCount] = useState(0);
+ 
 
   // Update functions
   const updateM = (value) => setM(value);
@@ -51,7 +55,10 @@ export const DataContextProvider = ({ children }) => {
   const updateSequenceScoreCount = (value) => setSequenceScoreCount(value);
   const updateTotalSetsPlayed = (value) => setTotalSetsPlayed(value);
   const updateCurrentFileCount = (value) => setCurrentFileCount(value); 
-  
+  const updateDistractionScoreCount = (value) => setDistractionScoreCount(value);
+  const updateDuration = (newDuration) => setDuration(newDuration);
+  const updateNumberOfStimuli = (newNumber) => setNumberOfStimuli(newNumber);
+  const updateResponseWindow = (window) => setResponseWindow(window);
   const updateTotalAudioFiles = (value) => {
   
     setTotalAudioFiles(value);
@@ -88,6 +95,9 @@ export const DataContextProvider = ({ children }) => {
     levelCode,
     totalAudioFiles,
     data,
+    duration,
+    numberOfStimuli,
+    responseWindow,
     memoryScoreCount,
     totalSetsPlayed,
     sequenceScoreCount,
@@ -102,6 +112,7 @@ export const DataContextProvider = ({ children }) => {
     isi,
     ibi,
     playedScripts,
+    distractionScoreCount,
     updatePlayedScripts, // Include playedScripts and its update function
     updateM,
     updateSM,
@@ -120,7 +131,11 @@ export const DataContextProvider = ({ children }) => {
     updateTotalAudioFiles,
     updateInstruction,
     updateSelectedOptions,
+    updateDistractionScoreCount,
     updateTestCode,
+    updateDuration,
+    updateNumberOfStimuli,
+    updateResponseWindow,
     updateIsi,
     updateIbi,
   };

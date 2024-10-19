@@ -2,19 +2,24 @@ import React, { useContext, useEffect, useState, useRef } from 'react';
 import DataContext from '../../stores/DataContextProvider';
 import { useNavigate } from 'react-router-dom';
 import backendIP from '../../utils/serverData';
+import Popup from '../popup/Popup';
 import './TestScreen6.css';
 
 const TestScreen8 = () => {
   const {
-    sk, g, selectedOptions, isi, folderPath, playedScripts,
-    updatePlayedScripts, totalAudioFiles, updateTotalAudioFiles
+    sk, g, selectedOptions, isi, folderPath,
+    updatePlayedScripts, totalSetsPlayed, memoryScoreCount, distractionScoreCount,totalAudioFiles, sequenceScoreCount, updateTotalAudioFiles
   } = useContext(DataContext);
-  
+
   const [selectedFileNames, setSelectedFileNames] = useState([]);
+  const [isExiting, setIsExiting] = useState(false);
+
+  const [showPopup, setShowPopup] = useState(false);
+  const timeoutRef = useRef(null); // Ref to store timeout ID
   const [currentFileName, setCurrentFileName] = useState('');
   const [currentAudioIndex, setCurrentAudioIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  
+
   const navigate = useNavigate();
   const audioRef = useRef(new Audio());
   const abortControllerRef = useRef();
@@ -22,7 +27,7 @@ const TestScreen8 = () => {
   useEffect(() => {
     abortControllerRef.current = new AbortController();
     fetchSelectedAudio();
-    
+
     return () => {
       if (abortControllerRef.current) {
         abortControllerRef.current.abort();
@@ -31,14 +36,14 @@ const TestScreen8 = () => {
       audioRef.current.src = ''; // Reset audio on cleanup
     };
   }, [selectedOptions]);
-  
+
 
   const fetchSelectedAudio = async () => {
     try {
       const recallLevel = selectedOptions['Recall Level']?.value || selectedOptions['Recall Level']?.label || '';
       const numberOfSelections = getNumberOfSelections(recallLevel);
       updateTotalAudioFiles(numberOfSelections);
-      
+
       if (!recallLevel) {
         console.error('Recall level is not selected');
         return;
@@ -56,21 +61,17 @@ const TestScreen8 = () => {
       }
 
       const data = await response.json();
-      console.log('Fetched Audio Files:', data);
-
       const randomFiles = selectRandomFiles(data, numberOfSelections);
-      console.log('Random Files Selected:', randomFiles);
-      
       if (randomFiles.length === 0) {
         console.error('No audio files selected. Please check your backend response.');
         return;
       }
 
       setSelectedFileNames(randomFiles);
-      playNextAudio(randomFiles, 0); 
+      playNextAudio(randomFiles, 0);
     } catch (error) {
       if (error.name === 'AbortError') {
-        console.log('Fetch aborted');
+
       } else {
         console.error('Failed to fetch audio files:', error);
       }
@@ -96,33 +97,32 @@ const TestScreen8 = () => {
     if (isPlaying || index >= fileNames.length || index < 0) return;
 
     const fileName = fileNames[index];
-  
+
     if (!fileName) {
       console.error(`Invalid fileName at index ${index}:`, fileNames);
       return;
     }
-  
+
     setIsPlaying(true);
     setCurrentAudioIndex(index);
-    
+
     await playAudio(fileName);
 
     if (fileName) {
       updatePlayedScripts((prevScripts) => {
         const newScripts = [...prevScripts, fileName].filter(Boolean);
-        console.log('Updated Played Scripts:', newScripts);
         return newScripts;
       });
     }
-  
+
     console.log('Playing File Name:', fileName);
-  setTimeout(() => {
-    navigate('/testscreen9', { state: { fileName: fileName.replace('.wav', '') } });
-  }, isi);
-   
+    setTimeout(() => {
+      navigate('/testscreen9', { state: { fileName: fileName.replace('.wav', '') } });
+    }, isi);
+
     setIsPlaying(false);
   };
-  
+
   const playAudio = async (fileName) => {
     try {
       const filePath = constructFilePath(fileName);
@@ -169,6 +169,29 @@ const TestScreen8 = () => {
     }
     return `${folderPath}/${recallLevel}/${fileName}`;
   };
+  const memoryScore = `${memoryScoreCount}/${totalSetsPlayed}`;
+  const sequenceScore = `${sequenceScoreCount}/${totalSetsPlayed}`;
+  const distractionRawScore = `${distractionScoreCount}/${totalAudioFiles*totalSetsPlayed}`;
+  
+
+
+  const handleExit = (e) => {
+    e.preventDefault();
+    if (isExiting) return;
+    console.log('Exit button clicked.');
+    setIsExiting(true);
+    setShowPopup(true);
+
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+    navigate('/home');
+  };
+
 
   return (
     <div className="test-screen6">
@@ -183,9 +206,19 @@ const TestScreen8 = () => {
         <h2 className="display-script">{currentFileName ? currentFileName : ''}</h2>
       </div>
       <div className="button-row">
-        <button className="button exit" onClick={() => navigate('/home')}>Exit</button>
+        <button className="button exit" onClick={handleExit}>Exit</button>
       </div>
+      {showPopup && (
+        <Popup
+          memoryScore={memoryScore}
+          sequencingScore={sequenceScore}
+          distractionRawScore={distractionRawScore}
+          onClose={handleClosePopup}
+          isTestScreen8={true}   // or false, depending on the screen
+        />
+      )}
     </div>
+
   );
 };
 

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Popup from '../popup/Popup';
 import './TestScreen7.css';
 
-const TestScreen10 = () => {
+const TestScreen7 = () => {
   const {
     sk,
     g,
@@ -24,21 +24,18 @@ const TestScreen10 = () => {
   const [buttonColors, setButtonColors] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   const [responseOrder, setResponseOrder] = useState([]);
-  const [isExiting, setIsExiting] = useState(false);
-
+  const [isExiting, setIsExiting] = useState(false); // For handling exit logic
   const navigate = useNavigate();
-  const timeoutRef = useRef(null); // Ref to store timeout ID
+  const timeoutRef = useRef(null); // Moved ref declaration here
 
   useEffect(() => {
-    if (!isExiting) { // Only initialize if not exiting
-      setSelectedScripts(playedScripts);
-      setUserResponses(Array(playedScripts.length).fill(''));
-      setButtonColors(Array(playedScripts.length).fill('default'));
-    }
-  }, [playedScripts, isExiting]);
+    setSelectedScripts(playedScripts);
+    setUserResponses(Array(playedScripts.length).fill(''));
+    setButtonColors(Array(playedScripts.length).fill('default'));
+  }, [playedScripts]);
 
   const handleResponseClick = (index) => {
-    if (isExiting) return; // Prevent actions if exiting
+    if (isExiting) return; // Stop handling clicks if exiting
 
     const newColors = [...buttonColors];
     const newResponses = [...userResponses];
@@ -55,10 +52,7 @@ const TestScreen10 = () => {
       } else {
         newColors[index] = 'default';
         newResponses[index] = '';
-        // Remove the response from the order
-        newResponseOrder = newResponseOrder.filter(
-          (item) => item !== selectedScripts[index]
-        );
+        newResponseOrder = newResponseOrder.filter(item => item !== selectedScripts[index]);
       }
     }
 
@@ -74,50 +68,34 @@ const TestScreen10 = () => {
 
   const handleEdit = (e) => {
     e.preventDefault();
-    if (isExiting) return;
+    if (isExiting) return; // Prevent editing if exiting
 
     setIsEditing(true);
     setButtonColors(Array(selectedScripts.length).fill('default'));
     setUserResponses(Array(selectedScripts.length).fill(''));
-    setResponseOrder([]); // Reset the response order
   };
 
   const checkSequence = (currentResponseOrder) => {
-    // Check if the current response order matches the order of selectedScripts
-    if (currentResponseOrder.length !== selectedScripts.length) {
-      return 0;
-    }
     return currentResponseOrder.every(
       (response, index) => response === selectedScripts[index]
-    )
-      ? 1
-      : 0;
+    ) ? 1 : 0;
   };
 
   const calculateScores = () => {
     let memoryCount = 0;
     let sequenceCount = 0;
 
-    // Check if all responses are provided
-    const allResponsesProvided = userResponses.filter(Boolean).length === selectedScripts.length;
+    // Check if all responses are correct, regardless of order
+    const allCorrect = selectedScripts.every((script) =>
+      userResponses.includes(script)
+    );
 
-    if (allResponsesProvided) {
-      // Check if all responses are correct, regardless of order
-      const allCorrect = selectedScripts.every((script) =>
-        userResponses.includes(script)
-      );
-
-      if (allCorrect) {
-        memoryCount = 1;
-      }
-
-      // Check if the responses are in the correct sequence
-      sequenceCount = checkSequence(responseOrder);
-    } else {
-      // If not all responses are provided, both scores are 0
-      memoryCount = 0;
-      sequenceCount = 0;
+    if (allCorrect) {
+      memoryCount = 1;
     }
+
+    // Check if the responses are in the correct sequence
+    sequenceCount = checkSequence(responseOrder);
 
     console.log(
       `Final Scores - Memory Count: ${memoryCount}, Sequence Count: ${sequenceCount}`
@@ -128,7 +106,7 @@ const TestScreen10 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (isExiting) return;
+    if (isExiting) return; // Prevent submission if exiting
 
     const { memoryCount, sequenceCount } = calculateScores();
 
@@ -146,32 +124,32 @@ const TestScreen10 = () => {
 
     updatePlayedScripts(userResponses);
 
-    // Set a timeout to navigate to the next test screen
+    // Clear the state and navigate after a short delay
     timeoutRef.current = setTimeout(() => {
       if (!isExiting) {
         setButtonColors(Array(selectedScripts.length).fill('default'));
         setSelectedScripts([]);
-        navigate('/testScreen8');
+        navigate('/testScreen6');
       }
-    },500);
+    }, 3000);
   };
 
   const handleExit = (e) => {
     e.preventDefault();
-    if (isExiting) return;
+    if (isExiting) return; // Prevent multiple exit actions
     console.log('Exit button clicked.');
-    setIsExiting(true); // Stop any further actions
-    setShowPopup(true); // Show the popup
+    setIsExiting(true); // Set the exiting state to true
+    setShowPopup(true); // Show popup when exit is clicked
 
-    // Clear any ongoing timeouts or intervals
+    // Clear any existing timeout
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
-    // Reset any states if necessary
   };
 
   const handleClosePopup = () => {
     setShowPopup(false);
+    setIsExiting(false); // Reset exiting state when popup is closed
     navigate('/home'); // Navigate to home after manually closing the popup
   };
 
@@ -179,13 +157,12 @@ const TestScreen10 = () => {
   const sequenceScore = `${sequenceScoreCount}/${totalSetsPlayed}`;
 
   return (
-    <div className="test-screen7">
+    <div className={`test-screen7 ${isExiting ? 'exiting' : ''}`}>
       <div className="header">
         <span>{g}</span>
       </div>
       <div className="content">
-        
-        <h3>Recall and repeat back in the same order</h3>
+        <h2>{sk}</h2>
         <div className="scripts-display">
           <ul>
             {selectedScripts.length > 0 ? (
@@ -194,6 +171,7 @@ const TestScreen10 = () => {
                   <button
                     className={`response-btn ${buttonColors[index]}`}
                     onClick={() => handleResponseClick(index)}
+                    disabled={isExiting} // Disable button if exiting
                   >
                     {userResponses[index] || script}
                   </button>
@@ -221,14 +199,12 @@ const TestScreen10 = () => {
         <Popup
           memoryScore={memoryScore}
           sequencingScore={sequenceScore}
-          onClose={handleClosePopup}
-          isTestScreen7={true} // or false, depending on the screen
+          onClose={handleClosePopup} // Ensure navigation happens only when popup is closed
+          isTestScreen7={true}
         />
       )}
     </div>
   );
 };
 
-export default TestScreen10;
-
-
+export default TestScreen7;

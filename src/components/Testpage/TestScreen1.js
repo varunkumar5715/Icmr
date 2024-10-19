@@ -82,6 +82,7 @@ const TestScreen1 = () => {
 
 
   const fetchAudioFiles = async (path) => {
+    console.log('fetchAudioFiles called with path:', path);
     try {
       const response = await fetch(`${backendIP}/audio/listfiles`, {
         method: 'POST',
@@ -314,3 +315,4 @@ const playAudioSet = async () => {
 };
 
 export default TestScreen1;
+

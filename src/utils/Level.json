@@ -974,15 +974,15 @@
               "options": [
                 {
                   "label": "5",
-                  "value": "5"
+                  "value": "fivesti"
                 },
                 {
                   "label": "10",
-                  "value": "10"
+                  "value": "tensti"
                 },
                 {
                   "label": "15",
-                  "value": "15"
+                  "value": "fifteensti"
                 },
                 {
                   "label": "20",

@@ -1,69 +1,98 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import DataContext from '../../stores/DataContextProvider';
 import { useNavigate } from 'react-router-dom';
 import './TestScreen9.css';
+import Popup from '../popup/Popup';
 
 const TestScreen9 = () => {
   const {
-    playedScripts,
+   
     updatePlayedScripts,
     currentFileName,
     instruction,
     totalAudioFiles,
     currentFileCount,
-    updateCurrentFileCount
+    updateCurrentFileCount,
+    memoryScoreCount,
+    sequenceScoreCount,
+    totalSetsPlayed,
+    distractionScoreCount,
+    updateDistractionScoreCount,
   } = useContext(DataContext);
 
   const navigate = useNavigate();
+  const [isExiting, setIsExiting] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
-    console.log("Current File Name:", currentFileName);
-    console.log("Played Scripts:", playedScripts);
-    console.log("Total Audio Files:", totalAudioFiles);
-    console.log("Current File Count:", currentFileCount);
-
     if (totalAudioFiles === undefined) {
-      console.error("totalAudioFiles is undefined. Redirecting to home.");
       navigate('/home');
     }
 
     if (currentFileCount === undefined || currentFileCount === 0) {
       updateCurrentFileCount(1);
     }
-  }, [totalAudioFiles, currentFileCount, navigate, updateCurrentFileCount, currentFileName, playedScripts]);
+  }, [totalAudioFiles, currentFileCount, navigate, updateCurrentFileCount]);
 
   const handleResponse = (isCorrect) => {
-    console.log("Response received. Is Correct:", isCorrect);
-    console.log("Current File:", currentFileName);
-
     if (isCorrect) {
       updatePlayedScripts((prev) => [...prev, { fileName: currentFileName, isCorrect }]);
+      updateDistractionScoreCount(distractionScoreCount + 1); // Increment the distraction score when "Correct" is clicked
     }
 
-    // Update the current file count
     updateCurrentFileCount(currentFileCount + 1);
 
-    // Check if we have reached the total audio files
     if (currentFileCount >= totalAudioFiles) {
-      // Clear the current file count before navigating to testScreen10
-      updateCurrentFileCount(0); // Reset to zero or any desired value
+      updateCurrentFileCount(0);
       navigate('/testscreen10');
     } else {
-      navigate('/testscreen8');
+      navigate('/testscreen8');   
     }
+  };
+
+  const memoryScore = `${memoryScoreCount}/${totalSetsPlayed}`;
+  const sequenceScore = `${sequenceScoreCount}/${totalSetsPlayed}`;
+  const distractionRawScore = `${distractionScoreCount}/${totalAudioFiles*totalSetsPlayed}`;
+  const distractionScore = `${distractionScoreCount}/${totalSetsPlayed}`;
+
+  const handleExit = (e) => {
+    e.preventDefault();
+    if (isExiting) return;
+    setIsExiting(true);
+    setShowPopup(true);
+
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+    navigate('/home');
   };
 
   return (
     <div className="test-screen9">
-      <h2>{instruction[0]}</h2> {/* Display only the first line of the instruction */}
+      <h2>{instruction[1]}</h2>
       <h3>{currentFileName}</h3>
       <div className="button-row">
         <button className="correct" onClick={() => handleResponse(true)}>Correct</button>
-        <button className="incorrect" onClick={() => handleResponse(true)}>Incorrect</button>
+        <button className="incorrect" onClick={() => handleResponse(false)}>Incorrect</button>
       </div>
       <div className="button-row">
-        <button className="exit" onClick={() => navigate('/home')}>Exit</button>
+        <button className="exit" onClick={handleExit}>Exit</button>
       </div>
+      {showPopup && (
+        <Popup
+          memoryScore={memoryScore}
+          sequencingScore={sequenceScore}
+          distractionRawScore={distractionRawScore}
+          distractionScore={distractionScore}
+          onClose={handleClosePopup}
+          isTestScreen9={true}
+        />
+      )}
     </div>
   );
 };

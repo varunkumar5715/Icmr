@@ -4,17 +4,21 @@ import React, { useContext, useEffect, useState, useRef } from 'react';
 import DataContext from '../../stores/DataContextProvider';
 import { useNavigate } from 'react-router-dom';
 import backendIP from '../../utils/serverData';
+import Popup from '../popup/Popup';
 import './TestScreen6.css';
 
 const TestScreen6 = () => {
-  const { sk, g, selectedOptions, isi, folderPath, updatePlayedScripts } = useContext(DataContext);
+  const { sk, g, selectedOptions, isi, folderPath, updatePlayedScripts,memoryScoreCount,sequenceScoreCount, totalSetsPlayed} = useContext(DataContext);
   const [selectedFileNames, setSelectedFileNames] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
   const [currentFileName, setCurrentFileName] = useState('');
+  const [isExiting, setIsExiting] = useState(false); // For handling exit logic
   const audioRef = useRef(new Audio());
   const [isPlaying, setIsPlaying] = useState(false);
   const [playedScripts, setPlayedScripts] = useState([]);
   const navigate = useNavigate();
   const abortControllerRef = useRef();
+  const timeoutRef = useRef(null); // Moved ref declaration here
 
   useEffect(() => {
     abortControllerRef.current = new AbortController();
@@ -165,7 +169,27 @@ const TestScreen6 = () => {
     console.log(`Constructed file path: ${path}`);
     return path;
   };
+  const handleExit = (e) => {
+    e.preventDefault();
+    if (isExiting) return; // Prevent multiple exit actions
+    console.log('Exit button clicked.');
+    setIsExiting(true); // Set the exiting state to true
+    setShowPopup(true); // Show popup when exit is clicked
 
+    // Clear any existing timeout
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  };
+
+  const memoryScore = `${memoryScoreCount}/${totalSetsPlayed}`;
+  const sequenceScore = `${sequenceScoreCount}/${totalSetsPlayed}`;
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+    setIsExiting(false); // Reset exiting state when popup is closed
+    navigate('/home'); // Navigate to home after manually closing the popup
+  };
   return (
     <div className="test-screen6">
       <div className="header">
@@ -180,9 +204,18 @@ const TestScreen6 = () => {
           {currentFileName ? ` ${currentFileName}` : ''}
         </h2>
       </div>
-      <div className="button-row">
-        <button className="button exit" onClick={() => navigate('/home')}>Exit</button>
-      </div>
+      <button className="button exit" onClick={handleExit}>
+          Exit
+        </button>
+        {showPopup && (
+  <Popup
+    memoryScore={memoryScore}
+    sequencingScore={sequenceScore}
+    onClose={handleClosePopup}
+    isTestScreen6={true}
+  
+  />
+)}
     </div>
   );
 };
