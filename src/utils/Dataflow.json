@@ -922,7 +922,7 @@
                                 {
                                     "title": "Category Identification",
                                     "skillCode": 66,
-                                    "testCode": 4,
+                                    "testCode": 3,
                                     "folderName": "metacogiden",
                                     "item": [],
                                     "platform": "",
@@ -930,20 +930,11 @@
                                     "instruction": "Three words will be presented. You have to identify the category they belong to",
                                     "example": "ವೃತ್ತ, ಚೌಕ, ಆಯತ|ಸರಿ ಉತ್ತರ: ಆಕಾರಗಳು"
                                 },
-                                {
-                                    "title": "Category Oddity",
-                                    "skillCode": 67,
-                                    "testCode": 3,
-                                    "folderName": "metacogoddi",
-                                    "item": [],
-                                    "platform": "",
-                                    "level": "",
-                                    "instruction": "Four words will be presented. You have to identify the odd word",
-                                    "example": "ವೃತ್ತ, ಚೌಕ, ಆಯತ, ಕೆಂಪು|ಸರಿ ಉತ್ತರ: ಕೆಂಪು "
-                                },
+                             
                                 {
                                     "title": "Category Member Recall",
                                     "skillCode": 68,
+                                    "testCode": 3,
                                     "folderName": "metacogrecal",
                                     "item": [],
                                     "platform": "",
@@ -960,6 +951,7 @@
                                 {
                                     "title": "Object-Person Relationship",
                                     "skillCode": 69,
+                                    "testCode": 3,
                                     "folderName": "metacogobj",
                                     "item": [],
                                     "platform": "",
@@ -970,6 +962,7 @@
                                 {
                                     "title": "Whole-Part Relationship",
                                     "skillCode": 70,
+                                    "testCode": 3,
                                     "folderName": "metacogwhole",
                                     "item": [],
                                     "platform": "",

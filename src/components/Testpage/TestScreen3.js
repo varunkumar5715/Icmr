@@ -57,7 +57,6 @@ const TestScreen3 = () => {
 
       const audioData = await response.json();
     
-
       if (Array.isArray(audioData) && audioData.length > 0) {
         let availableFiles = audioData.filter(file => !playedFiles.includes(file));
         
@@ -101,7 +100,6 @@ const TestScreen3 = () => {
       }
 
       const filenameWithPath = `${folderPath}/${fileName}`;
-      // console.log(`Requesting audio file: ${filenameWithPath}`);
 
       const response = await fetch(`${backendIP}/audio/getaudio`, {
         method: 'POST',
@@ -139,12 +137,16 @@ const TestScreen3 = () => {
   const handleCorrect = () => {
     setScore(prevScore => prevScore + 1);
     setTotalAudioPlayed(prevTotal => prevTotal + 1);
-    fetchSelectedAudio();
+    setTimeout(() => {
+      fetchSelectedAudio();
+    }, 3000); // 3-second delay before fetching the next audio file
   };
 
   const handleIncorrect = () => {
     setTotalAudioPlayed(prevTotal => prevTotal + 1);
-    fetchSelectedAudio();
+    setTimeout(() => {
+      fetchSelectedAudio();
+    }, 3000); // 3-second delay before fetching the next audio file
   };
 
   const handleRepeat = () => {
@@ -162,7 +164,6 @@ const TestScreen3 = () => {
     navigate('/home');
   };
   
-
   return (
     <div className="test-screen2">
       <div className="header">
