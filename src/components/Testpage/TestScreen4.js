@@ -1,26 +1,28 @@
-
 import React, { useContext, useState, useEffect, useRef } from 'react';
 import DataContext from '../../stores/DataContextProvider';
 import backendIP from '../../utils/serverData';
 import Popup from '../popup/Popup';
-import './TestScreen4.css'; // Ensure this CSS file exists and is correctly applied
+import './TestScreen4.css';
 
 const TestScreen4 = () => {
-  const { sk, g,instruction, folderPath, selectedOptions } = useContext(DataContext);
+  const { sk, g, folderPath, selectedOptions } = useContext(DataContext);
   const [displayWord, setDisplayWord] = useState('');
   const [options, setOptions] = useState([]);
   const [correctWord, setCorrectWord] = useState('');
   const [score, setScore] = useState(0);
   const [totalAudioPlayed, setTotalAudioPlayed] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false); // Track audio state
-  const [playedFiles, setPlayedFiles] = useState(new Set()); // Track played files
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [playedFiles, setPlayedFiles] = useState(new Set());
+  const [showOptions, setShowOptions] = useState(false);
+  const [showDisplay, setShowDisplay] = useState(true);
+  const [buttonsDisabled, setButtonsDisabled] = useState(false);
 
   const audioRef = useRef(new Audio());
 
   useEffect(() => {
     fetchSelectedAudio();
-  }, [selectedOptions]); // Fetch audio when selected options change
+  }, [selectedOptions]);
 
   const constructFilePath = (fileName) => {
     const noiseType = selectedOptions['Noise type']?.value;
@@ -29,146 +31,192 @@ const TestScreen4 = () => {
       console.error('Noise type or level not selected');
       return '';
     }
-    const path = `${folderPath}/${noiseType}/${noiseLevel}/${fileName}`;
-    // console.log(`Constructed file path: ${path}`); // Add logging
-    return path;
+    return `${folderPath}/${noiseType}/${noiseLevel}/${fileName}`;
   };
-  
+
+  const fetchAvailableFiles = async () => {
+    const noiseType = selectedOptions['Noise type']?.value;
+    const noiseLevel = selectedOptions['Noise level']?.value;
+
+    if (!noiseType || !noiseLevel) {
+      console.error('Noise type or level not selected');
+      return [];
+    }
+
+    const response = await fetch(`${backendIP}/audio/listfiles`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ folderPath: `${folderPath}/${noiseType}/${noiseLevel}` }),
+    });
+
+    if (!response.ok) {
+      console.error('Failed to fetch available audio files');
+      return [];
+    }
+
+    const availableFiles = await response.json();
+    return availableFiles;
+  };
+
   const playAudio = async (fileName) => {
     if (isPlaying) {
-      // Pause and reset the current audio
       audioRef.current.pause();
       audioRef.current.src = '';
     }
-  
+
     try {
       setIsPlaying(true);
-  
-      // Construct the correct file path
+      setButtonsDisabled(true);
+
       const filenameWithPath = constructFilePath(fileName);
       if (!filenameWithPath) {
         console.error('File path construction failed');
         return;
       }
-      // console.log(`Requesting audio file: ${filenameWithPath}`);
-  
+
       const response = await fetch(`${backendIP}/audio/getaudio`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ filenameWithPath }), // Corrected key here
+        body: JSON.stringify({ filenameWithPath }),
       });
-  
+
       if (!response.ok) {
-        const errorDetails = await response.text();
-        console.error(`Failed to fetch audio file: ${response.status} ${response.statusText} - ${errorDetails}`);
+        console.error(`Failed to fetch audio file: ${response.status} ${response.statusText}`);
         throw new Error(`Failed to fetch audio file: ${response.status} ${response.statusText}`);
       }
-  
+
       const audioBlob = await response.blob();
       const audioUrl = URL.createObjectURL(audioBlob);
-  
+
       audioRef.current.src = audioUrl;
       audioRef.current.onerror = (event) => {
         console.error('Error occurred while loading audio:', event);
         setIsPlaying(false);
+        setButtonsDisabled(false);
       };
       audioRef.current.onended = () => {
         setIsPlaying(false);
+        setButtonsDisabled(false);
       };
-  
-      // Wait for the audio to be ready and then play it
+
       await new Promise((resolve, reject) => {
         audioRef.current.oncanplaythrough = resolve;
         audioRef.current.onerror = reject;
       });
-  
+
       await audioRef.current.play();
-      // Fetch options for the current audio file
       fetchAudioOptions(fileName);
-  
+
+      setDisplayWord(fileName.replace('.wav', ''));
+      setCorrectWord(fileName);
     } catch (error) {
       console.error('Failed to load audio file:', error);
       setIsPlaying(false);
+      setButtonsDisabled(false);
+    }
+  };
+
+  const fetchAudioOptions = async (fileName) => {
+    try {
+      const availableFiles = await fetchAvailableFiles();
+      const filteredFiles = availableFiles.filter(file => file !== fileName && !playedFiles.has(file));
+
+      if (filteredFiles.length < 3) {
+        console.warn('Not enough files to display options');
+        return;
+      }
+
+      const randomFiles = [];
+      while (randomFiles.length < 3) {
+        const randomIndex = Math.floor(Math.random() * filteredFiles.length);
+        const selectedFile = filteredFiles[randomIndex];
+        if (!randomFiles.includes(selectedFile)) {
+          randomFiles.push(selectedFile);
+        }
+      }
+
+      const allOptions = [fileName, ...randomFiles];
+      setOptions(shuffleArray(allOptions));
+    } catch (error) {
+      console.error('Failed to fetch audio options:', error);
+    }
+  };
+
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
+  const handleResponse = async (option, responseType) => {
+    console.log(`${responseType} button clicked`);
+  
+    if (!isPlaying && !buttonsDisabled) {
+      setButtonsDisabled(true);
+  
+      if (option === correctWord) {
+        setScore((prev) => prev + 1);
+        console.log('Correct answer!');
+      } else {
+        console.log('Wrong answer!');
+      }
+  
+      setTotalAudioPlayed((prev) => prev + 1);
+      setOptions([]);
+      setShowOptions(false);
+      setShowDisplay(true);
+  
+      // Immediately fetch and play the next audio
+      await fetchSelectedAudio();
     }
   };
   
 
-  const fetchAudioOptions = async (fileName) => {
-    // console.log('Fetching audio options for file:', fileName);
-
-    try {
-      const response = await fetch(`${backendIP}/audio/getoptions`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ fileName }),
-      });
-
-      if (!response.ok) {
-        const errorDetails = await response.text();
-        console.error(`Failed to fetch options: ${response.status} ${response.statusText} - ${errorDetails}`);
-        throw new Error(`Failed to fetch options: ${response.status} ${response.statusText}`);
-      }
-
-      const data = await response.json();
-      // console.log('Options fetched:', data);
-
-      setOptions(data.options);
-      setCorrectWord(data.correctWord);
-    } catch (error) {
-      console.error('Failed to fetch options:', error);
-    }
-  };
-
-  const handleCorrect = () => {
-    if (!isPlaying) {
-      setScore(prev => prev + 1);
-      setTotalAudioPlayed(prev => prev + 1);
-      fetchSelectedAudio(); // Fetch new audio
-    }
-  };
-
-  const handleIncorrect = () => {
-    if (!isPlaying) {
-      setTotalAudioPlayed(prev => prev + 1);
-      fetchSelectedAudio(); // Fetch new audio
-    }
-  };
+  const handleCorrect = () => handleResponse(correctWord, 'Correct');
+  const handleIncorrect = () => handleResponse('', 'Incorrect');
 
   const handleRepeat = () => {
+    console.log('Repeat button clicked');
     if (correctWord && !isPlaying) {
-      playAudio(correctWord); // Repeat correct word
+      playAudio(correctWord);
     }
   };
 
-  const handleExit = () => setShowPopup(true);
+  const handleExit = () => {
+    console.log('Exit button clicked');
+    setShowPopup(true);
+  };
+
   const handleClosePopup = () => setShowPopup(false);
-
   const fetchSelectedAudio = async () => {
-    // console.log('Fetching selected audio based on options:', selectedOptions);
-
     try {
-      // List of files to choose from
-      const audioFiles = ['one.wav', 'two.wav', 'three.wav', 'four.wav', 'five.wav']; // Adjust if needed
-
-      // Filter out already played files
+      const audioFiles = await fetchAvailableFiles();
       const availableFiles = audioFiles.filter(file => !playedFiles.has(file));
       if (availableFiles.length === 0) {
         console.warn('No available files to play');
         return;
       }
-
+  
       const randomIndex = Math.floor(Math.random() * availableFiles.length);
       const selectedFile = availableFiles[randomIndex];
-
-      // console.log('Selected file for playback:', selectedFile);
-
-      setDisplayWord(selectedFile);
+  
+      setDisplayWord(selectedFile.replace('.wav', ''));
       await playAudio(selectedFile);
-
-      setPlayedFiles(prev => new Set(prev).add(selectedFile));
+  
+      setPlayedFiles((prev) => new Set(prev).add(selectedFile));
+      setButtonsDisabled(false);
     } catch (error) {
       console.error('Error fetching audio or options:', error);
+      setButtonsDisabled(false);
     }
+  };
+  
+
+  const handleShowOptions = () => {
+    console.log('Show Options button clicked');
+    setShowOptions(!showOptions);
+    setShowDisplay(!showDisplay);
   };
 
   return (
@@ -176,33 +224,44 @@ const TestScreen4 = () => {
       <div className="header"><span>{g}</span></div>
       <div className="content">
         <h2>{sk}</h2>
-        <div className="audio-icon" onClick={handleRepeat}>
-          <span role="img" aria-label="speaker">🔊</span>
-        </div>
-    
-      </div>
-      <div className="option-buttons">
-        {options.map((option, index) => (
-          <button
-            key={index}
-            className={`option-button ${option.split(' ').length > 1 ? 'multi-word' : 'single-word'}`}
-            onClick={() => {
-              if (!isPlaying) {
-                option === correctWord ? handleCorrect() : handleIncorrect();
-              }
-            }}
-          >
-            {option}
-          </button>
-        ))}
+        {showDisplay && (
+          <>
+            <div className="display-script">
+              <span>{displayWord}</span>
+            </div>
+            <div className="audio-icon" onClick={handleRepeat}>
+              <span role="img" aria-label="speaker">🔊</span>
+            </div>
+          </>
+        )}
       </div>
       <div className="button-row">
-        <button className="correct-button" onClick={handleCorrect} disabled={isPlaying}>Correct</button>
-        <button className="incorrect-button" onClick={handleIncorrect} disabled={isPlaying}>Incorrect</button>
-        <button className="repeat-button" onClick={handleRepeat}>Repeat</button>
+        <button className="show-options-button" onClick={handleShowOptions}>
+          {showOptions ? 'Hide Options' : 'Show Options'}
+        </button>
+      </div>
+      {showOptions && (
+        <div className="option-buttons">
+          {options.map((option, index) => (
+            <button
+              key={index}
+              className="option-button"
+              disabled
+            >
+              {option.replace('.wav', '')}
+            </button>
+          ))}
+        </div>
+      )}
+      <div className="button-row">
+        <button className="correct-button" onClick={handleCorrect} disabled={buttonsDisabled}>Correct</button>
+        <button className="incorrect-button" onClick={handleIncorrect} disabled={buttonsDisabled}>Incorrect</button>
+        <button className="repeat-button" onClick={handleRepeat} disabled={isPlaying}>Repeat</button>
         <button className="exit-button" onClick={handleExit}>Exit</button>
       </div>
-      {showPopup && <Popup score={score} totalAudioPlayed={totalAudioPlayed} onClose={handleClosePopup} />}
+    {showPopup && (
+        <Popup score={score} totalAudioPlayed={totalAudioPlayed} onClose={handleClosePopup} />
+      )}
     </div>
   );
 };

@@ -12,6 +12,7 @@ const TestScreen10 = () => {
     updateMemoryScoreCount,
     sequenceScoreCount,
     updateSequenceScoreCount,
+    correctResponses,
     totalSetsPlayed,
     distractionScoreCount,
     totalAudioFiles,
@@ -25,6 +26,7 @@ const TestScreen10 = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [responseOrder, setResponseOrder] = useState([]);
   const [isExiting, setIsExiting] = useState(false);
+  const [localCorrectResponses, setLocalCorrectResponses] = useState(0);
 
   const navigate = useNavigate();
   const audioRef = useRef(new Audio());
@@ -103,7 +105,7 @@ const TestScreen10 = () => {
     setResponseOrder(newResponseOrder);
 
     const sequenceScore = checkSequence(newResponseOrder);
-    console.log('Current Response Order:', newResponseOrder);
+  
     console.log('Sequence Score:', sequenceScore);
   };
 
@@ -152,9 +154,6 @@ const TestScreen10 = () => {
     const { memoryCount, sequenceCount } = calculateScores();
     updateMemoryScoreCount(prev => prev + memoryCount);
     updateSequenceScoreCount(prev => prev + sequenceCount);
-
-    console.log('Updated Memory Score Count:', memoryScoreCount + memoryCount);
-    console.log('Updated Sequence Score Count:', sequenceScoreCount + sequenceCount);
     updateTotalSetsPlayed(totalSetsPlayed + 1);
 
     setUserResponses([]);
@@ -175,23 +174,41 @@ const TestScreen10 = () => {
     e.preventDefault();
     if (isExiting) return;
     console.log('Exit button clicked.');
+    
+    // Calculate the scores before exiting
+    const { memoryCount, sequenceCount } = calculateScores();
+    
+    // Update the state with the calculated scores
+    updateMemoryScoreCount(prev => prev + memoryCount);
+    updateSequenceScoreCount(prev => prev + sequenceCount);
+  
+    console.log('Updated Memory Score Count:', memoryScoreCount + memoryCount);
+    console.log('Updated Sequence Score Count:', sequenceScoreCount + sequenceCount);
+    
+    // Increase the total sets played
+    // updateTotalSetsPlayed(totalSetsPlayed + 1);
+  
+    // Set the state for exiting and showing the popup
     setIsExiting(true);
     setShowPopup(true);
-
+  
+    // Clear any existing timeout to avoid navigating away
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
   };
+  const totalCorrectResponses = Number(correctResponses || 0) + localCorrectResponses;
+  // Ensure that the score variables reflect the updated values
+  const memoryScore = `${memoryScoreCount}/${totalSetsPlayed}`;
+  const sequenceScore = `${sequenceScoreCount}/${totalSetsPlayed}`;
+  const distractionScore = `${distractionScoreCount}/${totalSetsPlayed}`;
+  const distractionRawScore = `${totalCorrectResponses}/${Number(totalAudioFiles || 0) * Number(totalSetsPlayed || 0)}`;
+  
 
   const handleClosePopup = () => {
     setShowPopup(false);
     navigate('/home');
   };
-
-  const memoryScore = `${memoryScoreCount}/${totalSetsPlayed}`;
-  const sequenceScore = `${sequenceScoreCount}/${totalSetsPlayed}`;
-  const distractionRawScore = `${distractionScoreCount}/${totalAudioFiles*totalSetsPlayed}`;
-
   return (
     <div className="test-screen7">
       <div className="header">
@@ -243,6 +260,7 @@ const TestScreen10 = () => {
           memoryScore={memoryScore}
           sequencingScore={sequenceScore}
           distractionRawScore={distractionRawScore}
+          distractionScore={distractionScore}
           onClose={handleClosePopup}
           isTestScreen10={true} // or false, depending on the screen
         />

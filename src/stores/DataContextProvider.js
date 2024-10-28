@@ -27,6 +27,7 @@ export const DataContextProvider = ({ children }) => {
   const [responseWindow, setResponseWindow] = useState(1000);
   // State for played scripts
   const [playedScripts, setPlayedScripts] = useState([]);
+  const [correctResponses, setCorrectResponses] = useState([]); // New state for correct responses
 
   const [selectedOptions, setSelectedOptions] = useState({});
   const [testCode, setTestCode] = useState(1);
@@ -37,7 +38,7 @@ export const DataContextProvider = ({ children }) => {
   const [totalSetsPlayed, setTotalSetsPlayed] = useState(0);
   const [currentFileCount , setCurrentFileCount] = useState(0);
   const [distractionScoreCount, setDistractionScoreCount] = useState(0);
- 
+  const [responsesInCurrentSet, setResponsesInCurrentSet] = useState([]);
 
   // Update functions
   const updateM = (value) => setM(value);
@@ -59,11 +60,14 @@ export const DataContextProvider = ({ children }) => {
   const updateDuration = (newDuration) => setDuration(newDuration);
   const updateNumberOfStimuli = (newNumber) => setNumberOfStimuli(newNumber);
   const updateResponseWindow = (window) => setResponseWindow(window);
+  const updateCorrectResponses = (value) => setCorrectResponses(value); // Update function for correct responses
   const updateTotalAudioFiles = (value) => {
   
     setTotalAudioFiles(value);
   };
-  
+  const updateResponsesInCurrentSet = (newResponses) => {
+    setResponsesInCurrentSet(newResponses);
+  };
   const updateSelectedOptions = (options) => {
     setSelectedOptions(options);
   };
@@ -105,9 +109,11 @@ export const DataContextProvider = ({ children }) => {
     levels,
     skillCode,
     instruction,
+    responsesInCurrentSet,
     testdata,
     folderPath,
     selectedOptions,
+    correctResponses,
     testCode,
     isi,
     ibi,
@@ -126,12 +132,14 @@ export const DataContextProvider = ({ children }) => {
     updateSkillCode,
     updateTestdata,
     updateFolderPath,
+    updateResponsesInCurrentSet,
     updateTotalSetsPlayed,
     updateCurrentFileCount,
     updateTotalAudioFiles,
     updateInstruction,
     updateSelectedOptions,
     updateDistractionScoreCount,
+    updateCorrectResponses,
     updateTestCode,
     updateDuration,
     updateNumberOfStimuli,

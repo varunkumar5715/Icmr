@@ -2777,7 +2777,7 @@
                 },
                 {
                   "label": "White Noise",
-                  "value": "White Noise"
+                  "value": "whitenoise"
                 },
                 {
                   "label": "Speech Noise",
@@ -2854,7 +2854,7 @@
                 },
                 {
                   "label": "10 dB SNR",
-                  "value": "10 dB SNR"
+                  "value": "10dbsnr"
                 },
                 {
                   "label": "8 dB SNR",
@@ -3812,7 +3812,7 @@
                 },
                 {
                   "label": "Low-Pass Filter ",
-                  "value": "Low-Pass Filter "
+                  "value": "lowpassfilter"
                 },
                 {
                   "label": "High-Pass Filter ",
@@ -3837,7 +3837,7 @@
                 },
                 {
                   "label": "6000 Hz ",
-                  "value": "6000 Hz "
+                  "value": "6000hz"
                 },
                 {
                   "label": "5500 Hz ",

@@ -8,7 +8,7 @@ import './TestScreen6.css';
 const TestScreen8 = () => {
   const {
     sk, g, selectedOptions, isi, folderPath,
-    updatePlayedScripts, totalSetsPlayed, memoryScoreCount, distractionScoreCount,totalAudioFiles, sequenceScoreCount, updateTotalAudioFiles
+    updatePlayedScripts, totalSetsPlayed, memoryScoreCount, correctResponses,distractionScoreCount,totalAudioFiles, sequenceScoreCount, updateTotalAudioFiles
   } = useContext(DataContext);
 
   const [selectedFileNames, setSelectedFileNames] = useState([]);
@@ -19,6 +19,7 @@ const TestScreen8 = () => {
   const [currentFileName, setCurrentFileName] = useState('');
   const [currentAudioIndex, setCurrentAudioIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [localCorrectResponses, setLocalCorrectResponses] = useState(0);
 
   const navigate = useNavigate();
   const audioRef = useRef(new Audio());
@@ -169,11 +170,11 @@ const TestScreen8 = () => {
     }
     return `${folderPath}/${recallLevel}/${fileName}`;
   };
+  const totalCorrectResponses = Number(correctResponses || 0) + localCorrectResponses;
   const memoryScore = `${memoryScoreCount}/${totalSetsPlayed}`;
   const sequenceScore = `${sequenceScoreCount}/${totalSetsPlayed}`;
-  const distractionRawScore = `${distractionScoreCount}/${totalAudioFiles*totalSetsPlayed}`;
-  
-
+  const distractionRawScore = `${totalCorrectResponses}/${Number(totalAudioFiles || 0) * Number(totalSetsPlayed || 0)}`;
+  const distractionScore = `${distractionScoreCount}/${totalSetsPlayed}`;
 
   const handleExit = (e) => {
     e.preventDefault();
@@ -213,6 +214,7 @@ const TestScreen8 = () => {
           memoryScore={memoryScore}
           sequencingScore={sequenceScore}
           distractionRawScore={distractionRawScore}
+          distractionScore={distractionScore}
           onClose={handleClosePopup}
           isTestScreen8={true}   // or false, depending on the screen
         />

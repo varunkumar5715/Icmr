@@ -29,6 +29,7 @@
                                 {
                                     "title": "Phrase Identification",
                                     "skillCode": 2,
+                                    "testCode": 4,
                                     "folderName": "audipharse",
                                     "item": [],
                                     "platform": "",
@@ -992,6 +993,7 @@
                                 {
                                     "title": "Rhyming Awareness - Trial Activity",
                                     "skillCode": 71,
+                                    "testCode":3,
                                     "folderName": "rhytrial",
                                     "item": [],
                                     "platform": "",
