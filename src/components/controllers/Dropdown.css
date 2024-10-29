@@ -1,65 +1,72 @@
 /* Dropdown container */
 .dropdown {
   position: relative;
-  width: 160px; /* Fixed width for the dropdown */
-margin-left: auto;
-  
-   /* Margin to the left of content */
+  width: 175px; /* Fixed width for the dropdown */
+  margin-left: 0;
+  padding-right: 5px; /* Align to the left */
 }
 
 /* Dropdown toggle button */
 .dropdown-toggle {
-  padding: 12px; /* Increased padding for better click area */
-  font-size: 14px; /* Font size for readability */
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%; /* Full width to match the dropdown container */
-  background-color: #f8f8f8; /* Light grey background */
-  transition: background-color 0.3s ease; /* Smooth background transition */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 8px 10px; /* Adjusted padding for a compact look */
+  font-size: 12px; /* Smaller font size for dropdown text */
+  font-weight: 500; /* Medium font weight */
+  border: 1px solid #ccc; /* Border styling */
+  border-radius: 6px; /* Rounded corners */
+  background-color: #f7f7f7; /* Light background color */
+  color: #333; /* Dark text color */
+  cursor: pointer; /* Pointer cursor on hover */
+  width: 100%; /* Full width to match dropdown container */
+  display: flex; /* Flexbox for alignment */
+  justify-content: space-between; /* Space between text and icon */
+  align-items: center; /* Center vertically */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 
 .dropdown-toggle:hover {
   background-color: #e0e0e0; /* Darker background on hover */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Shadow effect on hover */
 }
 
 /* Symbol indicating dropdown state */
 .dropdown-symbol {
-  margin-left: 5px; /* Fixed margin to the left of content */
+  margin-left: 8px; /* Space between text and symbol */
   transition: transform 0.3s ease; /* Smooth rotation transition */
 }
 
 /* Dropdown menu styles */
 .dropdown-menu {
-  position: absolute;
-  top: calc(100% + 5px); /* Position below toggle button */
-  left: 0;
-  width: 100%;
-  max-height: 200px; /* Maximum height of the dropdown menu */
+  position: absolute; /* Positioned relative to the dropdown container */
+  top: calc(100% + 5px); /* Position below the toggle button */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width to match dropdown container */
+  max-height: 250px; /* Maximum height of the dropdown menu */
   overflow-y: auto; /* Enable vertical scrolling */
   background-color: #fff; /* White background */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
-  border: 1px solid #ccc; /* Light grey border */
-  border-radius: 4px;
+  border: 1px solid #ddd; /* Light grey border */
+  border-radius: 6px; /* Rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
   display: none; /* Initially hidden */
   opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease; /* Smooth opacity transition */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  transform: translateY(-10px); /* Slide effect */
   z-index: 1000; /* Ensure dropdown is above other content */
 }
 
 .dropdown-menu.show {
   display: block; /* Show dropdown when active */
   opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset slide effect */
 }
 
 /* Dropdown item styles */
 .dropdown-item {
   padding: 10px 15px; /* Padding for item content */
-  cursor: pointer;
+  font-size: 14px; /* Font size for dropdown items */
+  color: #333; /* Dark text color */
+  cursor: pointer; /* Pointer cursor on hover */
   transition: background-color 0.3s ease; /* Smooth background transition */
+  width: 100%; /* Full width within the menu */
 }
 
 .dropdown-item:hover {
@@ -67,6 +74,27 @@ margin-left: auto;
 }
 
 /* Rotate symbol when menu is open */
-.dropdown-menu.show + .dropdown-symbol {
+.dropdown-toggle[aria-expanded="true"] .dropdown-symbol {
   transform: rotate(180deg); /* Rotate symbol */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .dropdown {
+    max-width: 100%; /* Full width on mobile */
+  }
+
+  .dropdown-toggle {
+    font-size: 12px; /* Ensure smaller text size on mobile */
+    padding: 8px; /* Adjust padding for smaller screens */
+  }
+
+  .dropdown-menu {
+    max-height: 200px; /* Adjust max height for mobile */
+  }
+
+  .dropdown-item {
+    font-size: 13px; /* Font size for items on mobile */
+    padding: 8px; /* Adjust padding for mobile */
+  }
 }

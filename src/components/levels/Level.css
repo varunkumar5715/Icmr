@@ -1,80 +1,108 @@
 /* General Styles */
 h3, label {
-    margin-bottom: 5px;
-    margin-right: 10px;
+    margin-bottom: 5px; /* Space below headers and labels */
+    margin-right: 10px; /* Space to the right of labels */
 }
 
+/* Input and Select Styles */
 input, select {
-    padding: 8px;
-    font-size: 13px;
-    width: 115px;
-    border: 1px solid #fff;
-    border-radius: 4px;
-    box-sizing: border-box;
-    height: fit-content;
-    margin-left: auto;
+    padding: 8px; /* Padding inside inputs */
+    font-size: 13px; /* Font size for readability */
+    width: 100%; /* Full width for better responsiveness */
+    max-width: 115px; /* Maximum width to prevent overflow */
+    border: 1px solid #ccc; /* Light grey border for inputs */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding and border in width */
+    height: fit-content; /* Height based on content */
+    margin-left: auto; /* Center horizontally if needed */
 }
+
+/* Dropdown Styles */
+.dropdown-container {
+    position: relative;
+    width: 100%;
+    max-width: 115px; /* Match the max-width of inputs */
+    margin-left: auto;
+  }
 
 /* Dropdown Arrow */
 .dropdown-arrow {
-    position: absolute;
-    top: 50%;
-    right: 8px;
-    transform: translateY(-50%);
-    font-size: 20px;
-    color: #333;
+    position: absolute; /* Positioned relative to parent */
+    top: 50%; /* Center vertically */
+    right: 10px; /* Space from right edge */
+    transform: translateY(-50%); /* Center arrow */
+    font-size: 20px; /* Size of the arrow */
+    color: #333; /* Dark color for visibility */
 }
 
 /* Button Container */
 .button-container {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    bottom: 15px;
-    left: 0;
-    right: 0;
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between buttons */
+    position: absolute; /* Positioned relative to parent */
+    bottom: 15px; /* Distance from bottom */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
 }
 
 /* Containers */
 .small-container {
-    width: 150px;
-    height: 40px;
-    margin-bottom: 10px;
+    width: 150px; /* Fixed width for smaller containers */
+    height: 40px; /* Fixed height */
+    margin-bottom: 10px; /* Space below */
 }
 
 .level-container {
-    background-color: #6CACBF;
-    width: 280px;
-    border-radius: 25px;
-    height: 400px;
-    padding: 10px 20px;
-    margin: 30px auto 0;
-    position: relative;
+    background-color: #6CACBF; /* Background color */
+    width: 280px; /* Fixed width for level container */
+    border-radius: 25px; /* Rounded corners */
+    height: 400px; /* Fixed height */
+    padding: 10px 20px; /* Padding inside the container */
+    margin: 30px auto 0; /* Centered margin */
+    position: relative; /* Position for child elements */
 }
 
+/* Card Wrapper */
 .card-wrapper {
-    background-color: #fff;
-    padding: 10px;
+    background-color: #fff; /* White background for cards */
+    padding: 10px; /* Padding inside cards */
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-
+/* Name Component */
 .name-component {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center vertically */
+    margin-bottom: 20px; /* Space below */
 }
 
-
+/* Element Container */
 .element-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    gap: 10px;
+    display: flex; /* Flexbox for layout */
+    align-items: center; /* Center vertically */
+    margin-bottom: 10px; /* Space below */
+    gap: 10px; /* Space between elements */
 }
 
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .level-container {
+        width: 90%; /* Adjust width for smaller screens */
+        max-width: 300px; /* Set a max-width */
+        margin: 20px auto; /* Adjust margin for smaller screens */
+    }
+    
+    input, select {
+        width: 100%; /* Full width on small screens */
+        max-width: none; /* Remove max-width for flexibility */
+    }
 
-.dropdown-container {
-    position: relative;
-    flex: 1;
-    margin-left: 10px;
+    .small-container {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .dropdown-container {
+        max-width: 100%; /* Allow dropdown to be fully responsive */
+    }
 }

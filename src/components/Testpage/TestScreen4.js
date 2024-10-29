@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect, useRef } from 'react';
 import DataContext from '../../stores/DataContextProvider';
 import backendIP from '../../utils/serverData';
 import Popup from '../popup/Popup';
+import { useNavigate } from 'react-router-dom'; 
 import './TestScreen4.css';
 
 const TestScreen4 = () => {
@@ -17,36 +18,67 @@ const TestScreen4 = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [showDisplay, setShowDisplay] = useState(true);
   const [buttonsDisabled, setButtonsDisabled] = useState(false);
+  const navigate = useNavigate();
 
   const audioRef = useRef(new Audio());
 
   useEffect(() => {
     fetchSelectedAudio();
-  }, [selectedOptions]);
+  }, [folderPath, selectedOptions]);
 
   const constructFilePath = (fileName) => {
     const noiseType = selectedOptions['Noise type']?.value;
     const noiseLevel = selectedOptions['Noise level']?.value;
-    if (!noiseType || !noiseLevel) {
-      console.error('Noise type or level not selected');
-      return '';
+    const filterType = selectedOptions['Filter Type']?.value; 
+    const cutOffFrequency = selectedOptions['Cut off frequency']?.value;
+    const compressionPercentage = selectedOptions['Compression Percentage']?.value;
+  
+   
+  
+    try {
+      let path = folderPath;
+
+      if (compressionPercentage) {
+        path += `/${compressionPercentage}`;
+      } else if (filterType && cutOffFrequency) {
+        path += `/${filterType}/${cutOffFrequency}`;
+      } else if (noiseType && noiseLevel) {
+        path += `/${noiseType}/${noiseLevel}`;
+      }
+  
+      return `${path}/${fileName}`;
+    } catch (error) {
+      console.error("Error constructing file path:", error);
+      return null;
     }
-    return `${folderPath}/${noiseType}/${noiseLevel}/${fileName}`;
   };
 
   const fetchAvailableFiles = async () => {
     const noiseType = selectedOptions['Noise type']?.value;
     const noiseLevel = selectedOptions['Noise level']?.value;
-
-    if (!noiseType || !noiseLevel) {
-      console.error('Noise type or level not selected');
-      return [];
+    const filterType = selectedOptions['Filter Type']?.value; 
+    const cutOffFrequency = selectedOptions['Cut off frequency']?.value;
+    const compressionPercentage = selectedOptions['Compression Percentage']?.value;
+  
+    console.log("Fetching available files with:", { noiseType, noiseLevel, filterType, cutOffFrequency, compressionPercentage });
+  
+    let pathToCheck = '';
+  
+    if (compressionPercentage) {
+      pathToCheck = `${folderPath}/${compressionPercentage}`;
+    } else if (filterType && cutOffFrequency) {
+      pathToCheck = `${folderPath}/${filterType}/${cutOffFrequency}`;
+    } else if (noiseType && noiseLevel) {
+      pathToCheck = `${folderPath}/${noiseType}/${noiseLevel}`;
+    } else {
+      console.error('Missing required selections');
+      return []; 
     }
 
     const response = await fetch(`${backendIP}/audio/listfiles`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ folderPath: `${folderPath}/${noiseType}/${noiseLevel}` }),
+      body: JSON.stringify({ folderPath: pathToCheck }),
     });
 
     if (!response.ok) {
@@ -149,32 +181,39 @@ const TestScreen4 = () => {
     }
     return array;
   };
-  const handleResponse = async (option, responseType) => {
-    console.log(`${responseType} button clicked`);
+
+  const handleResponse = async (option) => {
+    console.log('Response button clicked:', option);
   
     if (!isPlaying && !buttonsDisabled) {
       setButtonsDisabled(true);
   
       if (option === correctWord) {
-        setScore((prev) => prev + 1);
-        console.log('Correct answer!');
+        setScore((prevScore) => {
+          const newScore = prevScore + 1;
+          console.log('Correct answer! Updating score to:', newScore);
+          return newScore;
+        });
       } else {
-        console.log('Wrong answer!');
+        console.log('Wrong answer selected');
       }
   
-      setTotalAudioPlayed((prev) => prev + 1);
+      setTotalAudioPlayed((prev) => {
+        const newTotal = prev + 1;
+        console.log('Updating totalAudioPlayed to:', newTotal);
+        return newTotal;
+      });
+
       setOptions([]);
       setShowOptions(false);
       setShowDisplay(true);
-  
-      // Immediately fetch and play the next audio
-      await fetchSelectedAudio();
+      
+      await fetchSelectedAudio(); 
     }
   };
-  
 
-  const handleCorrect = () => handleResponse(correctWord, 'Correct');
-  const handleIncorrect = () => handleResponse('', 'Incorrect');
+  const handleCorrect = () => handleResponse(correctWord);
+  const handleIncorrect = () => handleResponse('');
 
   const handleRepeat = () => {
     console.log('Repeat button clicked');
@@ -182,13 +221,28 @@ const TestScreen4 = () => {
       playAudio(correctWord);
     }
   };
-
   const handleExit = () => {
     console.log('Exit button clicked');
-    setShowPopup(true);
+  
+    audioRef.current.pause();
+    audioRef.current.src = '';
+  
+    setShowPopup(true);  // Show popup first with the correct score and totalAudioPlayed
   };
+  
+  const handleClosePopup = () => {
+    setShowPopup(false);
+    
+    // Reset states after popup closes
+    setDisplayWord(''); 
+    setOptions([]);     
+    setPlayedFiles(new Set()); 
+    setScore(0);        
+    setTotalAudioPlayed(0); 
+    navigate('/home');
+  };
+  
 
-  const handleClosePopup = () => setShowPopup(false);
   const fetchSelectedAudio = async () => {
     try {
       const audioFiles = await fetchAvailableFiles();
@@ -197,13 +251,13 @@ const TestScreen4 = () => {
         console.warn('No available files to play');
         return;
       }
-  
+
       const randomIndex = Math.floor(Math.random() * availableFiles.length);
       const selectedFile = availableFiles[randomIndex];
-  
+
       setDisplayWord(selectedFile.replace('.wav', ''));
       await playAudio(selectedFile);
-  
+
       setPlayedFiles((prev) => new Set(prev).add(selectedFile));
       setButtonsDisabled(false);
     } catch (error) {
@@ -211,7 +265,6 @@ const TestScreen4 = () => {
       setButtonsDisabled(false);
     }
   };
-  
 
   const handleShowOptions = () => {
     console.log('Show Options button clicked');
@@ -246,7 +299,8 @@ const TestScreen4 = () => {
             <button
               key={index}
               className="option-button"
-              disabled
+              onClick={() => handleResponse(option)} // Handle option selection
+              disabled={buttonsDisabled}
             >
               {option.replace('.wav', '')}
             </button>
@@ -259,7 +313,7 @@ const TestScreen4 = () => {
         <button className="repeat-button" onClick={handleRepeat} disabled={isPlaying}>Repeat</button>
         <button className="exit-button" onClick={handleExit}>Exit</button>
       </div>
-    {showPopup && (
+      {showPopup && (
         <Popup score={score} totalAudioPlayed={totalAudioPlayed} onClose={handleClosePopup} />
       )}
     </div>
@@ -267,3 +321,7 @@ const TestScreen4 = () => {
 };
 
 export default TestScreen4;
+
+
+
+

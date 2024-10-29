@@ -1,68 +1,80 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import React, { useState, useEffect, useContext } from 'react';
 import Dropdown from '../controllers/Dropdown';
 import Button from '../controllers/Button';
 import './Level.css';
+import DataContext from '../../stores/DataContextProvider';
+import { useNavigate } from 'react-router-dom';
 
-const Level1 = ({ onNext, onPrev, levelData }) => {
+const Level1 = ({ onPrev, levelData }) => {
+  const { updateSelectedOptions } = useContext(DataContext);
   const [selectedOptions, setSelectedOptions] = useState({});
-  const [inputValues, setInputValues] = useState({});
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log('Level Data on mount:', levelData); // Log levelData on component mount
+
+    if (levelData && levelData.skillData) {
+      const initialSelectedOptions = {};
+
+      // Assuming each skill object contains a 'type' and 'options' properties
+      levelData.skillData.forEach(skill => {
+        if (skill.type === 'dropdown' && skill.options) {
+          initialSelectedOptions[skill.label] = skill.options[0]; // Default to the first option
+        }
+      });
+
+      console.log('Initial selected options:', initialSelectedOptions); // Log initial selected options
+      setSelectedOptions(initialSelectedOptions);
+    } else {
+      console.error('Invalid levelData or skillData:', levelData); // Log error if levelData is invalid
+    }
+  }, [levelData]);
 
   const handleDropdownSelect = (label, value) => {
-    setSelectedOptions(prevState => ({ ...prevState, [label]: value }));
+    setSelectedOptions(prevState => ({
+      ...prevState,
+      [label]: value
+    }));
   };
 
-  const handleTextChange = (label, value) => {
-    setInputValues(prevState => ({ ...prevState, [label]: value }));
+  const handleNext = () => {
+    console.log('Selected options before navigating:', selectedOptions); // Log selected options before navigation
+    updateSelectedOptions(selectedOptions);
+    navigate('/instruction');
   };
 
-  const handleBack = () => {
-    onPrev(); // Use onPrev function to navigate back
-  };
-
-  if (!levelData) {
+  // Check if levelData or skillData is available
+  if (!levelData || !levelData.skillData) {
     return <div>Loading...</div>;
   }
 
   return (
     <div className="level-container">
       <div className="header-container">
-      <h2>Select the options</h2>
+        <h2>Select the options</h2>
       </div>
       <div className="content-container">
         {levelData.skillData.map((skill, index) => (
-          <div key={index} className="skill-container">
-            {skill.type === 'dropdown' && (
+          skill.type === 'dropdown' && skill.options && ( // Ensure the skill is a dropdown and has options
+            <div key={index} className="skill-container">
               <div className="element-container">
                 <label>{skill.label}</label>
                 <Dropdown
-                  options={skill.options}
-                  selectedOption={selectedOptions[skill.label]}
-                  onSelect={(value) => handleDropdownSelect(skill.label, value)}
+                  options={skill.options} // Use the skill's options directly
+                  selectedOption={selectedOptions[skill.label]} // Get selected option for this skill
+                  onSelect={(value) => handleDropdownSelect(skill.label, value)} // Handle option selection
                 />
               </div>
-            )}
-            {skill.type === 'text' && (
-              <div className="element-container">
-                  <label>{skill.label}(ms) </label>
-                <input
-                  type="text"
-                  placeholder={skill.placeholder}
-                  value={inputValues[skill.label]}
-                  onChange={(e) => handleTextChange(skill.label, e.target.value)}
-                />
-              </div>
-            )}
-          </div>
+            </div>
+          )
         ))}
       </div>
       <div className="button-container">
-        <Button buttonName="Back" handleClick={handleBack} />
-        <Button buttonName="Next" handleClick={onNext} />
+        <Button buttonName="Back" handleClick={onPrev} />
+        <Button buttonName="Next" handleClick={handleNext} />
       </div>
     </div>
   );
-}
+};
 
 export default Level1;

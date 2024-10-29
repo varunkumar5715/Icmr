@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect, useContext } from 'react';
 import Dropdown from '../controllers/Dropdown';
 import Button from '../controllers/Button';
@@ -6,29 +8,28 @@ import DataContext from '../../stores/DataContextProvider';
 import { useNavigate } from 'react-router-dom';
 
 const Level5 = ({ onPrev, levelData }) => {
-  const { updateSelectedOptions, updateTestdata } = useContext(DataContext);
+  const { updateSelectedOptions } = useContext(DataContext);
   const [selectedOptions, setSelectedOptions] = useState({});
-  const [inputValues, setInputValues] = useState({});
   const [filteredNoiseLevelOptions, setFilteredNoiseLevelOptions] = useState([]);
+  const [filteredCutOffOptions, setFilteredCutOffOptions] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (levelData) {
       const initialSelectedOptions = {};
-      const initialInputValues = {};
-      const noiseLevelOptions = levelData.skillData.find(skill => skill.label === 'Noise level').options;
+      const noiseLevelOptions = levelData.skillData.find(skill => skill.label === 'Noise level')?.options || [];
+      const cutOffOptions = levelData.skillData.find(skill => skill.label === 'Cut-Off Frequency')?.options || [];
 
+      // Set initial selected options for both dropdowns
       levelData.skillData.forEach(skill => {
         if (skill.type === 'dropdown') {
-          initialSelectedOptions[skill.label] = skill.options[0]; // Store full object
-        } else if (skill.type === 'text') {
-          initialInputValues[skill.label] = '';
+          initialSelectedOptions[skill.label] = skill.options[0]; // Default to the first option
         }
       });
 
       setSelectedOptions(initialSelectedOptions);
-      setInputValues(initialInputValues);
       setFilteredNoiseLevelOptions(noiseLevelOptions);
+      setFilteredCutOffOptions(cutOffOptions);
     }
   }, [levelData]);
 
@@ -36,51 +37,31 @@ const Level5 = ({ onPrev, levelData }) => {
     setSelectedOptions(prevState => {
       const newSelectedOptions = { ...prevState, [label]: value };
 
+      // Filter logic for noise levels based on noise type selection
       if (label === 'Noise type') {
         if (value.value === 'nonoise') {
-          // Show only "Quiet" in Noise level dropdown
+          // Only show "Quiet" if 'Noise type' is set to 'nonoise'
           setFilteredNoiseLevelOptions([{ label: 'Quiet', value: 'Quiet' }]);
-          // Do not auto-select "Quiet", just update options
+          newSelectedOptions['Noise level'] = { label: 'Quiet', value: 'Quiet' }; // Set Noise level to Quiet
         } else {
-          const allNoiseLevels = levelData.skillData.find(skill => skill.label === 'Noise level').options;
-          const filteredOptions = allNoiseLevels.filter(option => option.value !== 'Quiet');
-          setFilteredNoiseLevelOptions(filteredOptions);
-          // Select the first available option other than "Quiet"
-          newSelectedOptions['Noise level'] = filteredOptions[0];
+          const allNoiseLevels = levelData.skillData.find(skill => skill.label === 'Noise level')?.options || [];
+          setFilteredNoiseLevelOptions(allNoiseLevels.filter(option => option.value !== 'Quiet'));
+          newSelectedOptions['Noise level'] = allNoiseLevels[0]; // Default to the first available option
         }
       }
 
-      // console.log('Updated selected options:', newSelectedOptions);
+      // Update cut-off options as needed
+      if (label === 'Filter type') {
+        const allCutOffOptions = levelData.skillData.find(skill => skill.label === 'Cut-Off Frequency')?.options || [];
+        setFilteredCutOffOptions(allCutOffOptions);
+      }
 
       return newSelectedOptions;
     });
   };
 
-  const handleTextChange = (label, value) => {
-    setInputValues(prevState => ({ ...prevState, [label]: value }));
-  };
-
   const handleNext = () => {
     updateSelectedOptions(selectedOptions);
-
-    const noiseTypeValue = selectedOptions['Noise type']?.value;
-    const noiseLevelValue = selectedOptions['Noise level']?.value;
-
-    if (!noiseTypeValue || !noiseLevelValue) {
-      console.error('Noise type or Noise level not selected.');
-      return;
-    }
-
-    // Ensure values are strings
-    const filePath = `audiofiles/auditory/auddisspe/audiword/${noiseTypeValue}/${noiseLevelValue}/one.wav`;
-
-    // console.log('Generated audio path:', filePath);
-
-    updateTestdata({
-      selectedOptions,
-      audioPath: filePath,
-    });
-
     navigate('/instruction');
   };
 
@@ -96,36 +77,17 @@ const Level5 = ({ onPrev, levelData }) => {
       <div className="content-container">
         {levelData.skillData.map((skill, index) => (
           <div key={index} className="skill-container">
-            {skill.type === 'dropdown' && skill.label === 'Noise type' && (
+            {skill.type === 'dropdown' && (
               <div className="element-container">
                 <label>{skill.label}</label>
                 <Dropdown
-                  options={skill.options}
-                  selectedOption={selectedOptions[skill.label]?.value} // Pass the value for Dropdown
+                  options={
+                    skill.label === 'Noise level' ? filteredNoiseLevelOptions :
+                    skill.label === 'Cut-Off Frequency' ? filteredCutOffOptions :
+                    skill.options
+                  }
+                  selectedOption={selectedOptions[skill.label]?.value}
                   onSelect={(value) => handleDropdownSelect(skill.label, value)}
-                />
-              </div>
-            )}
-
-            {skill.type === 'dropdown' && skill.label === 'Noise level' && (
-              <div className="element-container">
-                <label>{skill.label}</label>
-                <Dropdown
-                  options={filteredNoiseLevelOptions}
-                  selectedOption={selectedOptions[skill.label]?.value} // Pass the value for Dropdown
-                  onSelect={(value) => handleDropdownSelect(skill.label, value)}
-                />
-              </div>
-            )}
-
-            {skill.type === 'text' && (
-              <div className="element-container">
-             <label>{skill.label}(ms) </label>
-                <input
-                  type="text"
-                  placeholder={skill.placeholder}
-                  value={inputValues[skill.label]}
-                  onChange={(e) => handleTextChange(skill.label, e.target.value)}
                 />
               </div>
             )}

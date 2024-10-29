@@ -77,11 +77,11 @@
               "options": [
                 {
                   "label": "No compression",
-                  "value": "No compression"
+                  "value": "nocompress"
                 },
                 {
                   "label": "10% compression",
-                  "value": "10% compression"
+                  "value": "10compre"
                 },
                 {
                   "label": "15% compression",

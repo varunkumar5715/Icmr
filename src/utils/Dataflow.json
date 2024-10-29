@@ -134,6 +134,7 @@
                                 {
                                     "title": "Word identification",
                                     "skillCode": 10,
+                                    "testCode": 4,
                                     "folderName": "auditorywordiden",
                                     "item": [],
                                     "platform": "",
@@ -212,6 +213,7 @@
                                 {
                                     "title": "Word identification",
                                     "skillCode": 16,
+                                    "testCode": 4,
                                     "folderName": "auditorylowword",
                                     "item": [],
                                     "platform": "",
@@ -979,7 +981,7 @@
         },
         {
             "title": "Metalinguistics",
-            "folderName": "meta",
+            "folderName": "metaling",
             "position": "2",
             "item": [
                 {
@@ -998,8 +1000,8 @@
                                     "item": [],
                                     "platform": "",
                                     "level": "",
-                                    "instruction": "",
-                                    "example": ""
+                                    "instruction": "A situation will be presented. Tell what you will do in that situation",
+                                    "example": "ನಿನ್ನ ಬಟ್ಟೆ ಕೊಳಕಾಗಿದೆ|ಸರಿ ಉತ್ತರ: ಮಣ್ಣಿನಲ್ಲಿ ಆಟವಾಡಿದೆ"
                                 },
                                 {
                                     "title": "Rhyme Judgement",
