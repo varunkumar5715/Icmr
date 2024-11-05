@@ -715,7 +715,7 @@
                                 {
                                     "title": "Words",
                                     "skillCode": 52,
-                                    "testCode": 6,
+                                   "testCode": 11,
                                     "folderName": "cogwordsus",
                                     "item": [],
                                     "platform": "",
@@ -727,7 +727,7 @@
                                 {
                                     "title": "Sentences",
                                     "skillCode": 53,
-                                    "testCode": 6,
+                                    "testCode": 11,
                                     "folderName": "cogsentsus",
                                     "item": [],
                                     "platform": "",
@@ -745,7 +745,7 @@
                                 {
                                     "title": "Syllables",
                                     "skillCode": 54,
-                                    "testCode": 6,
+                                    "testCode": 12,
                                     "folderName": "cogselsus",
                                     "item": [],
                                     "platform": "",
@@ -757,7 +757,7 @@
                                 {
                                     "title": "Words",
                                     "skillCode": 55,
-                                    "testCode": 6,
+                                    "testCode": 12,
                                     "folderName": "cogwordssus",
                                     "item": [],
                                     "platform": "",
@@ -769,7 +769,7 @@
                                 {
                                     "title": "Sentences",
                                     "skillCode": 56,
-                                    "testCode": 6,
+                                    "testCode": 12,
                                     "folderName": "cogselwsus",
                                     "item": [],
                                     "platform": "",
@@ -867,7 +867,7 @@
                                     "level": "",
                                     "instruction": [
                                         "Listen carefully and memorize all the sentences that will be presented",
-                                       "Identify and tell if the sentence is a true or a false statement after each presentation"
+                                        "Identify and tell if the sentence is a true or a false statement after each presentation"
                                     ],
                                     "example": ""
                                 }
@@ -933,7 +933,6 @@
                                     "instruction": "Three words will be presented. You have to identify the category they belong to",
                                     "example": "ವೃತ್ತ, ಚೌಕ, ಆಯತ|ಸರಿ ಉತ್ತರ: ಆಕಾರಗಳು"
                                 },
-                             
                                 {
                                     "title": "Category Member Recall",
                                     "skillCode": 68,
@@ -995,7 +994,7 @@
                                 {
                                     "title": "Rhyming Awareness - Trial Activity",
                                     "skillCode": 71,
-                                    "testCode":3,
+                                    "testCode": 3,
                                     "folderName": "rhytrial",
                                     "item": [],
                                     "platform": "",

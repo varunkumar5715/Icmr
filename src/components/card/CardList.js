@@ -1,5 +1,4 @@
 
-
 import React, { useContext, useEffect, useState } from 'react';
 import Card from './Card';
 import './CardList.css';
@@ -16,10 +15,10 @@ const CardList = () => {
   const [cardList, setCardList] = useState([]);
   const navigate = useNavigate();
 
-  const baseDirectory = '/ICMR-MAIN/backend/audiofiles'; // Use forward slashes for paths
+  const baseDirectory = '/ICMR-MAIN/backend/audiofiles'; // Base directory
 
   useEffect(() => {
-    // Default to '/instruction' if level is undefined or out of range
+    // Navigate to instruction if level is invalid
     if (level === undefined || level < 0 || level > 4) {
       navigate('/instruction');
       return;
@@ -43,8 +42,11 @@ const CardList = () => {
 
   const cardClick = (card) => {
     const { title, levelCode, skillCode, folderName } = card;
-    let newFolderPath = folderPath ? folderPath : baseDirectory; // Start with base directory
-    newFolderPath += `/${folderName}`;
+
+    // Update folderPath by appending the new folder name
+    const newFolderPath = folderPath 
+      ? `${folderPath}/${folderName}` 
+      : `${baseDirectory}/${folderName}`;
 
     switch(level) {
       case 0:
@@ -70,11 +72,26 @@ const CardList = () => {
 
     updateLevelCode(levelCode);
     updateSkillCode(skillCode);
-    updateFolderPath(newFolderPath);
+    updateFolderPath(newFolderPath); // Update the folder path
+  
+  };
+
+  const handleBack = () => {
+    // Handle back navigation by removing the last folder name
+    if (folderPath) {
+      const pathParts = folderPath.split('/'); // Split the path into parts
+      pathParts.pop(); // Remove the last part (folder name)
+      const newPath = pathParts.join('/'); // Reconstruct the path
+      updateFolderPath(newPath); // Update folder path in context
+      console.log('New Folder Path after Back:', newPath);
+    }
+    // Additional logic for back navigation can be added here
+    navigate(-1); // Navigate back in history
   };
 
   return (
     <div className='cardlist'>
+   
       {cardList.length > 0 ? (
         cardList.map((card, index) => (
           <Card 

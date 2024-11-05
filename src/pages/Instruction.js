@@ -79,6 +79,9 @@ const Instruction = () => {
       case 11:
         navigate('/testscreen11', { state: { selectedOptions } });
         break;
+        case 12:
+          navigate('/testscreen12', { state: { selectedOptions } });
+          break;
       default:
         console.error('Invalid testCode:', testCode);
         navigate('/home'); // Fallback in case of an invalid testCode

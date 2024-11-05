@@ -1,40 +1,54 @@
+
+
 import React, { useState, useEffect, useContext } from 'react';
 import Dropdown from '../controllers/Dropdown';
 import Button from '../controllers/Button';
 import DataContext from '../../stores/DataContextProvider';
 import './Level.css';
 
+// Mapping numbers to folder names
 const numberToStringMap = {
-  1: 'onesti',
-  2: 'twosti',
-  3: 'threesti',
-  4: 'foursti',
   5: 'fivesti',
-  6: 'sixsti',
-  7: 'sevensti',
-  8: 'eightsti',
-  9: 'ninesti',
   10: 'tensti',
-  11: 'elevensti',
-  12: 'twelfsti',
-  13: 'thirteensti',
-  14: 'fourteensti',
   15: 'fifteensti',
+  20: 'twentysti',
+  25: 'twentysti',
+  30: 'thirtysti',
+  35: 'thirtyfivesti',
+  40: 'fourtysti',
+  45: 'fourtyfivesti',
+  50: 'fiftysti',
+  55: 'fiftyfivesti',
+  60: 'sixtysti',
+  65: 'sixtyfivesti',
+  70: 'seventysti',
+  75: 'seventyfivesti',
+  80: 'eightysti',
+  85: 'eightyfivesti',
+  90: 'ninetysti',
+  95: 'ninetyfivesti',
+  100: 'hundredsti'
 };
 
+// Define base folder paths
+const baseFolderPaths = [
+  "D:\\ICMR-MAIN\\backend\\audiofiles\\cognition\\cognitive\\cogsustained\\cogsylsus",
+  "D:\\ICMR-MAIN\\backend\\audiofiles\\cognition\\cognitive\\cogsustained\\cogwordsus",
+  "D:\\ICMR-MAIN\\backend\\audiofiles\\cognition\\cognitive\\cogsustained\\cogsentsus"
+];
+
 const Level2 = ({ onNext, onPrev, levelData }) => {
-  const { 
-    updateSelectedOptions, 
-    updateDuration, 
-    updateNumberOfStimuli, 
-    updateResponseWindow, 
-    updateFolderPath 
+  const {
+    updateSelectedOptions,
+    updateDuration,
+    updateNumberOfStimuli,
+    updateResponseWindow,
+    updateFolderPath
   } = useContext(DataContext);
-  
+
   const [selectedOptions, setSelectedOptions] = useState({});
   const [inputValues, setInputValues] = useState({});
-  
-  const baseFolderPath = "D:\\ICMR-MAIN\\backend\\audiofiles\\cognition\\cognitive\\cogsustained\\cogsylsus";
+  const [selectedBaseFolderPath, setSelectedBaseFolderPath] = useState(baseFolderPaths[0]); // Default to the first path
 
   useEffect(() => {
     if (levelData) {
@@ -90,7 +104,8 @@ const Level2 = ({ onNext, onPrev, levelData }) => {
     const duration = parseInt(selectedOptions["Time Duration"].label, 10) || 5;
     const responseWindow = parseInt(inputValues["Response Window"], 10) || 1000;
 
-    const folderPath = `${baseFolderPath}\\${folderName}`;
+    // Update the folder path based on the selected base path and folder name
+    const folderPath = `${selectedBaseFolderPath}\\${folderName}`;
     console.log('Updated Folder Path:', folderPath);
 
     // Update the context with the selected options
@@ -99,19 +114,19 @@ const Level2 = ({ onNext, onPrev, levelData }) => {
       'Number of Stimuli': selectedOptions["Number of Stimuli"],
       'Response Window': responseWindow
     };
-    
+
     updateSelectedOptions(updatedOptions);
     console.log('Updated Selected Options:', updatedOptions);
-    
+
     updateDuration(duration * 60000); // Convert minutes to milliseconds
     console.log('Updated Duration:', duration * 60000);
-    
+
     updateNumberOfStimuli(numberOfStimuli);
     console.log('Updated Number of Stimuli:', numberOfStimuli);
-    
+
     updateResponseWindow(responseWindow);
     console.log('Updated Response Window:', responseWindow);
-    
+
     updateFolderPath(folderPath);
     console.log('Updated Folder Path:', folderPath);
 
@@ -135,7 +150,7 @@ const Level2 = ({ onNext, onPrev, levelData }) => {
                 <label>{skill.label}</label>
                 <Dropdown
                   options={skill.options}
-                  selectedOption={selectedOptions[skill.label]} 
+                  selectedOption={selectedOptions[skill.label]}
                   onSelect={(value) => handleDropdownSelect(skill.label, value)}
                 />
               </div>

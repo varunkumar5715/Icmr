@@ -19,6 +19,7 @@ import TestScreen8 from './components/Testpage/TestScreen8';
 import TestScreen9 from './components/Testpage/TestScreen9';
 import TestScreen10 from './components/Testpage/TestScreen10';
 import TestScreen11 from './components/Testpage/TestScreen11';
+import TestScreen12 from './components/Testpage/TestScreen12';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
             <Route path="/testscreen9" element={<TestScreen9/>} />
             <Route path="/testscreen10" element={<TestScreen10/>} />
             <Route path="/testscreen11" element={<TestScreen11/>} />
+            <Route path="/testscreen12" element={<TestScreen12/>} />
           </Routes>
         </Layout>
       </Router>

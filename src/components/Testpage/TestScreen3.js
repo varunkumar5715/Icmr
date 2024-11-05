@@ -163,9 +163,8 @@ const TestScreen3 = () => {
     setShowPopup(false); // Close the popup
     navigate('/home');
   };
-  
   return (
-    <div className="test-screen2">
+    <div className="test-screen3"> {/* Changed class name to test-screen3 */}
       <div className="header">
         <span>{g}</span>
       </div>
@@ -177,13 +176,15 @@ const TestScreen3 = () => {
         </div>
         <h2 className="display-script">{displayScript}</h2>
       </div>
-      <div className="button-row">
-        <button className="correct-button" onClick={handleCorrect}>Correct</button>
-        <button className="incorrect-button" onClick={handleIncorrect}>Incorrect</button>
+      <div class="button-container">
+  <div class="button-line">
+        <button className="button correct" onClick={handleCorrect}>Correct</button>
+        <button className="button incorrect" onClick={handleIncorrect}>Incorrect</button>
       </div>
-      <div className="button-row">
-        <button className="repeat-button" onClick={handleRepeat}>Repeat</button>
-        <button className="exit-button" onClick={handleExit}>Exit</button>
+      <div class="control-line"> {/* Updated button row class */}
+        <button className="button repeat" onClick={handleRepeat}>Repeat</button>
+        <button className="button exit" onClick={handleExit}>Exit</button>
+      </div>
       </div>
       {showPopup && (
         <Popup score={score} totalAudioPlayed={totalAudioPlayed} onClose={handleClosePopup} />

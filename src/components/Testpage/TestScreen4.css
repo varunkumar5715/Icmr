@@ -1,7 +1,7 @@
 /* Test Screen Container */
 .test-screen4 {
   background-color: #6CACBF;
-  width: 440px;
+  width: 480px;
   border-radius: 25px;
   height: 500px;
   padding: 20px;
@@ -64,7 +64,9 @@
 .test-screen4 .incorrect-button,
 .test-screen4 .repeat-button,
 .test-screen4 .exit-button {
-  width: 80px;
+  width: 100%; /* Set a fixed width for all buttons */
+  max-width: 100px; /* Set max width for larger screens */
+  height: 40px; /* Set a fixed height */
   padding: 10px;
   margin: 5px;
   border-radius: 15px;
@@ -73,29 +75,21 @@
   font-weight: bold;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease; /* Keep transition for smooth color change */
 }
 
+/* Button Colors */
 .test-screen4 .correct-button {
-  background-color: #25B233;
+  background-color: #238323;
 }
 
 .test-screen4 .incorrect-button {
-  background-color: #A81D1D;
+  background-color: rgb(138, 38, 38);
 }
 
 .test-screen4 .repeat-button,
 .test-screen4 .exit-button {
   background-color: #2F4046;
-}
-
-/* Button Hover Effects */
-.test-screen4 .audio-button:hover,
-.test-screen4 .correct-button:hover,
-.test-screen4 .incorrect-button:hover,
-.test-screen4 .repeat-button:hover,
-.test-screen4 .exit-button:hover {
-  opacity: 0.9;
 }
 
 /* Layout for Buttons */
@@ -112,20 +106,10 @@
   justify-content: space-between;
 }
 
-.test-screen4 .button-row.correct-incorrect .correct-button,
-.test-screen4 .button-row.correct-incorrect .incorrect-button {
-  width: calc(50% - 10px); /* 50% width minus the gap for margin */
-}
-
 /* Repeat and Exit Buttons Row */
 .test-screen4 .button-row.repeat-exit {
   flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
   justify-content: space-between;
-}
-
-.test-screen4 .button-row.repeat-exit .repeat-button,
-.test-screen4 .button-row.repeat-exit .exit-button {
-  width: calc(50% - 10px); /* 50% width minus the gap for margin */
 }
 
 /* Layout for Option Buttons */
@@ -137,6 +121,7 @@
   margin-top: 20px;
   width: 100%;
 }
+
 .test-screen4 .option-buttons .option-button {
   width: 200px; /* Set a fixed width */
   padding: 10px;
@@ -151,6 +136,7 @@
   text-align: center;
   word-break: break-word;
 }
+
 /* Single-Word Options */
 .test-screen4 .option-buttons .option-button.single-word {
   display: inline-block; /* Display in a row */
@@ -218,58 +204,60 @@
 /* Responsive Adjustments */
 @media screen and (max-width: 600px) {
   .test-screen4 {
-      width: 100%;
-      max-width: 320px;
-      height: auto;
-      padding: 10px;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    padding: 10px;
   }
 
   .test-screen4 .header span {
-      font-size: 18px;
+    font-size: 18px;
   }
 
   .test-screen4 .content h2 {
-      font-size: 18px;
+    font-size: 18px;
   }
 
   .test-screen4 .content h4 {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   .test-screen4 .audio-icon {
-      font-size: 24px;
+    font-size: 24px;
   }
 
   .test-screen4 .button-row.correct-incorrect,
   .test-screen4 .button-row.repeat-exit {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; /* Center buttons */
+    gap: 10px; /* Space between buttons */
   }
 
-  .test-screen4 .button-row.correct-incorrect .correct-button,
-  .test-screen4 .button-row.correct-incorrect .incorrect-button {
-      width: calc(50% - 10px); /* 50% width minus the gap for margin */
-  }
-
-  .test-screen4 .button-row.repeat-exit .repeat-button,
-  .test-screen4 .button-row.repeat-exit .exit-button {
-      width: calc(50% - 10px); /* 50% width minus the gap for margin */
+  /* Ensuring all buttons have the same width on mobile view */
+  .test-screen4 .audio-button,
+  .test-screen4 .correct-button,
+  .test-screen4 .incorrect-button,
+  .test-screen4 .repeat-button,
+  .test-screen4 .exit-button {
+    width: 100%; /* Set all buttons to full width */
+    max-width: none; /* Remove max-width constraint */
+    margin: 5px 0; /* Add vertical margin for spacing */
   }
 
   .test-screen4 .option-buttons .option-button {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
+    width: 100%; /* Set option buttons to full width */
+    padding: 10px;
+    font-size: 16px;
   }
 
   .test-screen4 .popup {
-      width: 90%;
-      max-width: 300px;
+    width: 90%;
+    max-width: 300px;
   }
 
   .test-screen4 .popup .popup-footer button {
-      padding: 8px 16px;
-      font-size: 12px;
+    padding: 8px 16px;
+    font-size: 12px;
   }
 }

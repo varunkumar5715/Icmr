@@ -1386,7 +1386,7 @@
         }
       ]
     },
-    { 
+    {
       "level": 3,
       "skill": [
         {
@@ -1542,87 +1542,81 @@
               "label": "Target Stimuli",
               "options": [
                 {
-                  "label": "Target stimuli 1",
-                  "value": "Target stimuli 1"
+                  "label": "ಕ",
+                  "value": "ಕ"
                 },
                 {
-                  "label": "Target stimuli 2",
-                  "value": "Target stimuli 2"
+                  "label": "ಗ",
+                  "value": "ಗ"
                 },
                 {
-                  "label": "Target stimuli 3",
-                  "value": "Target stimuli 3"
+                  "label": "ಚ",
+                  "value": "ಚ"
                 },
                 {
-                  "label": "Target stimuli 4",
-                  "value": "Target stimuli 4"
+                  "label": "ಜ",
+                  "value": "ಜ"
                 },
                 {
-                  "label": "Target stimuli 5",
-                  "value": "Target stimuli 5"
-                },
-                {
-                  "label": "Target stimuli 6",
-                  "value": "Target stimuli 6"
-                },
-                {
-                  "label": "Target stimuli 7",
-                  "value": "Target stimuli 7"
-                },
-                {
-                  "label": "Target stimuli 8",
-                  "value": "Target stimuli 8"
-                },
-                {
-                  "label": "Target stimuli 9",
-                  "value": "Target stimuli 9"
-                },
-                {
-                  "label": "Target stimuli 10",
-                  "value": "Target stimuli 10"
-                },
-                {
-                  "label": "Target stimuli 11",
-                  "value": "Target stimuli 11"
-                },
-                {
-                  "label": "Target stimuli 12",
-                  "value": "Target stimuli 12"
-                },
-                {
-                  "label": "Target stimuli 13",
-                  "value": "Target stimuli 13"
-                },
-                {
-                  "label": "Target stimuli 14",
-                  "value": "Target stimuli 14"
-                },
-                {
-                  "label": "Target stimuli 15",
-                  "value": "Target stimuli 15"
-                },
-                {
-                  "label": "Target stimuli 16",
-                  "value": "Target stimuli 16"
-                },
-                {
-                  "label": "Target stimuli 17",
-                  "value": "Target stimuli 17"
-                },
-                {
-                  "label": "Target stimuli 18",
-                  "value": "Target stimuli 18"
-                },
-                {
-                  "label": "Target stimuli 19",
-                  "value": "Target stimuli 19"
-                },
-                {
-                  "label": "Target stimuli 20",
-                  "value": "Target stimuli 20"
+                  "label": "ಟ",
+                  "value": "ಟ"
                 }
+  
+              ]
+            },
+            {
+              "label": "Target Percentage",
+              "options": [
+            
+                {
+                  "label": "10",
+                  "value": "10"
+                },
+              
+                {
+                  "label": "20",
+                  "value": "20"
+                },
+             
+                {
+                  "label": "30",
+                  "value": "30"
+                },
+              
+                {
+                  "label": "40",
+                  "value": "40"
+                },
+             
+                {
+                  "label": "50",
+                  "value": "50"
+                },
+                {
+                  "label": "60",
+                  "value": "60"
+                },
+                {
+                  "label": "70",
+                  "value": "70"
+                },
+                {
+                  "label": "80",
+                  "value": "80"
+                },
+                {
+                  "label": "90",
+                  "value": "90"
+                },
+                {
+                  "label": "100",
+                  "value": "100"
+                }
+                
+
               ]
             }
+         
           ],
           "textbox": [
             {
@@ -10761,4 +10755,4 @@
       ]
     }
   ]
-}
+} 

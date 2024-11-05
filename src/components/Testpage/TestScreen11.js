@@ -1,477 +1,4 @@
 
-// import React, { useContext, useEffect, useState, useRef } from 'react';
-// import DataContext from '../../stores/DataContextProvider';
-// import { useNavigate } from 'react-router-dom';
-// import backendIP from '../../utils/serverData';
-// import Popup from '../popup/Popup';
-// import './TestScreen11.css';
-
-// const TestScreen11 = () => {
-//     const { g, sk, instruction, selectedOptions, folderPath } = useContext(DataContext);
-//     const [displayScript, setDisplayScript] = useState('');
-//     const [score, setScore] = useState(0);
-//     const [totalAudioPlayed, setTotalAudioPlayed] = useState(0);
-//     const [showPopup, setShowPopup] = useState(false);
-//     const [playedFiles, setPlayedFiles] = useState([]);
-//     const audioRef = useRef(new Audio());
-//     const abortControllerRef = useRef(new AbortController());
-//     const navigate = useNavigate();
-
-//     const [isTestRunning, setIsTestRunning] = useState(false);
-//     const [numberOfStimuli, setNumberOfStimuli] = useState(0);
-//     const [stimulusDuration, setStimulusDuration] = useState(0);
-//     const [responseWindow, setResponseWindow] = useState(5000);
-//     const [duration, setDuration] = useState(0);
-//     const [currentStimulusIndex, setCurrentStimulusIndex] = useState(0);
-//     useEffect(() => {
-//         console.log("Selected Options in TestScreen11:", JSON.stringify(selectedOptions, null, 2));
-//         if (selectedOptions && Object.keys(selectedOptions).length > 0) {
-//             const durationInMinutes = parseInt(selectedOptions['Time Duration']?.label, 10) || 0;
-//             const numStimuli = parseInt(selectedOptions['Number of Stimuli']?.label, 10) || 0;
-//             const responseWindowValue = selectedOptions['Response Window'] || 5000;
-            
-//             const totalDuration = durationInMinutes * 60; // Convert minutes to seconds
-    
-//             console.log('Number of Stimuli:', numStimuli);
-//             console.log('Total Duration (seconds):', totalDuration);
-//             console.log('Response Window (ms):', responseWindowValue);
-    
-//             if (!isNaN(numStimuli) && numStimuli > 0) {
-//                 setNumberOfStimuli(numStimuli);
-//                 setStimulusDuration(Math.min(responseWindowValue / 1000, 5)); // Ensure each stimulus plays for a maximum of 5 seconds
-//                 setResponseWindow(responseWindowValue);
-//                 setIsTestRunning(true);
-//                 setPlayedFiles([]);
-//                 setDuration(totalDuration);
-//             } else {
-//                 console.error('Invalid Number of Stimuli:', numStimuli);
-//             }
-//         }
-//     }, [selectedOptions]);
-    
-
-//     useEffect(() => {
-//         if (folderPath && numberOfStimuli > 0) {
-//             fetchSelectedAudio();
-//         }
-
-//         return () => {
-//             audioRef.current.pause();
-//             audioRef.current.src = '';
-//             abortControllerRef.current.abort();
-//         };
-//     }, [folderPath, numberOfStimuli]);
-
-//     const fetchSelectedAudio = async () => {
-//         try {
-//             abortControllerRef.current = new AbortController();
-
-//             const response = await fetch(`${backendIP}/audio/listfiles`, {
-//                 method: 'POST',
-//                 headers: { 'Content-Type': 'application/json' },
-//                 body: JSON.stringify({ folderPath }),
-//                 signal: abortControllerRef.current.signal,
-//             });
-
-//             if (!response.ok) {
-//                 throw new Error(`HTTP error! status: ${response.status}`);
-//             }
-
-//             const audioData = await response.json();
-
-//             if (Array.isArray(audioData) && audioData.length > 0) {
-//                 const shuffledAudioData = audioData.sort(() => Math.random() - 0.5);
-//                 const availableFiles = shuffledAudioData.slice(0, Math.min(numberOfStimuli, shuffledAudioData.length));
-//                 setPlayedFiles(availableFiles);
-
-//                 if (availableFiles.length > 0) {
-//                     playStimuliRandomly(availableFiles);
-//                 } else {
-//                     console.warn('No audio files available to play.');
-//                 }
-//             } else {
-//                 console.warn('No audio files found in the folder.');
-//             }
-//         } catch (error) {
-//             if (error.name !== 'AbortError') {
-//                 console.error('Error fetching audio files:', error);
-//             }
-//         }
-//     };
-//     const playStimuliRandomly = async (fileList) => {
-//         const remainingTime = duration * 1000; // Total duration in milliseconds
-//         const intervals = generateRandomIntervals(numberOfStimuli, remainingTime);
-    
-//         for (let i = 0; i < fileList.length; i++) {
-//             setCurrentStimulusIndex(i);
-//             await playAudio(fileList[i]);
-    
-//             if (i < intervals.length) {
-//                 console.log(`Time until the next audio plays: ${intervals[i] / 1000} seconds`);
-//                 await new Promise(resolve => setTimeout(resolve, intervals[i]));
-//             }
-//         }
-//         setIsTestRunning(false);
-//     };
-    
-
-//     const generateRandomIntervals = (numIntervals, maxDuration) => {
-//         const intervals = [];
-//         let totalInterval = 0;
-
-
-        
-//         for (let i = 0; i < numIntervals - 1; i++) {
-//             const randomInterval = Math.random() * (maxDuration - totalInterval) / (numIntervals - i);
-//             intervals.push(randomInterval);
-//             totalInterval += randomInterval;
-//         }
-//         intervals.push(maxDuration - totalInterval); // Ensure the total time sums up to the maxDuration
-
-//         return intervals;
-//     };
-
-//     const playAudio = async (fileName) => {
-//         try {
-//             audioRef.current.pause();
-//             audioRef.current.src = '';
-    
-//             setDisplayScript(fileName.replace('.wav', ''));
-//             const filenameWithPath = `${folderPath}/${fileName}`;
-    
-//             const response = await fetch(`${backendIP}/audio/getaudio`, {
-//                 method: 'POST',
-//                 headers: { 'Content-Type': 'application/json' },
-//                 body: JSON.stringify({ filenameWithPath }),
-//                 signal: abortControllerRef.current.signal,
-//             });
-    
-//             if (!response.ok) {
-//                 throw new Error(`HTTP error! status: ${response.status}`);
-//             }
-    
-//             const audioBlob = await response.blob();
-//             const audioUrl = URL.createObjectURL(audioBlob);
-//             audioRef.current.src = audioUrl;
-    
-//             await audioRef.current.play();
-    
-//             await new Promise(resolve => {
-//                 const timer = setTimeout(() => {
-//                     audioRef.current.pause();
-//                     resolve();
-//                 }, stimulusDuration * 1000);
-    
-//                 audioRef.current.onended = () => {
-//                     clearTimeout(timer);
-//                     resolve();
-//                 };
-//             });
-    
-//             setTotalAudioPlayed(prev => prev + 1);
-//             setDisplayScript('');
-    
-//             // Wait for the response window
-//             await new Promise(resolve => setTimeout(resolve, responseWindow));
-    
-//         } catch (error) {
-//             if (error.name !== 'AbortError') {
-//                 console.error('Failed to load audio file:', error);
-//             }
-//         }
-//     };
-
-//     const handleClick = () => {
-//         if (isTestRunning) {
-//             setTotalAudioPlayed(prev => prev + 1);
-//         }
-//     };
-
-//     const handleExit = () => {
-//         setShowPopup(true);
-//     };
-
-//     const handleClosePopup = () => {
-//         setShowPopup(false);
-//         navigate('/home');
-//     };
-
-//     return (
-//         <div className="test-screen11">
-//             <div className="header">
-//                 <span>{g}</span>
-//             </div>
-//             <div className="content">
-//                 <h2>{sk}</h2>
-//                 <h4>{instruction}</h4>
-//                 <div className="audio-icon" onClick={() => audioRef.current && audioRef.current.play()}>
-//                     <span role="img" aria-label="speaker">🔊</span>
-//                 </div>
-//                 <h2 className="display-script">{displayScript}</h2>
-//             </div>
-//             <div className="button-row-index">
-//                 <button className="click-button" onClick={handleClick} disabled={!isTestRunning}>
-//                     Click
-//                 </button>
-//                 <button className="exit-button" onClick={handleExit}>Exit</button>
-//             </div>
-//             {showPopup && (
-//                 <Popup score={score} totalAudioPlayed={totalAudioPlayed} onClose={handleClosePopup} />
-//             )}
-//         </div>
-//     );
-// };
-
-// export default TestScreen11;
-
-
-
-// import React, { useContext, useEffect, useState, useRef } from 'react';
-// import DataContext from '../../stores/DataContextProvider';
-// import { useNavigate } from 'react-router-dom';
-// import backendIP from '../../utils/serverData';
-// import Popup from '../popup/Popup';
-// import './TestScreen11.css';
-
-// const TestScreen11 = () => {
-//     const { g, sk, instruction, selectedOptions, folderPath } = useContext(DataContext);
-//     const [displayScript, setDisplayScript] = useState('');
-//     const [score, setScore] = useState(0);
-//     const [totalAudioPlayed, setTotalAudioPlayed] = useState(0);
-//     const [showPopup, setShowPopup] = useState(false);
-//     const [playedFiles, setPlayedFiles] = useState([]);
-//     const audioRef = useRef(new Audio());
-//     const abortControllerRef = useRef(new AbortController());
-//     const navigate = useNavigate();
-
-//     const [isTestRunning, setIsTestRunning] = useState(false);
-//     const [numberOfStimuli, setNumberOfStimuli] = useState(0);
-//     const [stimulusDuration, setStimulusDuration] = useState(0);
-//     const [responseWindow, setResponseWindow] = useState(5000);
-//     const [duration, setDuration] = useState(0);
-//     const [currentStimulusIndex, setCurrentStimulusIndex] = useState(0);
-//     const [isWithinResponseWindow, setIsWithinResponseWindow] = useState(false);
-//     const timeoutRef = useRef(null);  // Add this to track timeouts
-
-//     useEffect(() => {
-//         console.log("Selected Options in TestScreen11:", JSON.stringify(selectedOptions, null, 2));
-//         if (selectedOptions && Object.keys(selectedOptions).length > 0) {
-//             const durationInMinutes = parseInt(selectedOptions['Time Duration']?.label, 10) || 0;
-//             const numStimuli = parseInt(selectedOptions['Number of Stimuli']?.label, 10) || 0;
-//             const responseWindowValue = parseInt(selectedOptions['Response Window']?.label, 10) || 5000;
-            
-//             const totalDuration = durationInMinutes * 60; // Convert minutes to seconds
-    
-//             if (!isNaN(numStimuli) && numStimuli > 0) {
-//                 setNumberOfStimuli(numStimuli);
-//                 setStimulusDuration(Math.min(responseWindowValue / 1000, 5)); // Ensure each stimulus plays for a maximum of 5 seconds
-//                 setResponseWindow(responseWindowValue);
-//                 setIsTestRunning(true);
-//                 setPlayedFiles([]);
-//                 setDuration(totalDuration);
-//             } else {
-//                 console.error('Invalid Number of Stimuli:', numStimuli);
-//             }
-//         }
-//     }, [selectedOptions]);
-    
-
-//     useEffect(() => {
-//         if (folderPath && numberOfStimuli > 0) {
-//             fetchSelectedAudio();
-//         }
-
-//         return () => {
-//             audioRef.current.pause();
-//             audioRef.current.src = '';
-//             abortControllerRef.current.abort();
-//             clearTimeout(timeoutRef.current);  // Clear timeout on component unmount
-//         };
-//     }, [folderPath, numberOfStimuli]);
-
-//     const fetchSelectedAudio = async () => {
-//         try {
-//             abortControllerRef.current = new AbortController();
-
-//             const response = await fetch(`${backendIP}/audio/listfiles`, {
-//                 method: 'POST',
-//                 headers: { 'Content-Type': 'application/json' },
-//                 body: JSON.stringify({ folderPath }),
-//                 signal: abortControllerRef.current.signal,
-//             });
-
-//             if (!response.ok) {
-//                 throw new Error(`HTTP error! status: ${response.status}`);
-//             }
-
-//             const audioData = await response.json();
-
-//             if (Array.isArray(audioData) && audioData.length > 0) {
-//                 const shuffledAudioData = audioData.sort(() => Math.random() - 0.5);
-//                 const availableFiles = shuffledAudioData.slice(0, Math.min(numberOfStimuli, shuffledAudioData.length));
-//                 setPlayedFiles(availableFiles);
-
-//                 if (availableFiles.length > 0) {
-//                     playStimuliRandomly(availableFiles);
-//                 } else {
-//                     console.warn('No audio files available to play.');
-//                 }
-//             } else {
-//                 console.warn('No audio files found in the folder.');
-//             }
-//         } catch (error) {
-//             if (error.name !== 'AbortError') {
-//                 console.error('Error fetching audio files:', error);
-//             }
-//         }
-//     };
-
-//     const generateRandomIntervals = (numIntervals, maxDuration) => {
-//         const intervals = [];
-//         let totalInterval = 0;
-        
-//         for (let i = 0; i < numIntervals - 1; i++) {
-//             const randomInterval = Math.random() * (maxDuration - totalInterval) / (numIntervals - i);
-//             intervals.push(randomInterval);
-//             totalInterval += randomInterval;
-//         }
-//         intervals.push(maxDuration - totalInterval); // Ensure the total time sums up to the maxDuration
-
-//         return intervals;
-//     };
-
-//     const playStimuliRandomly = async (fileList) => {
-//         const remainingTime = duration * 1000; // Total duration in milliseconds
-//         const intervals = generateRandomIntervals(numberOfStimuli, remainingTime);
-    
-//         for (let i = 0; i < fileList.length; i++) {
-//             setCurrentStimulusIndex(i);
-    
-//             // Play the audio and wait for it to finish
-//             await playAudio(fileList[i]);
-    
-//             // If there is still time before the next audio, wait for that interval
-//             if (i < intervals.length) {
-//                 console.log(`Time until the next audio plays: ${intervals[i] / 1000} seconds`);
-                
-//                 // Set a timeout for the next stimulus
-//                 timeoutRef.current = setTimeout(() => {}, intervals[i]);
-//                 await new Promise(resolve => timeoutRef.current);
-//             }
-//         }
-//         setIsTestRunning(false);
-//     };
-    
-//     const playAudio = async (fileName) => {
-//         try {
-//             audioRef.current.pause(); // Pause any currently playing audio
-//             audioRef.current.src = ''; // Reset the audio source
-    
-//             // Display the name of the current audio file
-//             setDisplayScript(fileName.replace('.wav', ''));
-//             const filenameWithPath = `${folderPath}/${fileName}`;
-    
-//             const response = await fetch(`${backendIP}/audio/getaudio`, {
-//                 method: 'POST',
-//                 headers: { 'Content-Type': 'application/json' },
-//                 body: JSON.stringify({ filenameWithPath }),
-//                 signal: abortControllerRef.current.signal,
-//             });
-    
-//             if (!response.ok) {
-//                 throw new Error(`HTTP error! status: ${response.status}`);
-//             }
-    
-//             // Fetch the audio blob and create a URL for the audio source
-//             const audioBlob = await response.blob();
-//             const audioUrl = URL.createObjectURL(audioBlob);
-//             audioRef.current.src = audioUrl;
-    
-//             // Play the audio and wait for it to finish
-//             await audioRef.current.play();
-    
-//             await new Promise(resolve => {
-//                 const timer = setTimeout(() => {
-//                     audioRef.current.pause(); // Pause after the audio duration
-//                     resolve();
-//                 }, audioRef.current.duration * 1000); // Set a timeout for the duration of the audio
-    
-//                 // If the audio ends before the timer, clear the timeout
-//                 audioRef.current.onended = () => {
-//                     clearTimeout(timer);
-//                     resolve();
-//                 };
-//             });
-    
-//             setTotalAudioPlayed(prev => prev + 1);
-//             setDisplayScript(''); // Clear the displayed script once the audio finishes
-    
-//             // Response window: Allow the user to click and register a score
-//             setIsWithinResponseWindow(true);
-//             await new Promise(resolve => setTimeout(resolve, responseWindow)); // Wait for the response window
-//             setIsWithinResponseWindow(false); // Close response window after timeout
-    
-//         } catch (error) {
-//             if (error.name !== 'AbortError') {
-//                 console.error('Failed to load audio file:', error);
-//             }
-//         }
-//     };
-    
-//     const handleClick = () => {
-//         if (isWithinResponseWindow) {
-//             setScore(prev => prev + 1);
-//             console.log('Correct response! Score incremented.');
-//         } else {
-//             console.log('Clicked outside response window. No score.');
-//         }
-//     };
-
-//     const handleExit = () => {
-//         setShowPopup(true);
-//         stopTest();  // Stop the test when Exit is clicked
-//     };
-
-//     const stopTest = () => {
-//         setIsTestRunning(false);
-//         audioRef.current.pause(); // Stop the current audio
-//         audioRef.current.src = ''; // Reset the audio source
-//         clearTimeout(timeoutRef.current); // Clear any remaining timeouts
-//         abortControllerRef.current.abort(); // Abort any ongoing fetch requests
-//     };
-
-//     const handleClosePopup = () => {
-//         setShowPopup(false);
-//         navigate('/home');
-//     };
-
-//     return (
-//         <div className="test-screen11">
-//             <div className="header">
-//                 <span>{g}</span>
-//             </div>
-//             <div className="content">
-//                 <h2>{sk}</h2>
-//                 <h4>{instruction}</h4>
-//                 <div className="audio-icon" onClick={() => audioRef.current && audioRef.current.play()}>
-//                     <span role="img" aria-label="speaker">🔊</span>
-//                 </div>
-//                 <h2 className="display-script">{displayScript}</h2>
-//             </div>
-//             <div className="button-row-index">
-//                 <button className="click-button" onClick={handleClick} disabled={!isTestRunning}>
-//                     Click
-//                 </button>
-//                 <button className="exit-button" onClick={handleExit}>Exit</button>
-//             </div>
-//             {showPopup && (
-//                 <Popup score={score} totalAudioPlayed={totalAudioPlayed} onClose={handleClosePopup} />
-//             )}
-//         </div>
-//     );
-// };
-
-// export default TestScreen11;
 
 import React, { useContext, useEffect, useState, useRef } from 'react';
 import DataContext from '../../stores/DataContextProvider';
@@ -498,7 +25,7 @@ const TestScreen11 = () => {
     const [duration, setDuration] = useState(0); // Duration in seconds
     const [currentStimulusIndex, setCurrentStimulusIndex] = useState(0);
     const [isWithinResponseWindow, setIsWithinResponseWindow] = useState(false);
-    const timeoutRef = useRef(null);  // Track timeouts
+    const timeoutRef = useRef(null);
 
     useEffect(() => {
         if (selectedOptions && Object.keys(selectedOptions).length > 0) {
@@ -506,21 +33,20 @@ const TestScreen11 = () => {
             const numStimuli = parseInt(selectedOptions['Number of Stimuli']?.label, 10) || 0;
             const responseWindowValue = parseInt(selectedOptions['Response Window']?.label, 10) || 5000;
             
-            const totalDuration = durationInMinutes * 60; // Convert minutes to seconds
+            const totalDuration = durationInMinutes * 60;
     
             if (!isNaN(numStimuli) && numStimuli > 0) {
                 setNumberOfStimuli(numStimuli);
-                setStimulusDuration(Math.min(responseWindowValue / 1000, 5)); // Max 5 seconds per stimulus
+                setStimulusDuration(Math.min(responseWindowValue / 1000, 5));
                 setResponseWindow(responseWindowValue);
                 setIsTestRunning(true);
                 setPlayedFiles([]);
-                setDuration(totalDuration); // Set total duration in seconds
+                setDuration(totalDuration);
             } else {
                 console.error('Invalid Number of Stimuli:', numStimuli);
             }
         }
     }, [selectedOptions]);
-    
 
     useEffect(() => {
         if (folderPath && numberOfStimuli > 0) {
@@ -570,6 +96,7 @@ const TestScreen11 = () => {
             }
         }
     };
+
     const generateRandomIntervals = (totalTime, stimuliCount, maxInterval = 35) => {
         const minInterval = 5;  // Minimum gap between audio stimuli in seconds
         let intervals = [];
@@ -615,10 +142,11 @@ const TestScreen11 = () => {
     };
     
 
+
     const playAudio = async (fileName) => {
         try {
             audioRef.current.pause();
-            audioRef.current.src = ''; 
+            audioRef.current.src = '';
 
             setDisplayScript(fileName.replace('.wav', ''));
             const filenameWithPath = `${folderPath}/${fileName}`;
@@ -629,7 +157,7 @@ const TestScreen11 = () => {
                 body: JSON.stringify({ filenameWithPath }),
                 signal: abortControllerRef.current.signal,
             });
-    
+
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -640,25 +168,25 @@ const TestScreen11 = () => {
 
             await audioRef.current.play();
 
+            setIsWithinResponseWindow(true);
             await new Promise(resolve => {
                 const timer = setTimeout(() => {
                     audioRef.current.pause();
                     resolve();
-                }, audioRef.current.duration * 1000); 
+                }, audioRef.current.duration * 1000);
 
                 audioRef.current.onended = () => {
                     clearTimeout(timer);
                     resolve();
                 };
             });
-    
+
             setTotalAudioPlayed(prev => prev + 1);
             setDisplayScript('');
-    
-            setIsWithinResponseWindow(true);
+
             await new Promise(resolve => setTimeout(resolve, responseWindow));
             setIsWithinResponseWindow(false);
-    
+     
         } catch (error) {
             if (error.name !== 'AbortError') {
                 console.error('Failed to load audio file:', error);
@@ -691,6 +219,7 @@ const TestScreen11 = () => {
         setIsWithinResponseWindow(false);
         setDisplayScript('');
     };
+
     const handleClosePopup = () => {
         setShowPopup(false);
         navigate('/home');
