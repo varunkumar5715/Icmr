@@ -1,5 +1,5 @@
 {
-  "levels": [ 
+  "levels": [
     {
       "level": 1,
       "skill": [
@@ -575,7 +575,6 @@
                   "label": "Formation of words with consonant clusters",
                   "value": "Formation of words with consonant clusters"
                 }
-                
               ]
             }
           ]
@@ -610,7 +609,6 @@
                   "label": "Final Syllable Vowel",
                   "value": "Final Syllable Vowel"
                 }
-                
               ]
             }
           ]
@@ -645,7 +643,6 @@
                   "label": "Final Syllable Vowel",
                   "value": "Final Syllable Vowel"
                 }
-                
               ]
             }
           ]
@@ -690,7 +687,6 @@
                   "label": "Consonant - final position",
                   "value": "Consonant - final position"
                 }
-                
               ]
             }
           ]
@@ -725,7 +721,6 @@
                   "label": "Syllables with different consonant clusters- Production",
                   "value": "Syllables with different consonant clusters- Production"
                 }
-                
               ]
             }
           ]
@@ -760,7 +755,6 @@
                   "label": "Words with different consonant clusters- Production",
                   "value": "Words with different consonant clusters- Production"
                 }
-                
               ]
             }
           ]
@@ -795,7 +789,6 @@
                   "label": "Syllables with different consonant clusters- Production",
                   "value": "Syllables with different consonant clusters- Production"
                 }
-                
               ]
             }
           ]
@@ -806,7 +799,6 @@
             {
               "label": "Task Type",
               "options": [
-      
                 {
                   "label": "Simple words- Recognition",
                   "value": "Simple words- Recognition"
@@ -831,7 +823,6 @@
                   "label": "Words with different consonant clusters- Production",
                   "value": "Words with different consonant clusters- Production"
                 }
-                
               ]
             }
           ]
@@ -842,7 +833,6 @@
             {
               "label": "Task Type",
               "options": [
-      
                 {
                   "label": "Simple Syllables- Recognition",
                   "value": "Simple Syllables- Recognition"
@@ -867,7 +857,6 @@
                   "label": "Syllables with different consonant clusters- Production",
                   "value": "Syllables with different consonant clusters- Production"
                 }
-                
               ]
             }
           ]
@@ -878,7 +867,6 @@
             {
               "label": "Task Type",
               "options": [
-      
                 {
                   "label": "Simple Words- Recognition",
                   "value": "Simple Words- Recognition"
@@ -903,7 +891,6 @@
                   "label": "Words with different consonant clusters- Production",
                   "value": "Words with different consonant clusters- Production"
                 }
-                
               ]
             }
           ]
@@ -1561,33 +1548,27 @@
                   "label": "ಟ",
                   "value": "ಟ"
                 }
-  
               ]
             },
             {
               "label": "Target Percentage",
               "options": [
-            
                 {
                   "label": "10",
                   "value": "10"
                 },
-              
                 {
                   "label": "20",
                   "value": "20"
                 },
-             
                 {
                   "label": "30",
                   "value": "30"
                 },
-              
                 {
                   "label": "40",
                   "value": "40"
                 },
-             
                 {
                   "label": "50",
                   "value": "50"
@@ -1612,11 +1593,8 @@
                   "label": "100",
                   "value": "100"
                 }
-                
-
               ]
             }
-         
           ],
           "textbox": [
             {
@@ -2755,7 +2733,6 @@
                   "value": "-25 dB SNR"
                 }
               ]
-              
             }
           ]
         },
@@ -3873,12 +3850,10 @@
                   "label": "3400 Hz ",
                   "value": "3400 Hz "
                 },
-            
                 {
                   "label": "3200 Hz ",
                   "value": "3200 Hz "
                 },
-             
                 {
                   "label": "3000 Hz ",
                   "value": "3000 Hz "
@@ -4074,12 +4049,10 @@
                   "label": "3400 Hz ",
                   "value": "3400 Hz "
                 },
-               
                 {
                   "label": "3200 Hz ",
                   "value": "3200 Hz "
                 },
-             
                 {
                   "label": "3000 Hz ",
                   "value": "3000 Hz "
@@ -4275,12 +4248,10 @@
                   "label": "3400 Hz ",
                   "value": "3400 Hz "
                 },
-            
                 {
                   "label": "3200 Hz ",
                   "value": "3200 Hz "
                 },
-              
                 {
                   "label": "3000 Hz ",
                   "value": "3000 Hz "
@@ -4476,12 +4447,10 @@
                   "label": "3400 Hz ",
                   "value": "3400 Hz "
                 },
-           
                 {
                   "label": "3200 Hz ",
                   "value": "3200 Hz "
                 },
-          
                 {
                   "label": "3000 Hz ",
                   "value": "3000 Hz "
@@ -4963,7 +4932,7 @@
               ]
             }
           ],
-        "textbox": [
+          "textbox": [
             {
               "label": "ISI",
               "placeholder": "Enter text here..."
@@ -6409,7 +6378,6 @@
                   "label": "540ms",
                   "value": "540ms"
                 },
-             
                 {
                   "label": "545ms",
                   "value": "545ms"
@@ -6563,7 +6531,6 @@
                   "label": "540ms",
                   "value": "540ms"
                 },
-              
                 {
                   "label": "545ms",
                   "value": "545ms"
@@ -6717,7 +6684,6 @@
                   "label": "540ms",
                   "value": "540ms"
                 },
-             
                 {
                   "label": "545ms",
                   "value": "545ms"
@@ -6871,7 +6837,6 @@
                   "label": "540ms",
                   "value": "540ms"
                 },
-            
                 {
                   "label": "545ms",
                   "value": "545ms"
@@ -7025,7 +6990,6 @@
                   "label": "540ms",
                   "value": "540ms"
                 },
-           
                 {
                   "label": "545ms",
                   "value": "545ms"
@@ -9969,7 +9933,6 @@
             {
               "label": "Cut off frequency",
               "options": [
-         
                 {
                   "label": "No Cut Off",
                   "value": "No Cut Off"
@@ -10018,12 +9981,10 @@
                   "label": "3400 Hz ",
                   "value": "3400 Hz "
                 },
-            
                 {
                   "label": "3200 Hz ",
                   "value": "3200 Hz "
                 },
-           
                 {
                   "label": "3000 Hz ",
                   "value": "3000 Hz "
@@ -10376,7 +10337,6 @@
             {
               "label": "Cut off frequency",
               "options": [
-         
                 {
                   "label": "No Cut Off",
                   "value": "No Cut Off"
@@ -10425,12 +10385,10 @@
                   "label": "3400 Hz ",
                   "value": "3400 Hz "
                 },
-            
                 {
                   "label": "3200 Hz ",
                   "value": "3200 Hz "
                 },
-           
                 {
                   "label": "3000 Hz ",
                   "value": "3000 Hz "
@@ -10755,4 +10713,4 @@
       ]
     }
   ]
-} 
+}

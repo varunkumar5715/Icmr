@@ -1,5 +1,4 @@
 
-
 import React, { useContext, useEffect, useState, useRef } from 'react';
 import DataContext from '../../stores/DataContextProvider';
 import { useNavigate } from 'react-router-dom';
@@ -10,7 +9,6 @@ import './TestScreen11.css';
 const TestScreen12 = () => {
     const { g, sk, instruction, selectedOptions, folderPath } = useContext(DataContext);
     const [displayScript, setDisplayScript] = useState('');
-    const [score, setScore] = useState(0);
     const [totalAudioPlayed, setTotalAudioPlayed] = useState(0);
     const [showPopup, setShowPopup] = useState(false);
     const [playedFiles, setPlayedFiles] = useState([]);
@@ -24,7 +22,6 @@ const TestScreen12 = () => {
     const [targetPercentage, setTargetPercentage] = useState(0);
     const [duration, setDuration] = useState(300); // Default duration in seconds
 
-
     const [targetScore, setTargetScore] = useState(0);
     const [nonTargetScore, setNonTargetScore] = useState(0);
     const [targetStimulusCount, setTargetStimulusCount] = useState(0);
@@ -33,21 +30,22 @@ const TestScreen12 = () => {
     const [currentStimulusIndex, setCurrentStimulusIndex] = useState(0);
     const timeoutRef = useRef(null);
     const [responseWindow, setResponseWindow] = useState(3); // 3 seconds for response window
+
     useEffect(() => {
         if (selectedOptions && Object.keys(selectedOptions).length > 0) {
             const numStimuli = parseInt(selectedOptions['Number of Stimuli']?.label, 10) || 0;
             const targetStimuliLabel = selectedOptions['Target Stimuli']?.toString() || '';
-            const targetPercentageValue = selectedOptions['Target Percentage'] ? 
+            const targetPercentageValue = selectedOptions['Target Percentage'] ?
                 parseInt(selectedOptions['Target Percentage'], 10) : 0;
-    
+
             console.log('Parsed Target Stimuli:', targetStimuliLabel);
             console.log('Parsed Target Percentage:', targetPercentageValue);
-            console.log('Selected Options:', selectedOptions); // Log to check values in selectedOptions
-    
+            console.log('Selected Options:', selectedOptions);
+
             if (!isNaN(numStimuli) && numStimuli > 0) {
                 setNumberOfStimuli(numStimuli);
                 setTargetStimuli(targetStimuliLabel);
-                setTargetPercentage(targetPercentageValue); // Correctly set targetPercentage
+                setTargetPercentage(targetPercentageValue);
                 setIsTestRunning(true);
                 setPlayedFiles([]);
             } else {
@@ -55,8 +53,6 @@ const TestScreen12 = () => {
             }
         }
     }, [selectedOptions]);
-    
-    
 
     useEffect(() => {
         if (folderPath && numberOfStimuli > 0) {
@@ -72,21 +68,28 @@ const TestScreen12 = () => {
 
     const fetchSelectedAudio = async () => {
         try {
+            // Reset scores at the start of fetching audio
+            setTargetScore(0);
+            setNonTargetScore(0);
+            setTargetStimulusCount(0);
+            setNonTargetStimulusCount(0);
+            setTotalAudioPlayed(0);
+
             abortControllerRef.current = new AbortController();
-    
+
             const response = await fetch(`${backendIP}/audio/listfiles`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ folderPath }),
                 signal: abortControllerRef.current.signal,
             });
-    
+
             if (!response.ok) {
-                const errorText = await response.text(); 
+                const errorText = await response.text();
                 console.error(`Error fetching audio list: ${response.status} ${response.statusText}\nResponse: ${errorText}`);
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-    
+
             const audioData = await response.json();
             const validAudioFiles = audioData.filter(file => file.trim().endsWith('.wav')).map(file => file.trim());
             const normalizedTargetStimulus = targetStimuli.trim().replace(/\s+/g, '').toLowerCase();
@@ -97,7 +100,7 @@ const TestScreen12 = () => {
             const numStandardStimuli = numberOfStimuli - numTargetStimuli;
 
             console.log(`Number of Target Stimuli: ${numTargetStimuli}, Standard Stimuli: ${numStandardStimuli}`);
-    
+
             if (validAudioFiles.length > 0) {
                 const targetStimuliFiles = validAudioFiles
                     .filter(file => {
@@ -105,17 +108,17 @@ const TestScreen12 = () => {
                         return normalizedFileName === normalizedTargetStimulus;
                     })
                     .slice(0, numTargetStimuli);
-    
+
                 const standardStimuliFiles = validAudioFiles
                     .filter(file => {
                         const normalizedFileName = file.replace(/\s+/g, '').replace('.wav', '').toLowerCase();
                         return normalizedFileName !== normalizedTargetStimulus;
                     })
                     .slice(0, numStandardStimuli);
-    
+
                 console.log('Target Stimuli Files:', targetStimuliFiles);
                 console.log('Standard Stimuli Files:', standardStimuliFiles);
-    
+
                 if (targetStimuliFiles.length > 0 || standardStimuliFiles.length > 0) {
                     const combinedFiles = [...targetStimuliFiles, ...standardStimuliFiles].sort(() => Math.random() - 0.5);
                     setPlayedFiles(combinedFiles);
@@ -148,7 +151,7 @@ const TestScreen12 = () => {
             }, responseWindow * 1000);
 
             if (i < fileList.length - 1) {
-                const interval = intervals[i] * 1000; 
+                const interval = intervals[i] * 1000;
                 console.log(`Waiting for ${interval / 1000} seconds until the next stimulus.`);
                 await new Promise(resolve => setTimeout(resolve, interval));
             }
@@ -200,46 +203,58 @@ const TestScreen12 = () => {
 
             await audioRef.current.play();
 
-            await new Promise(resolve => {
-                audioRef.current.onended = resolve;
-            });
+            // Increment the stimulus count
+            const isTargetStimulus = fileName.includes(targetStimuli);
+            if (isTargetStimulus) {
+                setTargetStimulusCount(prev => prev + 1);
+            } else {
+                setNonTargetStimulusCount(prev => prev + 1);
+            }
 
+            setDisplayScript(fileName.replace('.wav', ''));
             setTotalAudioPlayed(prev => prev + 1);
+
+            // Set up the response window
+            timeoutRef.current = setTimeout(() => {
+                setDisplayScript('');
+            }, responseWindow * 1000);
+
         } catch (error) {
             if (error.name !== 'AbortError') {
-                console.error('Failed to load audio file:', error);
+                console.error('Error in playAudio:', error);
             }
         }
     };
+
     const handleClick = () => {
-        if (playedFiles[currentStimulusIndex]?.includes(targetStimuli)) {
-            setScore(prev => prev + 1);
-            console.log('Correct stimulus played.');
-        } else {
-            console.log('Incorrect stimulus played.');
+        if (!isTestRunning || displayScript === '') return;
+
+        const currentStimulus = playedFiles[currentStimulusIndex];
+        if (currentStimulus) {
+            const isTargetStimulus = currentStimulus.includes(targetStimuli);
+
+            if (isTargetStimulus) {
+                setTargetScore(prev => prev + 1);
+            } else {
+                setNonTargetScore(prev => prev + 1);
+            }
+
+            console.log(`${isTargetStimulus ? 'Target' : 'Non-target'} stimulus clicked.`);
         }
     };
 
     const handleExit = () => {
         setShowPopup(true);
-        stopTest();
-    };
-
-    const stopTest = () => {
         setIsTestRunning(false);
         audioRef.current.pause();
         audioRef.current.src = '';
         abortControllerRef.current.abort();
-        setCurrentStimulusIndex(0);
-        setDisplayScript('');
-        clearTimeout(timeoutRef.current);
     };
 
     const handleClosePopup = () => {
         setShowPopup(false);
         navigate('/home');
     };
-
     return (
         <div className="test-screen11">
             <div className="header">
@@ -259,16 +274,16 @@ const TestScreen12 = () => {
                 </button>
                 <button className="exit-button" onClick={handleExit}>Exit</button>
             </div>
-          {showPopup && (
-  <Popup
-    targetScore={targetScore}
-    targetStimulusCount={targetStimulusCount}
-    nonTargetScore={nonTargetScore}
-    nonTargetStimulusCount={nonTargetStimulusCount}
-    onClose={handleClosePopup}
-    isTestScreen12={true} // Indicate this is TestScreen12
-  />
-)}
+            {showPopup && (
+                <Popup
+                    targetScore={targetScore}
+                    targetStimulusCount={targetStimulusCount}
+                    nonTargetScore={nonTargetScore}
+                    nonTargetStimulusCount={nonTargetStimulusCount}
+                    onClose={handleClosePopup}
+                    isTestScreen12={true} // Indicate this is TestScreen12
+                />
+            )}
         </div>
     );
 };

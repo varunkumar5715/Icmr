@@ -43,6 +43,8 @@
 /* Memory and Sequencing Score Styling */
 .memory-score,
 .distraction-score,
+.target-score,
+.non-target-score,
 .sequencing-score {
   font-size: 18px; /* Set font size to 8px */
   font-weight: bold; /* Make text bold */
